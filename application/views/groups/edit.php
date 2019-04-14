@@ -126,25 +126,25 @@
                          ?>></td>
                       </tr>
                       <tr>
-                        <td>Stores</td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="createStore" <?php 
+                        <td>Customers</td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="createCustomer" <?php 
                         if($serialize_permission) {
-                          if(in_array('createStore', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('createCustomer', $serialize_permission)) { echo "checked"; }  
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="updateStore" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="updateCustomer" <?php 
                         if($serialize_permission) {
-                          if(in_array('updateStore', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('updateCustomer', $serialize_permission)) { echo "checked"; }  
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="viewStore" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="viewCustomer" <?php 
                         if($serialize_permission) {
-                          if(in_array('viewStore', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('viewCustomer', $serialize_permission)) { echo "checked"; }  
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteStore" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteCustomer" <?php 
                         if($serialize_permission) {
-                          if(in_array('deleteStore', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('deleteCustomer', $serialize_permission)) { echo "checked"; }  
                         }
                          ?>></td>
                       </tr>
