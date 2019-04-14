@@ -14,7 +14,7 @@ class Mainstock extends Admin_Controller
 
 		$this->load->model('model_mainstock');
 		$this->load->model('model_category');
-		$this->load->model('model_stores');
+		$this->load->model('model_customers');
 	}
 
     /* 
@@ -22,21 +22,50 @@ class Mainstock extends Admin_Controller
     */
 	public function index()
 	{
-        if(!in_array('viewProduct', $this->permission)) {
+        if(!in_array('createProduct', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
-        $material_data = $this->model_mainstock->getMaterialData();
+
+		$this->form_validation->set_rules('name', 'Material Name', 'trim|required|is_unique[materials.name]');
+		$this->form_validation->set_rules('type', 'Type', 'trim|required');
+        $this->form_validation->set_rules('unit', 'Unit', 'trim|required');
+        $this->form_validation->set_rules('reorderlevel', 'Re Order Level', 'trim|required|numeric');
+		
+	
+        if ($this->form_validation->run() == TRUE) {
+            // true case
+        	
+        	$data = array(
+        		'name' => $this->input->post('name'),
+        		'type' => $this->input->post('type'),
+                'unit' => $this->input->post('unit'),
+                'reorderlevel' => $this->input->post('reorderlevel'),
+        		
+        	);
+
+        	$create = $this->model_mainstock->createMaterial($data);
+        	if($create == true) {
+        		$this->session->set_flashdata('success', 'Successfully created');
+        		redirect('mainstock/', 'refresh');
+        	}
+        	else {
+        		$this->session->set_flashdata('errors', 'Error occurred!!');
+        		redirect('mainstock/', 'refresh');
+        	}
+        }
+        else {
+            // false case
+            $material_data = $this->model_mainstock->getMaterialData();
 
 		$result = array();
 		foreach ($material_data as $k => $v) {
 
 			$result[$k]['material_info'] = $v;
-
-
 		}
 
 		$this->data['material_data'] = $result;
-		$this->render_template('mainstock/index', $this->data);	
+            $this->render_template('mainstock/index', $this->data);
+        }	
 	}
 
     /*
@@ -93,167 +122,8 @@ class Mainstock extends Admin_Controller
 
 		echo json_encode($result);
 	}	
-    
-    /*
-    * view the product based on the store 
-    * the admin can view all the product information
-    */
-    public function viewproduct()
-    {
-        if(!in_array('viewProduct', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
-
-        $company_currency = $this->company_currency();
-        // get all the category 
-        $category_data = $this->model_category->getCategoryData();
-
-        $result = array();
-        
-        foreach ($category_data as $k => $v) {
-            $result[$k]['category'] = $v;
-            $result[$k]['products'] = $this->model_products->getProductDataByCat($v['id']);
-        }
-
-        // based on the category get all the products 
-
-        $html = '<!-- Main content -->
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                      <meta charset="utf-8">
-                      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                      <title>Invoice</title>
-                      <!-- Tell the browser to be responsive to screen width -->
-                      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-                      <!-- Bootstrap 3.3.7 -->
-                      <link rel="stylesheet" href="'.base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css').'">
-                      <!-- Font Awesome -->
-                      <link rel="stylesheet" href="'.base_url('assets/bower_components/font-awesome/css/font-awesome.min.css').'">
-                      <link rel="stylesheet" href="'.base_url('assets/dist/css/AdminLTE.min.css').'">
-                    </head>
-                    <body>
-                    
-                    <div class="wrapper">
-                      <section class="invoice">
-
-                        <div class="row">
-                        ';
-                            foreach ($result as $k => $v) {
-                                $html .= '<div class="col-md-6">
-                                    <div class="product-info">
-                                        <div class="category-title">
-                                            <h1>'.$v['category']['name'].'</h1>
-                                        </div>';
-
-                                        if(count($v['products']) > 0) {
-                                            foreach ($v['products'] as $p_key => $p_value) {
-                                                $html .= '<div class="product-detail">
-                                                            <div class="product-name" style="display:inline-block;">
-                                                                <h5>'.$p_value['name'].'</h5>
-                                                            </div>
-                                                            <div class="product-price" style="display:inline-block;float:right;">
-                                                                <h5>'.$company_currency . ' ' . $p_value['price'].'</h5>
-                                                            </div>
-                                                        </div>';
-                                            }
-                                        }
-                                        else {
-                                            $html .= 'N/A';
-                                        }        
-                                    $html .='</div>
-                                        
-                                </div>';
-                            }
-                        
-
-                        $html .='
-                        </div>
-                      </section>
-                      <!-- /.content -->
-                    </div>
-                </body>
-            </html>';
-
-                      echo $html;
-    }
-
-    /*
-    * If the validation is not valid, then it redirects to the create page.
-    * If the validation for each input field is valid then it inserts the data into the database 
-    * and it stores the operation message into the session flashdata and display on the manage product page
-    */
-	public function createMaterial()
-	{
-		if(!in_array('createProduct', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
-
-		$this->form_validation->set_rules('name', 'Material Name', 'trim|required|is_unique[materials.name]');
-		$this->form_validation->set_rules('type', 'Type', 'trim|required');
-		$this->form_validation->set_rules('unit', 'Unit', 'trim|required');
-		
-	
-        if ($this->form_validation->run() == TRUE) {
-            // true case
-        	
-        	$data = array(
-        		'name' => $this->input->post('name'),
-        		'type' => $this->input->post('type'),
-        		'unit' => $this->input->post('unit'),
-        		
-        	);
-
-        	$create = $this->model_mainstock->createMaterial($data);
-        	if($create == true) {
-        		$this->session->set_flashdata('success', 'Successfully created');
-        		redirect('mainstock/', 'refresh');
-        	}
-        	else {
-        		$this->session->set_flashdata('errors', 'Error occurred!!');
-        		redirect('mainstock/', 'refresh');
-        	}
-        }
-        else {
-            // false case
-
-        	
-            $this->render_template('users/', $this->data);
-        }	
-	}
-
-    /*
-    * This function is invoked from another function to upload the image into the assets folder
-    * and returns the image path
-    */
-	public function upload_image()
-    {
-    	// assets/images/product_image
-        $config['upload_path'] = 'assets/images/product_image';
-        $config['file_name'] =  uniqid();
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = '1000';
-
-        // $config['max_width']  = '1024';s
-        // $config['max_height']  = '768';
-
-        $this->load->library('upload', $config);
-        if ( ! $this->upload->do_upload('product_image'))
-        {
-            $error = $this->upload->display_errors();
-            return $error;
-        }
-        else
-        {
-            $data = array('upload_data' => $this->upload->data());
-            $type = explode('.', $_FILES['product_image']['name']);
-            $type = $type[count($type) - 1];
-            
-            $path = $config['upload_path'].'/'.$config['file_name'].'.'.$type;
-            return ($data == true) ? $path : false;            
-        }
-    }
-
+ 
+ 
     /*
     * If the validation is not valid, then it redirects to the edit product page 
     * If the validation is successfully then it updates the data into the database 
@@ -304,13 +174,8 @@ class Mainstock extends Admin_Controller
             }
         }
         else {
-                    
-            $this->data['category'] = $this->model_category->getActiveCategory();           
-            $this->data['stores'] = $this->model_stores->getActiveStore();          
-
-            $product_data = $this->model_products->getProductData($product_id);
-            $this->data['product_data'] = $product_data;
-            $this->render_template('products/edit', $this->data); 
+     
+            $this->render_template('mainstock/edit', $this->data); 
         }   
 	}
 
@@ -318,32 +183,37 @@ class Mainstock extends Admin_Controller
     * It removes the data from the database
     * and it returns the response into the json format
     */
-	public function remove()
+    public function deletematerial($id = null)
 	{
-        if(!in_array('deleteProduct', $this->permission)) {
+		
+        if(!in_array('deleteCustomer', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
-        
-        $product_id = $this->input->post('product_id');
 
-        $response = array();
-        if($product_id) {
-            $delete = $this->model_products->remove($product_id);
-            if($delete == true) {
-                $response['success'] = true;
-                $response['messages'] = "Successfully removed"; 
-            }
-            else {
-                $response['success'] = false;
-                $response['messages'] = "Error in the database while removing the product information";
-            }
-        }
-        else {
-            $response['success'] = false;
-            $response['messages'] = "Refersh the page again!!";
-        }
+		if($id) {
+			if($this->input->post('confirm')) {
 
-        echo json_encode($response);
+				
+					$delete = $this->model_mainstock->deleteMaterial($id);
+					if($delete == true) {
+		        		$this->session->set_flashdata('success', 'Successfully removed');
+		        		redirect('mainstock/', 'refresh');
+		        	}
+		        	else {
+		        		$this->session->set_flashdata('error', 'Error occurred!!');
+		        		redirect('mainstock/deletematerial/'.$id, 'refresh');
+		        	}
+
+			}	
+			else {
+				$this->data['id'] = $id;
+				$this->render_template('mainstock/deletematerial', $this->data);
+			}	
+		}
+
+
+
+
 	}
 
 }

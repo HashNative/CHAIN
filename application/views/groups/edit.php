@@ -149,25 +149,25 @@
                          ?>></td>
                       </tr>
                       <tr>
-                        <td>Tables</td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="createTable" <?php 
+                        <td>Vendors</td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="createVendor" <?php 
                         if($serialize_permission) {
-                          if(in_array('createTable', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('createVendor', $serialize_permission)) { echo "checked"; }  
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="updateTable" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="updateVendor" <?php 
                         if($serialize_permission) {
-                          if(in_array('updateTable', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('updateVendor', $serialize_permission)) { echo "checked"; }  
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="viewTable" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="viewVendor" <?php 
                         if($serialize_permission) {
-                          if(in_array('viewTable', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('viewVendor', $serialize_permission)) { echo "checked"; }  
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteTable" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteVendor" <?php 
                         if($serialize_permission) {
-                          if(in_array('deleteTable', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('deleteVendor', $serialize_permission)) { echo "checked"; }  
                         }
                          ?>></td>
                       </tr>

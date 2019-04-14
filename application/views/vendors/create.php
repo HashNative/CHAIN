@@ -1,16 +1,16 @@
 </div>
 <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Add Customers</h2>
+                    <h2>Add Vendors</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a>Customers</a>
+                            <a>Vendors</a>
                         </li>
                         <li class="breadcrumb-item active">
-                            <strong>Add Customer</strong>
+                            <strong>Add Vendor</strong>
                         </li>
                     </ol>
                 </div>
@@ -44,11 +44,11 @@
                   <div class="ibox-title">
 
 
-                <form role="form" action="<?php base_url('customers/create') ?>" method="post">
+                <form role="form" action="<?php base_url('vendors/create') ?>" method="post">
                 <?php echo validation_errors(); ?>
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" autocomplete="off">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Vendor Name" autocomplete="off">
                 </div>
 
                 <div class="form-group">
@@ -72,7 +72,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('customers/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('vendors/') ?>" class="btn btn-warning">Back</a>
               </div>
               </form>
               </div>

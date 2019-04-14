@@ -103,11 +103,11 @@
                         <td><input type="checkbox" name="permission[]" id="permission" value="deleteCustomer"></td>
                       </tr>
                       <tr>
-                        <td>Tables</td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="createTable"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="updateTable"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="viewTable"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteTable"></td>
+                        <td>Vendors</td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="createVendor"></td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="updateVendor"></td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="viewVendor"></td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteVendor"></td>
                       </tr>
                       <tr>
                         <td>Category</td>

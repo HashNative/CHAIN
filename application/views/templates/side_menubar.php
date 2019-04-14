@@ -17,7 +17,7 @@
                         </ul>
                     </div>
                     <div class="logo-element">
-                        HN
+                        HC
                     </div>
                 </li>
                 
@@ -62,6 +62,20 @@
                     <?php endif; ?>
                     <?php if(in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
                     <li><a href="<?php echo base_url('customers') ?>">Manage Customers</a></li>
+                    <?php endif; ?>   
+                    </ul>
+                </li>
+                <?php endif; ?>   
+
+                <?php if(in_array('createUser', $user_permission) || in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
+                <li>
+                <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Vendors</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                    <?php if(in_array('createUser', $user_permission)): ?>
+                    <li class="active"><a href="<?php echo base_url('vendors/create') ?>">Add Vendor</a></li>
+                    <?php endif; ?>
+                    <?php if(in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
+                    <li><a href="<?php echo base_url('vendors') ?>">Manage Customers</a></li>
                     <?php endif; ?>   
                     </ul>
                 </li>
@@ -139,10 +153,10 @@
                             <a href="#">Orders <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
-                                    <a href="#">Sales Orders</a>
+                                    <a href="#">Sales Order</a>
                                 </li>
                                 <li>
-                                    <a href="#">Purchase Orders</a>
+                                    <a href="#">Purchase Order</a>
                                 </li>
                                 
 
