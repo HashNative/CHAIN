@@ -30,6 +30,7 @@ class Mainstock extends Admin_Controller
 		$this->form_validation->set_rules('type', 'Type', 'trim|required');
         $this->form_validation->set_rules('unit', 'Unit', 'trim|required');
         $this->form_validation->set_rules('reorderlevel', 'Re Order Level', 'trim|required|numeric');
+        $this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');
 		
 	
         if ($this->form_validation->run() == TRUE) {
@@ -40,6 +41,7 @@ class Mainstock extends Admin_Controller
         		'type' => $this->input->post('type'),
                 'unit' => $this->input->post('unit'),
                 'reorderlevel' => $this->input->post('reorderlevel'),
+                'price' => $this->input->post('price'),
         		
         	);
 

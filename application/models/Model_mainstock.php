@@ -37,7 +37,7 @@ class Model_mainstock extends CI_Model
 	public function edit($data = array(), $id = null)
 	{
 		$this->db->where('id', $id);
-		$update = $this->db->update('customers', $data);
+		$update = $this->db->update('materials', $data);
 
 		return ($update == true) ? true : false;	
 	}

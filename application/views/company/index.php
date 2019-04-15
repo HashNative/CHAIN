@@ -1,42 +1,49 @@
 
+<div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Manage Company Info</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a>Comapny</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong>Manage Comapny Info</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Manage
-        <small>Company</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">company</li>
-      </ol>
-    </section>
+                </div>
+            </div>
 
-    <!-- Main content -->
-    <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-md-12 col-xs-12">
-          
-          <?php if($this->session->flashdata('success')): ?>
-            <div class="alert alert-success alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <?php echo $this->session->flashdata('success'); ?>
-            </div>
-          <?php elseif($this->session->flashdata('error')): ?>
-            <div class="alert alert-error alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <?php echo $this->session->flashdata('error'); ?>
-            </div>
-          <?php endif; ?>
+   <!-- Main content -->
+   <div class="wrapper wrapper-content animated fadeInRight">
 
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Manage Company Information</h3>
-            </div>
-            <form role="form" action="<?php base_url('company/update') ?>" method="post">
+            
+<?php if($this->session->flashdata('success')): ?>
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?php echo $this->session->flashdata('success'); ?>
+  </div>
+<?php elseif($this->session->flashdata('error')): ?>
+  <div class="alert alert-error alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?php echo $this->session->flashdata('error'); ?>
+  </div>
+<?php endif; ?>
+
+
+
+<div class="ibox ">
+        <div class="ibox-title">
+        <h5>Company Info</h5>
+                 
+                  <div class="ibox-content">
+
+                  <form role="form" action="<?php base_url('company/update') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -92,18 +99,15 @@
                 <button type="submit" class="btn btn-primary">Save Changes</button>
               </div>
             </form>
+                 
+                  </div>
+              </div>
           </div>
-          <!-- /.box -->
-        </div>
-        <!-- col-md-12 -->
-      </div>
-      <!-- /.row -->
+<!-- /.box -->
+</div>
+
       
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
 
 <script type="text/javascript">
   $(document).ready(function() {

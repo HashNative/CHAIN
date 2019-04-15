@@ -1,6 +1,4 @@
 
-
-</div>
 <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>Manage Materials</h2>
@@ -96,6 +94,12 @@
                                 <div class="col-lg-10"><input type="text" id="reorderlevel" name="reorderlevel" placeholder="Re Order Level" class="form-control" autocomplete="off">
                                 </div>
                                 </div>
+
+                                <div class="form-group row"><label class="col-lg-2 col-form-label">Price</label>
+
+                                <div class="col-lg-10"><input type="text" id="price" name="price" placeholder="Unit Cost" class="form-control" autocomplete="off">
+                                </div>
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-lg-offset-2 col-lg-10">
                                         <button class="btn btn-primary" type="submit">Save</button>
@@ -137,7 +141,10 @@
                                     <th>Type</th>
                                     <th>Unit</th>
                                     <th>R O L</th>
+                                    <th>Price</th>
+                                    <?php if(in_array('updateUser', $user_permission) && in_array('deleteUser', $user_permission)): ?>
                                     <th>Action</th>
+                                    <?php endif; ?>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -146,10 +153,11 @@
                                 <?php if($material_data): ?>                  
                     <?php foreach ($material_data as $k => $v): ?>
 
-                                    <td><span class="pie"><?php echo $v['material_info']['name']; ?></span></td>
+                                    <td><span class="client-link"><?php echo $v['material_info']['name']; ?></span></td>
                                     <td><?php echo $v['material_info']['type']; ?></td>
                                     <td class="text-navy"><?php echo $v['material_info']['unit']; ?></td>
-                                    <td class="text-navy"><?php echo $v['material_info']['reorderlevel']; ?></td>
+                                    <td class="text-primary"><?php echo $v['material_info']['reorderlevel']; ?></td>
+                                    <td class="text-danger"><?php echo $v['material_info']['price']; ?></td>
                                     <td>
                                     <?php if(in_array('updateUser', $user_permission)): ?>
                             <a class="btn btn-default"><i class="fa fa-edit"></i></a>
@@ -229,5 +237,4 @@
 
                 </div>
             </div>
-
 

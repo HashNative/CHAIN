@@ -52,24 +52,18 @@ class Model_orders extends CI_Model
 		$user_data = $this->model_users->getUserData($user_id);
 		$store_id = $user_data['store_id'];
 
-		$bill_no = 'BILPR-'.strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 4));
+		$order_id = $this->db->insert_id();
     	$data = array(
-    		'bill_no' => $bill_no,
+    		
     		'date_time' => strtotime(date('Y-m-d h:i:s a')),
     		'gross_amount' => $this->input->post('gross_amount_value'),
-    		'service_charge_rate' => $this->input->post('service_charge_rate'),
-    		'service_charge_amount' => ($this->input->post('service_charge_value') > 0) ?$this->input->post('service_charge_value'):0,
-    		'vat_charge_rate' => $this->input->post('vat_charge_rate'),
-    		'vat_charge_amount' => ($this->input->post('vat_charge_value') > 0) ? $this->input->post('vat_charge_value') : 0,
     		'net_amount' => $this->input->post('net_amount_value'),
     		'discount' => $this->input->post('discount'),
     		'paid_status' => 2,
     		'user_id' => $user_id,
-    		'table_id' => $this->input->post('table_name'),
-    		'store_id' => $store_id,
     	);
 
-		$insert = $this->db->insert('orders', $data);
+		$insert = $this->db->insert('purchase_order', $data);
 		$order_id = $this->db->insert_id();
 
 		$count_product = count($this->input->post('product'));
@@ -82,13 +76,10 @@ class Model_orders extends CI_Model
     			'amount' => $this->input->post('amount_value')[$x],
     		);
 
-    		$this->db->insert('order_items', $items);
+    		$this->db->insert('purchase_order_detail', $items);
     	}
 
-    	// update the table status
-    	$this->load->model('model_tables');
-    	$this->model_tables->update($this->input->post('table_name'), array('available' => 2));
-
+    	
 		return ($order_id) ? $order_id : false;
 	}
 

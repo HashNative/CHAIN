@@ -16,9 +16,10 @@ class Orders extends Admin_Controller
 
 		$this->load->model('model_orders');
 		$this->load->model('model_tables');
-		$this->load->model('model_products');
+		$this->load->model('model_mainstock');
 		$this->load->model('model_company');
 		$this->load->model('model_stores');
+		$this->load->model('model_products');
 
 		$this->currency_code = $this->company_currency();
 	}
@@ -26,14 +27,44 @@ class Orders extends Admin_Controller
 	/* 
 	* It only redirects to the manage order page
 	*/
-	public function index()
+	public function purchaseOrder()
 	{
-		if(!in_array('viewOrder', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
+		if(!in_array('createOrder', $this->permission)) {
+			redirect('dashboard', 'refresh');
+	}
 
-		$this->data['page_title'] = 'Manage Orders';
-		$this->render_template('orders/index', $this->data);		
+$this->data['page_title'] = 'Create Order';
+
+$this->form_validation->set_rules('product[]', 'Product name', 'trim|required');
+
+
+	if ($this->form_validation->run() == TRUE) {        	
+		
+		$order_id = $this->model_orders->create();
+		
+		if($order_id) {
+			$this->session->set_flashdata('success', 'Successfully created');
+			redirect('orders/update/'.$order_id, 'refresh');
+		}
+		else {
+			$this->session->set_flashdata('errors', 'Error occurred!!');
+			redirect('orders/create/', 'refresh');
+		}
+	}
+	else {
+			// false case
+			$this->data['table_data'] = $this->model_tables->getActiveTable();
+		$company = $this->model_company->getCompanyData(1);
+		$this->data['company_data'] = $company;
+		$this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+		$this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+
+		$this->data['materials'] = $this->model_mainstock->getMaterialData();      	
+
+			$this->render_template('transactions/orders/purchaseorder', $this->data);
+	}
+
+
 	}
 
 	/*
@@ -144,12 +175,12 @@ class Orders extends Admin_Controller
 	* It checks retrieves the particular product data from the product id 
 	* and return the data into the json format.
 	*/
-	public function getProductValueById()
+	public function getMaterialValueById()
 	{
-		$product_id = $this->input->post('product_id');
-		if($product_id) {
-			$product_data = $this->model_products->getProductData($product_id);
-			echo json_encode($product_data);
+		$material_id = $this->input->post('material_id');
+		if($material_id) {
+			$material_id = $this->model_mainstock->getMaterialData($material_id);
+			echo json_encode($material_id);
 		}
 	}
 
@@ -158,9 +189,10 @@ class Orders extends Admin_Controller
 	* This function is used in the order page, for the product selection in the table
 	* The response is return on the json format.
 	*/
-	public function getTableProductRow()
+	public function getMaterialRow()
 	{
-		$products = $this->model_products->getActiveProductData();
+		$products = $this->model_mainstock->getMaterialData();
+		
 		echo json_encode($products);
 	}
 
