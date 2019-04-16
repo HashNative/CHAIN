@@ -105,7 +105,9 @@
                         </li>
                        
                     </ul>
-                </li>  
+                </li>
+
+
 
 
                 <li class="treeview" id="TransactionMainNav">
@@ -164,14 +166,14 @@
                             </ul>
                         </li>
                     </ul>
-                </li>        
-
-               
-                <li class="landing_link">
-                    <a href="<?php echo base_url('company') ?>"><i class="fa fa-star"></i> <span class="nav-label"> Company</span> <span class="label label-warning float-right">Info</span></a>
                 </li>
+
                 <li class="special_link">
-                    <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Database</span></a>
+                    <a href="<?php echo base_url('task/') ?>"><i class="fa fa-star"></i> <span class="nav-label">Task</span></a>
+                </li>
+
+                <li class="landing_link">
+                    <a href="<?php echo base_url('company') ?>"><i class="fa fa-database"></i> <span class="nav-label"> Company</span> <span class="label label-warning float-right">Info</span></a>
                 </li>
             </ul>
 
