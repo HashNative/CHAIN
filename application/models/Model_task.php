@@ -27,4 +27,25 @@ class Model_task extends CI_Model
 	}
 
 
+	public function createTask(){
+
+        $count_material = count($this->input->post('material'));
+        $order_id = $this->db->insert_id();
+        for($x = 0; $x < $count_material; $x++) {
+            $items = array(
+                'description' => $this->input->post('description')[$x],
+                'production' => $this->input->post('qty')[$x],
+
+            );
+
+            $this->db->insert('task', $items);
+
+        }
+
+
+        return ($order_id) ? $order_id : false;
+
+    }
+
+
 }

@@ -66,12 +66,8 @@ class Task extends Admin_Controller
         $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
 
         if ($this->form_validation->run() == TRUE) {
-            $data = array(
-                'name' => $this->input->post('description'),
-                'active' => $this->input->post('active'),
-            );
 
-            $create = $this->model_task->createTask($data);
+            $create = $this->model_task->createTask();
             if ($create == true) {
                 $response['success'] = true;
                 $response['messages'] = 'Succesfully created';
