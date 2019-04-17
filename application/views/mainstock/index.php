@@ -7,8 +7,12 @@
                             <a href="#">Home</a>
                         </li>
                         <li class="breadcrumb-item">
+                            <a>Stock</a>
+                        </li>
+                        <li class="breadcrumb-item">
                             <a>Main Stock</a>
                         </li>
+
                         <li class="breadcrumb-item active">
                             <strong>Manage Materials</strong>
                         </li>

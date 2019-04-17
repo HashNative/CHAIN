@@ -7,21 +7,25 @@ class Model_task extends CI_Model
 		parent::__construct();
 	}
 
-	/* get the company data */
-	public function getCompanyData($id = null)
+	/* get the task data */
+	public function getTaskData($id = null)
 	{
-		if($id) {
-			$sql = "SELECT * FROM company WHERE id = ?";
-			$query = $this->db->query($sql, array($id));
-			return $query->row_array();
-		}
+        if($id) {
+            $sql = "SELECT * FROM task WHERE id = ?";
+            $query = $this->db->query($sql, array($id));
+            return $query->row_array();
+        }
+
+        $sql = "SELECT * FROM task WHERE id != ? ORDER BY id DESC";
+        $query = $this->db->query($sql, array(0));
+        return $query->result_array();
 	}
 
-	public function update($data, $id)
+	public function updateTask($data, $id)
 	{
 		if($data && $id) {
 			$this->db->where('id', $id);
-			$update = $this->db->update('company', $data);
+			$update = $this->db->update('task', $data);
 			return ($update == true) ? true : false;
 		}
 	}
@@ -30,22 +34,26 @@ class Model_task extends CI_Model
 	public function createTask(){
 
         $count_material = count($this->input->post('material'));
-        $order_id = $this->db->insert_id();
         for($x = 0; $x < $count_material; $x++) {
-            $items = array(
-                'description' => $this->input->post('description')[$x],
-                'production' => $this->input->post('qty')[$x],
 
-            );
-
-            $this->db->insert('task', $items);
+            $data[$this->input->post('material')[$x]]=$this->input->post('qty')[$x];
 
         }
 
+        $items = array(
+            'description' => $this->input->post('description'),
+            'ingredients' => json_encode($data),
+            'status' => 'todo',
+            );
+
+        $this->db->insert('task', $items);
+        $order_id = $this->db->insert_id();
 
         return ($order_id) ? $order_id : false;
 
     }
+
+
 
 
 }

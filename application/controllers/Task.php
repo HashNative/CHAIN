@@ -14,6 +14,7 @@ class Task extends Admin_Controller
 
         $this->load->model('model_task');
         $this->load->model('model_mainstock');
+            $this->load->model('model_finalstock');
     }
 
     /* 
@@ -27,29 +28,27 @@ class Task extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
 
-        $this->data['page_title'] = 'Create Order';
 
-        $this->form_validation->set_rules('product[]', 'Product name', 'trim|required');
-
-
-        if ($this->form_validation->run() == TRUE) {
-
-            $order_id = $this->model_orders->create();
-
-            if ($order_id) {
-                $this->session->set_flashdata('success', 'Successfully created');
-                redirect('orders/update/' . $order_id, 'refresh');
-            } else {
-                $this->session->set_flashdata('errors', 'Error occurred!!');
-                redirect('orders/create/', 'refresh');
-            }
-        } else {
-            // false case
-
-            $this->data['materials'] = $this->model_mainstock->getMaterialData();
-
-            $this->render_template('task/index', $this->data);
+        if (!in_array('createOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
         }
+
+
+        $task_data = $this->model_task->getTaskData();
+        $result = array();
+        foreach ($task_data as $k => $v) {
+
+            $result[$k]['task_info'] = $v;
+
+        }
+
+        $this->data['task_data'] = $result;
+
+        $this->data['materials'] = $this->model_mainstock->getMaterialData();
+        $this->data['products'] = $this->model_finalstock->getProductData();
+
+        $this->render_template('task/index', $this->data);
+
 
 
     }
@@ -87,9 +86,9 @@ class Task extends Admin_Controller
     }
 
 
-    public function issue(){
+    public function updateTask(){
 
-
+        redirect('task', 'refresh');
     }
 
 }

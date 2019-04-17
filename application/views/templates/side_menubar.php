@@ -100,8 +100,17 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Final Products</a>
-                            
+                            <a href="#">Final Products <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+
+                                <li>
+                                    <a href="<?php echo base_url('finalstock/') ?>">Manage Product</a>
+                                </li>
+                                <li>
+                                    <a href="#">Manage Final Stock</a>
+                                </li>
+
+                            </ul>
                         </li>
                        
                     </ul>
