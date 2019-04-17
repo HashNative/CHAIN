@@ -57,18 +57,26 @@ class Model_task extends CI_Model
 
         $task_id = $this->input->post('task_id');
         $count_product = count($this->input->post('product'));
+        $count_material = count($this->input->post('returnmaterial'));
         for($x = 0; $x < $count_product; $x++) {
 
             $data[$this->input->post('product')[$x]]=$this->input->post('productqty')[$x];
 
         }
+        for($x = 0; $x < $count_material; $x++) {
+
+            $data_material[$this->input->post('returnmaterial')[$x]]=$this->input->post('returnqty')[$x];
+
+        }
 
         $items = array(
             'production' => json_encode($data),
+            'return_materials' =>json_encode($data_material),
             'status' => 'completed',
+            'date_time_completed' =>date("h:i a d.m.Y")
         );
 
-        if($data && $task_id) {
+        if($task_id) {
             $this->db->where('id', $task_id);
             $update = $this->db->update('task', $items);
             return ($update == true) ? true : false;

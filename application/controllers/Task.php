@@ -92,29 +92,29 @@ class Task extends Admin_Controller
     {
         $response = array();
 
-        $this->form_validation->set_rules('product[]', 'Product Name', 'trim|required');
-        $this->form_validation->set_rules('material[]', 'Material Name', 'trim|required');
-        $this->form_validation->set_rules('productqty[]', 'Quantity', 'trim|required');
-        $this->form_validation->set_rules('damageqty[]', 'Damage quantity', 'trim|required');
-        $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
-
-        if ($this->form_validation->run() == TRUE) {
+//        $this->form_validation->set_rules('product[]', 'Product Name', 'trim|required');
+//        $this->form_validation->set_rules('material[]', 'Material Name', 'trim|required');
+//        $this->form_validation->set_rules('productqty[]', 'Quantity', 'trim|required');
+//        $this->form_validation->set_rules('damageqty[]', 'Damage quantity', 'trim|required');
+//        //$this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
+//        echo $this->input->post('task_id');
+//        if ($this->form_validation->run() == TRUE) {
 
             $create = $this->model_task->completeTask();
             if ($create == true) {
                 $response['success'] = true;
-                $response['messages'] = 'Succesfully created';
-                redirect('task', 'refresh');
+                $response['messages'] = 'Succesfully completed';
+
             } else {
                 $response['success'] = false;
                 $response['messages'] = 'Error in the database while creating the brand information';
             }
-        } else {
-            $response['success'] = false;
-            foreach ($_POST as $key => $value) {
-                $response['messages'][$key] = form_error($key);
-            }
-        }
+//        } else {
+//            $response['success'] = false;
+//            foreach ($_POST as $key => $value) {
+//                $response['messages'][$key] = form_error($key);
+//            }
+//        }
 
         echo json_encode($response);
 

@@ -233,6 +233,7 @@
                                                     </small>
                                                 </div>
                                                 <form role="form" action="<?php echo base_url('task/completetask') ?>" method="post" id="finalRecordForm">
+                                                    <input type="hidden" name="task_id" value="<?php echo $v['task_info']['id']; ?>">
 
                                                     <div class="modal-body">
 
@@ -301,6 +302,8 @@
                                                                         <a class="delete" title="Delete"><i class="fa fa-close"></i></a>
                                                                     </td>
                                                                 </tr>
+
+
                                                                 </tbody>
                                                             </table>
                                                             <div class="box-footer">
@@ -312,9 +315,7 @@
 
                                                         </div>
                                                     </div>
-
-
-                                                    <div class="modal-footer">
+                                                <div class="modal-footer">
                                                         <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
                                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                                     </div>
@@ -360,7 +361,7 @@
                                             <?php endif; ?>
                                         </ul>
                                         <div class="agile-detail">
-                                            <i class="fa fa-clock-o"></i> 06.10.2015
+                                            <i class="fa fa-clock-o"></i> <?php echo $v['task_info']['date_time_completed']; ?>
                                         </div>
                                     </li>
                                 <?php endif; ?>
