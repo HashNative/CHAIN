@@ -53,6 +53,38 @@ class Model_task extends CI_Model
 
     }
 
+    public function completeTask(){
+
+        $task_id = $this->input->post('task_id');
+        $count_product = count($this->input->post('product'));
+        for($x = 0; $x < $count_product; $x++) {
+
+            $data[$this->input->post('product')[$x]]=$this->input->post('productqty')[$x];
+
+        }
+
+        $items = array(
+            'production' => json_encode($data),
+            'status' => 'completed',
+        );
+
+        if($data && $task_id) {
+            $this->db->where('id', $task_id);
+            $update = $this->db->update('task', $items);
+            return ($update == true) ? true : false;
+        }
+    }
+
+
+    public function deleteTask($id = null)
+    {
+        if($id) {
+            $this->db->where('id', $id);
+            $delete = $this->db->delete('task');
+            return ($delete == true) ? true : false;
+        }
+    }
+
 
 
 

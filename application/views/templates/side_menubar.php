@@ -190,4 +190,7 @@
 </nav>
 
     <div id="page-wrapper" class="gray-bg">
-       
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <div class="col-lg-10">

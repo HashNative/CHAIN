@@ -70,6 +70,41 @@ class Task extends Admin_Controller
             if ($create == true) {
                 $response['success'] = true;
                 $response['messages'] = 'Succesfully created';
+
+            } else {
+                $response['success'] = false;
+                $response['messages'] = 'Error in the database while creating the brand information';
+            }
+        } else {
+            $response['success'] = false;
+            foreach ($_POST as $key => $value) {
+                $response['messages'][$key] = form_error($key);
+            }
+        }
+
+        echo json_encode($response);
+
+    }
+
+
+
+    public function completeTask()
+    {
+        $response = array();
+
+        $this->form_validation->set_rules('product[]', 'Product Name', 'trim|required');
+        $this->form_validation->set_rules('material[]', 'Material Name', 'trim|required');
+        $this->form_validation->set_rules('productqty[]', 'Quantity', 'trim|required');
+        $this->form_validation->set_rules('damageqty[]', 'Damage quantity', 'trim|required');
+        $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
+
+        if ($this->form_validation->run() == TRUE) {
+
+            $create = $this->model_task->completeTask();
+            if ($create == true) {
+                $response['success'] = true;
+                $response['messages'] = 'Succesfully created';
+                redirect('task', 'refresh');
             } else {
                 $response['success'] = false;
                 $response['messages'] = 'Error in the database while creating the brand information';
@@ -88,7 +123,84 @@ class Task extends Admin_Controller
 
     public function updateTask(){
 
-        redirect('task', 'refresh');
+        $task_id = $this->input->post('task_id');
+        $status = $this->input->post('status');
+        $response = array();
+        if($task_id) {
+            $updated_data = array(
+                'status' => $status,
+                'date_time_issued' =>date("h:i a d.m.Y")
+
+            );
+
+            $update = $this->model_task->updateTask($updated_data,$task_id);
+            if($update == true) {
+                $response['success'] = true;
+                $response['messages'] = "Successfully issued";
+                redirect('task', 'refresh');
+
+            }
+            else {
+                $response['success'] = false;
+                $response['messages'] = "Error in the database while removing the brand information";
+            }
+        }
+        else {
+            $response['success'] = false;
+            $response['messages'] = "Refersh the page again!!";
+        }
+    }
+
+
+    /*
+* It gets the all the active material inforamtion from the product table
+* This function is used in the order page, for the product selection in the table
+* The response is return on the json format.
+*/
+    public function getMaterialRow()
+    {
+        $materials = $this->model_mainstock->getMaterialData();
+
+        echo json_encode($materials);
+    }
+
+
+    /*
+* It gets the all the active product inforamtion from the product table
+* This function is used in the order page, for the product selection in the table
+* The response is return on the json format.
+*/
+    public function getProductRow()
+    {
+        $products = $this->model_finalstock->getProductData();
+
+        echo json_encode($products);
+    }
+
+    public function deleteTask()
+    {
+
+        $task_id = $this->input->post('task_id');
+
+        $response = array();
+        if($task_id) {
+            $delete = $this->model_task->deleteTask($task_id);
+            if($delete == true) {
+                $response['success'] = true;
+                $response['messages'] = "Successfully deleted";
+                redirect('task', 'refresh');
+            }
+            else {
+                $response['success'] = false;
+                $response['messages'] = "Error in the database while removing the brand information";
+            }
+        }
+        else {
+            $response['success'] = false;
+            $response['messages'] = "Refersh the page again!!";
+        }
+
+        echo json_encode($response);
     }
 
 }
