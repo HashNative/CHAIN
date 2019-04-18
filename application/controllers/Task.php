@@ -29,11 +29,6 @@ class Task extends Admin_Controller
         }
 
 
-        if (!in_array('createOrder', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
-
-
         $task_data = $this->model_task->getTaskData();
         $result = array();
         foreach ($task_data as $k => $v) {
@@ -53,6 +48,28 @@ class Task extends Admin_Controller
 
     }
 
+    public function all()
+    {
+        if (!in_array('createOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+
+
+        $task_data = $this->model_task->getTaskData();
+        $result = array();
+        foreach ($task_data as $k => $v) {
+
+            $result[$k]['task_info'] = $v;
+
+        }
+
+        $this->data['task_data'] = $result;
+
+        $this->render_template('task/alltask', $this->data);
+
+
+
+    }
 
     public function createTask()
     {

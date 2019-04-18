@@ -39,7 +39,8 @@
 
     <!-- Flot demo data -->
     <script src="<?php echo base_url('assets/js/demo/flot-demo.js');?>"></script>
-
+    <!-- FooTable -->
+    <script src="<?php echo base_url('assets/js/plugins/footable/footable.all.min.js');?>"></script>
 </head>
 
 <body>

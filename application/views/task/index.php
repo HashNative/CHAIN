@@ -12,7 +12,14 @@
             </li>
         </ol>
     </div>
+        <div class="col-lg-4">
+            <div class="title-action">
+                <a href="<?php echo base_url('task/all') ?>" class="btn btn-primary"><i class="fa fa-angle-double-down"></i> All Tasks </a>
+            </div>
+        </div>
+
 </div>
+
 
 <!-- Main content -->
 <div class="wrapper wrapper-content  animated fadeInRight">
@@ -67,10 +74,11 @@
                             <hr>
                             <p>Ingredients:</p>
                             <ul>
-
+                                <li>
                             <?php foreach (json_decode($v['task_info']['ingredients'], true) as $ki => $vi): ?>
-                            <li><strong><?php echo $ki; ?>:</strong><?php echo $vi; ?></li>
+                            <p><strong><?php echo $ki; ?>:</strong><?php echo $vi; ?></p>
                             <?php endforeach ?>
+                                </li>
                             </ul>
                             <div class="agile-detail">
                                 <a href="#" class="float-right btn btn-xs btn-primary" data-toggle="modal"
@@ -162,9 +170,12 @@
                                         <p>Ingredients:</p>
                                         <ul>
 
-                                            <?php foreach (json_decode($v['task_info']['ingredients'], true) as $ki => $vi): ?>
-                                                <li><strong><?php echo $ki; ?>:</strong><?php echo $vi; ?></li>
-                                            <?php endforeach ?>
+                                            <li>
+                                                <?php foreach (json_decode($v['task_info']['ingredients'], true) as $ki => $vi): ?>
+                                                    <p><strong><?php echo $ki; ?>:</strong><?php echo $vi; ?></p>
+                                                <?php endforeach ?>
+                                            </li>
+
                                         </ul>
                                         <div class="agile-detail">
                                             <a href="#" class="float-right btn btn-xs btn-primary" data-toggle="modal"
@@ -348,16 +359,21 @@
                                         <p>Ingredients:</p>
                                         <ul>
 
-                                            <?php foreach (json_decode($v['task_info']['ingredients'], true) as $ki => $vi): ?>
-                                                <li><strong><?php echo $ki; ?>:</strong><?php echo $vi; ?></li>
-                                            <?php endforeach ?>
+                                            <li>
+                                                <?php foreach (json_decode($v['task_info']['ingredients'], true) as $ki => $vi): ?>
+                                                    <p><strong><?php echo $ki; ?>:</strong><?php echo $vi; ?></p>
+                                                <?php endforeach ?>
+                                            </li>
+
                                         </ul>
                                         <p>Production:</p>
                                         <ul>
                                             <?php if($v['task_info']['production']):?>
+                                                <li>
                                             <?php foreach (json_decode($v['task_info']['production'], true) as $ki => $vi): ?>
-                                                <li><strong><?php echo $ki; ?>:</strong><?php echo $vi; ?></li>
+                                                <p><strong><?php echo $ki; ?>:</strong><?php echo $vi; ?></p>
                                             <?php endforeach ?>
+                                                </li>
                                             <?php endif; ?>
                                         </ul>
                                         <div class="agile-detail">
