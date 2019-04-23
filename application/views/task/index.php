@@ -267,7 +267,7 @@
                                                                                 id="product_1" name="product[]" style="width:100%;" required>
                                                                             <option value=""></option>
                                                                             <?php foreach ($products as $k => $v): ?>
-                                                                                <option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
+                                                                                <option value="<?php echo $v['name'] ?>"><?php echo $v['name'] ?></option>
                                                                             <?php endforeach ?>
                                                                         </select>
                                                                     </td>
@@ -301,14 +301,14 @@
                                                                 <tr id="row_1">
                                                                     <td>
                                                                         <select class="form-control select_group return_material" data-row-id="row_1"
-                                                                                id="returnmaterial_1" name="returnmaterial[]" style="width:100%;" required>
+                                                                                id="returnmaterial_1" name="returnmaterial[]" style="width:100%;">
                                                                             <option value=""></option>
                                                                             <?php foreach ($materials as $k => $v): ?>
-                                                                                <option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
+                                                                                <option value="<?php echo $v['name'] ?>"><?php echo $v['name'] ?></option>
                                                                             <?php endforeach ?>
                                                                         </select>
                                                                     </td>
-                                                                    <td><input type="text" name="returnqty[]" id="returnqty_1" class="form-control" required></td>
+                                                                    <td><input type="text" name="returnqty[]" id="returnqty_1" class="form-control"></td>
                                                                     <td>
                                                                         <a class="delete" title="Delete"><i class="fa fa-close"></i></a>
                                                                     </td>
@@ -354,7 +354,16 @@
                             <?php foreach ($task_data as $k => $v): ?>
                                 <?php if($v['task_info']['status']=='completed'): ?>
                                     <li class="<?php echo $colors[array_rand($colors)]; ?>" id="<?php echo $v['task_info']['id']; ?>">
-                                        <strong><?php echo $v['task_info']['description']; ?></strong>
+
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <strong><?php echo $v['task_info']['description']; ?></strong>
+                                            </div>
+                                            <div>
+                                                <a href="#" data-toggle="modal"
+                                                   data-target="#revertCompletedModal<?php echo $v['task_info']['id']; ?>"><i class="fa fa-reply"></i></a>
+                                            </div>
+                                        </div>
                                         <hr>
                                         <p>Ingredients:</p>
                                         <ul>
@@ -380,6 +389,31 @@
                                             <i class="fa fa-clock-o"></i> <?php echo $v['task_info']['date_time_completed']; ?>
                                         </div>
                                     </li>
+
+                                    <div class="modal inmodal fade" id="revertCompletedModal<?php echo $v['task_info']['id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span
+                                                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h3>Revert Confirmation</h3>
+                                                </div>
+                                                <form role="form" action="<?php echo base_url('task/updatetask') ?>" method="post" id="issueForm">
+                                                    <input type="hidden" name="task_id" value="<?php echo $v['task_info']['id']; ?>">
+                                                    <input type="hidden" name="status" value="progress">
+                                                    <div class="modal-body">
+                                                        <p><strong>Do you really want to revert the task?</strong></p>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-white" data-dismiss="modal">Discard</button>
+                                                        <button type="submit" class="btn btn-primary">Yes</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 <?php endif; ?>
                             <?php endforeach ?>
                         <?php endif; ?>
@@ -431,7 +465,7 @@
                                                     id="material_1" name="material[]" style="width:100%;" required>
                                                 <option value=""></option>
                                                 <?php foreach ($materials as $k => $v): ?>
-                                                    <option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
+                                                    <option value="<?php echo $v['name'] ?>"><?php echo $v['name'] ?></option>
                                                 <?php endforeach ?>
                                             </select>
                                         </td>
@@ -611,7 +645,7 @@
                         '<select class="form-control select_group material" data-row-id="' + row_id + '" id="material_' + row_id + '" name="material[]" style="width:100%;" >' +
                         '<option value=""></option>';
                     $.each(response, function (index, value) {
-                        html += '<option value="' + value.id + '">' + value.name + '</option>';
+                        html += '<option value="' + value.name + '">' + value.name + '</option>';
                     });
 
                     html += '</select>' +
@@ -653,7 +687,7 @@
                         '<select class="form-control select_group return_material" data-row-id="' + row_id + '" id="returnmaterial_' + row_id + '" name="returnmaterial[]" style="width:100%;" >' +
                         '<option value=""></option>';
                     $.each(response, function (index, value) {
-                        html += '<option value="' + value.id + '">' + value.name + '</option>';
+                        html += '<option value="' + value.name + '">' + value.name + '</option>';
                     });
 
                     html += '</select>' +
@@ -695,7 +729,7 @@
                         '<select class="form-control select_group product" data-row-id="' + row_id + '" id="product_' + row_id + '" name="product[]" style="width:100%;" >' +
                         '<option value=""></option>';
                     $.each(response, function (index, value) {
-                        html += '<option value="' + value.id + '">' + value.name + '</option>';
+                        html += '<option value="' + value.name + '">' + value.name + '</option>';
                     });
 
                     html += '</select>' +

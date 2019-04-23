@@ -71,7 +71,7 @@
                         <tr>
 
                             <th data-toggle="true">Task</th>
-                            <th data-hide="phone">Model</th>
+                            <th data-hide="phone">Time</th>
                             <th data-hide="all">Ingredients</th>
                             <th data-hide="phone">Price</th>
                             <th data-hide="phone,tablet" >Production</th>
@@ -88,7 +88,18 @@
                                 <?php echo $v['task_info']['description']; ?>
                             </td>
                             <td>
-                                Model 1
+                                <?php if($v['task_info']['status']=='todo'){?>
+                                        <p>Reserved</p>
+                                <?php
+                                } else if($v['task_info']['status']=='progress'){?>
+                                    <p><?php echo $v['task_info']['date_time_issued']; ?></p>
+
+                                <?php
+
+                                }else{?>
+                                    <p><?php echo $v['task_info']['date_time_completed']; ?></p>
+                                <?php } ?>
+
                             </td>
                             <td>
                                 <?php if($v['task_info']['ingredients']):?>
@@ -126,7 +137,7 @@
                             <td class="text-right">
                                 <div class="btn-group">
                                     <button class="btn-white btn btn-xs">View</button>
-                                    <button class="btn-white btn btn-xs">Edit</button>
+                                    <button class="btn-white btn btn-xs"><i class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </td>
                         </tr>

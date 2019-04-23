@@ -27,7 +27,7 @@ class Finalstock extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
 
-        $this->form_validation->set_rules('name', 'Material Name', 'trim|required|is_unique[materials.name]');
+        $this->form_validation->set_rules('name', 'Product Name', 'trim|required|is_unique[materials.name]');
         $this->form_validation->set_rules('unit', 'Unit', 'trim|required');
         $this->form_validation->set_rules('reorderlevel', 'Re Order Level', 'trim|required|numeric');
         $this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');

@@ -144,12 +144,24 @@ class Task extends Admin_Controller
         $status = $this->input->post('status');
         $response = array();
         if($task_id) {
+            if ($this->input->post('status')=='todo') {
+
             $updated_data = array(
                 'status' => $status,
-                'date_time_issued' =>date("h:i a d.m.Y")
+                'date_time_issued' => ''
 
             );
+        }else if ($this->input->post('status')=='progress') {
+                $updated_data = array(
+                    'status' => $status,
+                    'date_time_completed' => '',
+                    'production'=>'',
+                    'damage'=>'',
+                    'return_materials'=>''
 
+
+                );
+            }
             $update = $this->model_task->updateTask($updated_data,$task_id);
             if($update == true) {
                 $response['success'] = true;

@@ -69,9 +69,18 @@ class Model_task extends CI_Model
 
         }
 
+        for($x = 0; $x < $count_material; $x++) {
+
+            $data_damage[$this->input->post('product')[$x]]=$this->input->post('damageqty')[$x];
+
+        }
+
+
+
         $items = array(
             'production' => json_encode($data),
             'return_materials' =>json_encode($data_material),
+            'damage' =>json_encode($data_damage),
             'status' => 'completed',
             'date_time_completed' =>date("h:i a d.m.Y")
         );
