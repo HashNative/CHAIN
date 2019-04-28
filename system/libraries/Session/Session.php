@@ -65,7 +65,7 @@ class CI_Session {
 	 * Class constructor
 	 *
 	 * @param	array	$params	Configuration parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct(array $params = array())
 	{
@@ -186,7 +186,7 @@ class CI_Session {
 	 * self-sufficient.
 	 *
 	 * @param	string	$driver	Driver name
-	 * @return	string	Driver class name
+	 * @returns	string	Driver class name
 	 */
 	protected function _ci_load_classes($driver)
 	{
@@ -258,7 +258,7 @@ class CI_Session {
 	 * Handle input parameters and configuration defaults
 	 *
 	 * @param	array	&$params	Input parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _configure(&$params)
 	{
@@ -336,7 +336,7 @@ class CI_Session {
 	 * So we were forced to make changes, and OF COURSE something was
 	 * going to break and now we have this pile of shit. -- Narf
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _configure_sid_length()
 	{
@@ -403,7 +403,7 @@ class CI_Session {
 	 * Clears old "flash" data, marks the new one for deletion and handles
 	 * "temp" data deletion.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _ci_init_vars()
 	{
@@ -440,7 +440,7 @@ class CI_Session {
 	 * Mark as flash
 	 *
 	 * @param	mixed	$key	Session data key(s)
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function mark_as_flash($key)
 	{
@@ -477,7 +477,7 @@ class CI_Session {
 	/**
 	 * Get flash keys
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function get_flash_keys()
 	{
@@ -501,7 +501,7 @@ class CI_Session {
 	 * Unmark flash
 	 *
 	 * @param	mixed	$key	Session data key(s)
-	 * @return	void
+	 * @returns	void
 	 */
 	public function unmark_flash($key)
 	{
@@ -533,7 +533,7 @@ class CI_Session {
 	 *
 	 * @param	mixed	$key	Session data key(s)
 	 * @param	int	$ttl	Time-to-live in seconds
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function mark_as_temp($key, $ttl = 300)
 	{
@@ -585,7 +585,7 @@ class CI_Session {
 	/**
 	 * Get temp keys
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function get_temp_keys()
 	{
@@ -609,7 +609,7 @@ class CI_Session {
 	 * Unmark flash
 	 *
 	 * @param	mixed	$key	Session data key(s)
-	 * @return	void
+	 * @returns	void
 	 */
 	public function unmark_temp($key)
 	{
@@ -640,7 +640,7 @@ class CI_Session {
 	 * __get()
 	 *
 	 * @param	string	$key	'session_id' or a session data key
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function __get($key)
 	{
@@ -664,7 +664,7 @@ class CI_Session {
 	 * __isset()
 	 *
 	 * @param	string	$key	'session_id' or a session data key
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function __isset($key)
 	{
@@ -683,7 +683,7 @@ class CI_Session {
 	 *
 	 * @param	string	$key	Session data key
 	 * @param	mixed	$value	Session data value
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __set($key, $value)
 	{
@@ -697,7 +697,7 @@ class CI_Session {
 	 *
 	 * Legacy CI_Session compatibility method
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function sess_destroy()
 	{
@@ -712,7 +712,7 @@ class CI_Session {
 	 * Legacy CI_Session compatibility method
 	 *
 	 * @param	bool	$destroy	Destroy old session data flag
-	 * @return	void
+	 * @returns	void
 	 */
 	public function sess_regenerate($destroy = FALSE)
 	{
@@ -742,7 +742,7 @@ class CI_Session {
 	 * Legacy CI_Session compatibility method
 	 *
 	 * @param	string	$key	Session data key
-	 * @return	mixed	Session data value or NULL if not found
+	 * @returns	mixed	Session data value or NULL if not found
 	 */
 	public function userdata($key = NULL)
 	{
@@ -782,7 +782,7 @@ class CI_Session {
 	 *
 	 * @param	mixed	$data	Session data key or an associative array
 	 * @param	mixed	$value	Value to store
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_userdata($data, $value = NULL)
 	{
@@ -807,7 +807,7 @@ class CI_Session {
 	 * Legacy CI_Session compatibility method
 	 *
 	 * @param	mixed	$key	Session data key(s)
-	 * @return	void
+	 * @returns	void
 	 */
 	public function unset_userdata($key)
 	{
@@ -831,7 +831,7 @@ class CI_Session {
 	 *
 	 * Legacy CI_Session compatibility method
 	 *
-	 * @return	array	$_SESSION, excluding flash data items
+	 * @returns	array	$_SESSION, excluding flash data items
 	 */
 	public function all_userdata()
 	{
@@ -846,7 +846,7 @@ class CI_Session {
 	 * Legacy CI_Session compatibility method
 	 *
 	 * @param	string	$key	Session data key
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function has_userdata($key)
 	{
@@ -861,7 +861,7 @@ class CI_Session {
 	 * Legacy CI_Session compatibility method
 	 *
 	 * @param	string	$key	Session data key
-	 * @return	mixed	Session data value or NULL if not found
+	 * @returns	mixed	Session data value or NULL if not found
 	 */
 	public function flashdata($key = NULL)
 	{
@@ -894,7 +894,7 @@ class CI_Session {
 	 *
 	 * @param	mixed	$data	Session data key or an associative array
 	 * @param	mixed	$value	Value to store
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_flashdata($data, $value = NULL)
 	{
@@ -910,7 +910,7 @@ class CI_Session {
 	 * Legacy CI_Session compatibility method
 	 *
 	 * @param	mixed	$key	Session data key(s)
-	 * @return	void
+	 * @returns	void
 	 */
 	public function keep_flashdata($key)
 	{
@@ -925,7 +925,7 @@ class CI_Session {
 	 * Legacy CI_Session compatibility method
 	 *
 	 * @param	string	$key	Session data key
-	 * @return	mixed	Session data value or NULL if not found
+	 * @returns	mixed	Session data value or NULL if not found
 	 */
 	public function tempdata($key = NULL)
 	{
@@ -959,7 +959,7 @@ class CI_Session {
 	 * @param	mixed	$data	Session data key or an associative array of items
 	 * @param	mixed	$value	Value to store
 	 * @param	int	$ttl	Time-to-live in seconds
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_tempdata($data, $value = NULL, $ttl = 300)
 	{
@@ -975,7 +975,7 @@ class CI_Session {
 	 * Legacy CI_Session compatibility method
 	 *
 	 * @param	mixed	$data	Session data key(s)
-	 * @return	void
+	 * @returns	void
 	 */
 	public function unset_tempdata($key)
 	{

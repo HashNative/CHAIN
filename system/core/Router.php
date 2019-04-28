@@ -119,7 +119,7 @@ class CI_Router {
 	 * Runs the route mapping function.
 	 *
 	 * @param	array	$routing
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($routing = NULL)
 	{
@@ -150,7 +150,7 @@ class CI_Router {
 	 * Determines what should be served based on the URI request,
 	 * as well as any "routes" that have been set in the routing config file.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _set_routing()
 	{
@@ -243,7 +243,7 @@ class CI_Router {
 	 *
 	 * @used-by	CI_Router::_parse_routes()
 	 * @param	array	$segments	URI segments
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _set_request($segments = array())
 	{
@@ -285,7 +285,7 @@ class CI_Router {
 	/**
 	 * Set default controller
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _set_default_controller()
 	{
@@ -327,14 +327,14 @@ class CI_Router {
 	 *
 	 * @used-by	CI_Router::_set_request()
 	 * @param	array	$segments	URI segments
-	 * @return	mixed	URI segments
+	 * @returns	mixed	URI segments
 	 */
 	protected function _validate_request($segments)
 	{
 		$c = count($segments);
 		$directory_override = isset($this->directory);
 
-		// Loop through our segments and return as soon as a controller
+		// Loop through our segments and returns as soon as a controller
 		// is found or when such a directory doesn't exist
 		while ($c-- > 0)
 		{
@@ -365,7 +365,7 @@ class CI_Router {
 	 * Matches any routes that may exist in the config/routes.php file
 	 * against the URI to determine if the class/method need to be remapped.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _parse_routes()
 	{
@@ -429,7 +429,7 @@ class CI_Router {
 	 * Set class name
 	 *
 	 * @param	string	$class	Class name
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_class($class)
 	{
@@ -442,7 +442,7 @@ class CI_Router {
 	 * Fetch the current class
 	 *
 	 * @deprecated	3.0.0	Read the 'class' property instead
-	 * @return	string
+	 * @returns	string
 	 */
 	public function fetch_class()
 	{
@@ -455,7 +455,7 @@ class CI_Router {
 	 * Set method name
 	 *
 	 * @param	string	$method	Method name
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_method($method)
 	{
@@ -468,7 +468,7 @@ class CI_Router {
 	 * Fetch the current method
 	 *
 	 * @deprecated	3.0.0	Read the 'method' property instead
-	 * @return	string
+	 * @returns	string
 	 */
 	public function fetch_method()
 	{
@@ -482,7 +482,7 @@ class CI_Router {
 	 *
 	 * @param	string	$dir	Directory name
 	 * @param	bool	$append	Whether we're appending rather than setting the full value
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_directory($dir, $append = FALSE)
 	{
@@ -505,7 +505,7 @@ class CI_Router {
 	 * controller class.
 	 *
 	 * @deprecated	3.0.0	Read the 'directory' property instead
-	 * @return	string
+	 * @returns	string
 	 */
 	public function fetch_directory()
 	{

@@ -65,7 +65,7 @@ class CI_Benchmark {
 	 * execution points can be timed.
 	 *
 	 * @param	string	$name	Marker name
-	 * @return	void
+	 * @returns	void
 	 */
 	public function mark($name)
 	{
@@ -88,7 +88,7 @@ class CI_Benchmark {
 	 * @param	string	$point2		A particular marked point
 	 * @param	int	$decimals	Number of decimal places
 	 *
-	 * @return	string	Calculated elapsed time on success,
+	 * @returns	string	Calculated elapsed time on success,
 	 *			an '{elapsed_string}' if $point1 is empty
 	 *			or an empty string if $point1 is not found.
 	 */
@@ -123,7 +123,7 @@ class CI_Benchmark {
 	 * without the memory being calculated until the end.
 	 * The output class will swap the real value for this variable.
 	 *
-	 * @return	string	'{memory_usage}'
+	 * @returns	string	'{memory_usage}'
 	 */
 	public function memory_usage()
 	{

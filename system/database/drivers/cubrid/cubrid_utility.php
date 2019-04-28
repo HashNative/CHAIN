@@ -49,7 +49,7 @@ class CI_DB_cubrid_utility extends CI_DB_utility {
 	/**
 	 * List databases
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function list_databases()
 	{
@@ -67,7 +67,7 @@ class CI_DB_cubrid_utility extends CI_DB_utility {
 	 * CUBRID Export
 	 *
 	 * @param	array	Preferences
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _backup($params = array())
 	{

@@ -44,8 +44,8 @@ $.extend($.jgrid,{
 			date: "Vă rugăm să introduceți o dată validă",
 			url: "Nu este un URL valid. Prefixul  este necesar('http://' or 'https://')",
 			nodefined : " is not defined!",
-			novalue : " return value is required!",
-			customarray : "Custom function should return array!",
+			novalue : " returns value is required!",
+			customarray : "Custom function should returns array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 		}
 	},

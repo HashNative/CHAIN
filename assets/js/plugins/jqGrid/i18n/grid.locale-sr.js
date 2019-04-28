@@ -45,7 +45,7 @@ $.extend($.jgrid,{
 			url: "није исправан УРЛ. Потребан је префикс ('http://' or 'https://')",
 			nodefined : " није дефинисан!",
 			novalue : " захтевана је повратна вредност!",
-			customarray : "Custom function should return array!",
+			customarray : "Custom function should returns array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 			
 		}

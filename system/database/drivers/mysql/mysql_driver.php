@@ -101,7 +101,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Class constructor
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -119,7 +119,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Non-persistent database connection
 	 *
 	 * @param	bool	$persistent
-	 * @return	resource
+	 * @returns	resource
 	 */
 	public function db_connect($persistent = FALSE)
 	{
@@ -180,7 +180,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Keep / reestablish the db connection if no queries have been
 	 * sent for a length of time exceeding the server's idle timeout
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function reconnect()
 	{
@@ -196,7 +196,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Select the database
 	 *
 	 * @param	string	$database
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function db_select($database = '')
 	{
@@ -221,7 +221,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Set client character set
 	 *
 	 * @param	string	$charset
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _db_set_charset($charset)
 	{
@@ -233,7 +233,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Database version number
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function version()
 	{
@@ -256,7 +256,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Execute the query
 	 *
 	 * @param	string	$sql	an SQL query
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _execute($sql)
 	{
@@ -271,7 +271,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * If needed, each database adapter can prep the query string
 	 *
 	 * @param	string	$sql	an SQL query
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _prep_query($sql)
 	{
@@ -290,7 +290,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Begin Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_begin()
 	{
@@ -303,7 +303,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Commit Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_commit()
 	{
@@ -321,7 +321,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Rollback Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_rollback()
 	{
@@ -340,7 +340,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Platform-dependent string escape
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _escape_str($str)
 	{
@@ -352,7 +352,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Affected Rows
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function affected_rows()
 	{
@@ -364,7 +364,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Insert ID
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function insert_id()
 	{
@@ -379,7 +379,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Generates a platform-specific query string so that the table names can be fetched
 	 *
 	 * @param	bool	$prefix_limit
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_tables($prefix_limit = FALSE)
 	{
@@ -401,7 +401,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Generates a platform-specific query string so that the column names can be fetched
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_columns($table = '')
 	{
@@ -414,7 +414,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Returns an object with field data
 	 *
 	 * @param	string	$table
-	 * @return	array
+	 * @returns	array
 	 */
 	public function field_data($table)
 	{
@@ -450,7 +450,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function error()
 	{
@@ -465,7 +465,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * Groups tables in FROM clauses if needed, so there is no confusion
 	 * about operator precedence.
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _from_tables()
 	{
@@ -482,7 +482,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Close DB Connection
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _close()
 	{

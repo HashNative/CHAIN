@@ -69,7 +69,7 @@ if ( ! function_exists('password_get_info'))
 	 *
 	 * @link	http://php.net/password_get_info
 	 * @param	string	$hash
-	 * @return	array
+	 * @returns	array
 	 */
 	function password_get_info($hash)
 	{
@@ -90,7 +90,7 @@ if ( ! function_exists('password_hash'))
 	 * @param	string	$password
 	 * @param	int	$algo
 	 * @param	array	$options
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	function password_hash($password, $algo, array $options = array())
 	{
@@ -198,7 +198,7 @@ if ( ! function_exists('password_needs_rehash'))
 	 * @param	string	$hash
 	 * @param	int	$algo
 	 * @param	array	$options
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function password_needs_rehash($hash, $algo, array $options = array())
 	{
@@ -231,7 +231,7 @@ if ( ! function_exists('password_verify'))
 	 * @link	http://php.net/password_verify
 	 * @param	string	$password
 	 * @param	string	$hash
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function password_verify($password, $hash)
 	{

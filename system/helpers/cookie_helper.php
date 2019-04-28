@@ -65,7 +65,7 @@ if ( ! function_exists('set_cookie'))
 	 * @param	string	the cookie prefix
 	 * @param	bool	true makes the cookie secure
 	 * @param	bool	true makes the cookie accessible via http(s) only (no javascript)
-	 * @return	void
+	 * @returns	void
 	 */
 	function set_cookie($name, $value = '', $expire = '', $domain = '', $path = '/', $prefix = '', $secure = NULL, $httponly = NULL)
 	{
@@ -83,7 +83,7 @@ if ( ! function_exists('get_cookie'))
 	 *
 	 * @param	string
 	 * @param	bool
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	function get_cookie($index, $xss_clean = NULL)
 	{
@@ -104,7 +104,7 @@ if ( ! function_exists('delete_cookie'))
 	 * @param	string	the cookie domain. Usually: .yourdomain.com
 	 * @param	string	the cookie path
 	 * @param	string	the cookie prefix
-	 * @return	void
+	 * @returns	void
 	 */
 	function delete_cookie($name, $domain = '', $path = '/', $prefix = '')
 	{

@@ -58,7 +58,7 @@ class CI_Cache_file extends CI_Driver {
 	/**
 	 * Initialize file-based cache
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -74,7 +74,7 @@ class CI_Cache_file extends CI_Driver {
 	 * Fetch from cache
 	 *
 	 * @param	string	$id	Cache ID
-	 * @return	mixed	Data on success, FALSE on failure
+	 * @returns	mixed	Data on success, FALSE on failure
 	 */
 	public function get($id)
 	{
@@ -91,7 +91,7 @@ class CI_Cache_file extends CI_Driver {
 	 * @param	mixed	$data	Data to store
 	 * @param	int	$ttl	Time to live in seconds
 	 * @param	bool	$raw	Whether to store the raw value (unused)
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function save($id, $data, $ttl = 60, $raw = FALSE)
 	{
@@ -116,7 +116,7 @@ class CI_Cache_file extends CI_Driver {
 	 * Delete from Cache
 	 *
 	 * @param	mixed	unique identifier of item in cache
-	 * @return	bool	true on success/false on failure
+	 * @returns	bool	true on success/false on failure
 	 */
 	public function delete($id)
 	{
@@ -130,7 +130,7 @@ class CI_Cache_file extends CI_Driver {
 	 *
 	 * @param	string	$id	Cache ID
 	 * @param	int	$offset	Step/value to add
-	 * @return	New value on success, FALSE on failure
+	 * @returns	New value on success, FALSE on failure
 	 */
 	public function increment($id, $offset = 1)
 	{
@@ -158,7 +158,7 @@ class CI_Cache_file extends CI_Driver {
 	 *
 	 * @param	string	$id	Cache ID
 	 * @param	int	$offset	Step/value to reduce by
-	 * @return	New value on success, FALSE on failure
+	 * @returns	New value on success, FALSE on failure
 	 */
 	public function decrement($id, $offset = 1)
 	{
@@ -184,7 +184,7 @@ class CI_Cache_file extends CI_Driver {
 	/**
 	 * Clean the Cache
 	 *
-	 * @return	bool	false on failure/true on success
+	 * @returns	bool	false on failure/true on success
 	 */
 	public function clean()
 	{
@@ -199,7 +199,7 @@ class CI_Cache_file extends CI_Driver {
 	 * Not supported by file-based caching
 	 *
 	 * @param	string	user/filehits
-	 * @return	mixed	FALSE
+	 * @returns	mixed	FALSE
 	 */
 	public function cache_info($type = NULL)
 	{
@@ -212,7 +212,7 @@ class CI_Cache_file extends CI_Driver {
 	 * Get Cache Metadata
 	 *
 	 * @param	mixed	key to get cache metadata on
-	 * @return	mixed	FALSE on failure, array on success.
+	 * @returns	mixed	FALSE on failure, array on success.
 	 */
 	public function get_metadata($id)
 	{
@@ -248,7 +248,7 @@ class CI_Cache_file extends CI_Driver {
 	 *
 	 * In the file driver, check to see that the cache directory is indeed writable
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_supported()
 	{
@@ -263,7 +263,7 @@ class CI_Cache_file extends CI_Driver {
 	 * Internal method to get all the relevant data about a cache item
 	 *
 	 * @param	string	$id	Cache ID
-	 * @return	mixed	Data array on success or FALSE on failure
+	 * @returns	mixed	Data array on success or FALSE on failure
 	 */
 	protected function _get($id)
 	{

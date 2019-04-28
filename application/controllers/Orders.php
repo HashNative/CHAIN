@@ -67,11 +67,73 @@ $this->form_validation->set_rules('product[]', 'Product name', 'trim|required');
 
 	}
 
-	/*
-	* Fetches the orders data from the orders table 
-	* this function is called from the datatable ajax function
-	*/
-	public function fetchOrdersData()
+
+    public function salesOrder()
+    {
+        if(!in_array('createOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+
+        $this->data['page_title'] = 'Create Order';
+
+        $this->form_validation->set_rules('product[]', 'Product name', 'trim|required');
+
+
+        if ($this->form_validation->run() == TRUE) {
+
+            $order_id = $this->model_orders->create();
+
+            if($order_id) {
+                $this->session->set_flashdata('success', 'Successfully created');
+                redirect('orders/update/'.$order_id, 'refresh');
+            }
+            else {
+                $this->session->set_flashdata('errors', 'Error occurred!!');
+                redirect('orders/create/', 'refresh');
+            }
+        }
+        else {
+            // false case
+            $this->data['table_data'] = $this->model_tables->getActiveTable();
+            $company = $this->model_company->getCompanyData(1);
+            $this->data['company_data'] = $company;
+            $this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+            $this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+
+            $this->data['materials'] = $this->model_mainstock->getMaterialData();
+
+            $this->render_template('transactions/orders/salesorder', $this->data);
+        }
+
+
+    }
+
+    public function purchaseOrderHistory()
+    {
+        if (!in_array('createOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+
+
+        $task_data = $this->model_orders->getPurchaseOrderData();
+        $result = array();
+        foreach ($task_data as $k => $v) {
+
+            $result[$k]['purchase_order_info'] = $v;
+
+        }
+
+        $this->data['purchase_order_data'] = $result;
+
+        $this->render_template('transactions/orders/purchaseorderhistory', $this->data);
+
+    }
+
+
+
+
+
+        public function fetchOrdersData()
 	{
 		if(!in_array('viewOrder', $this->permission)) {
             redirect('dashboard', 'refresh');
@@ -173,7 +235,7 @@ $this->form_validation->set_rules('product[]', 'Product name', 'trim|required');
 	/*
 	* It gets the product id passed from the ajax method.
 	* It checks retrieves the particular product data from the product id 
-	* and return the data into the json format.
+	* and returns the data into the json format.
 	*/
 	public function getMaterialValueById()
 	{
@@ -187,7 +249,7 @@ $this->form_validation->set_rules('product[]', 'Product name', 'trim|required');
 	/*
 	* It gets the all the active product inforamtion from the product table 
 	* This function is used in the order page, for the product selection in the table
-	* The response is return on the json format.
+	* The response is returns on the json format.
 	*/
 	public function getMaterialRow()
 	{

@@ -59,7 +59,7 @@ if ( ! function_exists('form_open'))
 	 * @param	string	the URI segments of the form destination
 	 * @param	array	a key/value pair of attributes
 	 * @param	array	a key/value pair hidden data
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_open($action = '', $attributes = array(), $hidden = array())
 	{
@@ -149,7 +149,7 @@ if ( ! function_exists('form_open_multipart'))
 	 * @param	string	the URI segments of the form destination
 	 * @param	array	a key/value pair of attributes
 	 * @param	array	a key/value pair hidden data
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_open_multipart($action = '', $attributes = array(), $hidden = array())
 	{
@@ -179,7 +179,7 @@ if ( ! function_exists('form_hidden'))
 	 * @param	mixed	$name		Field name
 	 * @param	string	$value		Field value
 	 * @param	bool	$recursing
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_hidden($name, $value = '', $recursing = FALSE)
 	{
@@ -227,7 +227,7 @@ if ( ! function_exists('form_input'))
 	 * @param	mixed
 	 * @param	string
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_input($data = '', $value = '', $extra = '')
 	{
@@ -253,7 +253,7 @@ if ( ! function_exists('form_password'))
 	 * @param	mixed
 	 * @param	string
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_password($data = '', $value = '', $extra = '')
 	{
@@ -275,7 +275,7 @@ if ( ! function_exists('form_upload'))
 	 * @param	mixed
 	 * @param	string
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_upload($data = '', $value = '', $extra = '')
 	{
@@ -297,7 +297,7 @@ if ( ! function_exists('form_textarea'))
 	 * @param	mixed	$data
 	 * @param	string	$value
 	 * @param	mixed	$extra
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_textarea($data = '', $value = '', $extra = '')
 	{
@@ -334,7 +334,7 @@ if ( ! function_exists('form_multiselect'))
 	 * @param	array
 	 * @param	mixed
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_multiselect($name = '', $options = array(), $selected = array(), $extra = '')
 	{
@@ -359,7 +359,7 @@ if ( ! function_exists('form_dropdown'))
 	 * @param	mixed	$options
 	 * @param	mixed	$selected
 	 * @param	mixed	$extra
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_dropdown($data = '', $options = array(), $selected = array(), $extra = '')
 	{
@@ -454,7 +454,7 @@ if ( ! function_exists('form_checkbox'))
 	 * @param	string
 	 * @param	bool
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_checkbox($data = '', $value = '', $checked = FALSE, $extra = '')
 	{
@@ -498,7 +498,7 @@ if ( ! function_exists('form_radio'))
 	 * @param	string
 	 * @param	bool
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_radio($data = '', $value = '', $checked = FALSE, $extra = '')
 	{
@@ -519,7 +519,7 @@ if ( ! function_exists('form_submit'))
 	 * @param	mixed
 	 * @param	string
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_submit($data = '', $value = '', $extra = '')
 	{
@@ -543,7 +543,7 @@ if ( ! function_exists('form_reset'))
 	 * @param	mixed
 	 * @param	string
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_reset($data = '', $value = '', $extra = '')
 	{
@@ -567,7 +567,7 @@ if ( ! function_exists('form_button'))
 	 * @param	mixed
 	 * @param	string
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_button($data = '', $content = '', $extra = '')
 	{
@@ -598,7 +598,7 @@ if ( ! function_exists('form_label'))
 	 * @param	string	The text to appear onscreen
 	 * @param	string	The id the label applies to
 	 * @param	mixed	Additional attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_label($label_text = '', $id = '', $attributes = array())
 	{
@@ -628,7 +628,7 @@ if ( ! function_exists('form_fieldset'))
 	 *
 	 * @param	string	The legend text
 	 * @param	array	Additional attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_fieldset($legend_text = '', $attributes = array())
 	{
@@ -650,7 +650,7 @@ if ( ! function_exists('form_fieldset_close'))
 	 * Fieldset Close Tag
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_fieldset_close($extra = '')
 	{
@@ -666,7 +666,7 @@ if ( ! function_exists('form_close'))
 	 * Form Close Tag
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_close($extra = '')
 	{
@@ -685,7 +685,7 @@ if ( ! function_exists('form_prep'))
 	 *
 	 * @deprecated	3.0.0	An alias for html_escape()
 	 * @param	string|string[]	$str		Value to escape
-	 * @return	string|string[]	Escaped values
+	 * @returns	string|string[]	Escaped values
 	 */
 	function form_prep($str)
 	{
@@ -707,7 +707,7 @@ if ( ! function_exists('set_value'))
 	 * @param	string	$field		Field name
 	 * @param	string	$default	Default value
 	 * @param	bool	$html_escape	Whether to escape HTML special characters or not
-	 * @return	string
+	 * @returns	string
 	 */
 	function set_value($field, $default = '', $html_escape = TRUE)
 	{
@@ -735,7 +735,7 @@ if ( ! function_exists('set_select'))
 	 * @param	string
 	 * @param	string
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	function set_select($field, $value = '', $default = FALSE)
 	{
@@ -782,7 +782,7 @@ if ( ! function_exists('set_checkbox'))
 	 * @param	string
 	 * @param	string
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	function set_checkbox($field, $value = '', $default = FALSE)
 	{
@@ -834,7 +834,7 @@ if ( ! function_exists('set_radio'))
 	 * @param	string	$field
 	 * @param	string	$value
 	 * @param	bool	$default
-	 * @return	string
+	 * @returns	string
 	 */
 	function set_radio($field, $value = '', $default = FALSE)
 	{
@@ -886,7 +886,7 @@ if ( ! function_exists('form_error'))
 	 * @param	string
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	function form_error($field = '', $prefix = '', $suffix = '')
 	{
@@ -911,7 +911,7 @@ if ( ! function_exists('validation_errors'))
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	function validation_errors($prefix = '', $suffix = '')
 	{
@@ -935,7 +935,7 @@ if ( ! function_exists('_parse_form_attributes'))
 	 *
 	 * @param	array	$attributes	List of attributes
 	 * @param	array	$default	Default values
-	 * @return	string
+	 * @returns	string
 	 */
 	function _parse_form_attributes($attributes, $default)
 	{
@@ -986,7 +986,7 @@ if ( ! function_exists('_attributes_to_string'))
 	 * Helper function used by some of the form helpers
 	 *
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function _attributes_to_string($attributes)
 	{
@@ -1031,7 +1031,7 @@ if ( ! function_exists('_get_validation_object'))
 	 * Determines what the form validation class was instantiated as, fetches
 	 * the object and returns it.
 	 *
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	function &_get_validation_object()
 	{

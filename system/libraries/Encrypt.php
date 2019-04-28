@@ -88,7 +88,7 @@ class CI_Encrypt {
 	/**
 	 * Initialize Encryption class
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -109,7 +109,7 @@ class CI_Encrypt {
 	 * Mcrypt is sensitive to keys that are not the correct length
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_key($key = '')
 	{
@@ -137,7 +137,7 @@ class CI_Encrypt {
 	 * Set the encryption key
 	 *
 	 * @param	string
-	 * @return	CI_Encrypt
+	 * @returns	CI_Encrypt
 	 */
 	public function set_key($key = '')
 	{
@@ -160,7 +160,7 @@ class CI_Encrypt {
 	 *
 	 * @param	string	the string to encode
 	 * @param	string	the key
-	 * @return	string
+	 * @returns	string
 	 */
 	public function encode($string, $key = '')
 	{
@@ -176,7 +176,7 @@ class CI_Encrypt {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function decode($string, $key = '')
 	{
@@ -203,7 +203,7 @@ class CI_Encrypt {
 	 * @param	string
 	 * @param	int		(mcrypt mode constant)
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function encode_from_legacy($string, $legacy_mode = MCRYPT_MODE_ECB, $key = '')
 	{
@@ -245,7 +245,7 @@ class CI_Encrypt {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _xor_decode($string, $key)
 	{
@@ -269,7 +269,7 @@ class CI_Encrypt {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _xor_merge($string, $key)
 	{
@@ -291,7 +291,7 @@ class CI_Encrypt {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function mcrypt_encode($data, $key)
 	{
@@ -307,7 +307,7 @@ class CI_Encrypt {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function mcrypt_decode($data, $key)
 	{
@@ -334,7 +334,7 @@ class CI_Encrypt {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _add_cipher_noise($data, $key)
 	{
@@ -364,7 +364,7 @@ class CI_Encrypt {
 	 *
 	 * @param	string	$data
 	 * @param	string	$key
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _remove_cipher_noise($data, $key)
 	{
@@ -397,7 +397,7 @@ class CI_Encrypt {
 	 * Set the Mcrypt Cipher
 	 *
 	 * @param	int
-	 * @return	CI_Encrypt
+	 * @returns	CI_Encrypt
 	 */
 	public function set_cipher($cipher)
 	{
@@ -411,7 +411,7 @@ class CI_Encrypt {
 	 * Set the Mcrypt Mode
 	 *
 	 * @param	int
-	 * @return	CI_Encrypt
+	 * @returns	CI_Encrypt
 	 */
 	public function set_mode($mode)
 	{
@@ -424,7 +424,7 @@ class CI_Encrypt {
 	/**
 	 * Get Mcrypt cipher Value
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	protected function _get_cipher()
 	{
@@ -441,7 +441,7 @@ class CI_Encrypt {
 	/**
 	 * Get Mcrypt Mode Value
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	protected function _get_mode()
 	{
@@ -459,7 +459,7 @@ class CI_Encrypt {
 	 * Set the Hash type
 	 *
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_hash($type = 'sha1')
 	{
@@ -472,7 +472,7 @@ class CI_Encrypt {
 	 * Hash encode a string
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function hash($str)
 	{
@@ -485,7 +485,7 @@ class CI_Encrypt {
 	 * Byte-safe strlen()
 	 *
 	 * @param	string	$str
-	 * @return	int
+	 * @returns	int
 	 */
 	protected static function strlen($str)
 	{
@@ -502,7 +502,7 @@ class CI_Encrypt {
 	 * @param	string	$str
 	 * @param	int	$start
 	 * @param	int	$length
-	 * @return	string
+	 * @returns	string
 	 */
 	protected static function substr($str, $start, $length = NULL)
 	{

@@ -58,7 +58,7 @@ if ( ! function_exists('now'))
 	 * "time_reference" setting
 	 *
 	 * @param	string
-	 * @return	int
+	 * @returns	int
 	 */
 	function now($timezone = NULL)
 	{
@@ -97,7 +97,7 @@ if ( ! function_exists('mdate'))
 	 *
 	 * @param	string
 	 * @param	int
-	 * @return	int
+	 * @returns	int
 	 */
 	function mdate($datestr = '', $time = '')
 	{
@@ -141,7 +141,7 @@ if ( ! function_exists('standard_date'))
 	 *
 	 * @param	string	$fmt = 'DATE_RFC822'	the chosen format
 	 * @param	int	$time = NULL		Unix timestamp
-	 * @return	string
+	 * @returns	string
 	 */
 	function standard_date($fmt = 'DATE_RFC822', $time = NULL)
 	{
@@ -173,7 +173,7 @@ if ( ! function_exists('timespan'))
 	 * @param	int	a number of seconds
 	 * @param	int	Unix timestamp
 	 * @param	int	a number of display units
-	 * @return	string
+	 * @returns	string
 	 */
 	function timespan($seconds = 1, $time = '', $units = 7)
 	{
@@ -276,7 +276,7 @@ if ( ! function_exists('days_in_month'))
 	 *
 	 * @param	int	a numeric month
 	 * @param	int	a numeric year
-	 * @return	int
+	 * @returns	int
 	 */
 	function days_in_month($month = 0, $year = '')
 	{
@@ -320,7 +320,7 @@ if ( ! function_exists('local_to_gmt'))
 	 * Converts a local Unix timestamp to GMT
 	 *
 	 * @param	int	Unix timestamp
-	 * @return	int
+	 * @returns	int
 	 */
 	function local_to_gmt($time = '')
 	{
@@ -354,7 +354,7 @@ if ( ! function_exists('gmt_to_local'))
 	 * @param	int	Unix timestamp
 	 * @param	string	timezone
 	 * @param	bool	whether DST is active
-	 * @return	int
+	 * @returns	int
 	 */
 	function gmt_to_local($time = '', $timezone = 'UTC', $dst = FALSE)
 	{
@@ -377,7 +377,7 @@ if ( ! function_exists('mysql_to_unix'))
 	 * Converts a MySQL Timestamp to Unix
 	 *
 	 * @param	int	MySQL timestamp YYYY-MM-DD HH:MM:SS
-	 * @return	int	Unix timstamp
+	 * @returns	int	Unix timstamp
 	 */
 	function mysql_to_unix($time = '')
 	{
@@ -411,7 +411,7 @@ if ( ! function_exists('unix_to_human'))
 	 * @param	int	Unix timestamp
 	 * @param	bool	whether to show seconds
 	 * @param	string	format: us or euro
-	 * @return	string
+	 * @returns	string
 	 */
 	function unix_to_human($time = '', $seconds = FALSE, $fmt = 'us')
 	{
@@ -450,7 +450,7 @@ if ( ! function_exists('human_to_unix'))
 	 * Reverses the above process
 	 *
 	 * @param	string	format: us or euro
-	 * @return	int
+	 * @returns	int
 	 */
 	function human_to_unix($datestr = '')
 	{
@@ -498,8 +498,8 @@ if ( ! function_exists('nice_date'))
 	 *
 	 * @deprecated	3.1.3	Use DateTime::createFromFormat($input_format, $input)->format($output_format);
 	 * @param	string	The terribly formatted date-like string
-	 * @param	string	Date format to return (same as php date function)
-	 * @return	string
+	 * @param	string	Date format to returns (same as php date function)
+	 * @returns	string
 	 */
 	function nice_date($bad_date = '', $format = FALSE)
 	{
@@ -543,7 +543,7 @@ if ( ! function_exists('nice_date'))
 
 		// Any other kind of string, when converted into UNIX time,
 		// produces "0 seconds after epoc..." is probably bad...
-		// return "Invalid Date".
+		// returns "Invalid Date".
 		if (date('U', strtotime($bad_date)) === '0')
 		{
 			return 'Invalid Date';
@@ -567,7 +567,7 @@ if ( ! function_exists('timezone_menu'))
 	 * @param	string	classname
 	 * @param	string	menu name
 	 * @param	mixed	attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	function timezone_menu($default = 'UTC', $class = '', $name = 'timezones', $attributes = '')
 	{
@@ -606,7 +606,7 @@ if ( ! function_exists('timezones'))
 	 * for various other ones in this library
 	 *
 	 * @param	string	timezone
-	 * @return	string
+	 * @returns	string
 	 */
 	function timezones($tz = '')
 	{
@@ -682,7 +682,7 @@ if ( ! function_exists('date_range'))
 	 *					 - TRUE or 'unix' for a timestamp
 	 *					 - FALSE or 'days' for an interval
 	 * @param	string  date_format	Output date format, same as in date()
-	 * @return	array
+	 * @returns	array
 	 */
 	function date_range($unix_start = '', $mixed = '', $is_unix = TRUE, $format = 'Y-m-d')
 	{

@@ -147,7 +147,7 @@ class CI_Encryption {
 	 * Class constructor
 	 *
 	 * @param	array	$params	Configuration parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct(array $params = array())
 	{
@@ -178,7 +178,7 @@ class CI_Encryption {
 	 * Initialize
 	 *
 	 * @param	array	$params	Configuration parameters
-	 * @return	CI_Encryption
+	 * @returns	CI_Encryption
 	 */
 	public function initialize(array $params)
 	{
@@ -222,7 +222,7 @@ class CI_Encryption {
 	 * Initialize MCrypt
 	 *
 	 * @param	array	$params	Configuration parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _mcrypt_initialize($params)
 	{
@@ -281,7 +281,7 @@ class CI_Encryption {
 	 * Initialize OpenSSL
 	 *
 	 * @param	array	$params	Configuration parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _openssl_initialize($params)
 	{
@@ -331,7 +331,7 @@ class CI_Encryption {
 	 * Create a random key
 	 *
 	 * @param	int	$length	Output length
-	 * @return	string
+	 * @returns	string
 	 */
 	public function create_key($length)
 	{
@@ -366,7 +366,7 @@ class CI_Encryption {
 	 *
 	 * @param	string	$data	Input data
 	 * @param	array	$params	Input parameters
-	 * @return	string
+	 * @returns	string
 	 */
 	public function encrypt($data, array $params = NULL)
 	{
@@ -400,7 +400,7 @@ class CI_Encryption {
 	 *
 	 * @param	string	$data	Input data
 	 * @param	array	$params	Input parameters
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _mcrypt_encrypt($data, $params)
 	{
@@ -440,7 +440,7 @@ class CI_Encryption {
 		// mcrypt_enc_get_iv_size() returns a value larger than 0
 		// even if ECB is used AND mcrypt_generic_init() complains
 		// if you don't pass an IV with length equal to the said
-		// return value.
+		// returns value.
 		//
 		// This probably would've been fine (even though still wasteful),
 		// but OpenSSL isn't that dumb and we need to make the process
@@ -465,7 +465,7 @@ class CI_Encryption {
 	 *
 	 * @param	string	$data	Input data
 	 * @param	array	$params	Input parameters
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _openssl_encrypt($data, $params)
 	{
@@ -501,7 +501,7 @@ class CI_Encryption {
 	 *
 	 * @param	string	$data	Encrypted data
 	 * @param	array	$params	Input parameters
-	 * @return	string
+	 * @returns	string
 	 */
 	public function decrypt($data, array $params = NULL)
 	{
@@ -559,7 +559,7 @@ class CI_Encryption {
 	 *
 	 * @param	string	$data	Encrypted data
 	 * @param	array	$params	Input parameters
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _mcrypt_decrypt($data, $params)
 	{
@@ -621,7 +621,7 @@ class CI_Encryption {
 	 *
 	 * @param	string	$data	Encrypted data
 	 * @param	array	$params	Input parameters
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _openssl_decrypt($data, $params)
 	{
@@ -652,7 +652,7 @@ class CI_Encryption {
 	 * Get params
 	 *
 	 * @param	array	$params	Input parameters
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _get_params($params)
 	{
@@ -737,7 +737,7 @@ class CI_Encryption {
 	 *
 	 * @param	string	$cipher	Cipher name
 	 * @param	string	$mode	Encryption mode
-	 * @return	resource
+	 * @returns	resource
 	 */
 	protected function _mcrypt_get_handle($cipher, $mode)
 	{
@@ -751,7 +751,7 @@ class CI_Encryption {
 	 *
 	 * @param	string	$cipher	Cipher name
 	 * @param	string	$mode	Encryption mode
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _openssl_get_handle($cipher, $mode)
 	{
@@ -769,7 +769,7 @@ class CI_Encryption {
 	 * Tries to translate cipher names between MCrypt and OpenSSL's "dialects".
 	 *
 	 * @param	string	$cipher	Cipher name
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _cipher_alias(&$cipher)
 	{
@@ -847,7 +847,7 @@ class CI_Encryption {
 	 * @param	$salt	Optional salt
 	 * @param	$length	Output length (defaults to the selected digest size)
 	 * @param	$info	Optional context/application-specific info
-	 * @return	string	A pseudo-random key
+	 * @returns	string	A pseudo-random key
 	 */
 	public function hkdf($key, $digest = 'sha512', $salt = NULL, $length = NULL, $info = '')
 	{
@@ -884,7 +884,7 @@ class CI_Encryption {
 	 * __get() magic
 	 *
 	 * @param	string	$key	Property name
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function __get($key)
 	{
@@ -907,7 +907,7 @@ class CI_Encryption {
 	 * Byte-safe strlen()
 	 *
 	 * @param	string	$str
-	 * @return	int
+	 * @returns	int
 	 */
 	protected static function strlen($str)
 	{
@@ -924,7 +924,7 @@ class CI_Encryption {
 	 * @param	string	$str
 	 * @param	int	$start
 	 * @param	int	$length
-	 * @return	string
+	 * @returns	string
 	 */
 	protected static function substr($str, $start, $length = NULL)
 	{

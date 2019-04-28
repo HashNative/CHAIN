@@ -74,7 +74,7 @@ class CI_Parser {
 	/**
 	 * Class constructor
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -93,7 +93,7 @@ class CI_Parser {
 	 * @param	string
 	 * @param	array
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	public function parse($template, $data, $return = FALSE)
 	{
@@ -113,7 +113,7 @@ class CI_Parser {
 	 * @param	string
 	 * @param	array
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	public function parse_string($template, $data, $return = FALSE)
 	{
@@ -131,7 +131,7 @@ class CI_Parser {
 	 * @param	string
 	 * @param	array
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _parse($template, $data, $return = FALSE)
 	{
@@ -169,7 +169,7 @@ class CI_Parser {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_delimiters($l = '{', $r = '}')
 	{
@@ -185,7 +185,7 @@ class CI_Parser {
 	 * @param	string
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _parse_single($key, $val, $string)
 	{
@@ -202,7 +202,7 @@ class CI_Parser {
 	 * @param	string
 	 * @param	array
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _parse_pair($variable, $data, $string)
 	{

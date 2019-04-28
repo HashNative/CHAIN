@@ -112,7 +112,7 @@ CodeMirror.defineMode("clojure", function (options) {
     // Eat character that starts after backslash \
     function eatCharacter(stream) {
         var first = stream.next();
-        // Read special literals: backspace, newline, space, return.
+        // Read special literals: backspace, newline, space, returns.
         // Just read all lowercase letters.
         if (first && first.match(/[a-z]/) && stream.match(/[a-z]+/, true)) {
             return;

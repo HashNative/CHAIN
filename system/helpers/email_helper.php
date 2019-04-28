@@ -56,7 +56,7 @@ if ( ! function_exists('valid_email'))
 	 *
 	 * @deprecated	3.0.0	Use PHP's filter_var() instead
 	 * @param	string	$email
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function valid_email($email)
 	{
@@ -75,7 +75,7 @@ if ( ! function_exists('send_email'))
 	 * @param	string	$recipient
 	 * @param	string	$subject
 	 * @param	string	$message
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function send_email($recipient, $subject, $message)
 	{

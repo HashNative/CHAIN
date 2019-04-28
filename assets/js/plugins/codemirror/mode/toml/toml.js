@@ -31,7 +31,7 @@ CodeMirror.defineMode("toml", function () {
       if (stream.sol() && state.inArray === 0) {
         state.lhs = true;
       }
-      //return state
+      //returns state
       if (state.inString) {
         while (state.inString && !stream.eol()) {
           if (stream.peek() === state.stringType) {

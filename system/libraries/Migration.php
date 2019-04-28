@@ -111,7 +111,7 @@ class CI_Migration {
 	 * Initialize Migration Class
 	 *
 	 * @param	array	$config
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($config = array())
 	{
@@ -191,7 +191,7 @@ class CI_Migration {
 	 * choice
 	 *
 	 * @param	string	$target_version	Target schema version
-	 * @return	mixed	TRUE if no migrations are found, current version string on success, FALSE on failure
+	 * @returns	mixed	TRUE if no migrations are found, current version string on success, FALSE on failure
 	 */
 	public function version($target_version)
 	{
@@ -325,7 +325,7 @@ class CI_Migration {
 	/**
 	 * Sets the schema to the latest migration
 	 *
-	 * @return	mixed	Current version string on success, FALSE on failure
+	 * @returns	mixed	Current version string on success, FALSE on failure
 	 */
 	public function latest()
 	{
@@ -349,7 +349,7 @@ class CI_Migration {
 	/**
 	 * Sets the schema to the migration version set in config
 	 *
-	 * @return	mixed	TRUE if no migrations are found, current version string on success, FALSE on failure
+	 * @returns	mixed	TRUE if no migrations are found, current version string on success, FALSE on failure
 	 */
 	public function current()
 	{
@@ -361,7 +361,7 @@ class CI_Migration {
 	/**
 	 * Error string
 	 *
-	 * @return	string	Error message returned as a string
+	 * @returns	string	Error message returned as a string
 	 */
 	public function error_string()
 	{
@@ -373,7 +373,7 @@ class CI_Migration {
 	/**
 	 * Retrieves list of available migration scripts
 	 *
-	 * @return	array	list of migration file paths sorted by version
+	 * @returns	array	list of migration file paths sorted by version
 	 */
 	public function find_migrations()
 	{
@@ -410,7 +410,7 @@ class CI_Migration {
 	 * Extracts the migration number from a filename
 	 *
 	 * @param	string	$migration
-	 * @return	string	Numeric portion of a migration filename
+	 * @returns	string	Numeric portion of a migration filename
 	 */
 	protected function _get_migration_number($migration)
 	{
@@ -424,7 +424,7 @@ class CI_Migration {
 	 * Extracts the migration class name from a filename
 	 *
 	 * @param	string	$migration
-	 * @return	string	text portion of a migration filename
+	 * @returns	string	text portion of a migration filename
 	 */
 	protected function _get_migration_name($migration)
 	{
@@ -438,7 +438,7 @@ class CI_Migration {
 	/**
 	 * Retrieves current schema version
 	 *
-	 * @return	string	Current migration version
+	 * @returns	string	Current migration version
 	 */
 	protected function _get_version()
 	{
@@ -452,7 +452,7 @@ class CI_Migration {
 	 * Stores the current schema version
 	 *
 	 * @param	string	$migration	Migration reached
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _update_version($migration)
 	{
@@ -467,7 +467,7 @@ class CI_Migration {
 	 * Enable the use of CI super-global
 	 *
 	 * @param	string	$var
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function __get($var)
 	{

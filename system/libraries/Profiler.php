@@ -121,7 +121,7 @@ class CI_Profiler {
 	 * Sets the private _compile_* properties to enable/disable Profiler sections
 	 *
 	 * @param	mixed	$config
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_sections($config)
 	{
@@ -150,7 +150,7 @@ class CI_Profiler {
 	 * and "_end" respectively).  It then compiles the execution times for
 	 * all points and returns it as an array
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _compile_benchmarks()
 	{
@@ -192,7 +192,7 @@ class CI_Profiler {
 	/**
 	 * Compile Queries
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_queries()
 	{
@@ -295,7 +295,7 @@ class CI_Profiler {
 	/**
 	 * Compile $_GET Data
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_get()
 	{
@@ -335,7 +335,7 @@ class CI_Profiler {
 	/**
 	 * Compile $_POST Data
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_post()
 	{
@@ -387,7 +387,7 @@ class CI_Profiler {
 	/**
 	 * Show query string
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_uri_string()
 	{
@@ -405,7 +405,7 @@ class CI_Profiler {
 	/**
 	 * Show the controller and function that were called
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_controller_info()
 	{
@@ -424,7 +424,7 @@ class CI_Profiler {
 	 *
 	 * Display total used memory
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_memory_usage()
 	{
@@ -444,7 +444,7 @@ class CI_Profiler {
 	 *
 	 * Lists HTTP headers
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_http_headers()
 	{
@@ -472,7 +472,7 @@ class CI_Profiler {
 	 *
 	 * Lists developer config variables
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_config()
 	{
@@ -507,7 +507,7 @@ class CI_Profiler {
 	/**
 	 * Compile session userdata
 	 *
-	 * @return 	string
+	 * @returns 	string
 	 */
 	protected function _compile_session_data()
 	{
@@ -545,7 +545,7 @@ class CI_Profiler {
 	/**
 	 * Run the Profiler
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function run()
 	{

@@ -85,7 +85,7 @@ CodeMirror.defineMode("puppet", function () {
         // If so, and its in a string, assign it a different color
         return state.continueString ? 'variable-2' : 'variable';
       }
-      // Otherwise return an invalid variable
+      // Otherwise returns an invalid variable
       return "error";
     }
     // Should we still be looking for the end of a string?
@@ -96,7 +96,7 @@ CodeMirror.defineMode("puppet", function () {
     }
     // Are we in a definition (class, node, define)?
     if (state.inDefinition) {
-      // If so, return def (i.e. for 'class myclass {' ; 'myclass' would be matched)
+      // If so, returns def (i.e. for 'class myclass {' ; 'myclass' would be matched)
       if (stream.match(/(\s+)?[\w:_]+(\s+)?/)) {
         return 'def';
       }
@@ -106,7 +106,7 @@ CodeMirror.defineMode("puppet", function () {
     }
     // Are we in an 'include' statement?
     if (state.inInclude) {
-      // Match and return the included class
+      // Match and returns the included class
       stream.match(/(\s+)?\S+(\s+)?/);
       state.inInclude = false;
       return 'def';

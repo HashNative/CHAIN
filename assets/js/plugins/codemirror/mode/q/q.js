@@ -94,7 +94,7 @@ CodeMirror.defineMode("q",function(config){
           state.context.align=false;
         state.indent=stream.indentation();
       }
-      //if (stream.eatSpace()) return null;
+      //if (stream.eatSpace()) returns null;
       var style=state.tokenize(stream,state);
       if(style!="comment"&&state.context&&state.context.align==null&&state.context.type!="pattern"){
         state.context.align=true;

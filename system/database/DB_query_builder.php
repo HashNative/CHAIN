@@ -279,7 +279,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string
 	 * @param	mixed
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function select($select = '*', $escape = NULL)
 	{
@@ -321,7 +321,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the field
 	 * @param	string	an alias
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function select_max($select = '', $alias = '')
 	{
@@ -337,7 +337,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the field
 	 * @param	string	an alias
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function select_min($select = '', $alias = '')
 	{
@@ -353,7 +353,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the field
 	 * @param	string	an alias
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function select_avg($select = '', $alias = '')
 	{
@@ -369,7 +369,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the field
 	 * @param	string	an alias
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function select_sum($select = '', $alias = '')
 	{
@@ -389,7 +389,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$select	Field name
 	 * @param	string	$alias
 	 * @param	string	$type
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	protected function _max_min_avg_sum($select = '', $alias = '', $type = 'MAX')
 	{
@@ -430,7 +430,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Determines the alias name based on the table
 	 *
 	 * @param	string	$item
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _create_alias_from_table($item)
 	{
@@ -451,7 +451,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Sets a flag which tells the query string compiler to add DISTINCT
 	 *
 	 * @param	bool	$val
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function distinct($val = TRUE)
 	{
@@ -467,7 +467,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Generates the FROM portion of the query
 	 *
 	 * @param	mixed	$from	can be a string or array
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function from($from)
 	{
@@ -521,7 +521,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	the join condition
 	 * @param	string	the type of join
 	 * @param	string	whether not to try to escape identifiers
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function join($table, $cond, $type = '', $escape = NULL)
 	{
@@ -616,7 +616,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	mixed
 	 * @param	mixed
 	 * @param	bool
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function where($key, $value = NULL, $escape = NULL)
 	{
@@ -634,7 +634,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	mixed
 	 * @param	mixed
 	 * @param	bool
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function or_where($key, $value = NULL, $escape = NULL)
 	{
@@ -656,7 +656,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	mixed	$value
 	 * @param	string	$type
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	protected function _wh($qb_key, $key, $value = NULL, $type = 'AND ', $escape = NULL)
 	{
@@ -721,7 +721,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$key	The field to search
 	 * @param	array	$values	The values searched on
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function where_in($key = NULL, $values = NULL, $escape = NULL)
 	{
@@ -739,7 +739,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$key	The field to search
 	 * @param	array	$values	The values searched on
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function or_where_in($key = NULL, $values = NULL, $escape = NULL)
 	{
@@ -757,7 +757,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$key	The field to search
 	 * @param	array	$values	The values searched on
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function where_not_in($key = NULL, $values = NULL, $escape = NULL)
 	{
@@ -775,7 +775,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$key	The field to search
 	 * @param	array	$values	The values searched on
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function or_where_not_in($key = NULL, $values = NULL, $escape = NULL)
 	{
@@ -797,7 +797,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	bool	$not	If the statement would be IN or NOT IN
 	 * @param	string	$type
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	protected function _where_in($key = NULL, $values = NULL, $not = FALSE, $type = 'AND ', $escape = NULL)
 	{
@@ -859,7 +859,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$match
 	 * @param	string	$side
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function like($field, $match = '', $side = 'both', $escape = NULL)
 	{
@@ -878,7 +878,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$match
 	 * @param	string	$side
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function not_like($field, $match = '', $side = 'both', $escape = NULL)
 	{
@@ -897,7 +897,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$match
 	 * @param	string	$side
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function or_like($field, $match = '', $side = 'both', $escape = NULL)
 	{
@@ -916,7 +916,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$match
 	 * @param	string	$side
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function or_not_like($field, $match = '', $side = 'both', $escape = NULL)
 	{
@@ -939,7 +939,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$side
 	 * @param	string	$not
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	protected function _like($field, $match = '', $type = 'AND ', $side = 'both', $not = '', $escape = NULL)
 	{
@@ -1003,7 +1003,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	$not	(Internal use only)
 	 * @param	string	$type	(Internal use only)
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function group_start($not = '', $type = 'AND ')
 	{
@@ -1030,7 +1030,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	/**
 	 * Starts a query group, but ORs the group
 	 *
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function or_group_start()
 	{
@@ -1042,7 +1042,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	/**
 	 * Starts a query group, but NOTs the group
 	 *
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function not_group_start()
 	{
@@ -1054,7 +1054,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	/**
 	 * Starts a query group, but OR NOTs the group
 	 *
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function or_not_group_start()
 	{
@@ -1066,7 +1066,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	/**
 	 * Ends a query group
 	 *
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function group_end()
 	{
@@ -1096,7 +1096,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @used-by	_where_in()
 	 *
 	 * @param	string	$type
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _group_get_type($type)
 	{
@@ -1116,7 +1116,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	$by
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function group_by($by, $escape = NULL)
 	{
@@ -1159,7 +1159,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$key
 	 * @param	string	$value
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function having($key, $value = NULL, $escape = NULL)
 	{
@@ -1176,7 +1176,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$key
 	 * @param	string	$value
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function or_having($key, $value = NULL, $escape = NULL)
 	{
@@ -1191,7 +1191,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$orderby
 	 * @param	string	$direction	ASC, DESC or RANDOM
 	 * @param	bool	$escape
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function order_by($orderby, $direction = '', $escape = NULL)
 	{
@@ -1249,7 +1249,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	int	$value	LIMIT value
 	 * @param	int	$offset	OFFSET value
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function limit($value, $offset = 0)
 	{
@@ -1265,7 +1265,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Sets the OFFSET value
 	 *
 	 * @param	int	$offset	OFFSET value
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function offset($offset)
 	{
@@ -1281,7 +1281,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Generates a platform-specific LIMIT clause.
 	 *
 	 * @param	string	$sql	SQL Query
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _limit($sql)
 	{
@@ -1298,7 +1298,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	mixed
 	 * @param	string
 	 * @param	bool
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function set($key, $value = '', $escape = NULL)
 	{
@@ -1329,7 +1329,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the table name to select from (optional)
 	 * @param	bool	TRUE: resets QB values; FALSE: leave QB values alone
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_compiled_select($table = '', $reset = TRUE)
 	{
@@ -1360,7 +1360,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	the table
 	 * @param	string	the limit clause
 	 * @param	string	the offset clause
-	 * @return	CI_DB_result
+	 * @returns	CI_DB_result
 	 */
 	public function get($table = '', $limit = NULL, $offset = NULL)
 	{
@@ -1390,7 +1390,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string
 	 * @param	bool	the reset clause
-	 * @return	int
+	 * @returns	int
 	 */
 	public function count_all_results($table = '', $reset = TRUE)
 	{
@@ -1441,7 +1441,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$where
 	 * @param	int	$limit
 	 * @param	int	$offset
-	 * @return	CI_DB_result
+	 * @returns	CI_DB_result
 	 */
 	public function get_where($table = '', $where = NULL, $limit = NULL, $offset = NULL)
 	{
@@ -1475,7 +1475,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$table	Table to insert into
 	 * @param	array	$set 	An associative array of insert values
 	 * @param	bool	$escape	Whether to escape values and identifiers
-	 * @return	int	Number of rows inserted or FALSE on failure
+	 * @returns	int	Number of rows inserted or FALSE on failure
 	 */
 	public function insert_batch($table, $set = NULL, $escape = NULL, $batch_size = 100)
 	{
@@ -1530,7 +1530,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$table	Table name
 	 * @param	array	$keys	INSERT keys
 	 * @param	array	$values	INSERT values
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _insert_batch($table, $keys, $values)
 	{
@@ -1545,7 +1545,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	mixed
 	 * @param	string
 	 * @param	bool
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function set_insert_batch($key, $value = '', $escape = NULL)
 	{
@@ -1604,7 +1604,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the table to insert into
 	 * @param	bool	TRUE: reset QB values; FALSE: leave QB values alone
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_compiled_insert($table = '', $reset = TRUE)
 	{
@@ -1639,7 +1639,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	the table to insert data into
 	 * @param	array	an associative array of insert values
 	 * @param	bool	$escape	Whether to escape values and identifiers
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function insert($table = '', $set = NULL, $escape = NULL)
 	{
@@ -1675,7 +1675,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * has been chosen to be inserted into.
 	 *
 	 * @param	string	the table to insert data into
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _validate_insert($table = '')
 	{
@@ -1705,7 +1705,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the table to replace data into
 	 * @param	array	an associative array of insert values
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function replace($table = '', $set = NULL)
 	{
@@ -1745,7 +1745,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	the table name
 	 * @param	array	the insert keys
 	 * @param	array	the insert values
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _replace($table, $keys, $values)
 	{
@@ -1762,7 +1762,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * Note: This is only used (and overridden) by MySQL and CUBRID.
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _from_tables()
 	{
@@ -1778,7 +1778,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the table to update
 	 * @param	bool	TRUE: reset QB values; FALSE: leave QB values alone
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_compiled_update($table = '', $reset = TRUE)
 	{
@@ -1811,7 +1811,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	array	$set	An associative array of update values
 	 * @param	mixed	$where
 	 * @param	int	$limit
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function update($table = '', $set = NULL, $where = NULL, $limit = NULL)
 	{
@@ -1853,7 +1853,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * chosen to be update.
 	 *
 	 * @param	string	the table to update data on
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _validate_update($table)
 	{
@@ -1884,7 +1884,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	the table to retrieve the results from
 	 * @param	array	an associative array of update values
 	 * @param	string	the where key
-	 * @return	int	number of rows affected or FALSE on failure
+	 * @returns	int	number of rows affected or FALSE on failure
 	 */
 	public function update_batch($table, $set = NULL, $index = NULL, $batch_size = 100)
 	{
@@ -1949,7 +1949,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	$table	Table name
 	 * @param	array	$values	Update data
 	 * @param	string	$index	WHERE key
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _update_batch($table, $values, $index)
 	{
@@ -1988,7 +1988,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	array
 	 * @param	string
 	 * @param	bool
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function set_update_batch($key, $index = '', $escape = NULL)
 	{
@@ -2037,7 +2037,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Compiles a delete string and runs "DELETE FROM table"
 	 *
 	 * @param	string	the table to empty
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function empty_table($table = '')
 	{
@@ -2070,7 +2070,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * This function maps to "DELETE FROM table"
 	 *
 	 * @param	string	the table to truncate
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function truncate($table = '')
 	{
@@ -2104,7 +2104,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * then this method maps to 'DELETE FROM table'
 	 *
 	 * @param	string	the table name
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _truncate($table)
 	{
@@ -2120,7 +2120,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * @param	string	the table to delete from
 	 * @param	bool	TRUE: reset QB values; FALSE: leave QB values alone
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_compiled_delete($table = '', $reset = TRUE)
 	{
@@ -2141,7 +2141,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	mixed	the where clause
 	 * @param	mixed	the limit clause
 	 * @param	bool
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function delete($table = '', $where = '', $limit = NULL, $reset_data = TRUE)
 	{
@@ -2205,7 +2205,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Generates a platform-specific delete string from the supplied data
 	 *
 	 * @param	string	the table name
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _delete($table)
 	{
@@ -2221,7 +2221,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Prepends a database prefix if one exists in configuration
 	 *
 	 * @param	string	the table
-	 * @return	string
+	 * @returns	string
 	 */
 	public function dbprefix($table = '')
 	{
@@ -2241,7 +2241,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Set's the DB Prefix to something new without needing to reconnect
 	 *
 	 * @param	string	the prefix
-	 * @return	string
+	 * @returns	string
 	 */
 	public function set_dbprefix($prefix = '')
 	{
@@ -2256,7 +2256,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Used to track SQL statements written with aliased tables.
 	 *
 	 * @param	string	The table to inspect
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _track_aliases($table)
 	{
@@ -2307,7 +2307,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Should not be called directly.
 	 *
 	 * @param	bool	$select_override
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compile_select($select_override = FALSE)
 	{
@@ -2380,7 +2380,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * join() and dbprefix is added only if needed.
 	 *
 	 * @param	string	$qb_key	'qb_where' or 'qb_having'
-	 * @return	string	SQL statement
+	 * @returns	string	SQL statement
 	 */
 	protected function _compile_wh($qb_key)
 	{
@@ -2455,7 +2455,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * group_by() is called prior to from(), join() and dbprefix is added
 	 * only if needed.
 	 *
-	 * @return	string	SQL statement
+	 * @returns	string	SQL statement
 	 */
 	protected function _compile_group_by()
 	{
@@ -2491,7 +2491,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * order_by() is called prior to from(), join() and dbprefix is added
 	 * only if needed.
 	 *
-	 * @return	string	SQL statement
+	 * @returns	string	SQL statement
 	 */
 	protected function _compile_order_by()
 	{
@@ -2526,7 +2526,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Takes an object as input and converts the class variables to array key/vals
 	 *
 	 * @param	object
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _object_to_array($object)
 	{
@@ -2556,7 +2556,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Takes an object as input and converts the class variables to array key/vals
 	 *
 	 * @param	object
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _object_to_array_batch($object)
 	{
@@ -2592,7 +2592,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * Starts QB caching
 	 *
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function start_cache()
 	{
@@ -2607,7 +2607,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * Stops QB caching
 	 *
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function stop_cache()
 	{
@@ -2622,7 +2622,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * Empties the QB cache
 	 *
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function flush_cache()
 	{
@@ -2651,7 +2651,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * When called, this function merges any cached QB arrays with
 	 * locally called ones.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _merge_cache()
 	{
@@ -2698,7 +2698,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Determines if a string represents a literal value or a field name
 	 *
 	 * @param	string	$str
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _is_literal($str)
 	{
@@ -2727,7 +2727,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * Publicly-visible method to reset the QB values.
 	 *
-	 * @return	CI_DB_query_builder
+	 * @returns	CI_DB_query_builder
 	 */
 	public function reset_query()
 	{
@@ -2742,7 +2742,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * Resets the query builder values.  Called by the get() function
 	 *
 	 * @param	array	An array of fields to reset
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _reset_run($qb_reset_items)
 	{
@@ -2757,7 +2757,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	/**
 	 * Resets the query builder values.  Called by the get() function
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _reset_select()
 	{
@@ -2784,7 +2784,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * Called by the insert() update() insert_batch() update_batch() and delete() functions
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _reset_write()
 	{

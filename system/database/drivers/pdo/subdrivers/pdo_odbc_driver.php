@@ -99,7 +99,7 @@ class CI_DB_pdo_odbc_driver extends CI_DB_pdo_driver {
 	 * Builds the DSN if not already set.
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -164,7 +164,7 @@ class CI_DB_pdo_odbc_driver extends CI_DB_pdo_driver {
 	 * Platform-dependent string escape
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _escape_str($str)
 	{
@@ -177,7 +177,7 @@ class CI_DB_pdo_odbc_driver extends CI_DB_pdo_driver {
 	 * Determines if a query is a "write" type.
 	 *
 	 * @param	string	An SQL query string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_write_type($sql)
 	{
@@ -197,7 +197,7 @@ class CI_DB_pdo_odbc_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific query string so that the table names can be fetched
 	 *
 	 * @param	bool	$prefix_limit
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_tables($prefix_limit = FALSE)
 	{
@@ -220,7 +220,7 @@ class CI_DB_pdo_odbc_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific query string so that the column names can be fetched
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_columns($table = '')
 	{

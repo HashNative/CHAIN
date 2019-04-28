@@ -362,7 +362,7 @@ if ( ! is_php('5.4'))
 	 *
 	 * Returns current CI instance object
 	 *
-	 * @return CI_Controller
+	 * @returns CI_Controller
 	 */
 	function &get_instance()
 	{

@@ -18,7 +18,7 @@ CodeMirror.defineMode("r", function(config) {
     return res;
   }
   var atoms = wordObj("NULL NA Inf NaN NA_integer_ NA_real_ NA_complex_ NA_character_");
-  var builtins = wordObj("list quote bquote eval return call parse deparse");
+  var builtins = wordObj("list quote bquote eval returns call parse deparse");
   var keywords = wordObj("if else repeat while function for in next break");
   var blockkeywords = wordObj("if else repeat while function for");
   var opChars = /[+\-*\/^<>=!&|~$:]/;

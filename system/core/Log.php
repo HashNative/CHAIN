@@ -116,7 +116,7 @@ class CI_Log {
 	/**
 	 * Class constructor
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -165,7 +165,7 @@ class CI_Log {
 	 *
 	 * @param	string	$level 	The error level: 'error', 'debug' or 'info'
 	 * @param	string	$msg 	The error message
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function write_log($level, $msg)
 	{
@@ -247,7 +247,7 @@ class CI_Log {
 	 * @param	string	$level 	The error level
 	 * @param	string	$date 	Formatted date string
 	 * @param	string	$message 	The log message
-	 * @return	string	Formatted log line with a new line character '\n' at the end
+	 * @returns	string	Formatted log line with a new line character '\n' at the end
 	 */
 	protected function _format_line($level, $date, $message)
 	{
@@ -260,7 +260,7 @@ class CI_Log {
 	 * Byte-safe strlen()
 	 *
 	 * @param	string	$str
-	 * @return	int
+	 * @returns	int
 	 */
 	protected static function strlen($str)
 	{
@@ -277,7 +277,7 @@ class CI_Log {
 	 * @param	string	$str
 	 * @param	int	$start
 	 * @param	int	$length
-	 * @return	string
+	 * @returns	string
 	 */
 	protected static function substr($str, $start, $length = NULL)
 	{

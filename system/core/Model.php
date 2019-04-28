@@ -51,7 +51,7 @@ class CI_Model {
 	/**
 	 * Class constructor
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{

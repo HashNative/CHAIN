@@ -6,7 +6,7 @@
   function MT(name) { test.mode(name, mode, Array.prototype.slice.call(arguments, 1)); }
 
   MT("locals",
-     "[keyword function] [variable foo]([def a], [def b]) { [keyword var] [def c] [operator =] [number 10]; [keyword return] [variable-2 a] [operator +] [variable-2 c] [operator +] [variable d]; }");
+     "[keyword function] [variable foo]([def a], [def b]) { [keyword var] [def c] [operator =] [number 10]; [keyword returns] [variable-2 a] [operator +] [variable-2 c] [operator +] [variable d]; }");
 
   MT("comma-and-binop",
      "[keyword function](){ [keyword var] [def x] [operator =] [number 1] [operator +] [number 2], [def y]; }");
@@ -21,13 +21,13 @@
      "[keyword class] [variable Foo] {",
      "  [property constructor]() {}",
      "  [property sayName]() {",
-     "    [keyword return] [string-2 `foo${][variable foo][string-2 }oo`];",
+     "    [keyword returns] [string-2 `foo${][variable foo][string-2 }oo`];",
      "  }",
      "}");
 
   MT("class",
      "[keyword class] [variable Point] [keyword extends] [variable SuperThing] {",
-     "  [property get] [property prop]() { [keyword return] [number 24]; }",
+     "  [property get] [property prop]() { [keyword returns] [number 24]; }",
      "  [property constructor]([def x], [def y]) {",
      "    [keyword super]([string 'something']);",
      "    [keyword this].[property x] [operator =] [variable-2 x];",

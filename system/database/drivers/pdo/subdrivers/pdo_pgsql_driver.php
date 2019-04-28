@@ -83,7 +83,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Builds the DSN if not already set.
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -110,7 +110,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Database connection
 	 *
 	 * @param	bool	$persistent
-	 * @return	object
+	 * @returns	object
 	 */
 	public function db_connect($persistent = FALSE)
 	{
@@ -130,7 +130,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Insert ID
 	 *
 	 * @param	string	$name
-	 * @return	int
+	 * @returns	int
 	 */
 	public function insert_id($name = NULL)
 	{
@@ -150,7 +150,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Determines if a query is a "write" type.
 	 *
 	 * @param	string	An SQL query string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_write_type($sql)
 	{
@@ -170,7 +170,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Escapes data based on type
 	 *
 	 * @param	string	$str
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function escape($str)
 	{
@@ -190,7 +190,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * @param	string	$orderby
 	 * @param	string	$direction	ASC, DESC or RANDOM
 	 * @param	bool	$escape
-	 * @return	object
+	 * @returns	object
 	 */
 	public function order_by($orderby, $direction = '', $escape = NULL)
 	{
@@ -225,7 +225,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific query string so that the table names can be fetched
 	 *
 	 * @param	bool	$prefix_limit
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_tables($prefix_limit = FALSE)
 	{
@@ -249,7 +249,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific query string so that the column names can be fetched
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_columns($table = '')
 	{
@@ -264,7 +264,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Returns an object with field data
 	 *
 	 * @param	string	$table
-	 * @return	array
+	 * @returns	array
 	 */
 	public function field_data($table)
 	{
@@ -300,7 +300,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 *
 	 * @param	string	$table
 	 * @param	array	$values
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _update($table, $values)
 	{
@@ -319,7 +319,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * @param	string	$table	Table name
 	 * @param	array	$values	Update data
 	 * @param	string	$index	WHERE key
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _update_batch($table, $values, $index)
 	{
@@ -358,7 +358,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific delete string from the supplied data
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _delete($table)
 	{
@@ -374,7 +374,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific LIMIT clause
 	 *
 	 * @param	string	$sql	SQL Query
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _limit($sql)
 	{

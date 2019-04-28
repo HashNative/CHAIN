@@ -45,7 +45,7 @@ $.extend($.jgrid,{
 			url: "er ugyldig URL. Prefix mangler ('http://' or 'https://')",
 			nodefined : " er ikke defineret!",
 			novalue : " returværdi kræves!",
-			customarray : "Custom function should return array!",
+			customarray : "Custom function should returns array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 		}
 	},

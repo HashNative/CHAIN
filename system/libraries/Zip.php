@@ -115,7 +115,7 @@ class CI_Zip {
 	/**
 	 * Initialize zip compression class
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -133,7 +133,7 @@ class CI_Zip {
 	 * Lets you add a virtual directory into which you can place files.
 	 *
 	 * @param	mixed	$directory	the directory name. Can be string or array
-	 * @return	void
+	 * @returns	void
 	 */
 	public function add_dir($directory)
 	{
@@ -157,11 +157,11 @@ class CI_Zip {
 	 * If this is a newly created file/dir, we will set the time to 'now'
 	 *
 	 * @param	string	$dir	path to file
-	 * @return	array	filemtime/filemdate
+	 * @returns	array	filemtime/filemdate
 	 */
 	protected function _get_mod_time($dir)
 	{
-		// filemtime() may return false, but raises an error for non-existing files
+		// filemtime() may returns false, but raises an error for non-existing files
 		$date = file_exists($dir) ? getdate(filemtime($dir)) : getdate($this->now);
 
 		return array(
@@ -178,7 +178,7 @@ class CI_Zip {
 	 * @param	string	$dir	the directory name
 	 * @param	int	$file_mtime
 	 * @param	int	$file_mdate
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _add_dir($dir, $file_mtime, $file_mdate)
 	{
@@ -230,7 +230,7 @@ class CI_Zip {
 	 *
 	 * @param	mixed	$filepath	A single filepath or an array of file => data pairs
 	 * @param	string	$data		Single file contents
-	 * @return	void
+	 * @returns	void
 	 */
 	public function add_data($filepath, $data = NULL)
 	{
@@ -258,7 +258,7 @@ class CI_Zip {
 	 * @param	string	$data	the data to be encoded
 	 * @param	int	$file_mtime
 	 * @param	int	$file_mdate
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _add_data($filepath, $data, $file_mtime, $file_mdate)
 	{
@@ -309,7 +309,7 @@ class CI_Zip {
 	 *
 	 * @param	string	$path
 	 * @param	bool	$archive_filepath
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function read_file($path, $archive_filepath = FALSE)
 	{
@@ -348,7 +348,7 @@ class CI_Zip {
 	 * @param	string	$path	path to source directory
 	 * @param	bool	$preserve_filepath
 	 * @param	string	$root_path
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function read_dir($path, $preserve_filepath = TRUE, $root_path = NULL)
 	{
@@ -396,11 +396,11 @@ class CI_Zip {
 	/**
 	 * Get the Zip file
 	 *
-	 * @return	string	(binary encoded)
+	 * @returns	string	(binary encoded)
 	 */
 	public function get_zip()
 	{
-		// Is there any data to return?
+		// Is there any data to returns?
 		if ($this->entries === 0)
 		{
 			return FALSE;
@@ -423,7 +423,7 @@ class CI_Zip {
 	 * Lets you write a file
 	 *
 	 * @param	string	$filepath	the file name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function archive($filepath)
 	{
@@ -454,7 +454,7 @@ class CI_Zip {
 	 * Download
 	 *
 	 * @param	string	$filename	the file name
-	 * @return	void
+	 * @returns	void
 	 */
 	public function download($filename = 'backup.zip')
 	{
@@ -478,7 +478,7 @@ class CI_Zip {
 	 * Lets you clear current zip data. Useful if you need to create
 	 * multiple zips with different data.
 	 *
-	 * @return	CI_Zip
+	 * @returns	CI_Zip
 	 */
 	public function clear_data()
 	{
@@ -496,7 +496,7 @@ class CI_Zip {
 	 * Byte-safe strlen()
 	 *
 	 * @param	string	$str
-	 * @return	int
+	 * @returns	int
 	 */
 	protected static function strlen($str)
 	{
@@ -513,7 +513,7 @@ class CI_Zip {
 	 * @param	string	$str
 	 * @param	int	$start
 	 * @param	int	$length
-	 * @return	string
+	 * @returns	string
 	 */
 	protected static function substr($str, $start, $length = NULL)
 	{

@@ -1,169 +1,214 @@
 
-
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Manage
-      <small>Orders</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Orders</li>
-    </ol>
-  </section>
-
-  <!-- Main content -->
-  <section class="content">
-    <!-- Small boxes (Stat box) -->
-    <div class="row">
-      <div class="col-md-12 col-xs-12">
-
-        <div id="messages"></div>
-
-        <?php if($this->session->flashdata('success')): ?>
-          <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <?php echo $this->session->flashdata('success'); ?>
-          </div>
-        <?php elseif($this->session->flashdata('errors')): ?>
-          <div class="alert alert-error alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <?php echo $this->session->flashdata('errors'); ?>
-          </div>
-        <?php endif; ?>
-
-        <?php if(in_array('createOrder', $user_permission)): ?>
-          <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Add Order</a>
-          <br /> <br />
-        <?php endif; ?>
-
-        <div class="box">
-          <div class="box-header">
-            <h3 class="box-title">Manage Orders</h3>
-          </div>
-          <!-- /.box-header -->
-          <div class="box-body">
-            <table id="manageTable" class="table table-bordered table-striped">
-              <thead>
-              <tr>
-                <th>Bill no</th>
-                <th>Store</th>
-                <th>Date Time</th>
-                <th>Total Products</th>
-                <th>Total Amount</th>
-                <th>Paid status</th>
-                <?php if(in_array('updateOrder', $user_permission) || in_array('viewOrder', $user_permission) || in_array('deleteOrder', $user_permission)): ?>
-                  <th>Action</th>
-                <?php endif; ?>
-              </tr>
-              </thead>
-
-            </table>
-          </div>
-          <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-      </div>
-      <!-- col-md-12 -->
-    </div>
-    <!-- /.row -->
-    
-
-  </section>
-  <!-- /.content -->
+<h2>Sales Order</h2>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">Home</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a>Transactions</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a>Orders</a>
+    </li>
+    <li class="breadcrumb-item active">
+        <strong>Sales Order</strong>
+    </li>
+</ol>
 </div>
-<!-- /.content-wrapper -->
+<div class="col-lg-2">
 
-<?php if(in_array('deleteOrder', $user_permission)): ?>
-<!-- remove brand modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Remove Order</h4>
-      </div>
+</div>
+</div>
 
-      <form role="form" action="<?php echo base_url('orders/remove') ?>" method="post" id="removeForm">
-        <div class="modal-body">
-          <p>Do you really want to remove?</p>
+<!-- Main content -->
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <?php if($this->session->flashdata('success')): ?>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+            <?php elseif($this->session->flashdata('error')): ?>
+                <div class="alert alert-error alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <?php echo $this->session->flashdata('error'); ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="box">
+
+
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Create Sales Order</h5>
+                        <?php if(in_array('createCustomer', $user_permission)): ?>
+                            <div class="ibox-tools">
+                                <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-xs">Sales Order History</a>
+                            </div>
+
+                            <br /> <br />
+                        <?php endif; ?>
+                    </div>
+                    <div class="ibox-title">
+
+                        <form role="form" action="<?php echo base_url('task/createtask') ?>" method="post" id="createForm">
+
+                            <div class="modal-body">
+
+                                <div id="messages"></div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="description">Purchase Order Number</label>
+                                            <input type="text" id="pon" name="pon" value=""
+                                                   placeholder="PON" class="form-control">
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="description">Customer</label>
+                                            <input type="text" id="customer" name="customer" value=""
+                                                   placeholder="Customer" class="form-control">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="description">Address</label>
+                                            <input type="text" id="address" name="address" value=""
+                                                   placeholder="Address" class="form-control">
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <table class="table" id="material_info_table">
+                                        <thead>
+                                        <tr>
+                                            <th style="width:35%">Material</th>
+                                            <th style="width:10%">Quantity</th>
+                                            <th style="width:10%">Cost</th>
+                                            <th style="width:10%">Amount</th>
+                                            <th style="width:5%"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id="row_1">
+                                            <td>
+                                                <select class="form-control select_group material" data-row-id="row_1"
+                                                        id="material_1" name="material[]" style="width:100%;" required>
+                                                    <option value=""></option>
+                                                    <?php foreach ($materials as $k => $v): ?>
+                                                        <option value="<?php echo $v['name'] ?>" placeholder="Choose a material"><?php echo $v['name'] ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </td>
+                                            <td><input type="text" name="qty[]" id="qty_1" class="form-control" required>
+                                            </td>
+                                            <td><input type="text" name="cost[]" id="cost_1" class="form-control" required>
+                                            </td>
+                                            <td><input type="text" name="amount[]" id="amount_' + row_id + '" class="form-control"></td>
+                                            <td>
+                                                <a class="delete" title="Delete"><i class="fa fa-close"></i></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="box-footer">
+                                        <button type="button" class="btn btn-default add-new"><i class="fa fa-plus"></i> Add
+                                            Row
+                                        </button>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-white" data-dismiss="modal">Clear</button>
+                                <button type="submit" class="btn btn-primary">Save &amp Close</button>
+                            </div>
+                    </div>
+                    </form>
+                    <!-- /.box-body -->
+
+
+                </div>
+            </div>
+
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-      </form>
-
-
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<?php endif; ?>
-
+    </div>
+</div>
 
 
 <script type="text/javascript">
-var manageTable;
-var base_url = "<?php echo base_url(); ?>";
+    $(document).ready(function () {
+        $(".material").select2();
+        // Append table with add row form on add new button click ==Add new Task==
+        $(".add-new").click(function () {
+            var base_url = "<?php echo base_url(); ?>";
 
-$(document).ready(function() {
 
-  $("#OrderMainNav").addClass('active');
-  $("#manageOrderSubMenu").addClass('active');
+            var index = $("table tbody tr:last-child").index();
+            var table = $("#material_info_table");
+            var count_table_tbody_tr = $("#material_info_table tbody tr").length;
+            var row_id = count_table_tbody_tr + 1;
 
-  // initialize the datatable 
-  manageTable = $('#manageTable').DataTable({
-    'ajax': base_url + 'orders/fetchOrdersData',
-    'order': []
-  });
+            $.ajax({
+                url: base_url + '/task/getMaterialRow/',
+                type: 'post',
+                dataType: 'json',
+                success: function (response) {
 
-});
+                    var html = '<tr id="row_' + row_id + '">' +
+                        '<td>' +
+                        '<select class="form-control select_group material" data-row-id="' + row_id + '" id="material_' + row_id + '" name="material[]" style="width:100%;" >' +
+                        '<option value=""></option>';
+                    $.each(response, function (index, value) {
+                        html += '<option value="' + value.name + '">' + value.name + '</option>';
+                    });
 
-// remove functions 
-function removeFunc(id)
-{
-  if(id) {
-    $("#removeForm").on('submit', function() {
+                    html += '</select>' +
+                        '</td>' +
+                        '<td><input type="text" name="qty[]" id="qty_' + row_id + '" class="form-control"></td>' +
+                        '<td><input type="text" name="cost[]" id="cost_' + row_id + '" class="form-control"></td>' +
+                        '<td><input type="text" name="amount[]" id="amount_' + row_id + '" class="form-control"></td>' +
+                        '<td> <a class="delete" title="Delete"><i class="fa fa-close"></i></a> </td>' +
+                        '</tr>';
 
-      var form = $(this);
+                    if (count_table_tbody_tr >= 1) {
+                        $("#material_info_table tbody tr:last").after(html);
+                    } else {
+                        $("#material_info_table tbody").html(html);
+                    }
+                    $(".material").select2();
 
-      // remove the text-danger
-      $(".text-danger").remove();
+                }
+            });
+        })
 
-      $.ajax({
-        url: form.attr('action'),
-        type: form.attr('method'),
-        data: { order_id:id }, 
-        dataType: 'json',
-        success:function(response) {
 
-          manageTable.ajax.reload(null, false); 
+        // Delete row on delete button click
+        $(document).on("click", ".delete", function () {
 
-          if(response.success === true) {
-            $("#messages").html('<div class="alert alert-success alert-dismissible" role="alert">'+
-              '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
-              '<strong> <span class="glyphicon glyphicon-ok-sign"></span> </strong>'+response.messages+
-            '</div>');
+            $(this).parents("tr").remove();
 
-            // hide the modal
-            $("#removeModal").modal('hide');
-
-          } else {
-
-            $("#messages").html('<div class="alert alert-warning alert-dismissible" role="alert">'+
-              '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
-              '<strong> <span class="glyphicon glyphicon-exclamation-sign"></span> </strong>'+response.messages+
-            '</div>'); 
-          }
-        }
-      }); 
-
-      return false;
+        });
     });
-  }
-}
+
 
 
 </script>
+

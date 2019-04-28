@@ -11,7 +11,7 @@ class Model_orders extends CI_Model
 	}
 
 	/* get the orders data */
-	public function getOrdersData($id = null)
+	public function getPurchaseOrdersData($id = null)
 	{
 		if($id) {
 			$sql = "SELECT * FROM orders WHERE id = ?";

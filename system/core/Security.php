@@ -165,7 +165,7 @@ class CI_Security {
 	/**
 	 * Class constructor
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -201,7 +201,7 @@ class CI_Security {
 	/**
 	 * CSRF Verify
 	 *
-	 * @return	CI_Security
+	 * @returns	CI_Security
 	 */
 	public function csrf_verify()
 	{
@@ -257,7 +257,7 @@ class CI_Security {
 	 * CSRF Set Cookie
 	 *
 	 * @codeCoverageIgnore
-	 * @return	CI_Security
+	 * @returns	CI_Security
 	 */
 	public function csrf_set_cookie()
 	{
@@ -288,7 +288,7 @@ class CI_Security {
 	/**
 	 * Show CSRF Error
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function csrf_show_error()
 	{
@@ -301,7 +301,7 @@ class CI_Security {
 	 * Get CSRF Hash
 	 *
 	 * @see		CI_Security::$_csrf_hash
-	 * @return 	string	CSRF hash
+	 * @returns 	string	CSRF hash
 	 */
 	public function get_csrf_hash()
 	{
@@ -314,7 +314,7 @@ class CI_Security {
 	 * Get CSRF Token Name
 	 *
 	 * @see		CI_Security::$_csrf_token_name
-	 * @return	string	CSRF token name
+	 * @returns	string	CSRF token name
 	 */
 	public function get_csrf_token_name()
 	{
@@ -347,7 +347,7 @@ class CI_Security {
 	 *
 	 * @param	string|string[]	$str		Input data
 	 * @param 	bool		$is_image	Whether the input is an image
-	 * @return	string
+	 * @returns	string
 	 */
 	public function xss_clean($str, $is_image = FALSE)
 	{
@@ -551,7 +551,7 @@ class CI_Security {
 		 * Images are Handled in a Special Way
 		 * - Essentially, we want to know that after all of the character
 		 * conversion is done whether any unwanted, likely XSS, code was found.
-		 * If not, we return TRUE, as the image is clean.
+		 * If not, we returns TRUE, as the image is clean.
 		 * However, if the string post-conversion does not matched the
 		 * string post-removal of XSS, then it fails, as there was unwanted XSS
 		 * code found and removed/changed during processing.
@@ -572,7 +572,7 @@ class CI_Security {
 	 * Generates the XSS hash if needed and returns it.
 	 *
 	 * @see		CI_Security::$_xss_hash
-	 * @return	string	XSS hash
+	 * @returns	string	XSS hash
 	 */
 	public function xss_hash()
 	{
@@ -593,7 +593,7 @@ class CI_Security {
 	 * Get random bytes
 	 *
 	 * @param	int	$length	Output length
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_random_bytes($length)
 	{
@@ -662,7 +662,7 @@ class CI_Security {
 	 *
 	 * @param	string	$str		Input
 	 * @param	string	$charset	Character set
-	 * @return	string
+	 * @returns	string
 	 */
 	public function entity_decode($str, $charset = NULL)
 	{
@@ -737,7 +737,7 @@ class CI_Security {
 	 *
 	 * @param	string	$str		Input file name
 	 * @param 	bool	$relative_path	Whether to preserve paths
-	 * @return	string
+	 * @returns	string
 	 */
 	public function sanitize_filename($str, $relative_path = FALSE)
 	{
@@ -767,7 +767,7 @@ class CI_Security {
 	 * Strip Image Tags
 	 *
 	 * @param	string	$str
-	 * @return	string
+	 * @returns	string
 	 */
 	public function strip_image_tags($str)
 	{
@@ -788,7 +788,7 @@ class CI_Security {
 	 *
 	 * @see		https://github.com/bcit-ci/CodeIgniter/issues/4877
 	 * @param	array	$matches
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _urldecodespaces($matches)
 	{
@@ -809,7 +809,7 @@ class CI_Security {
 	 *
 	 * @used-by	CI_Security::xss_clean()
 	 * @param	array	$matches
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _compact_exploded_words($matches)
 	{
@@ -825,7 +825,7 @@ class CI_Security {
 	 *
 	 * @used-by	CI_Security::xss_clean()
 	 * @param	array	$matches
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _sanitize_naughty_html($matches)
 	{
@@ -920,7 +920,7 @@ class CI_Security {
 	 *
 	 * @used-by	CI_Security::xss_clean()
 	 * @param	array	$match
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _js_link_removal($match)
 	{
@@ -948,7 +948,7 @@ class CI_Security {
 	 *
 	 * @used-by	CI_Security::xss_clean()
 	 * @param	array	$match
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _js_img_removal($match)
 	{
@@ -970,7 +970,7 @@ class CI_Security {
 	 *
 	 * @used-by	CI_Security::xss_clean()
 	 * @param	array	$match
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _convert_attribute($match)
 	{
@@ -987,7 +987,7 @@ class CI_Security {
 	 * @used-by	CI_Security::_js_img_removal()
 	 * @used-by	CI_Security::_js_link_removal()
 	 * @param	string	$str
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _filter_attributes($str)
 	{
@@ -1010,7 +1010,7 @@ class CI_Security {
 	 *
 	 * @used-by	CI_Security::xss_clean()
 	 * @param	array	$match
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _decode_entity($match)
 	{
@@ -1033,7 +1033,7 @@ class CI_Security {
 	 *
 	 * @used-by	CI_Security::xss_clean()
 	 * @param 	string
-	 * @return 	string
+	 * @returns 	string
 	 */
 	protected function _do_never_allowed($str)
 	{
@@ -1052,7 +1052,7 @@ class CI_Security {
 	/**
 	 * Set CSRF Hash and Cookie
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _csrf_set_hash()
 	{

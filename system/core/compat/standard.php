@@ -65,7 +65,7 @@ if ( ! function_exists('array_column'))
 	 * @param	array	$array
 	 * @param	mixed	$column_key
 	 * @param	mixed	$index_key
-	 * @return	array
+	 * @returns	array
 	 */
 	function array_column(array $array, $column_key, $index_key = NULL)
 	{
@@ -149,7 +149,7 @@ if ( ! function_exists('hex2bin'))
 	 *
 	 * @link	http://php.net/hex2bin
 	 * @param	string	$data
-	 * @return	string
+	 * @returns	string
 	 */
 	function hex2bin($data)
 	{

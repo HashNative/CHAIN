@@ -59,7 +59,7 @@
      *  - markdown (String): markdown string to parse
      *  - dialect (String | Dialect): the dialect to use, defaults to gruber
      *
-     *  Parse `markdown` and return a markdown document as a Markdown.JsonML tree.
+     *  Parse `markdown` and returns a markdown document as a Markdown.JsonML tree.
      **/
     expose.parse = function( source, dialect ) {
         // dialect will default if undefined
@@ -186,7 +186,7 @@
      *  - block (String): the block to process
      *  - next (Array): the following blocks
      *
-     * Process `block` and return an array of JsonML nodes representing `block`.
+     * Process `block` and returns an array of JsonML nodes representing `block`.
      *
      * It does this by asking each block level function in the dialect to process
      * the block until one can. Succesful handling is indicated by returning an
@@ -216,7 +216,7 @@
             if ( res ) {
                 //D:this.debug("  matched");
                 if ( !isArray(res) || ( res.length > 0 && !( isArray(res[0]) ) ) )
-                    this.debug(ord[i], "didn't return a proper array");
+                    this.debug(ord[i], "didn't returns a proper array");
                 //D:this.debug( "" );
                 return res;
             }
@@ -236,7 +236,7 @@
      *
      *  Parse `source` into a JsonML tree representing the markdown document.
      **/
-// custom_tree means set this.tree to `custom_tree` and restore old value on return
+// custom_tree means set this.tree to `custom_tree` and restore old value on returns
     Markdown.prototype.toTree = function toTree( source, custom_root ) {
         var blocks = source instanceof Array ? source : this.split_blocks( source );
 
@@ -249,7 +249,7 @@
                 while ( blocks.length ) {
                     var b = this.processBlock( blocks.shift(), blocks );
 
-                    // Reference blocks and the like won't return any content
+                    // Reference blocks and the like won't returns any content
                     if ( !b.length ) continue blocks;
 
                     this.tree.push.apply( this.tree, b );
@@ -1232,7 +1232,7 @@
                 hash[ a ] = attr[ a ];
             }
 
-            // return nothing so the meta hash is removed
+            // returns nothing so the meta hash is removed
             return [];
         }
 

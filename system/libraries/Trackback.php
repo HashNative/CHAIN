@@ -99,7 +99,7 @@ class CI_Trackback {
 	/**
 	 * Constructor
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -112,7 +112,7 @@ class CI_Trackback {
 	 * Send Trackback
 	 *
 	 * @param	array
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function send($tb_data)
 	{
@@ -186,7 +186,7 @@ class CI_Trackback {
 	 * If the data is valid it is set to the $this->data array
 	 * so that it can be inserted into a database.
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function receive()
 	{
@@ -235,7 +235,7 @@ class CI_Trackback {
 	 * the most common one.
 	 *
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function send_error($message = 'Incomplete Information')
 	{
@@ -250,7 +250,7 @@ class CI_Trackback {
 	 * This should be called when a trackback has been
 	 * successfully received and inserted.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function send_success()
 	{
@@ -263,7 +263,7 @@ class CI_Trackback {
 	 * Fetch a particular item
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function data($item)
 	{
@@ -280,7 +280,7 @@ class CI_Trackback {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function process($url, $data)
 	{
@@ -342,7 +342,7 @@ class CI_Trackback {
 	 * space) and puts each URL into an array
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function extract_urls($urls)
 	{
@@ -364,7 +364,7 @@ class CI_Trackback {
 	 * Simply adds "http://" if missing
 	 *
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function validate_url(&$url)
 	{
@@ -382,7 +382,7 @@ class CI_Trackback {
 	 * Find the Trackback URL's ID
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_id($url)
 	{
@@ -423,7 +423,7 @@ class CI_Trackback {
 	 * Convert Reserved XML characters to Entities
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function convert_xml($str)
 	{
@@ -448,7 +448,7 @@ class CI_Trackback {
 	 * @param	string
 	 * @param	int
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function limit_characters($str, $n = 500, $end_char = '&#8230;')
 	{
@@ -484,7 +484,7 @@ class CI_Trackback {
 	 * to character entities
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function convert_ascii($str)
 	{
@@ -531,7 +531,7 @@ class CI_Trackback {
 	 * Set error message
 	 *
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_error($msg)
 	{
@@ -546,7 +546,7 @@ class CI_Trackback {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function display_errors($open = '<p>', $close = '</p>')
 	{

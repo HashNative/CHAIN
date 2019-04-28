@@ -162,7 +162,7 @@ abstract class CI_DB_forge {
 	 * Class constructor
 	 *
 	 * @param	object	&$db	Database object
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct(&$db)
 	{
@@ -176,7 +176,7 @@ abstract class CI_DB_forge {
 	 * Create database
 	 *
 	 * @param	string	$db_name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function create_database($db_name)
 	{
@@ -203,7 +203,7 @@ abstract class CI_DB_forge {
 	 * Drop database
 	 *
 	 * @param	string	$db_name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function drop_database($db_name)
 	{
@@ -235,7 +235,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	string	$key
 	 * @param	bool	$primary
-	 * @return	CI_DB_forge
+	 * @returns	CI_DB_forge
 	 */
 	public function add_key($key, $primary = FALSE)
 	{
@@ -273,7 +273,7 @@ abstract class CI_DB_forge {
 	 * Add Field
 	 *
 	 * @param	array	$field
-	 * @return	CI_DB_forge
+	 * @returns	CI_DB_forge
 	 */
 	public function add_field($field)
 	{
@@ -317,7 +317,7 @@ abstract class CI_DB_forge {
 	 * @param	string	$table		Table name
 	 * @param	bool	$if_not_exists	Whether to add IF NOT EXISTS condition
 	 * @param	array	$attributes	Associative array of table attributes
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function create_table($table, $if_not_exists = FALSE, array $attributes = array())
 	{
@@ -372,7 +372,7 @@ abstract class CI_DB_forge {
 	 * @param	string	$table		Table name
 	 * @param	bool	$if_not_exists	Whether to add 'IF NOT EXISTS' condition
 	 * @param	array	$attributes	Associative array of table attributes
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _create_table($table, $if_not_exists, $attributes)
 	{
@@ -426,7 +426,7 @@ abstract class CI_DB_forge {
 	 * CREATE TABLE attributes
 	 *
 	 * @param	array	$attributes	Associative array of table attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _create_table_attr($attributes)
 	{
@@ -450,7 +450,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	string	$table_name	Table name
 	 * @param	bool	$if_exists	Whether to add an IF EXISTS condition
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function drop_table($table_name, $if_exists = FALSE)
 	{
@@ -488,7 +488,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	string	$table		Table name
 	 * @param	bool	$if_exists	Whether to add an IF EXISTS condition
-	 * @return	mixed	(Returns a platform-specific DROP table string, or TRUE to indicate there's nothing to do)
+	 * @returns	mixed	(Returns a platform-specific DROP table string, or TRUE to indicate there's nothing to do)
 	 */
 	protected function _drop_table($table, $if_exists)
 	{
@@ -519,7 +519,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	string	$table_name	Old table name
 	 * @param	string	$new_table_name	New table name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function rename_table($table_name, $new_table_name)
 	{
@@ -559,7 +559,7 @@ abstract class CI_DB_forge {
 	 * @param	string	$table	Table name
 	 * @param	array	$field	Column definition
 	 * @param	string	$_after	Column for AFTER clause (deprecated)
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function add_column($table, $field, $_after = NULL)
 	{
@@ -602,7 +602,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	string	$table		Table name
 	 * @param	string	$column_name	Column name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function drop_column($table, $column_name)
 	{
@@ -622,7 +622,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	string	$table	Table name
 	 * @param	string	$field	Column definition
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function modify_column($table, $field)
 	{
@@ -665,7 +665,7 @@ abstract class CI_DB_forge {
 	 * @param	string	$alter_type	ALTER type
 	 * @param	string	$table		Table name
 	 * @param	mixed	$field		Column definition
-	 * @return	string|string[]
+	 * @returns	string|string[]
 	 */
 	protected function _alter_table($alter_type, $table, $field)
 	{
@@ -697,7 +697,7 @@ abstract class CI_DB_forge {
 	 * Process fields
 	 *
 	 * @param	bool	$create_table
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _process_fields($create_table = FALSE)
 	{
@@ -800,7 +800,7 @@ abstract class CI_DB_forge {
 	 * Process column
 	 *
 	 * @param	array	$field
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _process_column($field)
 	{
@@ -821,7 +821,7 @@ abstract class CI_DB_forge {
 	 * Performs a data type mapping between different databases.
 	 *
 	 * @param	array	&$attributes
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _attr_type(&$attributes)
 	{
@@ -844,7 +844,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	array	&$attributes
 	 * @param	array	&$field
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _attr_unsigned(&$attributes, &$field)
 	{
@@ -885,7 +885,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	array	&$attributes
 	 * @param	array	&$field
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _attr_default(&$attributes, &$field)
 	{
@@ -918,7 +918,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	array	&$attributes
 	 * @param	array	&$field
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _attr_unique(&$attributes, &$field)
 	{
@@ -935,7 +935,7 @@ abstract class CI_DB_forge {
 	 *
 	 * @param	array	&$attributes
 	 * @param	array	&$field
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _attr_auto_increment(&$attributes, &$field)
 	{
@@ -951,7 +951,7 @@ abstract class CI_DB_forge {
 	 * Process primary keys
 	 *
 	 * @param	string	$table	Table name
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _process_primary_keys($table)
 	{
@@ -980,7 +980,7 @@ abstract class CI_DB_forge {
 	 * Process indexes
 	 *
 	 * @param	string	$table	Table name
-	 * @return	string[] list of SQL statements
+	 * @returns	string[] list of SQL statements
 	 */
 	protected function _process_indexes($table)
 	{
@@ -1022,7 +1022,7 @@ abstract class CI_DB_forge {
 	 *
 	 * Resets table creation vars
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _reset()
 	{

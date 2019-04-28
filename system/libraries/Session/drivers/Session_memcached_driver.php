@@ -75,7 +75,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 * Class constructor
 	 *
 	 * @param	array	$params	Configuration parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct(&$params)
 	{
@@ -101,7 +101,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 *
 	 * @param	string	$save_path	Server path(s)
 	 * @param	string	$name		Session cookie name, unused
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function open($save_path, $name)
 	{
@@ -156,7 +156,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 * Reads session data and acquires a lock
 	 *
 	 * @param	string	$session_id	Session ID
-	 * @return	string	Serialized session data
+	 * @returns	string	Serialized session data
 	 */
 	public function read($session_id)
 	{
@@ -182,7 +182,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 *
 	 * @param	string	$session_id	Session ID
 	 * @param	string	$session_data	Serialized session data
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function write($session_id, $session_data)
 	{
@@ -233,7 +233,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 *
 	 * Releases locks and closes connection.
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function close()
 	{
@@ -260,7 +260,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 * Destroys the current session.
 	 *
 	 * @param	string	$session_id	Session ID
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function destroy($session_id)
 	{
@@ -282,7 +282,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 * Deletes expired sessions
 	 *
 	 * @param	int 	$maxlifetime	Maximum lifetime of sessions
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function gc($maxlifetime)
 	{
@@ -298,7 +298,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 * Acquires an (emulated) lock.
 	 *
 	 * @param	string	$session_id	Session ID
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _get_lock($session_id)
 	{
@@ -355,7 +355,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	 *
 	 * Releases a previously acquired lock
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _release_lock()
 	{

@@ -79,7 +79,7 @@ class CI_Config {
 	 *
 	 * Sets the $config data from the primary config.php file as a class variable.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -120,8 +120,8 @@ class CI_Config {
 	 *
 	 * @param	string	$file			Configuration file name
 	 * @param	bool	$use_sections		Whether configuration values should be loaded into their own section
-	 * @param	bool	$fail_gracefully	Whether to just return FALSE or display an error message
-	 * @return	bool	TRUE if the file was loaded correctly or FALSE on failure
+	 * @param	bool	$fail_gracefully	Whether to just returns FALSE or display an error message
+	 * @returns	bool	TRUE if the file was loaded correctly or FALSE on failure
 	 */
 	public function load($file = '', $use_sections = FALSE, $fail_gracefully = FALSE)
 	{
@@ -192,7 +192,7 @@ class CI_Config {
 	 *
 	 * @param	string	$item	Config item name
 	 * @param	string	$index	Index name
-	 * @return	string|null	The configuration item or NULL if the item doesn't exist
+	 * @returns	string|null	The configuration item or NULL if the item doesn't exist
 	 */
 	public function item($item, $index = '')
 	{
@@ -210,7 +210,7 @@ class CI_Config {
 	 * Fetch a config file item with slash appended (if not empty)
 	 *
 	 * @param	string		$item	Config item name
-	 * @return	string|null	The configuration item or NULL if the item doesn't exist
+	 * @returns	string|null	The configuration item or NULL if the item doesn't exist
 	 */
 	public function slash_item($item)
 	{
@@ -237,7 +237,7 @@ class CI_Config {
 	 *
 	 * @param	string|string[]	$uri	URI string or an array of segments
 	 * @param	string	$protocol
-	 * @return	string
+	 * @returns	string
 	 */
 	public function site_url($uri = '', $protocol = NULL)
 	{
@@ -300,7 +300,7 @@ class CI_Config {
 	 *
 	 * @param	string|string[]	$uri	URI string or an array of segments
 	 * @param	string	$protocol
-	 * @return	string
+	 * @returns	string
 	 */
 	public function base_url($uri = '', $protocol = NULL)
 	{
@@ -331,7 +331,7 @@ class CI_Config {
 	 * @used-by	CI_Config::base_url()
 	 *
 	 * @param	string|string[]	$uri	URI string or an array of segments
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _uri_string($uri)
 	{
@@ -354,7 +354,7 @@ class CI_Config {
 	 * System URL
 	 *
 	 * @deprecated	3.0.0	Encourages insecure practices
-	 * @return	string
+	 * @returns	string
 	 */
 	public function system_url()
 	{
@@ -369,7 +369,7 @@ class CI_Config {
 	 *
 	 * @param	string	$item	Config item key
 	 * @param	string	$value	Config item value
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_item($item, $value)
 	{

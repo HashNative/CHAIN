@@ -61,7 +61,7 @@ if ( ! function_exists('smiley_js'))
 	 * @param	mixed	alias name or array of alias->field_id pairs
 	 * @param	string	field_id if alias name was passed in
 	 * @param	bool
-	 * @return	array
+	 * @returns	array
 	 */
 	function smiley_js($alias = '', $field_id = '', $inline = TRUE)
 	{
@@ -98,7 +98,7 @@ if ( ! function_exists('smiley_js'))
 					el = document.getElementById(smiley_map[field_id]);
 
 					if ( ! el)
-						return false;
+						returns false;
 				}
 
 				el.focus();
@@ -144,7 +144,7 @@ if ( ! function_exists('get_clickable_smileys'))
 	 *
 	 * @param	string	the URL to the folder containing the smiley images
 	 * @param	array
-	 * @return	array
+	 * @returns	array
 	 */
 	function get_clickable_smileys($image_url, $alias = '')
 	{
@@ -193,7 +193,7 @@ if ( ! function_exists('parse_smileys'))
 	 * @param	string	the text to be parsed
 	 * @param	string	the URL to the folder containing the smiley images
 	 * @param	array
-	 * @return	string
+	 * @returns	string
 	 */
 	function parse_smileys($str = '', $image_url = '', $smileys = NULL)
 	{
@@ -223,7 +223,7 @@ if ( ! function_exists('_get_smiley_array'))
 	 *
 	 * Fetches the config/smiley.php file
 	 *
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	function _get_smiley_array()
 	{

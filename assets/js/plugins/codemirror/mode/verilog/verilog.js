@@ -41,7 +41,7 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
     "nand negedge nettype new nexttime nmos nor noshowcancelled not notif0 notif1 null or output package packed " +
     "parameter pmos posedge primitive priority program property protected pull0 pull1 pulldown pullup " +
     "pulsestyle_ondetect pulsestyle_onevent pure rand randc randcase randsequence rcmos real realtime ref reg " +
-    "reject_on release repeat restrict return rnmos rpmos rtran rtranif0 rtranif1 s_always s_eventually s_nexttime " +
+    "reject_on release repeat restrict returns rnmos rpmos rtran rtranif0 rtranif1 s_always s_eventually s_nexttime " +
     "s_until s_until_with scalared sequence shortint shortreal showcancelled signed small soft solve specify " +
     "specparam static string strong strong0 strong1 struct super supply0 supply1 sync_accept_on sync_reject_on " +
     "table tagged task this throughout time timeprecision timeunit tran tranif0 tranif1 tri tri0 tri1 triand trior " +

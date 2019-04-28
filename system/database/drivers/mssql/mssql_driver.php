@@ -86,7 +86,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Appends the port number to the hostname, if needed.
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -104,7 +104,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Non-persistent database connection
 	 *
 	 * @param	bool	$persistent
-	 * @return	resource
+	 * @returns	resource
 	 */
 	public function db_connect($persistent = FALSE)
 	{
@@ -144,7 +144,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Select the database
 	 *
 	 * @param	string	$database
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function db_select($database = '')
 	{
@@ -171,7 +171,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Execute the query
 	 *
 	 * @param	string	$sql	an SQL query
-	 * @return	mixed	resource if rows are returned, bool otherwise
+	 * @returns	mixed	resource if rows are returned, bool otherwise
 	 */
 	protected function _execute($sql)
 	{
@@ -183,7 +183,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * Begin Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_begin()
 	{
@@ -195,7 +195,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * Commit Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_commit()
 	{
@@ -207,7 +207,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * Rollback Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_rollback()
 	{
@@ -219,7 +219,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * Affected Rows
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function affected_rows()
 	{
@@ -233,7 +233,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 *
 	 * Returns the last id created in the Identity column.
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function insert_id()
 	{
@@ -252,7 +252,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Set client character set
 	 *
 	 * @param	string	$charset
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _db_set_charset($charset)
 	{
@@ -264,7 +264,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * Version number query string
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _version()
 	{
@@ -279,7 +279,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Generates a platform-specific query string so that the table names can be fetched
 	 *
 	 * @param	bool	$prefix_limit
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_tables($prefix_limit = FALSE)
 	{
@@ -304,7 +304,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Generates a platform-specific query string so that the column names can be fetched
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_columns($table = '')
 	{
@@ -319,7 +319,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Returns an object with field data
 	 *
 	 * @param	string	$table
-	 * @return	array
+	 * @returns	array
 	 */
 	public function field_data($table)
 	{
@@ -354,7 +354,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function error()
 	{
@@ -382,7 +382,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 *
 	 * @param	string	$table
 	 * @param	array	$values
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _update($table, $values)
 	{
@@ -402,7 +402,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * then this method maps to 'DELETE FROM table'
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _truncate($table)
 	{
@@ -417,7 +417,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Generates a platform-specific delete string from the supplied data
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _delete($table)
 	{
@@ -437,7 +437,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Generates a platform-specific LIMIT clause
 	 *
 	 * @param	string	$sql	SQL Query
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _limit($sql)
 	{
@@ -490,7 +490,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * @param	string	$table	Table name
 	 * @param	array	$keys	INSERT keys
 	 * @param	array	$values	INSERT values
-	 * @return	string|bool
+	 * @returns	string|bool
 	 */
 	protected function _insert_batch($table, $keys, $values)
 	{
@@ -508,7 +508,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * Close DB Connection
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _close()
 	{

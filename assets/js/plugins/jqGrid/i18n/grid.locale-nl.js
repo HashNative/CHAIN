@@ -40,8 +40,8 @@ a.extend(a.jgrid,{
                 date: "Voer a.u.b. een geldige waarde in",
                 url: "is geen geldige URL. Prefix is verplicht ('http://' or 'https://')",
                 nodefined : " is not defined!",
-                novalue : " return value is required!",
-                customarray : "Custom function should return array!",
+                novalue : " returns value is required!",
+                customarray : "Custom function should returns array!",
                 customfcheck : "Custom function should be present in case of custom checking!"
             }
         },

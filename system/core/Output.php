@@ -134,7 +134,7 @@ class CI_Output {
 	 *
 	 * Determines whether zLib output compression will be used.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -160,7 +160,7 @@ class CI_Output {
 	 *
 	 * Returns the current output string.
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_output()
 	{
@@ -175,7 +175,7 @@ class CI_Output {
 	 * Sets the output string.
 	 *
 	 * @param	string	$output	Output data
-	 * @return	CI_Output
+	 * @returns	CI_Output
 	 */
 	public function set_output($output)
 	{
@@ -191,7 +191,7 @@ class CI_Output {
 	 * Appends data onto the output string.
 	 *
 	 * @param	string	$output	Data to append
-	 * @return	CI_Output
+	 * @returns	CI_Output
 	 */
 	public function append_output($output)
 	{
@@ -211,7 +211,7 @@ class CI_Output {
 	 *
 	 * @param	string	$header		Header
 	 * @param	bool	$replace	Whether to replace the old header value, if already set
-	 * @return	CI_Output
+	 * @returns	CI_Output
 	 */
 	public function set_header($header, $replace = TRUE)
 	{
@@ -235,7 +235,7 @@ class CI_Output {
 	 *
 	 * @param	string	$mime_type	Extension of the file we're outputting
 	 * @param	string	$charset	Character set (default: NULL)
-	 * @return	CI_Output
+	 * @returns	CI_Output
 	 */
 	public function set_content_type($mime_type, $charset = NULL)
 	{
@@ -274,7 +274,7 @@ class CI_Output {
 	/**
 	 * Get Current Content-Type Header
 	 *
-	 * @return	string	'text/html', if not already set
+	 * @returns	string	'text/html', if not already set
 	 */
 	public function get_content_type()
 	{
@@ -295,7 +295,7 @@ class CI_Output {
 	 * Get Header
 	 *
 	 * @param	string	$header
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_header($header)
 	{
@@ -333,7 +333,7 @@ class CI_Output {
 	 *
 	 * @param	int	$code	Status code (default: 200)
 	 * @param	string	$text	Optional message
-	 * @return	CI_Output
+	 * @returns	CI_Output
 	 */
 	public function set_status_header($code = 200, $text = '')
 	{
@@ -347,7 +347,7 @@ class CI_Output {
 	 * Enable/disable Profiler
 	 *
 	 * @param	bool	$val	TRUE to enable or FALSE to disable
-	 * @return	CI_Output
+	 * @returns	CI_Output
 	 */
 	public function enable_profiler($val = TRUE)
 	{
@@ -364,7 +364,7 @@ class CI_Output {
 	 * Profiler section display.
 	 *
 	 * @param	array	$sections	Profiler sections
-	 * @return	CI_Output
+	 * @returns	CI_Output
 	 */
 	public function set_profiler_sections($sections)
 	{
@@ -388,7 +388,7 @@ class CI_Output {
 	 * Set Cache
 	 *
 	 * @param	int	$time	Cache expiration time in minutes
-	 * @return	CI_Output
+	 * @returns	CI_Output
 	 */
 	public function cache($time)
 	{
@@ -410,7 +410,7 @@ class CI_Output {
 	 *
 	 * @uses	CI_Output::$final_output
 	 * @param	string	$output	Output data override
-	 * @return	void
+	 * @returns	void
 	 */
 	public function _display($output = '')
 	{
@@ -548,7 +548,7 @@ class CI_Output {
 	 * Write Cache
 	 *
 	 * @param	string	$output	Output data to cache
-	 * @return	void
+	 * @returns	void
 	 */
 	public function _write_cache($output)
 	{
@@ -651,7 +651,7 @@ class CI_Output {
 	 *
 	 * @param	object	&$CFG	CI_Config class instance
 	 * @param	object	&$URI	CI_URI class instance
-	 * @return	bool	TRUE on success or FALSE on failure
+	 * @returns	bool	TRUE on success or FALSE on failure
 	 */
 	public function _display_cache(&$CFG, &$URI)
 	{
@@ -727,7 +727,7 @@ class CI_Output {
 	 * Delete cache
 	 *
 	 * @param	string	$uri	URI string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function delete_cache($uri = '')
 	{
@@ -782,7 +782,7 @@ class CI_Output {
 	 *
 	 * @param	int	$last_modified	Timestamp of when the page was last modified
 	 * @param	int	$expiration	Timestamp of when should the requested page expire from cache
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_cache_header($last_modified, $expiration)
 	{
@@ -806,7 +806,7 @@ class CI_Output {
 	 * Byte-safe strlen()
 	 *
 	 * @param	string	$str
-	 * @return	int
+	 * @returns	int
 	 */
 	protected static function strlen($str)
 	{
@@ -823,7 +823,7 @@ class CI_Output {
 	 * @param	string	$str
 	 * @param	int	$start
 	 * @param	int	$length
-	 * @return	string
+	 * @returns	string
 	 */
 	protected static function substr($str, $start, $length = NULL)
 	{

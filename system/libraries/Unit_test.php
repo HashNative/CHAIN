@@ -107,7 +107,7 @@ class CI_Unit_test {
 	/**
 	 * Constructor
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -122,7 +122,7 @@ class CI_Unit_test {
 	 * Runs the supplied tests
 	 *
 	 * @param	array	$items
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_test_items($items)
 	{
@@ -143,7 +143,7 @@ class CI_Unit_test {
 	 * @param	mixed	$expected
 	 * @param	string	$test_name
 	 * @param	string	$notes
-	 * @return	string
+	 * @returns	string
 	 */
 	public function run($test, $expected = TRUE, $test_name = 'undefined', $notes = '')
 	{
@@ -188,7 +188,7 @@ class CI_Unit_test {
 	 * Displays a table with the test data
 	 *
 	 * @param	array	 $result
-	 * @return	string
+	 * @returns	string
 	 */
 	public function report($result = array())
 	{
@@ -238,7 +238,7 @@ class CI_Unit_test {
 	 * Causes the evaluation to use === rather than ==
 	 *
 	 * @param	bool	$state
-	 * @return	void
+	 * @returns	void
 	 */
 	public function use_strict($state = TRUE)
 	{
@@ -253,7 +253,7 @@ class CI_Unit_test {
 	 * Enables/disables unit testing
 	 *
 	 * @param	bool
-	 * @return	void
+	 * @returns	void
 	 */
 	public function active($state = TRUE)
 	{
@@ -268,7 +268,7 @@ class CI_Unit_test {
 	 * Returns the raw result data
 	 *
 	 * @param	array	$results
-	 * @return	array
+	 * @returns	array
 	 */
 	public function result($results = array())
 	{
@@ -315,7 +315,7 @@ class CI_Unit_test {
 	 * This lets us set the template to be used to display results
 	 *
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_template($template)
 	{
@@ -329,7 +329,7 @@ class CI_Unit_test {
 	 *
 	 * This lets us show file names and line numbers
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _backtrace()
 	{
@@ -345,7 +345,7 @@ class CI_Unit_test {
 	/**
 	 * Get Default Template
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _default_template()
 	{
@@ -362,7 +362,7 @@ class CI_Unit_test {
 	 *
 	 * Harvests the data within the template {pseudo-variables}
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _parse_template()
 	{
@@ -387,7 +387,7 @@ class CI_Unit_test {
  * Helper function to test boolean TRUE
  *
  * @param	mixed	$test
- * @return	bool
+ * @returns	bool
  */
 function is_true($test)
 {
@@ -398,7 +398,7 @@ function is_true($test)
  * Helper function to test boolean FALSE
  *
  * @param	mixed	$test
- * @return	bool
+ * @returns	bool
  */
 function is_false($test)
 {

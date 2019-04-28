@@ -65,7 +65,7 @@ if ( ! function_exists('hash_equals'))
 	 * @link	http://php.net/hash_equals
 	 * @param	string	$known_string
 	 * @param	string	$user_string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function hash_equals($known_string, $user_string)
 	{
@@ -115,7 +115,7 @@ if ( ! function_exists('hash_pbkdf2'))
 	 * @param	int	$iterations
 	 * @param	int	$length
 	 * @param	bool	$raw_output
-	 * @return	string
+	 * @returns	string
 	 */
 	function hash_pbkdf2($algo, $password, $salt, $iterations, $length = 0, $raw_output = FALSE)
 	{

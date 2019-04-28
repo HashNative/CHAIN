@@ -262,7 +262,7 @@ CodeMirror.defineMode("sass", function(config) {
       return "operator";
 
     // If we haven't returned by now, we move 1 character
-    // and return an error
+    // and returns an error
     stream.next();
     return null;
   }
@@ -272,7 +272,7 @@ CodeMirror.defineMode("sass", function(config) {
     var style = state.tokenizer(stream, state);
     var current = stream.current();
 
-    if (current === "@return")
+    if (current === "@returns")
       dedent(state);
 
     if (style === "atom")

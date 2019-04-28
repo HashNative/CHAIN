@@ -96,7 +96,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * Class constructor
 	 *
 	 * @param	array	$params	Configuration parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct(&$params)
 	{
@@ -127,7 +127,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 *
 	 * @param	string	$save_path	Path to session files' directory
 	 * @param	string	$name		Session cookie name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function open($save_path, $name)
 	{
@@ -159,7 +159,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * Reads session data and acquires a lock
 	 *
 	 * @param	string	$session_id	Session ID
-	 * @return	string	Serialized session data
+	 * @returns	string	Serialized session data
 	 */
 	public function read($session_id)
 	{
@@ -228,7 +228,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 *
 	 * @param	string	$session_id	Session ID
 	 * @param	string	$session_data	Serialized session data
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function write($session_id, $session_data)
 	{
@@ -285,7 +285,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 *
 	 * Releases locks and closes file descriptor.
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function close()
 	{
@@ -308,7 +308,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * Destroys the current session.
 	 *
 	 * @param	string	$session_id	Session ID
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function destroy($session_id)
 	{
@@ -349,7 +349,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * Deletes expired sessions
 	 *
 	 * @param	int 	$maxlifetime	Maximum lifetime of sessions
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function gc($maxlifetime)
 	{
@@ -395,7 +395,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	 * Byte-safe strlen()
 	 *
 	 * @param	string	$str
-	 * @return	int
+	 * @returns	int
 	 */
 	protected static function strlen($str)
 	{

@@ -57,7 +57,7 @@ class CI_Cache_wincache extends CI_Driver {
 	 * Only present so that an error message is logged
 	 * if APC is not available.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -72,11 +72,11 @@ class CI_Cache_wincache extends CI_Driver {
 	/**
 	 * Get
 	 *
-	 * Look for a value in the cache. If it exists, return the data,
-	 * if not, return FALSE
+	 * Look for a value in the cache. If it exists, returns the data,
+	 * if not, returns FALSE
 	 *
 	 * @param	string	$id	Cache Ide
-	 * @return	mixed	Value that is stored/FALSE on failure
+	 * @returns	mixed	Value that is stored/FALSE on failure
 	 */
 	public function get($id)
 	{
@@ -96,7 +96,7 @@ class CI_Cache_wincache extends CI_Driver {
 	 * @param	mixed	$data	Data to store
 	 * @param	int	$ttl	Time to live (in seconds)
 	 * @param	bool	$raw	Whether to store the raw value (unused)
-	 * @return	bool	true on success/false on failure
+	 * @returns	bool	true on success/false on failure
 	 */
 	public function save($id, $data, $ttl = 60, $raw = FALSE)
 	{
@@ -109,7 +109,7 @@ class CI_Cache_wincache extends CI_Driver {
 	 * Delete from Cache
 	 *
 	 * @param	mixed	unique identifier of the item in the cache
-	 * @return	bool	true on success/false on failure
+	 * @returns	bool	true on success/false on failure
 	 */
 	public function delete($id)
 	{
@@ -123,7 +123,7 @@ class CI_Cache_wincache extends CI_Driver {
 	 *
 	 * @param	string	$id	Cache ID
 	 * @param	int	$offset	Step/value to add
-	 * @return	mixed	New value on success or FALSE on failure
+	 * @returns	mixed	New value on success or FALSE on failure
 	 */
 	public function increment($id, $offset = 1)
 	{
@@ -140,7 +140,7 @@ class CI_Cache_wincache extends CI_Driver {
 	 *
 	 * @param	string	$id	Cache ID
 	 * @param	int	$offset	Step/value to reduce by
-	 * @return	mixed	New value on success or FALSE on failure
+	 * @returns	mixed	New value on success or FALSE on failure
 	 */
 	public function decrement($id, $offset = 1)
 	{
@@ -155,7 +155,7 @@ class CI_Cache_wincache extends CI_Driver {
 	/**
 	 * Clean the cache
 	 *
-	 * @return	bool	false on failure/true on success
+	 * @returns	bool	false on failure/true on success
 	 */
 	public function clean()
 	{
@@ -167,7 +167,7 @@ class CI_Cache_wincache extends CI_Driver {
 	/**
 	 * Cache Info
 	 *
-	 * @return	mixed	array on success, false on failure
+	 * @returns	mixed	array on success, false on failure
 	 */
 	 public function cache_info()
 	 {
@@ -180,7 +180,7 @@ class CI_Cache_wincache extends CI_Driver {
 	 * Get Cache Metadata
 	 *
 	 * @param	mixed	key to get cache metadata on
-	 * @return	mixed	array on success/false on failure
+	 * @returns	mixed	array on success/false on failure
 	 */
 	public function get_metadata($id)
 	{
@@ -208,7 +208,7 @@ class CI_Cache_wincache extends CI_Driver {
 	 *
 	 * Check to see if WinCache is available on this system, bail if it isn't.
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_supported()
 	{

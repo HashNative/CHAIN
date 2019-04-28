@@ -259,7 +259,7 @@ class CI_Xmlrpc {
 	 * Initializes property default values
 	 *
 	 * @param	array	$config
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($config = array())
 	{
@@ -323,7 +323,7 @@ class CI_Xmlrpc {
 	 * Initialize
 	 *
 	 * @param	array	$config
-	 * @return	void
+	 * @returns	void
 	 */
 	public function initialize($config = array())
 	{
@@ -348,7 +348,7 @@ class CI_Xmlrpc {
 	 * @param	int	$port
 	 * @param	string	$proxy
 	 * @param	int	$proxy_port
-	 * @return	void
+	 * @returns	void
 	 */
 	public function server($url, $port = 80, $proxy = FALSE, $proxy_port = 8080)
 	{
@@ -380,7 +380,7 @@ class CI_Xmlrpc {
 	 * Set Timeout
 	 *
 	 * @param	int	$seconds
-	 * @return	void
+	 * @returns	void
 	 */
 	public function timeout($seconds = 5)
 	{
@@ -396,7 +396,7 @@ class CI_Xmlrpc {
 	 * Set Methods
 	 *
 	 * @param	string	$function	Method name
-	 * @return	void
+	 * @returns	void
 	 */
 	public function method($function)
 	{
@@ -409,7 +409,7 @@ class CI_Xmlrpc {
 	 * Take Array of Data and Create Objects
 	 *
 	 * @param	array	$incoming
-	 * @return	void
+	 * @returns	void
 	 */
 	public function request($incoming)
 	{
@@ -433,7 +433,7 @@ class CI_Xmlrpc {
 	 * Set Debug
 	 *
 	 * @param	bool	$flag
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_debug($flag = TRUE)
 	{
@@ -446,7 +446,7 @@ class CI_Xmlrpc {
 	 * Values Parsing
 	 *
 	 * @param	mixed	$value
-	 * @return	object
+	 * @returns	object
 	 */
 	public function values_parsing($value)
 	{
@@ -482,7 +482,7 @@ class CI_Xmlrpc {
 	/**
 	 * Sends XML-RPC Request
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function send_request()
 	{
@@ -504,7 +504,7 @@ class CI_Xmlrpc {
 	/**
 	 * Returns Error
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function display_error()
 	{
@@ -516,7 +516,7 @@ class CI_Xmlrpc {
 	/**
 	 * Returns Remote Server Response
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function display_response()
 	{
@@ -530,7 +530,7 @@ class CI_Xmlrpc {
 	 *
 	 * @param	int	$number
 	 * @param	string	$message
-	 * @return	object
+	 * @returns	object
 	 */
 	public function send_error_message($number, $message)
 	{
@@ -543,7 +543,7 @@ class CI_Xmlrpc {
 	 * Send Response for Server Request
 	 *
 	 * @param	array	$response
-	 * @return	object
+	 * @returns	object
 	 */
 	public function send_response($response)
 	{
@@ -651,7 +651,7 @@ class XML_RPC_Client extends CI_Xmlrpc
 	 * @param	int	$port
 	 * @param	string	$proxy
 	 * @param	int	$proxy_port
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($path, $server, $port = 80, $proxy = FALSE, $proxy_port = 8080)
 	{
@@ -678,7 +678,7 @@ class XML_RPC_Client extends CI_Xmlrpc
 	 * Send message
 	 *
 	 * @param	mixed	$msg
-	 * @return	object
+	 * @returns	object
 	 */
 	public function send($msg)
 	{
@@ -697,7 +697,7 @@ class XML_RPC_Client extends CI_Xmlrpc
 	 * Send payload
 	 *
 	 * @param	object	$msg
-	 * @return	object
+	 * @returns	object
 	 */
 	public function sendPayload($msg)
 	{
@@ -828,7 +828,7 @@ class XML_RPC_Response
 	 * @param	mixed	$val
 	 * @param	int	$code
 	 * @param	string	$fstr
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($val, $code = 0, $fstr = '')
 	{
@@ -857,7 +857,7 @@ class XML_RPC_Response
 	/**
 	 * Fault code
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function faultCode()
 	{
@@ -869,7 +869,7 @@ class XML_RPC_Response
 	/**
 	 * Fault string
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function faultString()
 	{
@@ -881,7 +881,7 @@ class XML_RPC_Response
 	/**
 	 * Value
 	 *
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function value()
 	{
@@ -893,7 +893,7 @@ class XML_RPC_Response
 	/**
 	 * Prepare response
 	 *
-	 * @return	string	xml
+	 * @returns	string	xml
 	 */
 	public function prepare_response()
 	{
@@ -923,7 +923,7 @@ class XML_RPC_Response
 	 * Decode
 	 *
 	 * @param	mixed	$array
-	 * @return	array
+	 * @returns	array
 	 */
 	public function decode($array = NULL)
 	{
@@ -966,7 +966,7 @@ class XML_RPC_Response
 	 * XML-RPC Object to PHP Types
 	 *
 	 * @param	object
-	 * @return	array
+	 * @returns	array
 	 */
 	public function xmlrpc_decoder($xmlrpc_val)
 	{
@@ -1009,7 +1009,7 @@ class XML_RPC_Response
 	 *
 	 * @param	string
 	 * @param	bool
-	 * @return	int	unix timestamp
+	 * @returns	int	unix timestamp
 	 */
 	public function iso8601_decode($time, $utc = FALSE)
 	{
@@ -1070,7 +1070,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	 *
 	 * @param	string	$method
 	 * @param	array	$pars
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($method, $pars = FALSE)
 	{
@@ -1092,7 +1092,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	/**
 	 * Create Payload to Send
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function createPayload()
 	{
@@ -1116,7 +1116,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	 * Parse External XML-RPC Server's Response
 	 *
 	 * @param	resource
-	 * @return	object
+	 * @returns	object
 	 */
 	public function parseResponse($fp)
 	{
@@ -1276,13 +1276,13 @@ class XML_RPC_Message extends CI_Xmlrpc
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function open_tag($the_parser, $name)
 	{
 		$the_parser = (string) $the_parser;
 
-		// If invalid nesting, then return
+		// If invalid nesting, then returns
 		if ($this->xh[$the_parser]['isf'] > 1) return;
 
 		// Evaluate and check for correct nesting of XML elements
@@ -1377,7 +1377,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function closing_tag($the_parser, $name)
 	{
@@ -1511,7 +1511,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function character_data($the_parser, $data)
 	{
@@ -1542,7 +1542,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	 * Add parameter
 	 *
 	 * @param	mixed
-	 * @return	void
+	 * @returns	void
 	 */
 	public function addParam($par)
 	{
@@ -1555,7 +1555,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	 * Output parameters
 	 *
 	 * @param	array	$array
-	 * @return	array
+	 * @returns	array
 	 */
 	public function output_parameters(array $array = array())
 	{
@@ -1605,7 +1605,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	 * Decode message
 	 *
 	 * @param	object
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function decode_message($param)
 	{
@@ -1674,7 +1674,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 *
 	 * @param	mixed	$val
 	 * @param	string	$type
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($val = -1, $type = '')
 	{
@@ -1706,7 +1706,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 *
 	 * @param	scalar
 	 * @param	string
-	 * @return	int
+	 * @returns	int
 	 */
 	public function addScalar($val, $type = 'string')
 	{
@@ -1752,7 +1752,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 * Add array value
 	 *
 	 * @param	array
-	 * @return	int
+	 * @returns	int
 	 */
 	public function addArray($vals)
 	{
@@ -1773,7 +1773,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 * Add struct value
 	 *
 	 * @param	object
-	 * @return	int
+	 * @returns	int
 	 */
 	public function addStruct($vals)
 	{
@@ -1792,7 +1792,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	/**
 	 * Get value type
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function kindOf()
 	{
@@ -1812,7 +1812,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 *
 	 * @param	string
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	public function serializedata($typ, $val)
 	{
@@ -1868,7 +1868,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	/**
 	 * Serialize class
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function serialize_class()
 	{
@@ -1881,7 +1881,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 * Serialize value
 	 *
 	 * @param	object
-	 * @return	string
+	 * @returns	string
 	 */
 	public function serializeval($o)
 	{
@@ -1895,7 +1895,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	/**
 	 * Scalar value
 	 *
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function scalarval()
 	{
@@ -1910,7 +1910,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 *
 	 * @param	int	unix timestamp
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	*/
 	public function iso8601_encode($time, $utc = FALSE)
 	{

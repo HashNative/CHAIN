@@ -59,7 +59,7 @@ if ( ! function_exists('read_file'))
 	 * @todo	Remove in version 3.1+.
 	 * @deprecated	3.0.0	It is now just an alias for PHP's native file_get_contents().
 	 * @param	string	$file	Path to file
-	 * @return	string	File contents
+	 * @returns	string	File contents
 	 */
 	function read_file($file)
 	{
@@ -80,7 +80,7 @@ if ( ! function_exists('write_file'))
 	 * @param	string	$path	File path
 	 * @param	string	$data	Data to write
 	 * @param	string	$mode	fopen() mode (default: 'wb')
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function write_file($path, $data, $mode = 'wb')
 	{
@@ -122,7 +122,7 @@ if ( ! function_exists('delete_files'))
 	 * @param	bool	$del_dir	Whether to delete any directories found in the path
 	 * @param	bool	$htdocs		Whether to skip deleting .htaccess and index page files
 	 * @param	int	$_level		Current directory depth level (default: 0; internal use only)
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function delete_files($path, $del_dir = FALSE, $htdocs = FALSE, $_level = 0)
 	{
@@ -172,7 +172,7 @@ if ( ! function_exists('get_filenames'))
 	 * @param	string	path to source
 	 * @param	bool	whether to include the path as part of the filename
 	 * @param	bool	internal variable to determine recursion status - do not use in calls
-	 * @return	array
+	 * @returns	array
 	 */
 	function get_filenames($source_dir, $include_path = FALSE, $_recursion = FALSE)
 	{
@@ -222,7 +222,7 @@ if ( ! function_exists('get_dir_file_info'))
 	 * @param	string	path to source
 	 * @param	bool	Look only at the top level directory specified?
 	 * @param	bool	internal variable to determine recursion status - do not use in calls
-	 * @return	array
+	 * @returns	array
 	 */
 	function get_dir_file_info($source_dir, $top_level_only = TRUE, $_recursion = FALSE)
 	{
@@ -274,7 +274,7 @@ if ( ! function_exists('get_file_info'))
 	 *
 	 * @param	string	path to file
 	 * @param	mixed	array or comma separated string of information returned
-	 * @return	array
+	 * @returns	array
 	 */
 	function get_file_info($file, $returned_values = array('name', 'server_path', 'size', 'date'))
 	{
@@ -337,7 +337,7 @@ if ( ! function_exists('get_mime_by_extension'))
 	 * It should NOT be trusted, and should certainly NOT be used for security
 	 *
 	 * @param	string	$filename	File name
-	 * @return	string
+	 * @returns	string
 	 */
 	function get_mime_by_extension($filename)
 	{
@@ -377,7 +377,7 @@ if ( ! function_exists('symbolic_permissions'))
 	 * standard symbolic notation representing that value
 	 *
 	 * @param	int	$perms	Permissions
-	 * @return	string
+	 * @returns	string
 	 */
 	function symbolic_permissions($perms)
 	{
@@ -444,7 +444,7 @@ if ( ! function_exists('octal_permissions'))
 	 * a three character string representing the file's octal permissions
 	 *
 	 * @param	int	$perms	Permissions
-	 * @return	string
+	 * @returns	string
 	 */
 	function octal_permissions($perms)
 	{

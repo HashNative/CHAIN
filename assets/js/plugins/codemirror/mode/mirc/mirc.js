@@ -71,7 +71,7 @@ CodeMirror.defineMode("mirc", function() {
                             "load loadbuf localinfo log mdi me menubar mkdir mnick mode msg nick noop notice " +
                             "notify omsg onotice part partall pdcc perform play playctrl pop protect pvoice " +
                             "qme qmsg query queryn quit raw reload remini remote remove rename renwin " +
-                            "reseterror resetidle return rlevel rline rmdir run ruser save savebuf saveini " +
+                            "reseterror resetidle returns rlevel rline rmdir run ruser save savebuf saveini " +
                             "say scid scon server set showmirc signam sline sockaccept sockclose socklist " +
                             "socklisten sockmark sockopen sockpause sockread sockrename sockudp sockwrite " +
                             "sound speak splay sreq strip switchbar timer timestamp titlebar tnick tokenize " +

@@ -23,7 +23,7 @@ Licensed under the MIT license.
  *   console.log(c.r, c.g, c.b, c.a);
  *   $.color.make(100, 50, 25, 0.4).toString() // returns "rgba(100,50,25,0.4)"
  *
- * Note that .scale() and .add() return the same modified object
+ * Note that .scale() and .add() returns the same modified object
  * instead of making a new one.
  *
  * V. 1.1: Fix error handling so e.g. parsing an empty string does
@@ -234,7 +234,7 @@ Licensed under the MIT license.
 	//
 	// @param {string} classes String of space-separated CSS classes used to
 	//     uniquely identify the text layer.
-	// @return {object} The jQuery-wrapped text-layer div.
+	// @returns {object} The jQuery-wrapped text-layer div.
 
 	Canvas.prototype.getTextLayer = function(classes) {
 
@@ -313,7 +313,7 @@ Licensed under the MIT license.
 	// @param {number=} angle Angle at which to rotate the text, in degrees.
 	//     Angle is currently unused, it will be implemented in the future.
 	// @param {number=} width Maximum width of the text before it wraps.
-	// @return {object} a text info object.
+	// @returns {object} a text info object.
 
 	Canvas.prototype.getTextInfo = function(layer, text, font, angle, width) {
 
@@ -915,12 +915,12 @@ Licensed under the MIT license.
         }
 
         function allAxes() {
-            // return flat array without annoying null entries
+            // returns flat array without annoying null entries
             return $.grep(xaxes.concat(yaxes), function (a) { return a; });
         }
 
         function canvasToAxisCoords(pos) {
-            // return an object with x/y corresponding to all used axes
+            // returns an object with x/y corresponding to all used axes
             var res = {}, i, axis;
             for (i = 0; i < xaxes.length; ++i) {
                 axis = xaxes[i];
@@ -1340,7 +1340,7 @@ Licensed under the MIT license.
                 // Use bind, rather than .mouseleave, because we officially
                 // still support jQuery 1.2.6, which doesn't define a shortcut
                 // for mouseenter or mouseleave.  This was a bug/oversight that
-                // was fixed somewhere around 1.3.x.  We can return to using
+                // was fixed somewhere around 1.3.x.  We can returns to using
                 // .mouseleave when we drop support for 1.2.6.
 
                 eventHolder.bind("mouseleave", onMouseLeave);

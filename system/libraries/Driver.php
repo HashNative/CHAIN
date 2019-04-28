@@ -72,7 +72,7 @@ class CI_Driver_Library {
 	 * subsequents calls will go straight to the proper child.
 	 *
 	 * @param	string	Child class name
-	 * @return	object	Child class
+	 * @returns	object	Child class
 	 */
 	public function __get($child)
 	{
@@ -86,7 +86,7 @@ class CI_Driver_Library {
 	 * Separate load_driver call to support explicit driver load by library or user
 	 *
 	 * @param	string	Driver name (w/o parent prefix)
-	 * @return	object	Child class
+	 * @returns	object	Child class
 	 */
 	public function load_driver($child)
 	{
@@ -242,7 +242,7 @@ class CI_Driver {
 	 * Decorates the child with the parent driver lib's methods and properties
 	 *
 	 * @param	object
-	 * @return	void
+	 * @returns	void
 	 */
 	public function decorate($parent)
 	{
@@ -290,7 +290,7 @@ class CI_Driver {
 	 *
 	 * @param	string
 	 * @param	array
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function __call($method, $args = array())
 	{
@@ -310,7 +310,7 @@ class CI_Driver {
 	 * Handles reading of the parent driver library's properties
 	 *
 	 * @param	string
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function __get($var)
 	{
@@ -329,7 +329,7 @@ class CI_Driver {
 	 *
 	 * @param	string
 	 * @param	array
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function __set($var, $val)
 	{

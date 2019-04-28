@@ -133,7 +133,7 @@ class CI_Input {
 	 * Determines whether to globally enable the XSS processing
 	 * and whether to allow the $_GET array.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -172,7 +172,7 @@ class CI_Input {
 	 * @param	array	&$array		$_GET, $_POST, $_COOKIE, $_SERVER, etc.
 	 * @param	mixed	$index		Index for item to be fetched from $array
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _fetch_from_array(&$array, $index = NULL, $xss_clean = NULL)
 	{
@@ -203,7 +203,7 @@ class CI_Input {
 			for ($i = 0; $i < $count; $i++)
 			{
 				$key = trim($matches[0][$i], '[]');
-				if ($key === '') // Empty notation will return the value as array
+				if ($key === '') // Empty notation will returns the value as array
 				{
 					break;
 				}
@@ -235,7 +235,7 @@ class CI_Input {
 	 *
 	 * @param	mixed	$index		Index for item to be fetched from $_GET
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function get($index = NULL, $xss_clean = NULL)
 	{
@@ -249,7 +249,7 @@ class CI_Input {
 	 *
 	 * @param	mixed	$index		Index for item to be fetched from $_POST
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function post($index = NULL, $xss_clean = NULL)
 	{
@@ -263,7 +263,7 @@ class CI_Input {
 	 *
 	 * @param	string	$index		Index for item to be fetched from $_POST or $_GET
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function post_get($index, $xss_clean = NULL)
 	{
@@ -279,7 +279,7 @@ class CI_Input {
 	 *
 	 * @param	string	$index		Index for item to be fetched from $_GET or $_POST
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function get_post($index, $xss_clean = NULL)
 	{
@@ -295,7 +295,7 @@ class CI_Input {
 	 *
 	 * @param	mixed	$index		Index for item to be fetched from $_COOKIE
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function cookie($index = NULL, $xss_clean = NULL)
 	{
@@ -309,7 +309,7 @@ class CI_Input {
 	 *
 	 * @param	mixed	$index		Index for item to be fetched from $_SERVER
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function server($index, $xss_clean = NULL)
 	{
@@ -325,7 +325,7 @@ class CI_Input {
 	 *
 	 * @param	string	$index		Index for item to be fetched
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function input_stream($index = NULL, $xss_clean = NULL)
 	{
@@ -357,7 +357,7 @@ class CI_Input {
 	 * @param	string		$prefix		Cookie name prefix
 	 * @param	bool		$secure		Whether to only transfer cookies via SSL
 	 * @param	bool		$httponly	Whether to only makes the cookie accessible via HTTP (no javascript)
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_cookie($name, $value = '', $expire = '', $domain = '', $path = '/', $prefix = '', $secure = NULL, $httponly = NULL)
 	{
@@ -415,7 +415,7 @@ class CI_Input {
 	 *
 	 * Determines and validates the visitor's IP address.
 	 *
-	 * @return	string	IP address
+	 * @returns	string	IP address
 	 */
 	public function ip_address()
 	{
@@ -552,7 +552,7 @@ class CI_Input {
 	 *
 	 * @param	string	$ip	IP address
 	 * @param	string	$which	IP protocol: 'ipv4' or 'ipv6'
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function valid_ip($ip, $which = '')
 	{
@@ -577,7 +577,7 @@ class CI_Input {
 	/**
 	 * Fetch User Agent string
 	 *
-	 * @return	string|null	User Agent string or NULL if it doesn't exist
+	 * @returns	string|null	User Agent string or NULL if it doesn't exist
 	 */
 	public function user_agent($xss_clean = NULL)
 	{
@@ -595,7 +595,7 @@ class CI_Input {
 	 *	- Cleans POST, COOKIE and SERVER data
 	 * 	- Standardizes newline characters to PHP_EOL
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _sanitize_globals()
 	{
@@ -663,7 +663,7 @@ class CI_Input {
 	 * standardizing newline characters to PHP_EOL.
 	 *
 	 * @param	string|string[]	$str	Input string(s)
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _clean_input_data($str)
 	{
@@ -679,7 +679,7 @@ class CI_Input {
 
 		/* We strip slashes if magic quotes is on to keep things consistent
 
-		   NOTE: In PHP 5.4 get_magic_quotes_gpc() will always return 0 and
+		   NOTE: In PHP 5.4 get_magic_quotes_gpc() will always returns 0 and
 		         it will probably not exist in future versions at all.
 		*/
 		if ( ! is_php('5.4') && get_magic_quotes_gpc())
@@ -716,9 +716,9 @@ class CI_Input {
 	 *
 	 * @param	string	$str	Input string
 	 * @param	bool	$fatal	Whether to terminate script exection
-	 *				or to return FALSE if an invalid
+	 *				or to returns FALSE if an invalid
 	 *				key is encountered
-	 * @return	string|bool
+	 * @returns	string|bool
 	 */
 	protected function _clean_input_keys($str, $fatal = TRUE)
 	{
@@ -751,11 +751,11 @@ class CI_Input {
 	 * Request Headers
 	 *
 	 * @param	bool	$xss_clean	Whether to apply XSS filtering
-	 * @return	array
+	 * @returns	array
 	 */
 	public function request_headers($xss_clean = FALSE)
 	{
-		// If header is already defined, return it immediately
+		// If header is already defined, returns it immediately
 		if ( ! empty($this->headers))
 		{
 			return $this->_fetch_from_array($this->headers, NULL, $xss_clean);
@@ -795,7 +795,7 @@ class CI_Input {
 	 *
 	 * @param	string		$index		Header name
 	 * @param	bool		$xss_clean	Whether to apply XSS filtering
-	 * @return	string|null	The requested header on success or NULL on failure
+	 * @returns	string|null	The requested header on success or NULL on failure
 	 */
 	public function get_request_header($index, $xss_clean = FALSE)
 	{
@@ -829,7 +829,7 @@ class CI_Input {
 	 *
 	 * Test to see if a request contains the HTTP_X_REQUESTED_WITH header.
 	 *
-	 * @return 	bool
+	 * @returns 	bool
 	 */
 	public function is_ajax_request()
 	{
@@ -844,7 +844,7 @@ class CI_Input {
 	 * Test to see if a request was made from the command line.
 	 *
 	 * @deprecated	3.0.0	Use is_cli() instead
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_cli_request()
 	{
@@ -858,9 +858,9 @@ class CI_Input {
 	 *
 	 * Return the request method
 	 *
-	 * @param	bool	$upper	Whether to return in upper or lower case
+	 * @param	bool	$upper	Whether to returns in upper or lower case
 	 *				(default: FALSE)
-	 * @return 	string
+	 * @returns 	string
 	 */
 	public function method($upper = FALSE)
 	{
@@ -877,7 +877,7 @@ class CI_Input {
 	 * Allows read access to protected properties
 	 *
 	 * @param	string	$name
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function __get($name)
 	{

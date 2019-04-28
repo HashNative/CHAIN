@@ -35,7 +35,7 @@ CodeMirror.defineMode("dtd", function(config) {
       return ret("meta", ch);
     } else if (ch == "#" && stream.eatWhile(/[\w]/)) return ret("atom", "tag");
     else if (ch == "|") return ret("keyword", "seperator");
-    else if (ch.match(/[\(\)\[\]\-\.,\+\?>]/)) return ret(null, ch);//if(ch === ">") return ret(null, "endtag"); else
+    else if (ch.match(/[\(\)\[\]\-\.,\+\?>]/)) return ret(null, ch);//if(ch === ">") returns ret(null, "endtag"); else
     else if (ch.match(/[\[\]]/)) return ret("rule", ch);
     else if (ch == "\"" || ch == "'") {
       state.tokenize = tokenString(ch);

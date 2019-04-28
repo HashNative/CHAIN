@@ -98,7 +98,7 @@ class CI_DB_mysqli_forge extends CI_DB_forge {
 	 * CREATE TABLE attributes
 	 *
 	 * @param	array	$attributes	Associative array of table attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _create_table_attr($attributes)
 	{
@@ -133,7 +133,7 @@ class CI_DB_mysqli_forge extends CI_DB_forge {
 	 * @param	string	$alter_type	ALTER type
 	 * @param	string	$table		Table name
 	 * @param	mixed	$field		Column definition
-	 * @return	string|string[]
+	 * @returns	string|string[]
 	 */
 	protected function _alter_table($alter_type, $table, $field)
 	{
@@ -175,7 +175,7 @@ class CI_DB_mysqli_forge extends CI_DB_forge {
 	 * Process column
 	 *
 	 * @param	array	$field
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _process_column($field)
 	{
@@ -205,7 +205,7 @@ class CI_DB_mysqli_forge extends CI_DB_forge {
 	 * Process indexes
 	 *
 	 * @param	string	$table	(ignored)
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _process_indexes($table)
 	{

@@ -385,6 +385,33 @@
                                                 </li>
                                             <?php endif; ?>
                                         </ul>
+
+                                        <?php if($v['task_info']['return_materials']):?>
+                                        <p>Return Materials:</p>
+
+                                        <p class="font-bold  alert alert-info m-b-sm">
+                                                    <?php foreach (json_decode($v['task_info']['return_materials'], true) as $ki => $vi): ?>
+
+                                                            <?php echo $ki; ?>:</strong><?php echo $vi; ?>
+
+                                                    <?php endforeach ?>
+                                        </p>
+
+
+
+                                        <?php endif; ?>
+
+                                        <?php if($v['task_info']['damage']):?>
+                                            <p>Damage:</p>
+                                            <p class="font-bold  alert alert-warning m-b-sm">
+                                                <?php foreach (json_decode($v['task_info']['damage'], true) as $ki => $vi): ?>
+
+                                                    <?php echo $ki; ?>:</strong><?php echo $vi; ?>
+
+                                                <?php endforeach ?>
+                                            </p>
+                                        <?php endif; ?>
+
                                         <div class="agile-detail">
                                             <i class="fa fa-clock-o"></i> <?php echo $v['task_info']['date_time_completed']; ?>
                                         </div>
@@ -417,6 +444,7 @@
                                 <?php endif; ?>
                             <?php endforeach ?>
                         <?php endif; ?>
+
                     </ul>
                 </div>
             </div>

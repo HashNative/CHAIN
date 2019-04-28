@@ -86,7 +86,7 @@ class CI_Cache_redis extends CI_Driver
 	 * Loads Redis config file if present. Will halt execution
 	 * if a Redis connection can't be established.
 	 *
-	 * @return	void
+	 * @returns	void
 	 * @see		Redis::connect()
 	 */
 	public function __construct()
@@ -147,7 +147,7 @@ class CI_Cache_redis extends CI_Driver
 	 * Get cache
 	 *
 	 * @param	string	$key	Cache ID
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function get($key)
 	{
@@ -170,7 +170,7 @@ class CI_Cache_redis extends CI_Driver
 	 * @param	mixed	$data	Data to save
 	 * @param	int	$ttl	Time to live in seconds
 	 * @param	bool	$raw	Whether to store the raw value (unused)
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function save($id, $data, $ttl = 60, $raw = FALSE)
 	{
@@ -199,7 +199,7 @@ class CI_Cache_redis extends CI_Driver
 	 * Delete from cache
 	 *
 	 * @param	string	$key	Cache key
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function delete($key)
 	{
@@ -224,7 +224,7 @@ class CI_Cache_redis extends CI_Driver
 	 *
 	 * @param	string	$id	Cache ID
 	 * @param	int	$offset	Step/value to add
-	 * @return	mixed	New value on success or FALSE on failure
+	 * @returns	mixed	New value on success or FALSE on failure
 	 */
 	public function increment($id, $offset = 1)
 	{
@@ -238,7 +238,7 @@ class CI_Cache_redis extends CI_Driver
 	 *
 	 * @param	string	$id	Cache ID
 	 * @param	int	$offset	Step/value to reduce by
-	 * @return	mixed	New value on success or FALSE on failure
+	 * @returns	mixed	New value on success or FALSE on failure
 	 */
 	public function decrement($id, $offset = 1)
 	{
@@ -250,7 +250,7 @@ class CI_Cache_redis extends CI_Driver
 	/**
 	 * Clean cache
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 * @see		Redis::flushDB()
 	 */
 	public function clean()
@@ -266,7 +266,7 @@ class CI_Cache_redis extends CI_Driver
 	 * @param	string	$type	Not supported in Redis.
 	 *				Only included in order to offer a
 	 *				consistent cache API.
-	 * @return	array
+	 * @returns	array
 	 * @see		Redis::info()
 	 */
 	public function cache_info($type = NULL)
@@ -280,7 +280,7 @@ class CI_Cache_redis extends CI_Driver
 	 * Get cache metadata
 	 *
 	 * @param	string	$key	Cache key
-	 * @return	array
+	 * @returns	array
 	 */
 	public function get_metadata($key)
 	{
@@ -302,7 +302,7 @@ class CI_Cache_redis extends CI_Driver
 	/**
 	 * Check if Redis driver is supported
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_supported()
 	{
@@ -316,7 +316,7 @@ class CI_Cache_redis extends CI_Driver
 	 *
 	 * Closes the connection to Redis if present.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __destruct()
 	{

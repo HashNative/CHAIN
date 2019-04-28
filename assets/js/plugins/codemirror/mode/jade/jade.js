@@ -65,7 +65,7 @@ CodeMirror.defineMode('jade', function (config) {
   /**
    * Safely copy a state
    *
-   * @return {State}
+   * @returns {State}
    */
   State.prototype.copy = function () {
     var res = new State();

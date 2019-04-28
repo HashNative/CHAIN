@@ -87,7 +87,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// __webpack_public_path__
 /******/ 	__w_pdfjs_require__.p = "";
 /******/
-/******/ 	// Load entry module and return exports
+/******/ 	// Load entry module and returns exports
 /******/ 	return __w_pdfjs_require__(__w_pdfjs_require__.s = 35);
 /******/ })
 /************************************************************************/

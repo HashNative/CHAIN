@@ -59,7 +59,7 @@ if ( ! function_exists('heading'))
 	 * @param	string	content
 	 * @param	int	heading level
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	function heading($data = '', $h = '1', $attributes = '')
 	{
@@ -78,7 +78,7 @@ if ( ! function_exists('ul'))
 	 *
 	 * @param	array
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function ul($list, $attributes = '')
 	{
@@ -97,7 +97,7 @@ if ( ! function_exists('ol'))
 	 *
 	 * @param	array
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function ol($list, $attributes = '')
 	{
@@ -118,7 +118,7 @@ if ( ! function_exists('_list'))
 	 * @param	mixed
 	 * @param	mixed
 	 * @param	int
-	 * @return	string
+	 * @returns	string
 	 */
 	function _list($type = 'ul', $list = array(), $attributes = '', $depth = 0)
 	{
@@ -173,7 +173,7 @@ if ( ! function_exists('img'))
 	 * @param	mixed
 	 * @param	bool
 	 * @param	mixed
-	 * @return	string
+	 * @returns	string
 	 */
 	function img($src = '', $index_page = FALSE, $attributes = '')
 	{
@@ -227,7 +227,7 @@ if ( ! function_exists('doctype'))
 	 * All values are saved in the doctypes config file.
 	 *
 	 * @param	string	type	The doctype to be generated
-	 * @return	string
+	 * @returns	string
 	 */
 	function doctype($type = 'xhtml1-strict')
 	{
@@ -273,7 +273,7 @@ if ( ! function_exists('link_tag'))
 	 * @param	string	title
 	 * @param	string	media
 	 * @param	bool	should index_page be added to the css path
-	 * @return	string
+	 * @returns	string
 	 */
 	function link_tag($href = '', $rel = 'stylesheet', $type = 'text/css', $title = '', $media = '', $index_page = FALSE)
 	{
@@ -344,7 +344,7 @@ if ( ! function_exists('meta'))
 	 * @param	string
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	function meta($name = '', $content = '', $type = 'name', $newline = "\n")
 	{
@@ -384,7 +384,7 @@ if ( ! function_exists('br'))
 	 *
 	 * @deprecated	3.0.0	Use str_repeat() instead
 	 * @param	int	$count	Number of times to repeat the tag
-	 * @return	string
+	 * @returns	string
 	 */
 	function br($count = 1)
 	{
@@ -401,7 +401,7 @@ if ( ! function_exists('nbs'))
 	 *
 	 * @deprecated	3.0.0	Use str_repeat() instead
 	 * @param	int
-	 * @return	string
+	 * @returns	string
 	 */
 	function nbs($num = 1)
 	{

@@ -184,7 +184,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
     for (var i = 0; i < words.length; ++i) obj[words[i]] = true;
     return obj;
   }
-  var cKeywords = "auto if break int case long char register continue return default short do sizeof " +
+  var cKeywords = "auto if break int case long char register continue returns default short do sizeof " +
     "double static else struct entry switch extern typedef float union for unsigned " +
     "goto while enum void const signed volatile";
 
@@ -307,7 +307,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
     keywords: words("abstract assert boolean break byte case catch char class const continue default " +
                     "do double else enum extends final finally float for goto if implements import " +
                     "instanceof int interface long native new package private protected public " +
-                    "return short static strictfp super switch synchronized this throw throws transient " +
+                    "returns short static strictfp super switch synchronized this throw throws transient " +
                     "try void volatile while"),
     blockKeywords: words("catch class do else finally for if switch try while"),
     atoms: words("true false null"),
@@ -325,7 +325,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
     keywords: words("abstract as base break case catch checked class const continue" +
                     " default delegate do else enum event explicit extern finally fixed for" +
                     " foreach goto if implicit in interface internal is lock namespace new" +
-                    " operator out override params private protected public readonly ref return sealed" +
+                    " operator out override params private protected public readonly ref returns sealed" +
                     " sizeof stackalloc static struct switch this throw try typeof unchecked" +
                     " unsafe using virtual void volatile while add alias ascending descending dynamic from get" +
                     " global group into join let orderby partial remove select set value var yield"),
@@ -365,7 +365,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
 
       /* scala */
       "abstract case catch class def do else extends false final finally for forSome if " +
-      "implicit import lazy match new null object override package private protected return " +
+      "implicit import lazy match new null object override package private protected returns " +
       "sealed super this throw trait try trye type val var while with yield _ : = => <- <: " +
       "<% >: # @ " +
 
@@ -410,7 +410,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
                     "sampler1D sampler2D sampler3D samplerCube " +
                     "sampler1DShadow sampler2DShadow" +
                     "const attribute uniform varying " +
-                    "break continue discard return " +
+                    "break continue discard returns " +
                     "for while do if else struct " +
                     "in out inout"),
     blockKeywords: words("for while do if else struct"),

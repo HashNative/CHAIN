@@ -58,6 +58,7 @@ class Model_task extends CI_Model
         $task_id = $this->input->post('task_id');
         $count_product = count($this->input->post('product'));
         $count_material = count($this->input->post('returnmaterial'));
+
         for($x = 0; $x < $count_product; $x++) {
 
             $data[$this->input->post('product')[$x]]=$this->input->post('productqty')[$x];
@@ -69,7 +70,7 @@ class Model_task extends CI_Model
 
         }
 
-        for($x = 0; $x < $count_material; $x++) {
+        for($x = 0; $x < $count_product; $x++) {
 
             $data_damage[$this->input->post('product')[$x]]=$this->input->post('damageqty')[$x];
 

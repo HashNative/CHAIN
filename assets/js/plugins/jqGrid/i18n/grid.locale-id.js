@@ -44,8 +44,8 @@ $.extend($.jgrid,{
 			date: "nilai tanggal tidak valid",
 			url: "Bukan URL yang valid. Harap gunakan ('http://' or 'https://')",
 			nodefined : " belum didefinisikan!",
-			novalue : " return value is required!",
-			customarray : "Custom function should return array!",
+			novalue : " returns value is required!",
+			customarray : "Custom function should returns array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 			
 		}

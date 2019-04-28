@@ -958,7 +958,7 @@
     this.line = line; this.ch = ch;
   };
 
-  // Compare two positions, return 0 if they are the same, a negative
+  // Compare two positions, returns 0 if they are the same, a negative
   // number when a is less, and a positive number otherwise.
   var cmp = CodeMirror.cmpPos = function(a, b) { return a.line - b.line || a.ch - b.ch; };
 
@@ -1235,7 +1235,7 @@
                   // Driven in a corner -- no valid cursor position found at all
                   // -- try again *with* clearing, if we didn't already
                   if (!mayClear) return skipAtomic(doc, pos, bias, true);
-                  // Otherwise, turn off editing until further notice, and return the start of the doc
+                  // Otherwise, turn off editing until further notice, and returns the start of the doc
                   doc.cantEdit = true;
                   return Pos(doc.first, 0);
                 }
@@ -4580,7 +4580,7 @@
   };
 
   // Given a MIME type, a {name, ...options} config object, or a name
-  // string, return a mode config object.
+  // string, returns a mode config object.
   CodeMirror.resolveMode = function(spec) {
     if (typeof spec == "string" && mimeModes.hasOwnProperty(spec)) {
       spec = mimeModes[spec];
@@ -5567,7 +5567,7 @@
   }
 
   // Find out whether a line ends or starts in a collapsed span. If
-  // so, return the marker for that span.
+  // so, returns the marker for that span.
   function collapsedSpanAtSide(line, start) {
     var sps = sawCollapsedSpans && line.markedSpans, found;
     if (sps) for (var sp, i = 0; i < sps.length; ++i) {
@@ -7499,7 +7499,7 @@
   var hasCopyEvent = (function() {
     var e = elt("div");
     if ("oncopy" in e) return true;
-    e.setAttribute("oncopy", "return;");
+    e.setAttribute("oncopy", "returns;");
     return typeof e.oncopy == "function";
   })();
 

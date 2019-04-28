@@ -125,7 +125,7 @@ class CI_Calendar {
 	 * @uses	CI_Lang::$is_loaded
 	 *
 	 * @param	array	$config	Calendar options
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($config = array())
 	{
@@ -145,7 +145,7 @@ class CI_Calendar {
 	 * Accepts an associative array as input, containing display preferences
 	 *
 	 * @param	array	config preferences
-	 * @return	CI_Calendar
+	 * @returns	CI_Calendar
 	 */
 	public function initialize($config = array())
 	{
@@ -174,7 +174,7 @@ class CI_Calendar {
 	 * @param	int	the year
 	 * @param	int	the month
 	 * @param	array	the data to be shown in the calendar cells
-	 * @return	string
+	 * @returns	string
 	 */
 	public function generate($year = '', $month = '', $data = array())
 	{
@@ -348,7 +348,7 @@ class CI_Calendar {
 	 * month provided.
 	 *
 	 * @param	int	the month
-	 * @return	string
+	 * @returns	string
 	 */
 	public function get_month_name($month)
 	{
@@ -375,7 +375,7 @@ class CI_Calendar {
 	 * on the type. Options: long, short, abr
 	 *
 	 * @param	string
-	 * @return	array
+	 * @returns	array
 	 */
 	public function get_day_names($day_type = '')
 	{
@@ -417,7 +417,7 @@ class CI_Calendar {
 	 *
 	 * @param	int	the month
 	 * @param	int	the year
-	 * @return	array
+	 * @returns	array
 	 */
 	public function adjust_date($month, $year)
 	{
@@ -453,7 +453,7 @@ class CI_Calendar {
 	 *
 	 * @param	int	the month
 	 * @param	int	the year
-	 * @return	int
+	 * @returns	int
 	 */
 	public function get_total_days($month, $year)
 	{
@@ -468,7 +468,7 @@ class CI_Calendar {
 	 *
 	 * This is used in the event that the user has not created their own template
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function default_template()
 	{
@@ -508,7 +508,7 @@ class CI_Calendar {
 	 * Harvests the data within the template {pseudo-variables}
 	 * used to display the calendar
 	 *
-	 * @return	CI_Calendar
+	 * @returns	CI_Calendar
 	 */
 	public function parse_template()
 	{

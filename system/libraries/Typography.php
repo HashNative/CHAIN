@@ -103,7 +103,7 @@ class CI_Typography {
 	 *
 	 * @param	string
 	 * @param	bool	whether to reduce more then two consecutive newlines to two
-	 * @return	string
+	 * @returns	string
 	 */
 	public function auto_typography($str, $reduce_linebreaks = FALSE)
 	{
@@ -288,7 +288,7 @@ class CI_Typography {
 	 * double spaces, and ampersands
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function format_characters($str)
 	{
@@ -351,7 +351,7 @@ class CI_Typography {
 	 * Converts newline characters into either <p> tags or <br />
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _format_newlines($str)
 	{
@@ -391,7 +391,7 @@ class CI_Typography {
 	 * likewise double spaces are converted to {@NBS} to prevent entity conversion
 	 *
 	 * @param	array
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _protect_characters($match)
 	{
@@ -404,7 +404,7 @@ class CI_Typography {
 	 * Convert newlines to HTML line breaks except within PRE tags
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function nl2br_except_pre($str)
 	{

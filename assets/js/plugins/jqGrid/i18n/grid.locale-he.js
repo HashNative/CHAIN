@@ -44,8 +44,8 @@ $.extend($.jgrid,{
 			date: "אנא, הכנס תאריך תקין",
 			url: "הכתובת אינה תקינה. דרושה תחילית ('http://' או 'https://')",
 			nodefined : " is not defined!",
-			novalue : " return value is required!",
-			customarray : "Custom function should return array!",
+			novalue : " returns value is required!",
+			customarray : "Custom function should returns array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 		}
 	},

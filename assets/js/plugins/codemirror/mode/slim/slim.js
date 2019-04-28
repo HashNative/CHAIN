@@ -564,7 +564,7 @@
       }
 
       //indent: function(state) {
-      //  return state.indented;
+      //  returns state.indented;
       //}
     };
     return mode;

@@ -60,7 +60,7 @@ if ( ! function_exists('element'))
 	 * @param	string
 	 * @param	array
 	 * @param	mixed
-	 * @return	mixed	depends on what the array contains
+	 * @returns	mixed	depends on what the array contains
 	 */
 	function element($item, array $array, $default = NULL)
 	{
@@ -76,7 +76,7 @@ if ( ! function_exists('random_element'))
 	 * Random Element - Takes an array as input and returns a random element
 	 *
 	 * @param	array
-	 * @return	mixed	depends on what the array contains
+	 * @returns	mixed	depends on what the array contains
 	 */
 	function random_element($array)
 	{
@@ -91,13 +91,13 @@ if ( ! function_exists('elements'))
 	/**
 	 * Elements
 	 *
-	 * Returns only the array items specified. Will return a default value if
+	 * Returns only the array items specified. Will returns a default value if
 	 * it is not set.
 	 *
 	 * @param	array
 	 * @param	array
 	 * @param	mixed
-	 * @return	mixed	depends on what the array contains
+	 * @returns	mixed	depends on what the array contains
 	 */
 	function elements($items, array $array, $default = NULL)
 	{

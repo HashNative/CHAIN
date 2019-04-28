@@ -43,8 +43,8 @@ $.extend($.jgrid,{
 	        integer: "Lütfen bir tamsayı giriniz",
 			url: "Geçerli bir URL değil. ('http://' or 'https://') ön eki gerekli.",
 			nodefined : " is not defined!",
-			novalue : " return value is required!",
-			customarray : "Custom function should return array!",
+			novalue : " returns value is required!",
+			customarray : "Custom function should returns array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 		}
 	},

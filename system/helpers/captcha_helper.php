@@ -58,7 +58,7 @@ if ( ! function_exists('create_captcha'))
 	 * @param	string	$img_path	path to create the image in
 	 * @param	string	$img_url	URL to the CAPTCHA image folder
 	 * @param	string	$font_path	server path to font
-	 * @return	string
+	 * @returns	string
 	 */
 	function create_captcha($data = '', $img_path = '', $img_url = '', $font_path = '')
 	{
@@ -179,7 +179,7 @@ if ( ! function_exists('create_captcha'))
 					{
 						// No failures should be possible if the
 						// first get_random_bytes() call didn't
-						// return FALSE, but still ...
+						// returns FALSE, but still ...
 						for ($i = 0; $i < 5; $i++)
 						{
 							if (($bytes = $security->get_random_bytes($pool_length)) === FALSE)

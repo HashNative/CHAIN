@@ -360,7 +360,7 @@ abstract class CI_DB_driver {
 	 * Class constructor
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -380,7 +380,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Initialize Database Settings
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function initialize()
 	{
@@ -451,7 +451,7 @@ abstract class CI_DB_driver {
 	 *
 	 * This is just a dummy method that all drivers will override.
 	 *
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function db_connect()
 	{
@@ -463,7 +463,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Persistent database connection
 	 *
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function db_pconnect()
 	{
@@ -481,7 +481,7 @@ abstract class CI_DB_driver {
 	 * This is just a dummy method to allow drivers without such
 	 * functionality to not declare it, while others will override it.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function reconnect()
 	{
@@ -495,7 +495,7 @@ abstract class CI_DB_driver {
 	 * This is just a dummy method to allow drivers without such
 	 * functionality to not declare it, while others will override it.
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function db_select()
 	{
@@ -507,7 +507,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Last error
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function error()
 	{
@@ -520,7 +520,7 @@ abstract class CI_DB_driver {
 	 * Set client character set
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function db_set_charset($charset)
 	{
@@ -544,7 +544,7 @@ abstract class CI_DB_driver {
 	/**
 	 * The name of the platform in use (mysql, mssql, etc...)
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function platform()
 	{
@@ -559,7 +559,7 @@ abstract class CI_DB_driver {
 	 * Returns a string containing the version of the database being used.
 	 * Most drivers will override this method.
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function version()
 	{
@@ -582,7 +582,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Version number query string
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _version()
 	{
@@ -603,7 +603,7 @@ abstract class CI_DB_driver {
 	 * @param	string	$sql
 	 * @param	array	$binds = FALSE		An array of binding data
 	 * @param	bool	$return_object = NULL
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function query($sql, $binds = FALSE, $return_object = NULL)
 	{
@@ -630,7 +630,7 @@ abstract class CI_DB_driver {
 		}
 
 		// Is query caching enabled? If the query is a "read type"
-		// we will load the caching class and return the previously
+		// we will load the caching class and returns the previously
 		// cached query if it exists
 		if ($this->cache_on === TRUE && $return_object === TRUE && $this->_cache_init())
 		{
@@ -706,7 +706,7 @@ abstract class CI_DB_driver {
 		// Increment the query counter
 		$this->query_count++;
 
-		// Will we have a result object instantiated? If not - we'll simply return TRUE
+		// Will we have a result object instantiated? If not - we'll simply returns TRUE
 		if ($return_object !== TRUE)
 		{
 			// If caching is enabled we'll auto-cleanup any existing files related to this particular URI
@@ -752,7 +752,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Load the result drivers
 	 *
-	 * @return	string	the name of the result class
+	 * @returns	string	the name of the result class
 	 */
 	public function load_rdriver()
 	{
@@ -776,7 +776,7 @@ abstract class CI_DB_driver {
 	 * not require all the features of the main query() function.
 	 *
 	 * @param	string	the sql query
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function simple_query($sql)
 	{
@@ -797,7 +797,7 @@ abstract class CI_DB_driver {
 	 * Disable Transactions
 	 * This permits transactions to be disabled at run-time.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function trans_off()
 	{
@@ -817,7 +817,7 @@ abstract class CI_DB_driver {
 	 * meaning a failure of one group will not affect any others
 	 *
 	 * @param	bool	$mode = TRUE
-	 * @return	void
+	 * @returns	void
 	 */
 	public function trans_strict($mode = TRUE)
 	{
@@ -830,7 +830,7 @@ abstract class CI_DB_driver {
 	 * Start Transaction
 	 *
 	 * @param	bool	$test_mode = FALSE
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function trans_start($test_mode = FALSE)
 	{
@@ -847,7 +847,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Complete Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function trans_complete()
 	{
@@ -881,7 +881,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Lets you retrieve the transaction flag to determine if it has failed
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function trans_status()
 	{
@@ -894,7 +894,7 @@ abstract class CI_DB_driver {
 	 * Begin Transaction
 	 *
 	 * @param	bool	$test_mode
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function trans_begin($test_mode = FALSE)
 	{
@@ -929,7 +929,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Commit Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function trans_commit()
 	{
@@ -952,7 +952,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Rollback Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function trans_rollback()
 	{
@@ -977,7 +977,7 @@ abstract class CI_DB_driver {
 	 *
 	 * @param	string	the sql statement
 	 * @param	array	an array of bind data
-	 * @return	string
+	 * @returns	string
 	 */
 	public function compile_binds($sql, $binds)
 	{
@@ -1041,7 +1041,7 @@ abstract class CI_DB_driver {
 	 * Determines if a query is a "write" type.
 	 *
 	 * @param	string	An SQL query string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_write_type($sql)
 	{
@@ -1054,7 +1054,7 @@ abstract class CI_DB_driver {
 	 * Calculate the aggregate query elapsed time
 	 *
 	 * @param	int	The number of decimal places
-	 * @return	string
+	 * @returns	string
 	 */
 	public function elapsed_time($decimals = 6)
 	{
@@ -1066,7 +1066,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Returns the total number of queries
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function total_queries()
 	{
@@ -1078,7 +1078,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Returns the last query that was executed
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function last_query()
 	{
@@ -1094,7 +1094,7 @@ abstract class CI_DB_driver {
 	 * Sets boolean and null types
 	 *
 	 * @param	string
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function escape($str)
 	{
@@ -1126,7 +1126,7 @@ abstract class CI_DB_driver {
 	 *
 	 * @param	string|string[]	$str	Input string
 	 * @param	bool	$like	Whether or not the string will be used in a LIKE condition
-	 * @return	string
+	 * @returns	string
 	 */
 	public function escape_str($str, $like = FALSE)
 	{
@@ -1164,7 +1164,7 @@ abstract class CI_DB_driver {
 	 * specific escaping for LIKE conditions
 	 *
 	 * @param	string|string[]
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function escape_like_str($str)
 	{
@@ -1177,7 +1177,7 @@ abstract class CI_DB_driver {
 	 * Platform-dependent string escape
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _escape_str($str)
 	{
@@ -1193,7 +1193,7 @@ abstract class CI_DB_driver {
 	 * position is the primary key
 	 *
 	 * @param	string	$table	Table name
-	 * @return	string
+	 * @returns	string
 	 */
 	public function primary($table)
 	{
@@ -1210,7 +1210,7 @@ abstract class CI_DB_driver {
 	 * the specified database
 	 *
 	 * @param	string
-	 * @return	int
+	 * @returns	int
 	 */
 	public function count_all($table = '')
 	{
@@ -1236,7 +1236,7 @@ abstract class CI_DB_driver {
 	 * Returns an array of table names
 	 *
 	 * @param	string	$constrain_by_prefix = FALSE
-	 * @return	array
+	 * @returns	array
 	 */
 	public function list_tables($constrain_by_prefix = FALSE)
 	{
@@ -1291,7 +1291,7 @@ abstract class CI_DB_driver {
 	 * Determine if a particular table exists
 	 *
 	 * @param	string	$table_name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function table_exists($table_name)
 	{
@@ -1304,7 +1304,7 @@ abstract class CI_DB_driver {
 	 * Fetch Field Names
 	 *
 	 * @param	string	$table	Table name
-	 * @return	array
+	 * @returns	array
 	 */
 	public function list_fields($table)
 	{
@@ -1355,7 +1355,7 @@ abstract class CI_DB_driver {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function field_exists($field_name, $table_name)
 	{
@@ -1368,7 +1368,7 @@ abstract class CI_DB_driver {
 	 * Returns an object with field data
 	 *
 	 * @param	string	$table	the table name
-	 * @return	array
+	 * @returns	array
 	 */
 	public function field_data($table)
 	{
@@ -1384,7 +1384,7 @@ abstract class CI_DB_driver {
 	 * This function escapes column and table names
 	 *
 	 * @param	mixed
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function escape_identifiers($item)
 	{
@@ -1445,7 +1445,7 @@ abstract class CI_DB_driver {
 	 *
 	 * @param	string	the table upon which the query will be performed
 	 * @param	array	an associative array data of key/values
-	 * @return	string
+	 * @returns	string
 	 */
 	public function insert_string($table, $data)
 	{
@@ -1470,7 +1470,7 @@ abstract class CI_DB_driver {
 	 * @param	string	the table name
 	 * @param	array	the insert keys
 	 * @param	array	the insert values
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _insert($table, $keys, $values)
 	{
@@ -1485,7 +1485,7 @@ abstract class CI_DB_driver {
 	 * @param	string	the table upon which the query will be performed
 	 * @param	array	an associative array data of key/values
 	 * @param	mixed	the "where" statement
-	 * @return	string
+	 * @returns	string
 	 */
 	public function update_string($table, $data, $where)
 	{
@@ -1516,7 +1516,7 @@ abstract class CI_DB_driver {
 	 *
 	 * @param	string	the table name
 	 * @param	array	the update data
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _update($table, $values)
 	{
@@ -1537,7 +1537,7 @@ abstract class CI_DB_driver {
 	 * Tests whether the string has an SQL operator
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _has_operator($str)
 	{
@@ -1550,7 +1550,7 @@ abstract class CI_DB_driver {
 	 * Returns the SQL string operator
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _get_operator($str)
 	{
@@ -1588,7 +1588,7 @@ abstract class CI_DB_driver {
 	 * Enables a native PHP function to be run, using a platform agnostic wrapper.
 	 *
 	 * @param	string	$function	Function name
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function call_function($function)
 	{
@@ -1615,7 +1615,7 @@ abstract class CI_DB_driver {
 	 * Set Cache Directory Path
 	 *
 	 * @param	string	the path to the cache directory
-	 * @return	void
+	 * @returns	void
 	 */
 	public function cache_set_path($path = '')
 	{
@@ -1627,7 +1627,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Enable Query Caching
 	 *
-	 * @return	bool	cache_on value
+	 * @returns	bool	cache_on value
 	 */
 	public function cache_on()
 	{
@@ -1639,7 +1639,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Disable Query Caching
 	 *
-	 * @return	bool	cache_on value
+	 * @returns	bool	cache_on value
 	 */
 	public function cache_off()
 	{
@@ -1653,7 +1653,7 @@ abstract class CI_DB_driver {
 	 *
 	 * @param	string	$segment_one = ''
 	 * @param	string	$segment_two = ''
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function cache_delete($segment_one = '', $segment_two = '')
 	{
@@ -1667,7 +1667,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Delete All cache files
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function cache_delete_all()
 	{
@@ -1681,7 +1681,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Initialize the Cache Class
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _cache_init()
 	{
@@ -1703,7 +1703,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Close DB Connection
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function close()
 	{
@@ -1721,7 +1721,7 @@ abstract class CI_DB_driver {
 	 *
 	 * This method would be overridden by most of the drivers.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _close()
 	{
@@ -1736,7 +1736,7 @@ abstract class CI_DB_driver {
 	 * @param	string	the error message
 	 * @param	string	any "swap" values
 	 * @param	bool	whether to localize the message
-	 * @return	string	sends the application/views/errors/error_db.php template
+	 * @returns	string	sends the application/views/errors/error_db.php template
 	 */
 	public function display_error($error = '', $swap = '', $native = FALSE)
 	{
@@ -1809,7 +1809,7 @@ abstract class CI_DB_driver {
 	 * @param	bool
 	 * @param	mixed
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	public function protect_identifiers($item, $prefix_single = FALSE, $protect_identifiers = NULL, $field_exists = TRUE)
 	{
@@ -1978,7 +1978,7 @@ abstract class CI_DB_driver {
 	 * Dummy method that allows Query Builder class to be disabled
 	 * and keep count_all() working.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _reset_select()
 	{

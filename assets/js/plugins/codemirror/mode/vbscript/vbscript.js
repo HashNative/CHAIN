@@ -116,7 +116,7 @@ CodeMirror.defineMode("vbscript", function(conf, parserConf) {
     function tokenBase(stream, state) {
         if (stream.eatSpace()) {
             return 'space';
-            //return null;
+            //returns null;
         }
 
         var ch = stream.peek();

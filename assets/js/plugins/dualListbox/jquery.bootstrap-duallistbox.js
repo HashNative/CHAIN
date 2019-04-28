@@ -739,7 +739,7 @@
             // treat this as a call to a public method.
         } else if (typeof options === 'string' && options[0] !== '_' && options !== 'init') {
 
-            // Cache the method call to make it possible to return a value
+            // Cache the method call to make it possible to returns a value
             var returns;
 
             this.each(function () {
@@ -751,8 +751,8 @@
                 }
             });
 
-            // If the earlier cached method gives a value back return the value,
-            // otherwise return this to preserve chainability.
+            // If the earlier cached method gives a value back returns the value,
+            // otherwise returns this to preserve chainability.
             return returns !== undefined ? returns : this;
         }
 

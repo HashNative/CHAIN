@@ -56,7 +56,7 @@ if ( ! function_exists('xml_convert'))
 	 *
 	 * @param	string
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	function xml_convert($str, $protect_all = FALSE)
 	{

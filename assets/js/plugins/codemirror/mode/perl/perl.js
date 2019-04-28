@@ -299,7 +299,7 @@ CodeMirror.defineMode("perl",function(){
                 exit                            :1,     // - terminate this program
                 'exp'                           :1,     // - raise I to a power
                 fcntl                           :1,     // - file control system call
-                fileno                          :1,     // - return file descriptor from filehandle
+                fileno                          :1,     // - returns file descriptor from filehandle
                 flock                           :1,     // - lock an entire file with an advisory lock
                 fork                            :1,     // - create a new process just like this one
                 format                          :1,     // - declare a picture format with use by the write() function
@@ -311,7 +311,7 @@ CodeMirror.defineMode("perl",function(){
                 gethostbyaddr                   :1,     // - get host record given its address
                 gethostbyname                   :1,     // - get host record given name
                 gethostent                      :1,     // - get next hosts record
-                getlogin                        :1,     // - return who logged in at this tty
+                getlogin                        :1,     // - returns who logged in at this tty
                 getnetbyaddr                    :1,     // - get network record given its address
                 getnetbyname                    :1,     // - get networks record given name
                 getnetent                       :1,     // - get next networks record
@@ -344,9 +344,9 @@ CodeMirror.defineMode("perl",function(){
                 keys                            :1,     // - retrieve list of indices from a hash
                 kill                            :1,     // - send a signal to a process or process group
                 last                            :1,     // - exit a block prematurely
-                lc                              :1,     // - return lower-case version of a string
-                lcfirst                         :1,     // - return a string with just the next letter in lower case
-                length                          :1,     // - return the number of bytes in a string
+                lc                              :1,     // - returns lower-case version of a string
+                lcfirst                         :1,     // - returns a string with just the next letter in lower case
+                length                          :1,     // - returns the number of bytes in a string
                 'link'                          :1,     // - create a hard link in the filesytem
                 listen                          :1,     // - register your socket as a server
                 local                           : 2,    // - create a temporary value for a global variable (dynamic scoping)
@@ -373,7 +373,7 @@ CodeMirror.defineMode("perl",function(){
                 pack                            :1,     // - convert a list into a binary representation
                 'package'                       :1,     // - declare a separate global namespace
                 pipe                            :1,     // - open a pair of connected filehandles
-                pop                             :1,     // - remove the last element from an array and return it
+                pop                             :1,     // - remove the last element from an array and returns it
                 pos                             :1,     // - find or set the offset for the last/next m//g search
                 print                           :1,     // - output a list to a filehandle
                 printf                          :1,     // - output a formatted list to a filehandle
@@ -421,13 +421,13 @@ CodeMirror.defineMode("perl",function(){
                 setpwent                        :1,     // - prepare passwd file for use
                 setservent                      :1,     // - prepare services file for use
                 setsockopt                      :1,     // - set some socket options
-                shift                           :1,     // - remove the first element of an array, and return it
+                shift                           :1,     // - remove the first element of an array, and returns it
                 shmctl                          :1,     // - SysV shared memory operations
                 shmget                          :1,     // - get SysV shared memory segment identifier
                 shmread                         :1,     // - read SysV shared memory
                 shmwrite                        :1,     // - write SysV shared memory
                 shutdown                        :1,     // - close down just half of a socket connection
-                'sin'                           :1,     // - return the sine of a number
+                'sin'                           :1,     // - returns the sine of a number
                 sleep                           :1,     // - block for some number of seconds
                 socket                          :1,     // - create a socket
                 socketpair                      :1,     // - create a pair of sockets
@@ -453,12 +453,12 @@ CodeMirror.defineMode("perl",function(){
                 telldir                         :1,     // - get current seekpointer on a directory handle
                 tie                             :1,     // - bind a variable to an object class
                 tied                            :1,     // - get a reference to the object underlying a tied variable
-                time                            :1,     // - return number of seconds since 1970
-                times                           :1,     // - return elapsed time for self and child processes
+                time                            :1,     // - returns number of seconds since 1970
+                times                           :1,     // - returns elapsed time for self and child processes
                 tr                              :null,  // - transliterate a string
                 truncate                        :1,     // - shorten a file
-                uc                              :1,     // - return upper-case version of a string
-                ucfirst                         :1,     // - return a string with just the next letter in upper case
+                uc                              :1,     // - returns upper-case version of a string
+                ucfirst                         :1,     // - returns a string with just the next letter in upper case
                 umask                           :1,     // - set file creation mode mask
                 undef                           :1,     // - remove a variable or function definition
                 unlink                          :1,     // - remove one link to a file
@@ -467,7 +467,7 @@ CodeMirror.defineMode("perl",function(){
                 untie                           :1,     // - break a tie binding to a variable
                 use                             :1,     // - load in a module at compile time
                 utime                           :1,     // - set a file's last access and modify times
-                values                          :1,     // - return a list of the values in a hash
+                values                          :1,     // - returns a list of the values in a hash
                 vec                             :1,     // - test or set particular bits in a string
                 wait                            :1,     // - wait for any child process to die
                 waitpid                         :1,     // - wait for a particular child process to die
@@ -800,7 +800,7 @@ function look(stream, c){
   return stream.string.charAt(stream.pos+(c||0));
 }
 
-// return a part of prefix of current stream from current position
+// returns a part of prefix of current stream from current position
 function prefix(stream, c){
   if(c){
     var x=stream.pos-c;
@@ -810,7 +810,7 @@ function prefix(stream, c){
   }
 }
 
-// return a part of suffix of current stream from current position
+// returns a part of suffix of current stream from current position
 function suffix(stream, c){
   var y=stream.string.length;
   var x=y-stream.pos+1;

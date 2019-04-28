@@ -83,7 +83,7 @@ class CI_Hooks {
 	/**
 	 * Class constructor
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -128,7 +128,7 @@ class CI_Hooks {
 	 * @uses	CI_Hooks::_run_hook()
 	 *
 	 * @param	string	$which	Hook name
-	 * @return	bool	TRUE on success or FALSE on failure
+	 * @returns	bool	TRUE on success or FALSE on failure
 	 */
 	public function call_hook($which = '')
 	{
@@ -160,7 +160,7 @@ class CI_Hooks {
 	 * Runs a particular hook
 	 *
 	 * @param	array	$data	Hook details
-	 * @return	bool	TRUE on success or FALSE on failure
+	 * @returns	bool	TRUE on success or FALSE on failure
 	 */
 	protected function _run_hook($data)
 	{

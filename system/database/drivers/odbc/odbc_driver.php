@@ -113,7 +113,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Class constructor
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -132,7 +132,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Non-persistent database connection
 	 *
 	 * @param	bool	$persistent
-	 * @return	resource
+	 * @returns	resource
 	 */
 	public function db_connect($persistent = FALSE)
 	{
@@ -148,7 +148,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 *
 	 * @param	string	$sql	SQL statement
 	 * @param	array	$binds	An array of values to bind
-	 * @return	string
+	 * @returns	string
 	 */
 	public function compile_binds($sql, $binds)
 	{
@@ -215,7 +215,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Execute the query
 	 *
 	 * @param	string	$sql	an SQL query
-	 * @return	resource
+	 * @returns	resource
 	 */
 	protected function _execute($sql)
 	{
@@ -230,7 +230,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 
 		if (TRUE === ($success = odbc_execute($this->odbc_result, $this->binds)))
 		{
-			// For queries that return result sets, return the result_id resource on success
+			// For queries that returns result sets, returns the result_id resource on success
 			$this->is_write_type($sql) OR $success = $this->odbc_result;
 		}
 
@@ -245,7 +245,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * Begin Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_begin()
 	{
@@ -257,7 +257,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * Commit Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_commit()
 	{
@@ -275,7 +275,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * Rollback Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_rollback()
 	{
@@ -294,7 +294,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Determines if a query is a "write" type.
 	 *
 	 * @param	string	An SQL query string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_write_type($sql)
 	{
@@ -312,7 +312,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Platform-dependent string escape
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _escape_str($str)
 	{
@@ -324,7 +324,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * Affected Rows
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function affected_rows()
 	{
@@ -336,7 +336,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * Insert ID
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function insert_id()
 	{
@@ -351,7 +351,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Generates a platform-specific query string so that the table names can be fetched
 	 *
 	 * @param	bool	$prefix_limit
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_tables($prefix_limit = FALSE)
 	{
@@ -374,7 +374,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Generates a platform-specific query string so that the column names can be fetched
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_columns($table = '')
 	{
@@ -389,7 +389,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Generates a platform-specific query so that the column data can be retrieved
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _field_data($table)
 	{
@@ -404,7 +404,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function error()
 	{
@@ -416,7 +416,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * Close DB Connection
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _close()
 	{

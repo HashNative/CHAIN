@@ -27,7 +27,7 @@ CodeMirror.defineMode("xquery", function() {
       , punctuation = {type: "punctuation", style: null}
       , qualifier = {type: "axis_specifier", style: "qualifier"};
 
-    // kwObj is what is return from this function at the end
+    // kwObj is what is returns from this function at the end
     var kwObj = {
       'if': A, 'switch': A, 'while': A, 'for': A,
       'else': B, 'then': B, 'try': B, 'finally': B, 'catch': B,
@@ -210,7 +210,7 @@ CodeMirror.defineMode("xquery", function() {
       // push the stack so we know to look for it on the next word
       if(word == "element" || word == "attribute" || known.type == "axis_specifier") pushStateStack(state, {type: "xmlconstructor"});
 
-      // if the word is known, return the details of that else just call this a generic 'word'
+      // if the word is known, returns the details of that else just call this a generic 'word'
       return known ? ret(known.type, known.style, word) :
                      ret("word", "variable", word);
     }

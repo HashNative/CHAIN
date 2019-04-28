@@ -53,7 +53,7 @@ class CI_DB_odbc_result extends CI_DB_result {
 	/**
 	 * Number of rows in the result set
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function num_rows()
 	{
@@ -84,7 +84,7 @@ class CI_DB_odbc_result extends CI_DB_result {
 	/**
 	 * Number of fields in the result set
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function num_fields()
 	{
@@ -98,7 +98,7 @@ class CI_DB_odbc_result extends CI_DB_result {
 	 *
 	 * Generates an array of column names
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function list_fields()
 	{
@@ -123,7 +123,7 @@ class CI_DB_odbc_result extends CI_DB_result {
 	 *
 	 * Generates an array of objects containing field meta-data
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function field_data()
 	{
@@ -146,7 +146,7 @@ class CI_DB_odbc_result extends CI_DB_result {
 	/**
 	 * Free the result
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function free_result()
 	{
@@ -164,7 +164,7 @@ class CI_DB_odbc_result extends CI_DB_result {
 	 *
 	 * Returns the result set as an array
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _fetch_assoc()
 	{
@@ -179,7 +179,7 @@ class CI_DB_odbc_result extends CI_DB_result {
 	 * Returns the result set as an object
 	 *
 	 * @param	string	$class_name
-	 * @return	object
+	 * @returns	object
 	 */
 	protected function _fetch_object($class_name = 'stdClass')
 	{
@@ -213,7 +213,7 @@ if ( ! function_exists('odbc_fetch_array'))
 	 *
 	 * @param	resource	&$result
 	 * @param	int		$rownumber
-	 * @return	array
+	 * @returns	array
 	 */
 	function odbc_fetch_array(&$result, $rownumber = 1)
 	{
@@ -246,7 +246,7 @@ if ( ! function_exists('odbc_fetch_object'))
 	 *
 	 * @param	resource	&$result
 	 * @param	int		$rownumber
-	 * @return	object
+	 * @returns	object
 	 */
 	function odbc_fetch_object(&$result, $rownumber = 1)
 	{

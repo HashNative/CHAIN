@@ -122,7 +122,7 @@ class CI_Form_validation {
 	 * Initialize Form_Validation class
 	 *
 	 * @param	array	$rules
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($rules = array())
 	{
@@ -162,7 +162,7 @@ class CI_Form_validation {
 	 * @param	string	$label
 	 * @param	mixed	$rules
 	 * @param	array	$errors
-	 * @return	CI_Form_validation
+	 * @returns	CI_Form_validation
 	 */
 	public function set_rules($field, $label = '', $rules = array(), $errors = array())
 	{
@@ -262,7 +262,7 @@ class CI_Form_validation {
 	 * each array due to the limitations of CI's singleton
 	 *
 	 * @param	array	$data
-	 * @return	CI_Form_validation
+	 * @returns	CI_Form_validation
 	 */
 	public function set_data(array $data)
 	{
@@ -284,7 +284,7 @@ class CI_Form_validation {
 	 *
 	 * @param	array
 	 * @param	string
-	 * @return	CI_Form_validation
+	 * @returns	CI_Form_validation
 	 */
 	public function set_message($lang, $val = '')
 	{
@@ -306,7 +306,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	CI_Form_validation
+	 * @returns	CI_Form_validation
 	 */
 	public function set_error_delimiters($prefix = '<p>', $suffix = '</p>')
 	{
@@ -325,7 +325,7 @@ class CI_Form_validation {
 	 * @param	string	$field	Field name
 	 * @param	string	$prefix	HTML start tag
 	 * @param 	string	$suffix	HTML end tag
-	 * @return	string
+	 * @returns	string
 	 */
 	public function error($field, $prefix = '', $suffix = '')
 	{
@@ -354,7 +354,7 @@ class CI_Form_validation {
 	 *
 	 * Returns the error messages as an array
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function error_array()
 	{
@@ -370,7 +370,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function error_string($prefix = '', $suffix = '')
 	{
@@ -411,7 +411,7 @@ class CI_Form_validation {
 	 * This function does all the work.
 	 *
 	 * @param	string	$group
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function run($group = '')
 	{
@@ -504,7 +504,7 @@ class CI_Form_validation {
 	 * and then every next rule depends on the previous one passing.
 	 *
 	 * @param	array	$rules
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _prepare_rules($rules)
 	{
@@ -556,7 +556,7 @@ class CI_Form_validation {
 	 * @param	array
 	 * @param	array
 	 * @param	int
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _reduce_array($array, $keys, $i = 0)
 	{
@@ -574,7 +574,7 @@ class CI_Form_validation {
 	/**
 	 * Re-populate the _POST array with our finalized and processed data
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _reset_post_array()
 	{
@@ -619,7 +619,7 @@ class CI_Form_validation {
 	 * @param	array
 	 * @param	mixed
 	 * @param	int
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _execute($row, $rules, $postdata = NULL, $cycles = 0)
 	{
@@ -827,7 +827,7 @@ class CI_Form_validation {
 	 *
 	 * @param 	string $rule 	The rule name
 	 * @param 	string $field	The field name
-	 * @return 	string
+	 * @returns 	string
 	 */
 	protected function _get_error_message($rule, $field)
 	{
@@ -860,12 +860,12 @@ class CI_Form_validation {
 	 * Translate a field name
 	 *
 	 * @param	string	the field name
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _translate_fieldname($fieldname)
 	{
 		// Do we need to translate the field name? We look for the prefix 'lang:' to determine this
-		// If we find one, but there's no translation for the string - just return it
+		// If we find one, but there's no translation for the string - just returns it
 		if (sscanf($fieldname, 'lang:%s', $line) === 1 && FALSE === ($fieldname = $this->CI->lang->line($line, FALSE)))
 		{
 			return $line;
@@ -882,7 +882,7 @@ class CI_Form_validation {
 	 * @param	string	The error message line
 	 * @param	string	A field's human name
 	 * @param	mixed	A rule's optional parameter
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _build_error_msg($line, $field = '', $param = '')
 	{
@@ -903,7 +903,7 @@ class CI_Form_validation {
 	 * Permits you to check if a rule is present within the validator
 	 *
 	 * @param	string	the field name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function has_rule($field)
 	{
@@ -920,7 +920,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string	the field name
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function set_value($field = '', $default = '')
 	{
@@ -950,7 +950,7 @@ class CI_Form_validation {
 	 * @param	string
 	 * @param	string
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	public function set_select($field = '', $value = '', $default = FALSE)
 	{
@@ -993,7 +993,7 @@ class CI_Form_validation {
 	 * @param	string
 	 * @param	string
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	public function set_radio($field = '', $value = '', $default = FALSE)
 	{
@@ -1036,7 +1036,7 @@ class CI_Form_validation {
 	 * @param	string
 	 * @param	string
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	public function set_checkbox($field = '', $value = '', $default = FALSE)
 	{
@@ -1050,7 +1050,7 @@ class CI_Form_validation {
 	 * Required
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function required($str)
 	{
@@ -1066,7 +1066,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string	regex
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function regex_match($str, $regex)
 	{
@@ -1080,7 +1080,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string	$str	string to compare against
 	 * @param	string	$field
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function matches($str, $field)
 	{
@@ -1096,7 +1096,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string	field
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function differs($str, $field)
 	{
@@ -1113,7 +1113,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string	$str
 	 * @param	string	$field
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_unique($str, $field)
 	{
@@ -1130,7 +1130,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function min_length($str, $val)
 	{
@@ -1149,7 +1149,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function max_length($str, $val)
 	{
@@ -1168,7 +1168,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function exact_length($str, $val)
 	{
@@ -1186,7 +1186,7 @@ class CI_Form_validation {
 	 * Valid URL
 	 *
 	 * @param	string	$str
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function valid_url($str)
 	{
@@ -1225,7 +1225,7 @@ class CI_Form_validation {
 	 * Valid Email
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function valid_email($str)
 	{
@@ -1243,7 +1243,7 @@ class CI_Form_validation {
 	 * Valid Emails
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function valid_emails($str)
 	{
@@ -1270,7 +1270,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string	'ipv4' or 'ipv6' to validate a specific IP format
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function valid_ip($ip, $which = '')
 	{
@@ -1283,7 +1283,7 @@ class CI_Form_validation {
 	 * Alpha
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function alpha($str)
 	{
@@ -1296,7 +1296,7 @@ class CI_Form_validation {
 	 * Alpha-numeric
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function alpha_numeric($str)
 	{
@@ -1309,7 +1309,7 @@ class CI_Form_validation {
 	 * Alpha-numeric w/ spaces
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function alpha_numeric_spaces($str)
 	{
@@ -1322,7 +1322,7 @@ class CI_Form_validation {
 	 * Alpha-numeric with underscores and dashes
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function alpha_dash($str)
 	{
@@ -1335,7 +1335,7 @@ class CI_Form_validation {
 	 * Numeric
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function numeric($str)
 	{
@@ -1349,7 +1349,7 @@ class CI_Form_validation {
 	 * Integer
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function integer($str)
 	{
@@ -1362,7 +1362,7 @@ class CI_Form_validation {
 	 * Decimal number
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function decimal($str)
 	{
@@ -1376,7 +1376,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	int
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function greater_than($str, $min)
 	{
@@ -1390,7 +1390,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	int
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function greater_than_equal_to($str, $min)
 	{
@@ -1404,7 +1404,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	int
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function less_than($str, $max)
 	{
@@ -1418,7 +1418,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	int
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function less_than_equal_to($str, $max)
 	{
@@ -1432,7 +1432,7 @@ class CI_Form_validation {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function in_list($value, $list)
 	{
@@ -1445,7 +1445,7 @@ class CI_Form_validation {
 	 * Is a Natural number  (0,1,2,3, etc.)
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_natural($str)
 	{
@@ -1458,7 +1458,7 @@ class CI_Form_validation {
 	 * Is a Natural number, but not a zero  (1,2,3, etc.)
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_natural_no_zero($str)
 	{
@@ -1474,7 +1474,7 @@ class CI_Form_validation {
 	 * as defined by RFC 2045 http://www.faqs.org/rfcs/rfc2045
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function valid_base64($str)
 	{
@@ -1491,7 +1491,7 @@ class CI_Form_validation {
 	 *
 	 * @deprecated	3.0.6	Not used anywhere within the framework and pretty much useless
 	 * @param	mixed	$data	Input data
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function prep_for_form($data)
 	{
@@ -1519,7 +1519,7 @@ class CI_Form_validation {
 	 * Prep URL
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function prep_url($str = '')
 	{
@@ -1542,7 +1542,7 @@ class CI_Form_validation {
 	 * Strip Image Tags
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function strip_image_tags($str)
 	{
@@ -1555,7 +1555,7 @@ class CI_Form_validation {
 	 * Convert PHP tags to entities
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function encode_php_tags($str)
 	{
@@ -1570,7 +1570,7 @@ class CI_Form_validation {
 	 * Prevents subsequent validation routines from being affected by the
 	 * results of any previous validation routine due to the CI singleton.
 	 *
-	 * @return	CI_Form_validation
+	 * @returns	CI_Form_validation
 	 */
 	public function reset_validation()
 	{

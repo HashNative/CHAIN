@@ -92,7 +92,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Initialize XMLRPC class
 	 *
 	 * @param	array	$config
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($config = array())
 	{
@@ -113,7 +113,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Initialize Prefs and Serve
 	 *
 	 * @param	mixed
-	 * @return	void
+	 * @returns	void
 	 */
 	public function initialize($config = array())
 	{
@@ -143,7 +143,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	/**
 	 * Setting of System Methods
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_system_methods()
 	{
@@ -159,7 +159,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 					'system.methodSignature' => array(
 										'function' => 'this.methodSignature',
 										'signature' => array(array($this->xmlrpcArray, $this->xmlrpcString)),
-										'docstring' => 'Returns an array describing the return type and required parameters of a method'),
+										'docstring' => 'Returns an array describing the returns type and required parameters of a method'),
 					'system.multicall'	 => array(
 										'function' => 'this.multicall',
 										'signature' => array(array($this->xmlrpcArray, $this->xmlrpcArray)),
@@ -172,7 +172,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	/**
 	 * Main Server Function
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function serve()
 	{
@@ -193,7 +193,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * @param	string	function
 	 * @param	string	signature
 	 * @param	string	docstring
-	 * @return	void
+	 * @returns	void
 	 */
 	public function add_to_map($methodname, $function, $sig, $doc)
 	{
@@ -210,7 +210,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Parse Server Request
 	 *
 	 * @param	string	data
-	 * @return	object	xmlrpc response
+	 * @returns	object	xmlrpc response
 	 */
 	public function parseRequest($data = '')
 	{
@@ -311,7 +311,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Executes the Method
 	 *
 	 * @param	object
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _execute($m)
 	{
@@ -419,7 +419,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Server Function: List Methods
 	 *
 	 * @param	mixed
-	 * @return	object
+	 * @returns	object
 	 */
 	public function listMethods($m)
 	{
@@ -446,7 +446,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Server Function: Return Signature for Method
 	 *
 	 * @param	mixed
-	 * @return	object
+	 * @returns	object
 	 */
 	public function methodSignature($m)
 	{
@@ -486,7 +486,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Server Function: Doc String for Method
 	 *
 	 * @param	mixed
-	 * @return	object
+	 * @returns	object
 	 */
 	public function methodHelp($m)
 	{
@@ -511,7 +511,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Server Function: Multi-call
 	 *
 	 * @param	mixed
-	 * @return	object
+	 * @returns	object
 	 */
 	public function multicall($m)
 	{
@@ -552,7 +552,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Multi-call Function: Error Handling
 	 *
 	 * @param	mixed
-	 * @return	object
+	 * @returns	object
 	 */
 	public function multicall_error($err)
 	{
@@ -571,7 +571,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	 * Multi-call Function: Processes method
 	 *
 	 * @param	mixed
-	 * @return	object
+	 * @returns	object
 	 */
 	public function do_multicall($call)
 	{

@@ -59,7 +59,7 @@ if ( ! function_exists('lang'))
 	 * @param	string	$line		The language line
 	 * @param	string	$for		The "for" value (id of the form element)
 	 * @param	array	$attributes	Any additional HTML attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	function lang($line, $for = '', $attributes = array())
 	{

@@ -59,7 +59,7 @@ if ( ! function_exists('word_limiter'))
 	 * @param	string
 	 * @param	int
 	 * @param	string	the end character. Usually an ellipsis
-	 * @return	string
+	 * @returns	string
 	 */
 	function word_limiter($str, $limit = 100, $end_char = '&#8230;')
 	{
@@ -92,7 +92,7 @@ if ( ! function_exists('character_limiter'))
 	 * @param	string
 	 * @param	int
 	 * @param	string	the end character. Usually an ellipsis
-	 * @return	string
+	 * @returns	string
 	 */
 	function character_limiter($str, $n = 500, $end_char = '&#8230;')
 	{
@@ -133,7 +133,7 @@ if ( ! function_exists('ascii_to_entities'))
 	 * Converts high ASCII text and MS Word special characters to character entities
 	 *
 	 * @param	string	$str
-	 * @return	string
+	 * @returns	string
 	 */
 	function ascii_to_entities($str)
 	{
@@ -201,7 +201,7 @@ if ( ! function_exists('entities_to_ascii'))
 	 *
 	 * @param	string
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	function entities_to_ascii($str, $all = TRUE)
 	{
@@ -259,7 +259,7 @@ if ( ! function_exists('word_censor'))
 	 * @param	string	the text string
 	 * @param	string	the array of censored words
 	 * @param	string	the optional replacement value
-	 * @return	string
+	 * @returns	string
 	 */
 	function word_censor($str, $censored, $replacement = '')
 	{
@@ -317,7 +317,7 @@ if ( ! function_exists('highlight_code'))
 	 * Colorizes code strings
 	 *
 	 * @param	string	the text string
-	 * @return	string
+	 * @returns	string
 	 */
 	function highlight_code($str)
 	{
@@ -375,7 +375,7 @@ if ( ! function_exists('highlight_phrase'))
 	 * @param	string	$phrase		the phrase you'd like to highlight
 	 * @param	string	$tag_open	the openging tag to precede the phrase with
 	 * @param	string	$tag_close	the closing tag to end the phrase with
-	 * @return	string
+	 * @returns	string
 	 */
 	function highlight_phrase($str, $phrase, $tag_open = '<mark>', $tag_close = '</mark>')
 	{
@@ -393,7 +393,7 @@ if ( ! function_exists('convert_accented_characters'))
 	 * Convert Accented Foreign Characters to ASCII
 	 *
 	 * @param	string	$str	Input string
-	 * @return	string
+	 * @returns	string
 	 */
 	function convert_accented_characters($str)
 	{
@@ -440,7 +440,7 @@ if ( ! function_exists('word_wrap'))
 	 *
 	 * @param	string	$str		the text string
 	 * @param	int	$charlim = 76	the number of characters to wrap at
-	 * @return	string
+	 * @returns	string
 	 */
 	function word_wrap($str, $charlim = 76)
 	{
@@ -537,7 +537,7 @@ if ( ! function_exists('ellipsize'))
 	 * @param	int	max length of string
 	 * @param	mixed	int (1|0) or float, .5, .2, etc for position to split
 	 * @param	string	ellipsis ; Default '...'
-	 * @return	string	ellipsized string
+	 * @returns	string	ellipsized string
 	 */
 	function ellipsize($str, $max_length, $position = 1, $ellipsis = '&hellip;')
 	{

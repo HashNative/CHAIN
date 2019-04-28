@@ -110,7 +110,7 @@ class CI_Table {
 	 * Set the template from the table config file if it exists
 	 *
 	 * @param	array	$config	(default: array())
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($config = array())
 	{
@@ -129,7 +129,7 @@ class CI_Table {
 	 * Set the template
 	 *
 	 * @param	array	$template
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function set_template($template)
 	{
@@ -150,7 +150,7 @@ class CI_Table {
 	 * Can be passed as an array or discreet params
 	 *
 	 * @param	mixed
-	 * @return	CI_Table
+	 * @returns	CI_Table
 	 */
 	public function set_heading($args = array())
 	{
@@ -168,7 +168,7 @@ class CI_Table {
 	 *
 	 * @param	array	$array
 	 * @param	int	$col_limit
-	 * @return	array
+	 * @returns	array
 	 */
 	public function make_columns($array = array(), $col_limit = 0)
 	{
@@ -214,7 +214,7 @@ class CI_Table {
 	 * Can be passed as an array or discreet params
 	 *
 	 * @param	mixed	$value
-	 * @return	CI_Table
+	 * @returns	CI_Table
 	 */
 	public function set_empty($value)
 	{
@@ -230,7 +230,7 @@ class CI_Table {
 	 * Can be passed as an array or discreet params
 	 *
 	 * @param	mixed
-	 * @return	CI_Table
+	 * @returns	CI_Table
 	 */
 	public function add_row($args = array())
 	{
@@ -246,7 +246,7 @@ class CI_Table {
 	 * Ensures a standard associative array format for all cell data
 	 *
 	 * @param	array
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _prep_args($args)
 	{
@@ -272,7 +272,7 @@ class CI_Table {
 	 * Add a table caption
 	 *
 	 * @param	string	$caption
-	 * @return	CI_Table
+	 * @returns	CI_Table
 	 */
 	public function set_caption($caption)
 	{
@@ -286,7 +286,7 @@ class CI_Table {
 	 * Generate the table
 	 *
 	 * @param	mixed	$table_data
-	 * @return	string
+	 * @returns	string
 	 */
 	public function generate($table_data = NULL)
 	{
@@ -420,7 +420,7 @@ class CI_Table {
 	/**
 	 * Clears the table arrays.  Useful if multiple tables are being generated
 	 *
-	 * @return	CI_Table
+	 * @returns	CI_Table
 	 */
 	public function clear()
 	{
@@ -436,7 +436,7 @@ class CI_Table {
 	 * Set table data from a database result object
 	 *
 	 * @param	CI_DB_result	$object	Database result object
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _set_from_db_result($object)
 	{
@@ -458,7 +458,7 @@ class CI_Table {
 	 * Set table data from an array
 	 *
 	 * @param	array	$data
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _set_from_array($data)
 	{
@@ -478,7 +478,7 @@ class CI_Table {
 	/**
 	 * Compile Template
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _compile_template()
 	{
@@ -503,7 +503,7 @@ class CI_Table {
 	/**
 	 * Default Template
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _default_template()
 	{

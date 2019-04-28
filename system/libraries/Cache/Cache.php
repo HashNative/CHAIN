@@ -96,7 +96,7 @@ class CI_Cache extends CI_Driver_Library {
 	 * Initialize class properties based on the configuration array.
 	 *
 	 * @param	array	$config = array()
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($config = array())
 	{
@@ -127,11 +127,11 @@ class CI_Cache extends CI_Driver_Library {
 	/**
 	 * Get
 	 *
-	 * Look for a value in the cache. If it exists, return the data
-	 * if not, return FALSE
+	 * Look for a value in the cache. If it exists, returns the data
+	 * if not, returns FALSE
 	 *
 	 * @param	string	$id
-	 * @return	mixed	value matching $id or FALSE on failure
+	 * @returns	mixed	value matching $id or FALSE on failure
 	 */
 	public function get($id)
 	{
@@ -147,7 +147,7 @@ class CI_Cache extends CI_Driver_Library {
 	 * @param	mixed	$data	Data to store
 	 * @param	int	$ttl	Cache TTL (in seconds)
 	 * @param	bool	$raw	Whether to store the raw value
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function save($id, $data, $ttl = 60, $raw = FALSE)
 	{
@@ -160,7 +160,7 @@ class CI_Cache extends CI_Driver_Library {
 	 * Delete from Cache
 	 *
 	 * @param	string	$id	Cache ID
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function delete($id)
 	{
@@ -174,7 +174,7 @@ class CI_Cache extends CI_Driver_Library {
 	 *
 	 * @param	string	$id	Cache ID
 	 * @param	int	$offset	Step/value to add
-	 * @return	mixed	New value on success or FALSE on failure
+	 * @returns	mixed	New value on success or FALSE on failure
 	 */
 	public function increment($id, $offset = 1)
 	{
@@ -188,7 +188,7 @@ class CI_Cache extends CI_Driver_Library {
 	 *
 	 * @param	string	$id	Cache ID
 	 * @param	int	$offset	Step/value to reduce by
-	 * @return	mixed	New value on success or FALSE on failure
+	 * @returns	mixed	New value on success or FALSE on failure
 	 */
 	public function decrement($id, $offset = 1)
 	{
@@ -200,7 +200,7 @@ class CI_Cache extends CI_Driver_Library {
 	/**
 	 * Clean the cache
 	 *
-	 * @return	bool	TRUE on success, FALSE on failure
+	 * @returns	bool	TRUE on success, FALSE on failure
 	 */
 	public function clean()
 	{
@@ -213,7 +213,7 @@ class CI_Cache extends CI_Driver_Library {
 	 * Cache Info
 	 *
 	 * @param	string	$type = 'user'	user/filehits
-	 * @return	mixed	array containing cache info on success OR FALSE on failure
+	 * @returns	mixed	array containing cache info on success OR FALSE on failure
 	 */
 	public function cache_info($type = 'user')
 	{
@@ -226,7 +226,7 @@ class CI_Cache extends CI_Driver_Library {
 	 * Get Cache Metadata
 	 *
 	 * @param	string	$id	key to get cache metadata on
-	 * @return	mixed	cache item metadata
+	 * @returns	mixed	cache item metadata
 	 */
 	public function get_metadata($id)
 	{
@@ -239,7 +239,7 @@ class CI_Cache extends CI_Driver_Library {
 	 * Is the requested driver supported in this environment?
 	 *
 	 * @param	string	$driver	The driver to test
-	 * @return	array
+	 * @returns	array
 	 */
 	public function is_supported($driver)
 	{

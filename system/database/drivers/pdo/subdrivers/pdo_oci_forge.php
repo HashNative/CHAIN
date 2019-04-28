@@ -82,7 +82,7 @@ class CI_DB_pdo_oci_forge extends CI_DB_pdo_forge {
 	 * @param	string	$alter_type	ALTER type
 	 * @param	string	$table		Table name
 	 * @param	mixed	$field		Column definition
-	 * @return	string|string[]
+	 * @returns	string|string[]
 	 */
 	protected function _alter_table($alter_type, $table, $field)
 	{
@@ -139,7 +139,7 @@ class CI_DB_pdo_oci_forge extends CI_DB_pdo_forge {
 	 *
 	 * @param	array	&$attributes
 	 * @param	array	&$field
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _attr_auto_increment(&$attributes, &$field)
 	{
@@ -152,7 +152,7 @@ class CI_DB_pdo_oci_forge extends CI_DB_pdo_forge {
 	 * Performs a data type mapping between different databases.
 	 *
 	 * @param	array	&$attributes
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _attr_type(&$attributes)
 	{

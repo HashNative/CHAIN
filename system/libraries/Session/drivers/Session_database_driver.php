@@ -75,7 +75,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 * Class constructor
 	 *
 	 * @param	array	$params	Configuration parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct(&$params)
 	{
@@ -124,7 +124,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 *
 	 * @param	string	$save_path	Table name
 	 * @param	string	$name		Session cookie name, unused
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function open($save_path, $name)
 	{
@@ -144,7 +144,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 * Reads session data and acquires a lock
 	 *
 	 * @param	string	$session_id	Session ID
-	 * @return	string	Serialized session data
+	 * @returns	string	Serialized session data
 	 */
 	public function read($session_id)
 	{
@@ -201,7 +201,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 *
 	 * @param	string	$session_id	Session ID
 	 * @param	string	$session_data	Serialized session data
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function write($session_id, $session_data)
 	{
@@ -273,7 +273,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 *
 	 * Releases locks
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function close()
 	{
@@ -290,7 +290,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 * Destroys the current session.
 	 *
 	 * @param	string	$session_id	Session ID
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function destroy($session_id)
 	{
@@ -328,7 +328,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 * Deletes expired sessions
 	 *
 	 * @param	int 	$maxlifetime	Maximum lifetime of sessions
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function gc($maxlifetime)
 	{
@@ -348,7 +348,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 * Acquires a lock, depending on the underlying platform.
 	 *
 	 * @param	string	$session_id	Session ID
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _get_lock($session_id)
 	{
@@ -385,7 +385,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 *
 	 * Releases a previously acquired lock
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _release_lock()
 	{

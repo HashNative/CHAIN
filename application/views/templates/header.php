@@ -18,6 +18,8 @@
     <link href="<?php echo base_url('assets/css/animate.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
 
+    <!-- Select2 Style -->
+    <link href="<?php echo base_url('assets/css/plugins/select2/select2.min.css');?>" rel="stylesheet">
      <!-- Mainly scripts -->
      <script src="<?php echo base_url('assets/js/jquery-3.1.1.min.js');?>"></script>
     
@@ -41,6 +43,8 @@
     <script src="<?php echo base_url('assets/js/demo/flot-demo.js');?>"></script>
     <!-- FooTable -->
     <script src="<?php echo base_url('assets/js/plugins/footable/footable.all.min.js');?>"></script>
+    <!-- Select2 Script-->
+    <script src="<?php echo base_url('assets/js/plugins/select2/select2.full.min.js');?>"></script
 </head>
 
 <body>

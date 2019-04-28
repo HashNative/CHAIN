@@ -341,11 +341,11 @@ function uniqueId(prefix) {
  * - Scroll Issue: http://goo.gl/sNjUc
  *
  * @param {Rect} rect
- * @return {Object} bounds
- * @return {Number} bounds.top
- * @return {Number} bounds.left
- * @return {Number} bounds.width
- * @return {Number} bounds.height
+ * @returns {Object} bounds
+ * @returns {Number} bounds.top
+ * @returns {Number} bounds.left
+ * @returns {Number} bounds.width
+ * @returns {Number} bounds.height
  */
 function rect2bnd(rect) {
     var $document = $(document);
@@ -359,7 +359,7 @@ function rect2bnd(rect) {
 /**
  * returns a copy of the object where the keys have become the values and the values the keys.
  * @param {Object} obj
- * @return {Object}
+ * @returns {Object}
  */
 function invertObject(obj) {
     var inverted = {};
@@ -373,7 +373,7 @@ function invertObject(obj) {
 /**
  * @param {String} namespace
  * @param {String} [prefix]
- * @return {String}
+ * @returns {String}
  */
 function namespaceToCamel(namespace, prefix) {
     prefix = prefix || '';
@@ -389,7 +389,7 @@ function namespaceToCamel(namespace, prefix) {
  * @param {Function} func
  * @param {Number} wait
  * @param {Boolean} immediate
- * @return {Function}
+ * @returns {Function}
  */
 function debounce(func, wait, immediate) {
     var _this = this;
@@ -630,7 +630,7 @@ var isSupportAmd = typeof define === 'function' && define.amd; // eslint-disable
  * returns whether font is installed or not.
  *
  * @param {String} fontName
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isFontInstalled(fontName) {
     var testFontName = fontName === 'Comic Sans MS' ? 'Courier New' : 'Comic Sans MS';
@@ -733,7 +733,7 @@ var ZERO_WIDTH_NBSP_CHAR = '\ufeff';
  * returns whether node is `note-editable` or not.
  *
  * @param {Node} node
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isEditable(node) {
     return node && $$1(node).hasClass('note-editable');
@@ -744,7 +744,7 @@ function isEditable(node) {
  * returns whether node is `note-control-sizing` or not.
  *
  * @param {Node} node
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isControlSizing(node) {
     return node && $$1(node).hasClass('note-control-sizing');
@@ -755,7 +755,7 @@ function isControlSizing(node) {
  * returns predicate which judge whether nodeName is same
  *
  * @param {String} nodeName
- * @return {Function}
+ * @returns {Function}
  */
 function makePredByNodeName(nodeName) {
     nodeName = nodeName.toUpperCase();
@@ -769,7 +769,7 @@ function makePredByNodeName(nodeName) {
  *
  *
  * @param {Node} node
- * @return {Boolean} true if node's type is text(3)
+ * @returns {Boolean} true if node's type is text(3)
  */
 function isText(node) {
     return node && node.nodeType === 3;
@@ -780,7 +780,7 @@ function isText(node) {
  *
  *
  * @param {Node} node
- * @return {Boolean} true if node's type is element(1)
+ * @returns {Boolean} true if node's type is element(1)
  */
 function isElement(node) {
     return node && node.nodeType === 1;
@@ -842,7 +842,7 @@ var isBody = makePredByNodeName('BODY');
  *
  * @param {Node} nodeA
  * @param {Node} nodeB
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isClosestSibling(nodeA, nodeB) {
     return nodeA.nextSibling === nodeB ||
@@ -853,7 +853,7 @@ function isClosestSibling(nodeA, nodeB) {
  *
  * @param {Node} node
  * @param {function} [pred] - predicate function
- * @return {Node[]}
+ * @returns {Node[]}
  */
 function withClosestSiblings(node, pred) {
     pred = pred || func.ok;
@@ -893,7 +893,7 @@ function nodeLength(node) {
  * returns whether node is empty or not.
  *
  * @param {Node} node
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isEmpty(node) {
     var len = nodeLength(node);
@@ -1058,7 +1058,7 @@ function listDescendant(node, pred) {
  *
  * @param {Node} node
  * @param {Node} tagName of wrapper
- * @return {Node} - wrapper
+ * @returns {Node} - wrapper
  */
 function wrap(node, wrapperName) {
     var parent = node.parentNode;
@@ -1100,7 +1100,7 @@ function appendChildNodes(node, aChild) {
  * returns whether boundaryPoint is left edge or not.
  *
  * @param {BoundaryPoint} point
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isLeftEdgePoint(point) {
     return point.offset === 0;
@@ -1109,7 +1109,7 @@ function isLeftEdgePoint(point) {
  * returns whether boundaryPoint is right edge or not.
  *
  * @param {BoundaryPoint} point
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isRightEdgePoint(point) {
     return point.offset === nodeLength(point.node);
@@ -1118,7 +1118,7 @@ function isRightEdgePoint(point) {
  * returns whether boundaryPoint is edge or not.
  *
  * @param {BoundaryPoint} point
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isEdgePoint(point) {
     return isLeftEdgePoint(point) || isRightEdgePoint(point);
@@ -1128,7 +1128,7 @@ function isEdgePoint(point) {
  *
  * @param {Node} node
  * @param {Node} ancestor
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isLeftEdgeOf(node, ancestor) {
     while (node && node !== ancestor) {
@@ -1144,7 +1144,7 @@ function isLeftEdgeOf(node, ancestor) {
  *
  * @param {Node} node
  * @param {Node} ancestor
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isRightEdgeOf(node, ancestor) {
     if (!ancestor) {
@@ -1162,7 +1162,7 @@ function isRightEdgeOf(node, ancestor) {
  * returns whether point is left edge of ancestor or not.
  * @param {BoundaryPoint} point
  * @param {Node} ancestor
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isLeftEdgePointOf(point, ancestor) {
     return isLeftEdgePoint(point) && isLeftEdgeOf(point.node, ancestor);
@@ -1171,7 +1171,7 @@ function isLeftEdgePointOf(point, ancestor) {
  * returns whether point is right edge of ancestor or not.
  * @param {BoundaryPoint} point
  * @param {Node} ancestor
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isRightEdgePointOf(point, ancestor) {
     return isRightEdgePoint(point) && isRightEdgeOf(point.node, ancestor);
@@ -1196,7 +1196,7 @@ function hasChildren(node) {
  *
  * @param {BoundaryPoint} point
  * @param {Boolean} isSkipInnerOffset
- * @return {BoundaryPoint}
+ * @returns {BoundaryPoint}
  */
 function prevPoint(point, isSkipInnerOffset) {
     var node;
@@ -1226,7 +1226,7 @@ function prevPoint(point, isSkipInnerOffset) {
  *
  * @param {BoundaryPoint} point
  * @param {Boolean} isSkipInnerOffset
- * @return {BoundaryPoint}
+ * @returns {BoundaryPoint}
  */
 function nextPoint(point, isSkipInnerOffset) {
     var node, offset;
@@ -1255,7 +1255,7 @@ function nextPoint(point, isSkipInnerOffset) {
  *
  * @param {BoundaryPoint} pointA
  * @param {BoundaryPoint} pointB
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isSamePoint(pointA, pointB) {
     return pointA.node === pointB.node && pointA.offset === pointB.offset;
@@ -1264,7 +1264,7 @@ function isSamePoint(pointA, pointB) {
  * returns whether point is visible (can set cursor) or not.
  *
  * @param {BoundaryPoint} point
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isVisiblePoint(point) {
     if (isText(point.node) || !hasChildren(point.node) || isEmpty(point.node)) {
@@ -1282,7 +1282,7 @@ function isVisiblePoint(point) {
  *
  * @param {BoundaryPoint} point
  * @param {Function} pred
- * @return {BoundaryPoint}
+ * @returns {BoundaryPoint}
  */
 function prevPointUntil(point, pred) {
     while (point) {
@@ -1298,7 +1298,7 @@ function prevPointUntil(point, pred) {
  *
  * @param {BoundaryPoint} point
  * @param {Function} pred
- * @return {BoundaryPoint}
+ * @returns {BoundaryPoint}
  */
 function nextPointUntil(point, pred) {
     while (point) {
@@ -1313,7 +1313,7 @@ function nextPointUntil(point, pred) {
  * returns whether point has character or not.
  *
  * @param {Point} point
- * @return {Boolean}
+ * @returns {Boolean}
  */
 function isCharPoint(point) {
     if (!isText(point.node)) {
@@ -1346,7 +1346,7 @@ function walkPoint(startPoint, endPoint, handler, isSkipInnerOffset) {
 /**
  * @method makeOffsetPath
  *
- * return offsetPath(array of offset) from ancestor
+ * returns offsetPath(array of offset) from ancestor
  *
  * @param {Node} ancestor - ancestor node
  * @param {Node} node
@@ -1358,7 +1358,7 @@ function makeOffsetPath(ancestor, node) {
 /**
  * @method fromOffsetPath
  *
- * return element from offsetPath(array of offset)
+ * returns element from offsetPath(array of offset)
  *
  * @param {Node} ancestor - ancestor node
  * @param {array} offsets - offsetPath
@@ -1384,7 +1384,7 @@ function fromOffsetPath(ancestor, offsets) {
  * @param {Object} [options]
  * @param {Boolean} [options.isSkipPaddingBlankHTML] - default: false
  * @param {Boolean} [options.isNotSplitEdgePoint] - default: false
- * @return {Node} right node of boundaryPoint
+ * @returns {Node} right node of boundaryPoint
  */
 function splitNode(point, options) {
     var isSkipPaddingBlankHTML = options && options.isSkipPaddingBlankHTML;
@@ -1423,7 +1423,7 @@ function splitNode(point, options) {
  * @param {Object} [options]
  * @param {Boolean} [options.isSkipPaddingBlankHTML] - default: false
  * @param {Boolean} [options.isNotSplitEdgePoint] - default: false
- * @return {Node} right node of boundaryPoint
+ * @returns {Node} right node of boundaryPoint
  */
 function splitTree(root, point, options) {
     // ex) [#text, <span>, <p>]
@@ -1449,7 +1449,7 @@ function splitTree(root, point, options) {
  *
  * @param {Point} point
  * @param {Boolean} isInline
- * @return {Object}
+ * @returns {Object}
  */
 function splitPoint(point, isInline) {
     // find splitRoot, container
@@ -1537,7 +1537,7 @@ function removeWhile(node, pred) {
  *
  * @param {Node} node
  * @param {String} nodeName
- * @return {Node} - new node
+ * @returns {Node} - new node
  */
 function replace(node, nodeName) {
     if (node.nodeName.toUpperCase() === nodeName.toUpperCase()) {
@@ -1917,7 +1917,7 @@ var key = {
      * @method isEdit
      *
      * @param {Number} keyCode
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     isEdit: function (keyCode) {
         return lists.contains([
@@ -1932,7 +1932,7 @@ var key = {
      * @method isMove
      *
      * @param {Number} keyCode
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     isMove: function (keyCode) {
         return lists.contains([
@@ -1951,11 +1951,11 @@ var key = {
 };
 
 /**
- * return boundaryPoint from TextRange, inspired by Andy Na's HuskyRange.js
+ * returns boundaryPoint from TextRange, inspired by Andy Na's HuskyRange.js
  *
  * @param {TextRange} textRange
  * @param {Boolean} isStart
- * @return {BoundaryPoint}
+ * @returns {BoundaryPoint}
  *
  * @see http://msdn.microsoft.com/en-us/library/ie/ms535872(v=vs.85).aspx
  */
@@ -2004,9 +2004,9 @@ function textRangeToPoint(textRange, isStart) {
     };
 }
 /**
- * return TextRange from boundary point (inspired by google closure-library)
+ * returns TextRange from boundary point (inspired by google closure-library)
  * @param {BoundaryPoint} point
- * @return {TextRange}
+ * @returns {TextRange}
  */
 function pointToTextRange(point) {
     var textRangeInfo = function (container, offset) {
@@ -2125,7 +2125,7 @@ var WrappedRange = /** @class */ (function () {
     /**
      * Moves the scrollbar to start container(sc) of current range
      *
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     WrappedRange.prototype.scrollIntoView = function (container) {
         var height = $$1(container).height();
@@ -2135,13 +2135,13 @@ var WrappedRange = /** @class */ (function () {
         return this;
     };
     /**
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     WrappedRange.prototype.normalize = function () {
         /**
          * @param {BoundaryPoint} point
          * @param {Boolean} isLeftToRight
-         * @return {BoundaryPoint}
+         * @returns {BoundaryPoint}
          */
         var getVisiblePoint = function (point, isLeftToRight) {
             if ((dom.isVisiblePoint(point) && !dom.isEdgePoint(point)) ||
@@ -2176,7 +2176,7 @@ var WrappedRange = /** @class */ (function () {
      * @param {Object} [options]
      * @param {Boolean} [options.includeAncestor]
      * @param {Boolean} [options.fullyContains]
-     * @return {Node[]}
+     * @returns {Node[]}
      */
     WrappedRange.prototype.nodes = function (pred, options) {
         pred = pred || func.ok;
@@ -2214,7 +2214,7 @@ var WrappedRange = /** @class */ (function () {
     };
     /**
      * returns commonAncestor of range
-     * @return {Element} - commonAncestor
+     * @returns {Element} - commonAncestor
      */
     WrappedRange.prototype.commonAncestor = function () {
         return dom.commonAncestor(this.sc, this.ec);
@@ -2223,7 +2223,7 @@ var WrappedRange = /** @class */ (function () {
      * returns expanded range by pred
      *
      * @param {Function} pred - predicate function
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     WrappedRange.prototype.expand = function (pred) {
         var startAncestor = dom.ancestor(this.sc, pred);
@@ -2244,7 +2244,7 @@ var WrappedRange = /** @class */ (function () {
     };
     /**
      * @param {Boolean} isCollapseToStart
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     WrappedRange.prototype.collapse = function (isCollapseToStart) {
         if (isCollapseToStart) {
@@ -2275,7 +2275,7 @@ var WrappedRange = /** @class */ (function () {
     };
     /**
      * delete contents on range
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     WrappedRange.prototype.deleteContents = function () {
         if (this.isCollapsed()) {
@@ -2305,7 +2305,7 @@ var WrappedRange = /** @class */ (function () {
         return new WrappedRange(point.node, point.offset, point.node, point.offset).normalize();
     };
     /**
-     * makeIsOn: return isOn(pred) function
+     * makeIsOn: returns isOn(pred) function
      */
     WrappedRange.prototype.makeIsOn = function (pred) {
         return function () {
@@ -2315,7 +2315,7 @@ var WrappedRange = /** @class */ (function () {
     };
     /**
      * @param {Function} pred
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     WrappedRange.prototype.isLeftEdgeOf = function (pred) {
         if (!dom.isLeftEdgePoint(this.getStartPoint())) {
@@ -2333,7 +2333,7 @@ var WrappedRange = /** @class */ (function () {
     /**
      * wrap inline nodes which children of body with paragraph
      *
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     WrappedRange.prototype.wrapBodyInlineWithPara = function () {
         if (dom.isBodyContainer(this.sc) && dom.isEmpty(this.sc)) {
@@ -2375,7 +2375,7 @@ var WrappedRange = /** @class */ (function () {
      * insert node at current cursor
      *
      * @param {Node} node
-     * @return {Node}
+     * @returns {Node}
      */
     WrappedRange.prototype.insertNode = function (node) {
         var rng = this.wrapBodyInlineWithPara().deleteContents();
@@ -2402,7 +2402,7 @@ var WrappedRange = /** @class */ (function () {
     /**
      * returns text in range
      *
-     * @return {String}
+     * @returns {String}
      */
     WrappedRange.prototype.toString = function () {
         var nativeRng = this.nativeRange();
@@ -2412,7 +2412,7 @@ var WrappedRange = /** @class */ (function () {
      * returns range for word before cursor
      *
      * @param {Boolean} [findAfter] - find after cursor, default: false
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     WrappedRange.prototype.getWordRange = function (findAfter) {
         var endPoint = this.getEndPoint();
@@ -2465,7 +2465,7 @@ var WrappedRange = /** @class */ (function () {
     };
     /**
      * getClientRects
-     * @return {Rect[]}
+     * @returns {Rect[]}
      */
     WrappedRange.prototype.getClientRects = function () {
         var nativeRng = this.nativeRange();
@@ -2488,7 +2488,7 @@ var range = {
      * @param {Number} so - start offset
      * @param {Node} ec - end container
      * @param {Number} eo - end offset
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     create: function (sc, so, ec, eo) {
         if (arguments.length === 4) {
@@ -2553,7 +2553,7 @@ var range = {
      * create WrappedRange from node
      *
      * @param {Node} node
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     createFromNode: function (node) {
         var sc = node;
@@ -2579,7 +2579,7 @@ var range = {
      * create WrappedRange from node after position
      *
      * @param {Node} node
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     createFromNodeBefore: function (node) {
         return this.createFromNode(node).collapse(true);
@@ -2588,7 +2588,7 @@ var range = {
      * create WrappedRange from node after position
      *
      * @param {Node} node
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     createFromNodeAfter: function (node) {
         return this.createFromNode(node).collapse();
@@ -2600,7 +2600,7 @@ var range = {
      *
      * @param {Node} editable
      * @param {Object} bookmark
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     createFromBookmark: function (editable, bookmark) {
         var sc = dom.fromOffsetPath(editable, bookmark.s.path);
@@ -2616,7 +2616,7 @@ var range = {
      *
      * @param {Object} bookmark
      * @param {Node[]} paras
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     createFromParaBookmark: function (bookmark, paras) {
         var so = bookmark.s.offset;
@@ -2633,7 +2633,7 @@ var range = {
  * read contents of file as representing URL
  *
  * @param {File} file
- * @return {Promise} - then: dataUrl
+ * @returns {Promise} - then: dataUrl
  */
 function readFileAsDataURL(file) {
     return $$1.Deferred(function (deferred) {
@@ -2654,7 +2654,7 @@ function readFileAsDataURL(file) {
  * create `<image>` from url string
  *
  * @param {String} url
- * @return {Promise} - then: $image
+ * @returns {Promise} - then: $image
  */
 function createImage(url) {
     return $$1.Deferred(function (deferred) {
@@ -2774,7 +2774,7 @@ var Style = /** @class */ (function () {
      * @private
      * @param  {jQuery} $obj
      * @param  {Array} propertyNames - An array of one or more CSS properties.
-     * @return {Object}
+     * @returns {Object}
      */
     Style.prototype.jQueryCSS = function ($obj, propertyNames) {
         if (env.jqueryVersion < 1.9) {
@@ -2790,7 +2790,7 @@ var Style = /** @class */ (function () {
      * returns style object from node
      *
      * @param {jQuery} $node
-     * @return {Object}
+     * @returns {Object}
      */
     Style.prototype.fromNode = function ($node) {
         var properties = ['font-family', 'font-size', 'text-align', 'list-style-type', 'line-height'];
@@ -2819,7 +2819,7 @@ var Style = /** @class */ (function () {
      * @param {String} [options.nodeName] - default: `SPAN`
      * @param {Boolean} [options.expandClosestSibling] - default: `false`
      * @param {Boolean} [options.onlyPartialContains] - default: `false`
-     * @return {Node[]}
+     * @returns {Node[]}
      */
     Style.prototype.styleNodes = function (rng, options) {
         rng = rng.splitText();
@@ -2862,7 +2862,7 @@ var Style = /** @class */ (function () {
      * get current style on cursor
      *
      * @param {WrappedRange} rng
-     * @return {Object} - object contains style properties.
+     * @returns {Object} - object contains style properties.
      */
     Style.prototype.current = function (rng) {
         var $cont = $$1(!dom.isElement(rng.sc) ? rng.sc.parentNode : rng.sc);
@@ -3008,7 +3008,7 @@ var Bullet = /** @class */ (function () {
     /**
      * @param {Node[]} paras
      * @param {String} listName
-     * @return {Node[]}
+     * @returns {Node[]}
      */
     Bullet.prototype.wrapList = function (paras, listName) {
         var head = lists.head(paras);
@@ -3033,7 +3033,7 @@ var Bullet = /** @class */ (function () {
      *
      * @param {Array[]} clustereds
      * @param {Boolean} isEscapseToBody
-     * @return {Node[]}
+     * @returns {Node[]}
      */
     Bullet.prototype.releaseList = function (clustereds, isEscapseToBody) {
         var releasedParas = [];
@@ -3444,7 +3444,7 @@ var Table = /** @class */ (function () {
      *
      * @param {WrappedRange} rng
      * @param {String} position (top/bottom)
-     * @return {Node}
+     * @returns {Node}
      */
     Table.prototype.addRow = function (rng, position) {
         var cell = dom.ancestor(rng.commonAncestor(), dom.isCell);
@@ -3494,7 +3494,7 @@ var Table = /** @class */ (function () {
      *
      * @param {WrappedRange} rng
      * @param {String} position (left/right)
-     * @return {Node}
+     * @returns {Node}
      */
     Table.prototype.addCol = function (rng, position) {
         var cell = dom.ancestor(rng.commonAncestor(), dom.isCell);
@@ -3532,7 +3532,7 @@ var Table = /** @class */ (function () {
     * Copy attributes from element.
     *
     * @param {object} Element to recover attributes.
-    * @return {string} Copied string elements.
+    * @returns {string} Copied string elements.
     */
     Table.prototype.recoverAttributes = function (el) {
         var resultStr = '';
@@ -3554,7 +3554,7 @@ var Table = /** @class */ (function () {
      * Delete current row
      *
      * @param {WrappedRange} rng
-     * @return {Node}
+     * @returns {Node}
      */
     Table.prototype.deleteRow = function (rng) {
         var cell = dom.ancestor(rng.commonAncestor(), dom.isCell);
@@ -3622,7 +3622,7 @@ var Table = /** @class */ (function () {
      * Delete current col
      *
      * @param {WrappedRange} rng
-     * @return {Node}
+     * @returns {Node}
      */
     Table.prototype.deleteCol = function (rng) {
         var cell = dom.ancestor(rng.commonAncestor(), dom.isCell);
@@ -3668,7 +3668,7 @@ var Table = /** @class */ (function () {
      *
      * @param {Number} rowCount
      * @param {Number} colCount
-     * @return {Node}
+     * @returns {Node}
      */
     Table.prototype.createTable = function (colCount, rowCount, options) {
         var tds = [];
@@ -3693,7 +3693,7 @@ var Table = /** @class */ (function () {
      * Delete current table
      *
      * @param {WrappedRange} rng
-     * @return {Node}
+     * @returns {Node}
      */
     Table.prototype.deleteTable = function (rng) {
         var cell = dom.ancestor(rng.commonAncestor(), dom.isCell);
@@ -4085,7 +4085,7 @@ var Editor = /** @class */ (function () {
     };
     /**
      * create range
-     * @return {WrappedRange}
+     * @returns {WrappedRange}
      */
     Editor.prototype.createRange = function () {
         this.focus();
@@ -4128,7 +4128,7 @@ var Editor = /** @class */ (function () {
      * currentStyle
      *
      * current style
-     * @return {Object|Boolean} unfocus
+     * @returns {Object|Boolean} unfocus
      */
     Editor.prototype.currentStyle = function () {
         var rng = range.create();
@@ -4141,7 +4141,7 @@ var Editor = /** @class */ (function () {
      * style from node
      *
      * @param {jQuery} $node
-     * @return {Object}
+     * @returns {Object}
      */
     Editor.prototype.styleFromNode = function ($node) {
         return this.style.fromNode($node);
@@ -4230,7 +4230,7 @@ var Editor = /** @class */ (function () {
      *
      * @param {String} src
      * @param {String|Function} param
-     * @return {Promise}
+     * @returns {Promise}
      */
     Editor.prototype.insertImage = function (src, param) {
         var _this = this;
@@ -4289,8 +4289,8 @@ var Editor = /** @class */ (function () {
         }
     };
     /**
-     * return selected plain text
-     * @return {String} text
+     * returns selected plain text
+     * @returns {String} text
      */
     Editor.prototype.getSelectedText = function () {
         var rng = this.createRange();
@@ -4353,11 +4353,11 @@ var Editor = /** @class */ (function () {
     /**
      * returns link info
      *
-     * @return {Object}
-     * @return {WrappedRange} return.range
-     * @return {String} return.text
-     * @return {Boolean} [return.isNewWindow=true]
-     * @return {String} [return.url=""]
+     * @returns {Object}
+     * @returns {WrappedRange} returns.range
+     * @returns {String} returns.text
+     * @returns {Boolean} [returns.isNewWindow=true]
+     * @returns {String} [returns.url=""]
      */
     Editor.prototype.getLinkInfo = function () {
         var rng = this.createRange().expand(dom.isAnchor);
@@ -4455,7 +4455,7 @@ var Editor = /** @class */ (function () {
     };
     /**
      * returns whether contents is empty or not.
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     Editor.prototype.isEmpty = function () {
         return dom.isEmpty(this.$editable[0]) || dom.emptyPara === this.$editable.html();
@@ -4637,7 +4637,7 @@ var CodeView = /** @class */ (function () {
         }
     };
     /**
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     CodeView.prototype.isActivated = function () {
         return this.$editor.hasClass('codeview');
@@ -5948,7 +5948,7 @@ var LinkDialog = /** @class */ (function () {
      * Show link dialog and set event handlers on dialog controls.
      *
      * @param {Object} linkInfo
-     * @return {Promise}
+     * @returns {Promise}
      */
     LinkDialog.prototype.showLinkDialog = function (linkInfo) {
         var _this = this;
@@ -6166,7 +6166,7 @@ var ImageDialog = /** @class */ (function () {
      * show image dialog
      *
      * @param {jQuery} $dialog
-     * @return {Promise}
+     * @returns {Promise}
      */
     ImageDialog.prototype.showImageDialog = function () {
         var _this = this;
@@ -6463,7 +6463,7 @@ var VideoDialog = /** @class */ (function () {
      * show image dialog
      *
      * @param {jQuery} $dialog
-     * @return {Promise}
+     * @returns {Promise}
      */
     VideoDialog.prototype.showVideoDialog = function (text) {
         var _this = this;
@@ -6548,7 +6548,7 @@ var HelpDialog = /** @class */ (function () {
     /**
      * show help dialog
      *
-     * @return {Promise}
+     * @returns {Promise}
      */
     HelpDialog.prototype.showHelpDialog = function () {
         var _this = this;
@@ -7036,7 +7036,7 @@ $$1.fn.extend({
      * Summernote API
      *
      * @param {Object|String}
-     * @return {this}
+     * @returns {this}
      */
     summernote: function () {
         var type = $$1.type(lists.head(arguments));

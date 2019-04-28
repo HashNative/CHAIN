@@ -51,7 +51,7 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	/**
 	 * Number of rows in the result set
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function num_rows()
 	{
@@ -65,7 +65,7 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	/**
 	 * Number of fields in the result set
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function num_fields()
 	{
@@ -79,7 +79,7 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 *
 	 * Generates an array of column names
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function list_fields()
 	{
@@ -99,7 +99,7 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 *
 	 * Generates an array of objects containing field meta-data
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function field_data()
 	{
@@ -125,7 +125,7 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 * result set starts at zero.
 	 *
 	 * @param	int	$n
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function data_seek($n = 0)
 	{
@@ -139,7 +139,7 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 *
 	 * Returns the result set as an array
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	protected function _fetch_assoc()
 	{
@@ -154,7 +154,7 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 * Returns the result set as an object
 	 *
 	 * @param	string	$class_name
-	 * @return	object
+	 * @returns	object
 	 */
 	protected function _fetch_object($class_name = 'stdClass')
 	{

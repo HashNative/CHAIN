@@ -107,7 +107,7 @@ class CI_FTP {
 	 * Constructor
 	 *
 	 * @param	array	$config
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($config = array())
 	{
@@ -121,7 +121,7 @@ class CI_FTP {
 	 * Initialize preferences
 	 *
 	 * @param	array	$config
-	 * @return	void
+	 * @returns	void
 	 */
 	public function initialize($config = array())
 	{
@@ -143,7 +143,7 @@ class CI_FTP {
 	 * FTP Connect
 	 *
 	 * @param	array	 $config	Connection values
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function connect($config = array())
 	{
@@ -186,7 +186,7 @@ class CI_FTP {
 	/**
 	 * FTP Login
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _login()
 	{
@@ -198,7 +198,7 @@ class CI_FTP {
 	/**
 	 * Validates the connection ID
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _is_conn()
 	{
@@ -228,7 +228,7 @@ class CI_FTP {
 	 *
 	 * @param	string	$path
 	 * @param	bool	$suppress_debug
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function changedir($path, $suppress_debug = FALSE)
 	{
@@ -259,7 +259,7 @@ class CI_FTP {
 	 *
 	 * @param	string	$path
 	 * @param	int	$permissions
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function mkdir($path, $permissions = NULL)
 	{
@@ -298,7 +298,7 @@ class CI_FTP {
 	 * @param	string	$rempath
 	 * @param	string	$mode
 	 * @param	int	$permissions
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function upload($locpath, $rempath, $mode = 'auto', $permissions = NULL)
 	{
@@ -352,7 +352,7 @@ class CI_FTP {
 	 * @param	string	$rempath
 	 * @param	string	$locpath
 	 * @param	string	$mode
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function download($rempath, $locpath, $mode = 'auto')
 	{
@@ -394,7 +394,7 @@ class CI_FTP {
 	 * @param	string	$old_file
 	 * @param	string	$new_file
 	 * @param	bool	$move
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function rename($old_file, $new_file, $move = FALSE)
 	{
@@ -425,7 +425,7 @@ class CI_FTP {
 	 *
 	 * @param	string	$old_file
 	 * @param	string	$new_file
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function move($old_file, $new_file)
 	{
@@ -438,7 +438,7 @@ class CI_FTP {
 	 * Rename (or move) a file
 	 *
 	 * @param	string	$filepath
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function delete_file($filepath)
 	{
@@ -469,7 +469,7 @@ class CI_FTP {
 	 * contained within it.
 	 *
 	 * @param	string	$filepath
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function delete_dir($filepath)
 	{
@@ -515,7 +515,7 @@ class CI_FTP {
 	 *
 	 * @param	string	$path	File path
 	 * @param	int	$perm	Permissions
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function chmod($path, $perm)
 	{
@@ -543,7 +543,7 @@ class CI_FTP {
 	 * FTP List files in the specified directory
 	 *
 	 * @param	string	$path
-	 * @return	array
+	 * @returns	array
 	 */
 	public function list_files($path = '.')
 	{
@@ -564,7 +564,7 @@ class CI_FTP {
 	 *
 	 * @param	string	$locpath	Path to source with trailing slash
 	 * @param	string	$rempath	Path to destination - include the base folder with trailing slash
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function mirror($locpath, $rempath)
 	{
@@ -611,7 +611,7 @@ class CI_FTP {
 	 * Extract the file extension
 	 *
 	 * @param	string	$filename
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _getext($filename)
 	{
@@ -626,7 +626,7 @@ class CI_FTP {
 	 * Set the upload type
 	 *
 	 * @param	string	$ext	Filename extension
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _settype($ext)
 	{
@@ -640,7 +640,7 @@ class CI_FTP {
 	/**
 	 * Close the connection
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function close()
 	{
@@ -655,7 +655,7 @@ class CI_FTP {
 	 * Display error message
 	 *
 	 * @param	string	$line
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _error($line)
 	{

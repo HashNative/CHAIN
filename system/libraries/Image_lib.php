@@ -383,7 +383,7 @@ class CI_Image_lib {
 	 * Initialize Image Library
 	 *
 	 * @param	array	$props
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($props = array())
 	{
@@ -412,7 +412,7 @@ class CI_Image_lib {
 	 *
 	 * Resets values in case this class is used in a loop
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function clear()
 	{
@@ -455,7 +455,7 @@ class CI_Image_lib {
 	 * initialize image preferences
 	 *
 	 * @param	array
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function initialize($props = array())
 	{
@@ -670,7 +670,7 @@ class CI_Image_lib {
 	 * This is a wrapper function that chooses the proper
 	 * resize function based on the protocol specified
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function resize()
 	{
@@ -686,7 +686,7 @@ class CI_Image_lib {
 	 * This is a wrapper function that chooses the proper
 	 * cropping function based on the protocol specified
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function crop()
 	{
@@ -702,7 +702,7 @@ class CI_Image_lib {
 	 * This is a wrapper function that chooses the proper
 	 * rotation function based on the protocol specified
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function rotate()
 	{
@@ -747,7 +747,7 @@ class CI_Image_lib {
 	 * This function will resize or crop
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function image_process_gd($action = 'resize')
 	{
@@ -848,7 +848,7 @@ class CI_Image_lib {
 	 * This function will resize, crop or rotate
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function image_process_imagemagick($action = 'resize')
 	{
@@ -918,7 +918,7 @@ class CI_Image_lib {
 	 * This function will resize, crop or rotate
 	 *
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function image_process_netpbm($action = 'resize')
 	{
@@ -1003,7 +1003,7 @@ class CI_Image_lib {
 	/**
 	 * Image Rotate Using GD
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function image_rotate_gd()
 	{
@@ -1049,7 +1049,7 @@ class CI_Image_lib {
 	 *
 	 * This function will flip horizontal or vertical
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function image_mirror_gd()
 	{
@@ -1128,7 +1128,7 @@ class CI_Image_lib {
 	 * This is a wrapper function that chooses the type
 	 * of watermarking based on the specified preference.
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function watermark()
 	{
@@ -1140,7 +1140,7 @@ class CI_Image_lib {
 	/**
 	 * Watermark - Graphic Version
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function overlay_watermark()
 	{
@@ -1254,7 +1254,7 @@ class CI_Image_lib {
 	/**
 	 * Watermark - Text Version
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function text_watermark()
 	{
@@ -1429,7 +1429,7 @@ class CI_Image_lib {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	resource
+	 * @returns	resource
 	 */
 	public function image_create_gd($path = '', $image_type = '')
 	{
@@ -1484,7 +1484,7 @@ class CI_Image_lib {
 	 * to the specified destination
 	 *
 	 * @param	resource
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function image_save_gd($resource)
 	{
@@ -1544,7 +1544,7 @@ class CI_Image_lib {
 	 * Dynamically outputs an image
 	 *
 	 * @param	resource
-	 * @return	void
+	 * @returns	void
 	 */
 	public function image_display_gd($resource)
 	{
@@ -1578,7 +1578,7 @@ class CI_Image_lib {
 	 * This function lets us re-proportion the width/height
 	 * if users choose to maintain the aspect ratio when resizing.
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function image_reproportion()
 	{
@@ -1630,7 +1630,7 @@ class CI_Image_lib {
 	 *
 	 * @param	string
 	 * @param	bool
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function get_image_properties($path = '', $return = FALSE)
 	{
@@ -1695,7 +1695,7 @@ class CI_Image_lib {
 	 *		);
 	 *
 	 * @param	array
-	 * @return	array
+	 * @returns	array
 	 */
 	public function size_calculator($vals)
 	{
@@ -1744,7 +1744,7 @@ class CI_Image_lib {
 	 * $array['name'] = 'my.cool';
 	 *
 	 * @param	array
-	 * @return	array
+	 * @returns	array
 	 */
 	public function explode_name($source_image)
 	{
@@ -1759,7 +1759,7 @@ class CI_Image_lib {
 	/**
 	 * Is GD Installed?
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function gd_loaded()
 	{
@@ -1779,7 +1779,7 @@ class CI_Image_lib {
 	/**
 	 * Get GD version
 	 *
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function gd_version()
 	{
@@ -1798,7 +1798,7 @@ class CI_Image_lib {
 	 * Set error message
 	 *
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function set_error($msg)
 	{
@@ -1829,7 +1829,7 @@ class CI_Image_lib {
 	 *
 	 * @param	string
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	public function display_errors($open = '<p>', $close = '</p>')
 	{

@@ -43,8 +43,8 @@ $.jgrid = {
 			date: "Indtast venligst en valid datoværdi",
 			url: "is not a valid URL. Prefix required ('http://' or 'https://')",
 			nodefined : " is not defined!",
-			novalue : " return value is required!",
-			customarray : "Custom function should return array!",
+			novalue : " returns value is required!",
+			customarray : "Custom function should returns array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 		}
 	},

@@ -759,7 +759,7 @@
   , eventSupported: function(eventName) {
       var isSupported = eventName in this.$element;
       if (!isSupported) {
-        this.$element.setAttribute(eventName, 'return;');
+        this.$element.setAttribute(eventName, 'returns;');
         isSupported = typeof this.$element[eventName] === 'function';
       }
       return isSupported;

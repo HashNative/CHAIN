@@ -109,7 +109,7 @@
 
         /**
          * Request animation frame wrapper with polyfill
-         * @return {function} Request animation frame method or timeout fallback
+         * @returns {function} Request animation frame method or timeout fallback
          */
         var reqAnimationFrame = (function() {
             return  window.requestAnimationFrame ||
@@ -310,7 +310,7 @@
         /**
          * Update the value of the chart
          * @param  {number} newValue Number between 0 and 100
-         * @return {object}          Instance of the plugin for method chaining
+         * @returns {object}          Instance of the plugin for method chaining
          */
         this.update = function(newValue) {
             newValue = parseFloat(newValue);
@@ -325,7 +325,7 @@
 
         /**
          * Disable animation
-         * @return {object} Instance of the plugin for method chaining
+         * @returns {object} Instance of the plugin for method chaining
          */
         this.disableAnimation = function() {
             options.animate.enabled = false;
@@ -334,7 +334,7 @@
 
         /**
          * Enable animation
-         * @return {object} Instance of the plugin for method chaining
+         * @returns {object} Instance of the plugin for method chaining
          */
         this.enableAnimation = function() {
             options.animate.enabled = true;

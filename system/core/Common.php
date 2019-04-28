@@ -57,7 +57,7 @@ if ( ! function_exists('is_php'))
 	 * Determines if the current version of PHP is equal to or greater than the supplied value
 	 *
 	 * @param	string
-	 * @return	bool	TRUE if the current version is $version or higher
+	 * @returns	bool	TRUE if the current version is $version or higher
 	 */
 	function is_php($version)
 	{
@@ -86,7 +86,7 @@ if ( ! function_exists('is_really_writable'))
 	 *
 	 * @link	https://bugs.php.net/bug.php?id=54709
 	 * @param	string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function is_really_writable($file)
 	{
@@ -136,7 +136,7 @@ if ( ! function_exists('load_class'))
 	 * @param	string	the class name being requested
 	 * @param	string	the directory where the class should be found
 	 * @param	mixed	an optional argument to pass to the class constructor
-	 * @return	object
+	 * @returns	object
 	 */
 	function &load_class($class, $directory = 'libraries', $param = NULL)
 	{
@@ -207,7 +207,7 @@ if ( ! function_exists('is_loaded'))
 	 * called by the load_class() function above
 	 *
 	 * @param	string
-	 * @return	array
+	 * @returns	array
 	 */
 	function &is_loaded($class = '')
 	{
@@ -233,7 +233,7 @@ if ( ! function_exists('get_config'))
 	 * hasn't been instantiated yet
 	 *
 	 * @param	array
-	 * @return	array
+	 * @returns	array
 	 */
 	function &get_config(Array $replace = array())
 	{
@@ -288,7 +288,7 @@ if ( ! function_exists('config_item'))
 	 * Returns the specified config item
 	 *
 	 * @param	string
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	function config_item($item)
 	{
@@ -311,7 +311,7 @@ if ( ! function_exists('get_mimes'))
 	/**
 	 * Returns the MIME types array from config/mimes.php
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	function &get_mimes()
 	{
@@ -343,7 +343,7 @@ if ( ! function_exists('is_https'))
 	 * Determines if the application is accessed via an encrypted
 	 * (HTTPS) connection.
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	function is_https()
 	{
@@ -374,7 +374,7 @@ if ( ! function_exists('is_cli'))
 	 *
 	 * Test to see if a request was made from the command line.
 	 *
-	 * @return 	bool
+	 * @returns 	bool
 	 */
 	function is_cli()
 	{
@@ -398,7 +398,7 @@ if ( ! function_exists('show_error'))
 	 * @param	string
 	 * @param	int
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	function show_error($message, $status_code = 500, $heading = 'An Error Was Encountered')
 	{
@@ -432,7 +432,7 @@ if ( ! function_exists('show_404'))
 	 *
 	 * @param	string
 	 * @param	bool
-	 * @return	void
+	 * @returns	void
 	 */
 	function show_404($page = '', $log_error = TRUE)
 	{
@@ -454,7 +454,7 @@ if ( ! function_exists('log_message'))
 	 *
 	 * @param	string	the error level: 'error', 'debug' or 'info'
 	 * @param	string	the error message
-	 * @return	void
+	 * @returns	void
 	 */
 	function log_message($level, $message)
 	{
@@ -479,7 +479,7 @@ if ( ! function_exists('set_status_header'))
 	 *
 	 * @param	int	the status code
 	 * @param	string
-	 * @return	void
+	 * @returns	void
 	 */
 	function set_status_header($code = 200, $text = '')
 	{
@@ -590,7 +590,7 @@ if ( ! function_exists('_error_handler'))
 	 * @param	string	$message
 	 * @param	string	$filepath
 	 * @param	int	$line
-	 * @return	void
+	 * @returns	void
 	 */
 	function _error_handler($severity, $message, $filepath, $line)
 	{
@@ -645,7 +645,7 @@ if ( ! function_exists('_exception_handler'))
 	 * production environments.
 	 *
 	 * @param	Exception	$exception
-	 * @return	void
+	 * @returns	void
 	 */
 	function _exception_handler($exception)
 	{
@@ -678,7 +678,7 @@ if ( ! function_exists('_shutdown_handler'))
 	 * been caught. Duplication or none? None is preferred for now.
 	 *
 	 * @link	http://insomanic.me.uk/post/229851073/php-trick-catching-fatal-errors-e-error-with-a
-	 * @return	void
+	 * @returns	void
 	 */
 	function _shutdown_handler()
 	{
@@ -703,14 +703,14 @@ if ( ! function_exists('remove_invisible_characters'))
 	 *
 	 * @param	string
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	function remove_invisible_characters($str, $url_encoded = TRUE)
 	{
 		$non_displayables = array();
 
 		// every control character except newline (dec 10),
-		// carriage return (dec 13) and horizontal tab (dec 09)
+		// carriage returns (dec 13) and horizontal tab (dec 09)
 		if ($url_encoded)
 		{
 			$non_displayables[] = '/%0[0-8bcef]/i';	// url encoded 00-08, 11, 12, 14, 15
@@ -739,7 +739,7 @@ if ( ! function_exists('html_escape'))
 	 *
 	 * @param	mixed	$var		The input string or array of strings to be escaped.
 	 * @param	bool	$double_encode	$double_encode set to FALSE prevents escaping twice.
-	 * @return	mixed			The escaped string or array of strings as a result.
+	 * @returns	mixed			The escaped string or array of strings as a result.
 	 */
 	function html_escape($var, $double_encode = TRUE)
 	{
@@ -774,7 +774,7 @@ if ( ! function_exists('_stringify_attributes'))
 	 *
 	 * @param	mixed	string, array, object
 	 * @param	bool
-	 * @return	string
+	 * @returns	string
 	 */
 	function _stringify_attributes($attributes, $js = FALSE)
 	{
@@ -812,7 +812,7 @@ if ( ! function_exists('function_usable'))
 	 * extension is loaded - checks whether the function that is
 	 * checked might be disabled in there as well.
 	 *
-	 * This is useful as function_exists() will return FALSE for
+	 * This is useful as function_exists() will returns FALSE for
 	 * functions disabled via the *disable_functions* php.ini
 	 * setting, but not for *suhosin.executor.func.blacklist* and
 	 * *suhosin.executor.disable_eval*. These settings will just
@@ -825,7 +825,7 @@ if ( ! function_exists('function_usable'))
 	 *
 	 * @link	http://www.hardened-php.net/suhosin/
 	 * @param	string	$function_name	Function to check for
-	 * @return	bool	TRUE if the function exists and is safe to call,
+	 * @returns	bool	TRUE if the function exists and is safe to call,
 	 *			FALSE otherwise.
 	 */
 	function function_usable($function_name)

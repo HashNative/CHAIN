@@ -74,7 +74,7 @@ class CI_DB_pdo_4d_driver extends CI_DB_pdo_driver {
 	 * Builds the DSN if not already set.
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -102,7 +102,7 @@ class CI_DB_pdo_4d_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific query string so that the table names can be fetched
 	 *
 	 * @param	bool	$prefix_limit
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_tables($prefix_limit = FALSE)
 	{
@@ -125,7 +125,7 @@ class CI_DB_pdo_4d_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific query string so that the column names can be fetched
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_columns($table = '')
 	{
@@ -141,7 +141,7 @@ class CI_DB_pdo_4d_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific query so that the column data can be retrieved
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _field_data($table)
 	{
@@ -157,7 +157,7 @@ class CI_DB_pdo_4d_driver extends CI_DB_pdo_driver {
 	 *
 	 * @param	string	$table
 	 * @param	array	$values
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _update($table, $values)
 	{
@@ -174,7 +174,7 @@ class CI_DB_pdo_4d_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific delete string from the supplied data
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _delete($table)
 	{
@@ -190,7 +190,7 @@ class CI_DB_pdo_4d_driver extends CI_DB_pdo_driver {
 	 * Generates a platform-specific LIMIT clause
 	 *
 	 * @param	string	$sql	SQL Query
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _limit($sql)
 	{

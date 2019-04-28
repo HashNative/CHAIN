@@ -74,7 +74,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	 * Validates the DSN string and/or detects the subdriver.
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -122,7 +122,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	 * Database connection
 	 *
 	 * @param	bool	$persistent
-	 * @return	object
+	 * @returns	object
 	 */
 	public function db_connect($persistent = FALSE)
 	{
@@ -151,7 +151,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	/**
 	 * Database version number
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function version()
 	{
@@ -177,7 +177,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	 * Execute the query
 	 *
 	 * @param	string	$sql	SQL query
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _execute($sql)
 	{
@@ -189,7 +189,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	/**
 	 * Begin Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_begin()
 	{
@@ -201,7 +201,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	/**
 	 * Commit Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_commit()
 	{
@@ -213,7 +213,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	/**
 	 * Rollback Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_rollback()
 	{
@@ -226,7 +226,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	 * Platform-dependent string escape
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _escape_str($str)
 	{
@@ -244,7 +244,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	/**
 	 * Affected Rows
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function affected_rows()
 	{
@@ -257,7 +257,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	 * Insert ID
 	 *
 	 * @param	string	$name
-	 * @return	int
+	 * @returns	int
 	 */
 	public function insert_id($name = NULL)
 	{
@@ -272,7 +272,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	 * Generates a platform-specific query so that the column data can be retrieved
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _field_data($table)
 	{
@@ -287,7 +287,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	 * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function error()
 	{
@@ -319,7 +319,7 @@ class CI_DB_pdo_driver extends CI_DB {
 	 * then this method maps to 'DELETE FROM table'
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _truncate($table)
 	{

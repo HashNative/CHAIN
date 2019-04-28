@@ -46,7 +46,7 @@ $.extend($.jgrid,{
 			url: "nem helyes cím. Előtag kötelező ('http://' vagy 'https://')",
 			nodefined : " nem definiált!",
 			novalue : " visszatérési érték kötelező!!",
-			customarray : "Custom function should return array!",
+			customarray : "Custom function should returns array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 			
 		}

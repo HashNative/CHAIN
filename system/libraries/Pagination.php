@@ -325,7 +325,7 @@ class CI_Pagination {
 	 * Constructor
 	 *
 	 * @param	array	$params	Initialization parameters
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params = array())
 	{
@@ -349,7 +349,7 @@ class CI_Pagination {
 	 * Initialize Preferences
 	 *
 	 * @param	array	$params	Initialization parameters
-	 * @return	CI_Pagination
+	 * @returns	CI_Pagination
 	 */
 	public function initialize(array $params = array())
 	{
@@ -394,7 +394,7 @@ class CI_Pagination {
 	/**
 	 * Generate the pagination links
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function create_links()
 	{
@@ -661,7 +661,7 @@ class CI_Pagination {
 	 * Parse attributes
 	 *
 	 * @param	array	$attributes
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _parse_attributes($attributes)
 	{
@@ -685,7 +685,7 @@ class CI_Pagination {
 	 *
 	 * @link	http://www.w3.org/TR/html5/links.html#linkTypes
 	 * @param	string	$type
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _attr_rel($type)
 	{

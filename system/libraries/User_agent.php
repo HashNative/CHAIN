@@ -169,7 +169,7 @@ class CI_User_agent {
 	 *
 	 * Sets the User Agent and runs the compilation routine
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -189,7 +189,7 @@ class CI_User_agent {
 	/**
 	 * Compile the User Agent Data
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _load_agent_file()
 	{
@@ -247,7 +247,7 @@ class CI_User_agent {
 	/**
 	 * Compile the User Agent Data
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _compile_data()
 	{
@@ -267,7 +267,7 @@ class CI_User_agent {
 	/**
 	 * Set the Platform
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _set_platform()
 	{
@@ -292,7 +292,7 @@ class CI_User_agent {
 	/**
 	 * Set the Browser
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _set_browser()
 	{
@@ -319,7 +319,7 @@ class CI_User_agent {
 	/**
 	 * Set the Robot
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _set_robot()
 	{
@@ -345,7 +345,7 @@ class CI_User_agent {
 	/**
 	 * Set the Mobile Device
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _set_mobile()
 	{
@@ -370,7 +370,7 @@ class CI_User_agent {
 	/**
 	 * Set the accepted languages
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _set_languages()
 	{
@@ -390,7 +390,7 @@ class CI_User_agent {
 	/**
 	 * Set the accepted character sets
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _set_charsets()
 	{
@@ -411,7 +411,7 @@ class CI_User_agent {
 	 * Is Browser
 	 *
 	 * @param	string	$key
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_browser($key = NULL)
 	{
@@ -436,7 +436,7 @@ class CI_User_agent {
 	 * Is Robot
 	 *
 	 * @param	string	$key
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_robot($key = NULL)
 	{
@@ -461,7 +461,7 @@ class CI_User_agent {
 	 * Is Mobile
 	 *
 	 * @param	string	$key
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_mobile($key = NULL)
 	{
@@ -485,7 +485,7 @@ class CI_User_agent {
 	/**
 	 * Is this a referral from another site?
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_referral()
 	{
@@ -512,7 +512,7 @@ class CI_User_agent {
 	/**
 	 * Agent String
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function agent_string()
 	{
@@ -524,7 +524,7 @@ class CI_User_agent {
 	/**
 	 * Get Platform
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function platform()
 	{
@@ -536,7 +536,7 @@ class CI_User_agent {
 	/**
 	 * Get Browser Name
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function browser()
 	{
@@ -548,7 +548,7 @@ class CI_User_agent {
 	/**
 	 * Get the Browser Version
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function version()
 	{
@@ -560,7 +560,7 @@ class CI_User_agent {
 	/**
 	 * Get The Robot Name
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function robot()
 	{
@@ -571,7 +571,7 @@ class CI_User_agent {
 	/**
 	 * Get the Mobile Device
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function mobile()
 	{
@@ -583,7 +583,7 @@ class CI_User_agent {
 	/**
 	 * Get the referrer
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function referrer()
 	{
@@ -595,7 +595,7 @@ class CI_User_agent {
 	/**
 	 * Get the accepted languages
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function languages()
 	{
@@ -612,7 +612,7 @@ class CI_User_agent {
 	/**
 	 * Get the accepted Character Sets
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function charsets()
 	{
@@ -630,7 +630,7 @@ class CI_User_agent {
 	 * Test for a particular language
 	 *
 	 * @param	string	$lang
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function accept_lang($lang = 'en')
 	{
@@ -643,7 +643,7 @@ class CI_User_agent {
 	 * Test for a particular character set
 	 *
 	 * @param	string	$charset
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function accept_charset($charset = 'utf-8')
 	{
@@ -656,7 +656,7 @@ class CI_User_agent {
 	 * Parse a custom user-agent string
 	 *
 	 * @param	string	$string
-	 * @return	void
+	 * @returns	void
 	 */
 	public function parse($string)
 	{

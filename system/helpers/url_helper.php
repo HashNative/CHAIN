@@ -59,7 +59,7 @@ if ( ! function_exists('site_url'))
 	 *
 	 * @param	string	$uri
 	 * @param	string	$protocol
-	 * @return	string
+	 * @returns	string
 	 */
 	function site_url($uri = '', $protocol = NULL)
 	{
@@ -80,7 +80,7 @@ if ( ! function_exists('base_url'))
 	 *
 	 * @param	string	$uri
 	 * @param	string	$protocol
-	 * @return	string
+	 * @returns	string
 	 */
 	function base_url($uri = '', $protocol = NULL)
 	{
@@ -98,7 +98,7 @@ if ( ! function_exists('current_url'))
 	 * Returns the full URL (including segments) of the page where this
 	 * function is placed
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	function current_url()
 	{
@@ -116,7 +116,7 @@ if ( ! function_exists('uri_string'))
 	 *
 	 * Returns the URI segments.
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	function uri_string()
 	{
@@ -133,7 +133,7 @@ if ( ! function_exists('index_page'))
 	 *
 	 * Returns the "index_page" from your config file
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	function index_page()
 	{
@@ -153,7 +153,7 @@ if ( ! function_exists('anchor'))
 	 * @param	string	the URL
 	 * @param	string	the link title
 	 * @param	mixed	any attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	function anchor($uri = '', $title = '', $attributes = '')
 	{
@@ -190,7 +190,7 @@ if ( ! function_exists('anchor_popup'))
 	 * @param	string	the URL
 	 * @param	string	the link title
 	 * @param	mixed	any attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	function anchor_popup($uri = '', $title = '', $attributes = FALSE)
 	{
@@ -204,7 +204,7 @@ if ( ! function_exists('anchor_popup'))
 
 		if ($attributes === FALSE)
 		{
-			return '<a href="'.$site_url.'" onclick="window.open(\''.$site_url."', '_blank'); return false;\">".$title.'</a>';
+			return '<a href="'.$site_url.'" onclick="window.open(\''.$site_url."', '_blank'); returns false;\">".$title.'</a>';
 		}
 
 		if ( ! is_array($attributes))
@@ -233,7 +233,7 @@ if ( ! function_exists('anchor_popup'))
 		$attributes = _stringify_attributes($attributes);
 
 		return '<a href="'.$site_url
-			.'" onclick="window.open(\''.$site_url."', '".$window_name."', '"._stringify_attributes($atts, TRUE)."'); return false;\""
+			.'" onclick="window.open(\''.$site_url."', '".$window_name."', '"._stringify_attributes($atts, TRUE)."'); returns false;\""
 			.$attributes.'>'.$title.'</a>';
 	}
 }
@@ -248,7 +248,7 @@ if ( ! function_exists('mailto'))
 	 * @param	string	the email address
 	 * @param	string	the link title
 	 * @param	mixed	any attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	function mailto($email, $title = '', $attributes = '')
 	{
@@ -275,7 +275,7 @@ if ( ! function_exists('safe_mailto'))
 	 * @param	string	the email address
 	 * @param	string	the link title
 	 * @param	mixed	any attributes
-	 * @return	string
+	 * @returns	string
 	 */
 	function safe_mailto($email, $title = '', $attributes = '')
 	{
@@ -388,7 +388,7 @@ if ( ! function_exists('auto_link'))
 	 * @param	string	the string
 	 * @param	string	the type: email, url, or both
 	 * @param	bool	whether to create pop-up links
-	 * @return	string
+	 * @returns	string
 	 */
 	function auto_link($str, $type = 'both', $popup = FALSE)
 	{
@@ -439,7 +439,7 @@ if ( ! function_exists('prep_url'))
 	 * Simply adds the http:// part if no scheme is included
 	 *
 	 * @param	string	the URL
-	 * @return	string
+	 * @returns	string
 	 */
 	function prep_url($str = '')
 	{
@@ -475,7 +475,7 @@ if ( ! function_exists('url_title'))
 	 * @param	string	$separator	Word separator
 	 *			(usually '-' or '_')
 	 * @param	bool	$lowercase	Whether to transform the output string to lowercase
-	 * @return	string
+	 * @returns	string
 	 */
 	function url_title($str, $separator = '-', $lowercase = FALSE)
 	{
@@ -527,7 +527,7 @@ if ( ! function_exists('redirect'))
 	 * @param	string	$method	Redirect method
 	 *			'auto', 'location' or 'refresh'
 	 * @param	int	$code	HTTP Response status code
-	 * @return	void
+	 * @returns	void
 	 */
 	function redirect($uri = '', $method = 'auto', $code = NULL)
 	{

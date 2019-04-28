@@ -69,7 +69,7 @@ class CI_DB_Cache {
 	 * Constructor
 	 *
 	 * @param	object	&$db
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct(&$db)
 	{
@@ -87,7 +87,7 @@ class CI_DB_Cache {
 	 * Set Cache Directory Path
 	 *
 	 * @param	string	$path	Path to the cache directory
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function check_path($path = '')
 	{
@@ -135,7 +135,7 @@ class CI_DB_Cache {
 	 * An MD5 hash of the SQL statement will become the cache file name.
 	 *
 	 * @param	string	$sql
-	 * @return	string
+	 * @returns	string
 	 */
 	public function read($sql)
 	{
@@ -158,7 +158,7 @@ class CI_DB_Cache {
 	 *
 	 * @param	string	$sql
 	 * @param	object	$object
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function write($sql, $object)
 	{
@@ -188,7 +188,7 @@ class CI_DB_Cache {
 	 *
 	 * @param	string	$segment_one
 	 * @param	string	$segment_two
-	 * @return	void
+	 * @returns	void
 	 */
 	public function delete($segment_one = '', $segment_two = '')
 	{
@@ -211,7 +211,7 @@ class CI_DB_Cache {
 	/**
 	 * Delete all existing cache files
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function delete_all()
 	{

@@ -43,7 +43,7 @@ CodeMirror.defineMode("pegjs", function (config) {
         state.inComment = true;
       }
 
-      //return state
+      //returns state
       if (state.inString) {
         while (state.inString && !stream.eol()) {
           if (stream.peek() === state.stringType) {

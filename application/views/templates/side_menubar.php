@@ -123,19 +123,19 @@
                     <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Transactions </span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li>
-                            <a href="#">Sales / Purchase <span class="fa arrow"></span></a>
+                            <a href="#">Sales &amp Purchase <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
-                                    <a href="#">Purchase</a>
+                                    <a href="<?php echo base_url('purchase/') ?>">Purchase</a>
                                 </li>
                                 <li>
-                                    <a href="#">Sales</a>
+                                    <a href="<?php echo base_url('sales') ?>">Sales</a>
                                 </li>
                                 <li>
-                                    <a href="#">Invoice</a>
+                                    <a href="<?php echo base_url('invoice') ?>">Invoice</a>
                                 </li>
                                 <li>
-                                    <a href="#">Quotation</a>
+                                    <a href="<?php echo base_url('quotation') ?>">Quotation</a>
                                 </li>
 
 
@@ -160,14 +160,27 @@
 
                             </ul>
                         </li>
-                        <li><a href="#">Return</a></li>
+                        <li>
+
+                            <a href="#">Return <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="<?php echo base_url('returns/salesreturn/') ?>">Sales Return</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('returns/purchasereturn/') ?>">Purchase Return</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
                         <li class="treeview" id="OrdersMainMenu">
                             <a href="#">Orders <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
-                                    <a href="#">Sales Order</a>
+                                    <a href="<?php echo base_url('orders/salesorder/') ?>">Sales Order</a>
                                 </li>
-                                <li id="purchaseOrderSubMenu">
+                                <li>
                                     <a href="<?php echo base_url('orders/purchaseorder/') ?>">Purchase Order</a>
                                 </li>
                                 
@@ -176,6 +189,20 @@
                         </li>
                     </ul>
                 </li>
+
+                <?php if(in_array('createUser', $user_permission) || in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
+                    <li>
+                        <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Accounting</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <?php if(in_array('createUser', $user_permission)): ?>
+                                <li><a href="<?php echo base_url('customers/create') ?>">Manufacturing Accounts</a></li>
+                            <?php endif; ?>
+                            <?php if(in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
+                                <li><a href="<?php echo base_url('customers') ?>">Income Statement</a></li>
+                            <?php endif; ?>
+                        </ul>
+                    </li>
+                <?php endif; ?>
 
                 <li class="special_link">
                     <a href="<?php echo base_url('task/') ?>"><i class="fa fa-star"></i> <span class="nav-label">Task</span></a>

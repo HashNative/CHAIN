@@ -94,7 +94,7 @@ class CI_Cart {
 	 * The constructor loads the Session class, used to store the shopping cart contents.
 	 *
 	 * @param	array
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params = array())
 	{
@@ -124,7 +124,7 @@ class CI_Cart {
 	 * Insert items into the cart and save it to the session table
 	 *
 	 * @param	array
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function insert($items = array())
 	{
@@ -178,7 +178,7 @@ class CI_Cart {
 	 * Insert
 	 *
 	 * @param	array
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _insert($items = array())
 	{
@@ -282,7 +282,7 @@ class CI_Cart {
 	 * product ID and quantity for each item.
 	 *
 	 * @param	array
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function update($items = array())
 	{
@@ -339,7 +339,7 @@ class CI_Cart {
 	 * rowid and quantity for each item.
 	 *
 	 * @param	array
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _update($items = array())
 	{
@@ -384,7 +384,7 @@ class CI_Cart {
 	/**
 	 * Save the cart array to the session DB
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _save_cart()
 	{
@@ -425,7 +425,7 @@ class CI_Cart {
 	/**
 	 * Cart Total
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function total()
 	{
@@ -440,7 +440,7 @@ class CI_Cart {
 	 * Removes an item from the cart
 	 *
 	 * @param	int
-	 * @return	bool
+	 * @returns	bool
 	 */
 	 public function remove($rowid)
 	 {
@@ -457,7 +457,7 @@ class CI_Cart {
 	 *
 	 * Returns the total item count
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function total_items()
 	{
@@ -472,7 +472,7 @@ class CI_Cart {
 	 * Returns the entire cart array
 	 *
 	 * @param	bool
-	 * @return	array
+	 * @returns	array
 	 */
 	public function contents($newest_first = FALSE)
 	{
@@ -494,7 +494,7 @@ class CI_Cart {
 	 * Returns the details of a specific item in the cart
 	 *
 	 * @param	string	$row_id
-	 * @return	array
+	 * @returns	array
 	 */
 	public function get_item($row_id)
 	{
@@ -512,7 +512,7 @@ class CI_Cart {
 	 * that has options associated with it.
 	 *
 	 * @param	string	$row_id = ''
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function has_options($row_id = '')
 	{
@@ -527,7 +527,7 @@ class CI_Cart {
 	 * Returns the an array of options, for a particular product row ID
 	 *
 	 * @param	string	$row_id = ''
-	 * @return	array
+	 * @returns	array
 	 */
 	public function product_options($row_id = '')
 	{
@@ -542,7 +542,7 @@ class CI_Cart {
 	 * Returns the supplied number with commas and a decimal point.
 	 *
 	 * @param	float
-	 * @return	string
+	 * @returns	string
 	 */
 	public function format_number($n = '')
 	{
@@ -556,7 +556,7 @@ class CI_Cart {
 	 *
 	 * Empties the cart and kills the session
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function destroy()
 	{

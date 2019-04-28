@@ -82,7 +82,7 @@ abstract class CI_DB_utility {
 	 * Class constructor
 	 *
 	 * @param	object	&$db	Database object
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct(&$db)
 	{
@@ -95,7 +95,7 @@ abstract class CI_DB_utility {
 	/**
 	 * List databases
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function list_databases()
 	{
@@ -131,7 +131,7 @@ abstract class CI_DB_utility {
 	 * Determine if a particular database exists
 	 *
 	 * @param	string	$database_name
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function database_exists($database_name)
 	{
@@ -144,7 +144,7 @@ abstract class CI_DB_utility {
 	 * Optimize Table
 	 *
 	 * @param	string	$table_name
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function optimize_table($table_name)
 	{
@@ -168,7 +168,7 @@ abstract class CI_DB_utility {
 	/**
 	 * Optimize Database
 	 *
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function optimize_database()
 	{
@@ -205,7 +205,7 @@ abstract class CI_DB_utility {
 	 * Repair Table
 	 *
 	 * @param	string	$table_name
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function repair_table($table_name)
 	{
@@ -233,7 +233,7 @@ abstract class CI_DB_utility {
 	 * @param	string	$delim		Delimiter (default: ,)
 	 * @param	string	$newline	Newline character (default: \n)
 	 * @param	string	$enclosure	Enclosure (default: ")
-	 * @return	string
+	 * @returns	string
 	 */
 	public function csv_from_result($query, $delim = ',', $newline = "\n", $enclosure = '"')
 	{
@@ -272,7 +272,7 @@ abstract class CI_DB_utility {
 	 *
 	 * @param	object	$query	Query result object
 	 * @param	array	$params	Any preferences
-	 * @return	string
+	 * @returns	string
 	 */
 	public function xml_from_result($query, $params = array())
 	{
@@ -317,7 +317,7 @@ abstract class CI_DB_utility {
 	 * Database Backup
 	 *
 	 * @param	array	$params
-	 * @return	string
+	 * @returns	string
 	 */
 	public function backup($params = array())
 	{

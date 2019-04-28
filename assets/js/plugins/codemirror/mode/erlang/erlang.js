@@ -470,7 +470,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
     // The function returns (possibly truncated) stack.
     // It will descend the stack, looking for a Token such that Token.token
     //  is a member of tokens. If it does not find that, it will normally (but
-    //  see "E" below) return stack. If it does find a match, it will remove
+    //  see "E" below) returns stack. If it does find a match, it will remove
     //  all the Tokens between the top and the matched Token.
     // If type is "m", that is all it does.
     // If type is "i", it will also remove the matched Token and the top Token.
@@ -478,7 +478,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
     // If type is "r", it will remove the matched Token, but not the top Token.
     // If type is "e", it will keep the matched Token but not the top Token.
     // If type is "E", it behaves as for type "e", except if there is no match,
-    //  in which case it will return an empty stack.
+    //  in which case it will returns an empty stack.
 
     for (var type in tt) {
       var len = stack.length-1;

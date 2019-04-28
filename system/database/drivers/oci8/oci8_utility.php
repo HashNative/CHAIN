@@ -57,7 +57,7 @@ class CI_DB_oci8_utility extends CI_DB_utility {
 	 * Export
 	 *
 	 * @param	array	$params	Preferences
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	protected function _backup($params = array())
 	{

@@ -45,7 +45,7 @@
      * @param {Number} x0, y0, x1, y1: coordinates of the end (knot) points of the segment
      * @param {Number} x2, y2: the next knot (not connected, but needed to calculate p2)
      * @param {Number} tension: control how far the control points spread
-     * @return {Array}: p1 -> control point, from x1 back toward x0
+     * @returns {Array}: p1 -> control point, from x1 back toward x0
      * 					p2 -> the next control point, returned to become the next segment's p1
      *
      * @api private

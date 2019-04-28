@@ -68,7 +68,7 @@ if ( ! function_exists('mb_strlen'))
 	 * @link	http://php.net/mb_strlen
 	 * @param	string	$str
 	 * @param	string	$encoding
-	 * @return	int
+	 * @returns	int
 	 */
 	function mb_strlen($str, $encoding = NULL)
 	{
@@ -97,7 +97,7 @@ if ( ! function_exists('mb_strpos'))
 	 * @param	string	$needle
 	 * @param	int	$offset
 	 * @param	string	$encoding
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	function mb_strpos($haystack, $needle, $offset = 0, $encoding = NULL)
 	{
@@ -126,7 +126,7 @@ if ( ! function_exists('mb_substr'))
 	 * @param	int	$start
 	 * @param	int 	$length
 	 * @param	string	$encoding
-	 * @return	string
+	 * @returns	string
 	 */
 	function mb_substr($str, $start, $length = NULL, $encoding = NULL)
 	{

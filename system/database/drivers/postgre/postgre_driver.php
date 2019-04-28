@@ -83,7 +83,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Creates a DSN string to be used for db_connect() and db_pconnect()
 	 *
 	 * @param	array	$params
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct($params)
 	{
@@ -145,7 +145,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Database connection
 	 *
 	 * @param	bool	$persistent
-	 * @return	resource
+	 * @returns	resource
 	 */
 	public function db_connect($persistent = FALSE)
 	{
@@ -177,7 +177,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Keep / reestablish the db connection if no queries have been
 	 * sent for a length of time exceeding the server's idle timeout
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function reconnect()
 	{
@@ -193,7 +193,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Set client character set
 	 *
 	 * @param	string	$charset
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _db_set_charset($charset)
 	{
@@ -205,7 +205,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Database version number
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function version()
 	{
@@ -220,7 +220,7 @@ class CI_DB_postgre_driver extends CI_DB {
 		}
 
 		/* If PHP was compiled with PostgreSQL lib versions earlier
-		 * than 7.4, pg_version() won't return the server version
+		 * than 7.4, pg_version() won't returns the server version
 		 * and so we'll have to fall back to running a query in
 		 * order to get it.
 		 */
@@ -235,7 +235,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Execute the query
 	 *
 	 * @param	string	$sql	an SQL query
-	 * @return	resource
+	 * @returns	resource
 	 */
 	protected function _execute($sql)
 	{
@@ -247,7 +247,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Begin Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_begin()
 	{
@@ -259,7 +259,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Commit Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_commit()
 	{
@@ -271,7 +271,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Rollback Transaction
 	 *
-	 * @return	bool
+	 * @returns	bool
 	 */
 	protected function _trans_rollback()
 	{
@@ -284,7 +284,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Determines if a query is a "write" type.
 	 *
 	 * @param	string	An SQL query string
-	 * @return	bool
+	 * @returns	bool
 	 */
 	public function is_write_type($sql)
 	{
@@ -302,7 +302,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Platform-dependent string escape
 	 *
 	 * @param	string
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _escape_str($str)
 	{
@@ -317,7 +317,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Escapes data based on type
 	 *
 	 * @param	string	$str
-	 * @return	mixed
+	 * @returns	mixed
 	 */
 	public function escape($str)
 	{
@@ -338,7 +338,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Affected Rows
 	 *
-	 * @return	int
+	 * @returns	int
 	 */
 	public function affected_rows()
 	{
@@ -350,7 +350,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Insert ID
 	 *
-	 * @return	string
+	 * @returns	string
 	 */
 	public function insert_id()
 	{
@@ -399,7 +399,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Generates a platform-specific query string so that the table names can be fetched
 	 *
 	 * @param	bool	$prefix_limit
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_tables($prefix_limit = FALSE)
 	{
@@ -423,7 +423,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Generates a platform-specific query string so that the column names can be fetched
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _list_columns($table = '')
 	{
@@ -438,7 +438,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Returns an object with field data
 	 *
 	 * @param	string	$table
-	 * @return	array
+	 * @returns	array
 	 */
 	public function field_data($table)
 	{
@@ -473,7 +473,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
-	 * @return	array
+	 * @returns	array
 	 */
 	public function error()
 	{
@@ -488,7 +488,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * @param	string	$orderby
 	 * @param	string	$direction	ASC, DESC or RANDOM
 	 * @param	bool	$escape
-	 * @return	object
+	 * @returns	object
 	 */
 	public function order_by($orderby, $direction = '', $escape = NULL)
 	{
@@ -524,7 +524,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 *
 	 * @param	string	$table
 	 * @param	array	$values
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _update($table, $values)
 	{
@@ -543,7 +543,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * @param	string	$table	Table name
 	 * @param	array	$values	Update data
 	 * @param	string	$index	WHERE key
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _update_batch($table, $values, $index)
 	{
@@ -582,7 +582,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Generates a platform-specific delete string from the supplied data
 	 *
 	 * @param	string	$table
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _delete($table)
 	{
@@ -598,7 +598,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 * Generates a platform-specific LIMIT clause
 	 *
 	 * @param	string	$sql	SQL Query
-	 * @return	string
+	 * @returns	string
 	 */
 	protected function _limit($sql)
 	{
@@ -610,7 +610,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Close DB Connection
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	protected function _close()
 	{

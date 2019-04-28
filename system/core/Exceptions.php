@@ -78,7 +78,7 @@ class CI_Exceptions {
 	/**
 	 * Class constructor
 	 *
-	 * @return	void
+	 * @returns	void
 	 */
 	public function __construct()
 	{
@@ -97,7 +97,7 @@ class CI_Exceptions {
 	 * @param	string	$message	Error message
 	 * @param	string	$filepath	File path
 	 * @param	int	$line		Line number
-	 * @return	void
+	 * @returns	void
 	 */
 	public function log_exception($severity, $message, $filepath, $line)
 	{
@@ -114,7 +114,7 @@ class CI_Exceptions {
 	 *
 	 * @param	string	$page		Page URI
 	 * @param 	bool	$log_error	Whether to log the error
-	 * @return	void
+	 * @returns	void
 	 */
 	public function show_404($page = '', $log_error = TRUE)
 	{
@@ -152,7 +152,7 @@ class CI_Exceptions {
 	 * @param	string		$template	Template name
 	 * @param 	int		$status_code	(default: 500)
 	 *
-	 * @return	string	Error page output
+	 * @returns	string	Error page output
 	 */
 	public function show_error($heading, $message, $template = 'error_general', $status_code = 500)
 	{
@@ -231,7 +231,7 @@ class CI_Exceptions {
 	 * @param	string	$message	Error message
 	 * @param	string	$filepath	File path
 	 * @param	int	$line		Line number
-	 * @return	void
+	 * @returns	void
 	 */
 	public function show_php_error($severity, $message, $filepath, $line)
 	{

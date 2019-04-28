@@ -56,7 +56,7 @@ if ( ! function_exists('byte_format'))
 	 *
 	 * @param	mixed	will be cast as int
 	 * @param	int
-	 * @return	string
+	 * @returns	string
 	 */
 	function byte_format($num, $precision = 1)
 	{
