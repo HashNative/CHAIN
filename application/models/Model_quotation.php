@@ -1,6 +1,6 @@
 <?php 
 
-class Model_orders extends CI_Model
+class Model_quotation extends CI_Model
 {
 	public function __construct()
 	{
@@ -11,23 +11,23 @@ class Model_orders extends CI_Model
 	}
 
 	/* get the orders data */
-	public function getPurchaseOrdersData($id = null)
+	public function getQuotationData($id = null)
 	{
 		if($id) {
-			$sql = "SELECT * FROM orders WHERE id = ?";
+			$sql = "SELECT * FROM quotation WHERE id = ?";
 			$query = $this->db->query($sql, array($id));
 			return $query->row_array();
 		}
 
 		$user_id = $this->session->userdata('id');
 		if($user_id == 1) {
-			$sql = "SELECT * FROM orders ORDER BY id DESC";
+			$sql = "SELECT * FROM quotation ORDER BY id DESC";
 			$query = $this->db->query($sql);
 			return $query->result_array();
 		}
 		else {
 			$user_data = $this->model_users->getUserData($user_id);
-			$sql = "SELECT * FROM orders WHERE store_id = ? ORDER BY id DESC";
+			$sql = "SELECT * FROM quotation_detail WHERE store_id = ? ORDER BY id DESC";
 			$query = $this->db->query($sql, array($user_data['store_id']));
 			return $query->result_array();	
 		}
@@ -40,7 +40,7 @@ class Model_orders extends CI_Model
 			return false;
 		}
 
-		$sql = "SELECT * FROM order_items WHERE order_id = ?";
+		$sql = "SELECT * FROM purchase_order_detail WHERE order_id = ?";
 		$query = $this->db->query($sql, array($order_id));
 		return $query->result_array();
 	}
@@ -48,39 +48,35 @@ class Model_orders extends CI_Model
 	public function create()
 	{
 		$user_id = $this->session->userdata('id');
-		// get store id from user id 
-		$user_data = $this->model_users->getUserData($user_id);
-		$store_id = $user_data['store_id'];
 
-		$order_id = $this->db->insert_id();
+		echo $user_id;
+		$quotation_id = $this->db->insert_id();
     	$data = array(
     		
     		'date_time' => strtotime(date('Y-m-d h:i:s a')),
-    		'gross_amount' => $this->input->post('gross_amount_value'),
-    		'net_amount' => $this->input->post('net_amount_value'),
-    		'discount' => $this->input->post('discount'),
-    		'paid_status' => 2,
+            'quotation_id' => $quotation_id,
+    		'customer' => $this->input->post('customer'),
     		'user_id' => $user_id,
     	);
 
-		$insert = $this->db->insert('purchase_order', $data);
-		$order_id = $this->db->insert_id();
+		$insert = $this->db->insert('quotation', $data);
 
 		$count_product = count($this->input->post('product'));
     	for($x = 0; $x < $count_product; $x++) {
     		$items = array(
-    			'order_id' => $order_id,
-    			'product_id' => $this->input->post('product')[$x],
-    			'qty' => $this->input->post('qty')[$x],
-    			'rate' => $this->input->post('rate_value')[$x],
-    			'amount' => $this->input->post('amount_value')[$x],
+
+    			'quotation_id' => $quotation_id,
+                'product_id' => $this->input->post('product')[$x],
+    			'quantity' => $this->input->post('qty')[$x],
+    			'price' => $this->input->post('cost')[$x],
+    			'amount' => $this->input->post('amount')[$x],
     		);
 
-    		$this->db->insert('purchase_order_detail', $items);
+    		$this->db->insert('quotation_detail', $items);
     	}
 
     	
-		return ($order_id) ? $order_id : false;
+		return ($quotation_id) ? $quotation_id : false;
 	}
 
 	public function countOrderItem($order_id)

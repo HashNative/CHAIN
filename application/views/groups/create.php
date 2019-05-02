@@ -186,6 +186,8 @@
    
     <script>
         $(document).ready(function(){
+            $("#groupMainNav").addClass('active');
+            $("#createGroupSubMenu").addClass('active');
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',

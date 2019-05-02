@@ -46,7 +46,7 @@
                                             <h5>Create Purchase Order</h5>
                                             <?php if(in_array('createCustomer', $user_permission)): ?>
                                                 <div class="ibox-tools">
-                                                    <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-xs">Purchase Order History</a>
+                                                    <a href="<?php echo base_url('Purchaseorder/history') ?>" class="btn btn-primary btn-xs">Purchase Order History</a>
                                                 </div>
 
                                                 <br /> <br />
@@ -54,30 +54,23 @@
                                         </div>
                                         <div class="ibox-title">
 
-                                            <form role="form" action="<?php echo base_url('task/createtask') ?>" method="post" id="createForm">
+                                            <form role="form" action="<?php echo base_url('purchaseorder') ?>" method="post" id="createForm">
 
                                                 <div class="modal-body">
 
                                                     <div id="messages"></div>
+
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="col-form-label" for="description">Purchase Order Number</label>
-                                                                <input type="text" id="pon" name="pon" value=""
-                                                                       placeholder="PON" class="form-control">
-                                                            </div>
-
-                                                        </div>
-
-
-
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <label class="col-form-label" for="description">Customer</label>
-                                                                <input type="text" id="customer" name="customer" value=""
-                                                                       placeholder="Customer" class="form-control">
+                                                                <label class="col-form-label" for="description">Vendor</label>
+                                                                <select class="form-control select_group material"
+                                                                        id="vendor" name="vendor" style="width:100%;" onchange="getProductData(1)" required>
+                                                                    <option value=""></option>
+                                                                    <?php foreach ($vendor_data as $k => $v): ?>
+                                                                        <option value="<?php echo $v['name'] ?>" placeholder="Choose vendor"><?php echo $v['name'] ?></option>
+                                                                    <?php endforeach ?>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -110,7 +103,7 @@
                                                                             id="material_1" name="material[]" style="width:100%;" required>
                                                                         <option value=""></option>
                                                                         <?php foreach ($materials as $k => $v): ?>
-                                                                            <option value="<?php echo $v['name'] ?>" placeholder="Choose a material"><?php echo $v['name'] ?></option>
+                                                                            <option value="<?php echo $v['id'] ?>" placeholder="Choose a material"><?php echo $v['name'] ?></option>
                                                                         <?php endforeach ?>
                                                                     </select>
                                                                 </td>
@@ -208,7 +201,40 @@
                             });
                         });
 
+                        // get the product information from the server
+                        function getProductData(row_id)
+                        {
+                            var product_id = $("#material_"+row_id).val();
+                            if(product_id == "") {
+                                $("#rate_"+row_id).val("");
+
+                                $("#qty_"+row_id).val("");
+
+                                $("#amount_"+row_id).val("");
+
+                            } else {
+                                $.ajax({
+                                    url: base_url + 'orders/getProductValueById',
+                                    type: 'post',
+                                    data: {product_id : product_id},
+                                    dataType: 'json',
+                                    success:function(response) {
+                                        // setting the rate value into the rate input field
+
+                                        $("#rate_"+row_id).val(response.price);
+
+                                        $("#qty_"+row_id).val(1);
+
+                                        var total = Number(response.price) * 1;
+                                        total = total.toFixed(2);
+                                        $("#amount_"+row_id).val(total);
 
 
-                    </script>
+                                    } // /success
+                                }); // /ajax function to fetch the product data
+                            }
+                        }
+
+
+        </script>
 

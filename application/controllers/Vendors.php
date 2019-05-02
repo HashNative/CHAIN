@@ -31,7 +31,6 @@ class Vendors extends Admin_Controller
 
 			$result[$k]['vendor_info'] = $v;
 
-
 		}
 
 		$this->data['vendor_data'] = $result;

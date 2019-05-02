@@ -8,10 +8,10 @@ class Quotation extends Admin_Controller
 
         $this->not_logged_in();
 
-        $this->data['page_title'] = 'Customers';
+        $this->data['page_title'] = 'Quotation';
 
-
-        $this->load->model('model_mainstock');
+        $this->load->model('model_quotation');
+        $this->load->model('model_finalstock');
         $this->load->model('model_stores');
         $this->load->model('model_users');
 
@@ -23,7 +23,7 @@ class Quotation extends Admin_Controller
         if(!in_array('viewCustomer', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
-        $this->data['materials'] = $this->model_mainstock->getMaterialData();
+        $this->data['products'] = $this->model_finalstock->getProductData();
 
         $this->render_template('transactions/salesandpurchase/quotation', $this->data);
     }
@@ -35,39 +35,51 @@ class Quotation extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
 
-        $this->form_validation->set_rules('name', 'Name', 'trim|required');
-        $this->form_validation->set_rules('address', 'Address', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required');
-        $this->form_validation->set_rules('phone', 'Phone', 'trim|required|min_length[10]');
+//        $this->form_validation->set_rules('customer', 'Customer', 'trim|required');
+//        $this->form_validation->set_rules('material[]', 'Material', 'required');
+//        $this->form_validation->set_rules('qty[]', 'Quantity', 'trim|required|number');
+//        $this->form_validation->set_rules('cost[]', 'Cost', 'trim|required|number');
 
 
-        if ($this->form_validation->run() == TRUE) {
-            // true case
+//        if ($this->form_validation->run() == TRUE) {
+        // true case
 
-            $data = array(
-                'name' => $this->input->post('name'),
-                'email' => $this->input->post('email'),
-                'address' => $this->input->post('address'),
-                'phone' => $this->input->post('phone'),
-            );
-
-            $create = $this->model_customers->create($data);
-            if($create == true) {
-                $this->session->set_flashdata('success', 'Successfully created');
-                redirect('customers/', 'refresh');
-            }
-            else {
-                $this->session->set_flashdata('errors', 'Error occurred!!');
-                redirect('customers/create', 'refresh');
-            }
+        $create = $this->model_quotation->create();
+        if($create == true) {
+            $this->session->set_flashdata('success', 'Successfully created');
+            redirect('quotation', 'refresh');
         }
         else {
-            // false case
+            $this->session->set_flashdata('errors', 'Error occurred!!');
+            redirect('quotation', 'refresh');
+        }
+//        } else {
+//            // false case
+//            $this->render_template('transactions/salesandpurchase/purchase', $this->data);
+//        }
 
 
-            $this->render_template('customers/create', $this->data);
+    }
+
+
+    public function history()
+    {
+        if (!in_array('createOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
         }
 
+
+        $quotation_data = $this->model_quotation->getQuotationData();
+        $result = array();
+        foreach ($quotation_data as $k => $v) {
+
+            $result[$k]['quotation_info'] = $v;
+
+        }
+
+        $this->data['quotation_data'] = $result;
+
+        $this->render_template('transactions/salesandpurchase/quotationhistory', $this->data);
 
     }
 

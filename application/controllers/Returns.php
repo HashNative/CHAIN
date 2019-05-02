@@ -12,7 +12,7 @@ class Returns extends Admin_Controller
 
 		$this->not_logged_in();
 
-		$this->data['page_title'] = 'Orders';
+		$this->data['page_title'] = 'Salesorder';
 
 		$this->load->model('model_orders');
 		$this->load->model('model_tables');
@@ -286,7 +286,7 @@ $this->form_validation->set_rules('product[]', 'Product name', 'trim|required');
 
         	if(empty($orders_data)) {
         		$this->session->set_flashdata('errors', 'The request data does not exists');
-        		redirect('orders', 'refresh');
+        		redirect('Salesorder', 'refresh');
         	}
 
     		$result['order'] = $orders_data;

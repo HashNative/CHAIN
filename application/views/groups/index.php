@@ -106,7 +106,8 @@
 
         <script type="text/javascript">
 $(document).ready(function(){
-   // $("#groupMainNav").addClass('active');
+
+    $("#groupMainNav").addClass('active');
     $("#manageGroupSubMenu").addClass('active');
   
 });

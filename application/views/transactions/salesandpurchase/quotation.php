@@ -3,6 +3,9 @@
 <h2>Quotation</h2>
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
+        <a href="#">Home</a>
+    </li>
+    <li class="breadcrumb-item">
         <a href="#">Transactions</a>
     </li>
     <li class="breadcrumb-item">
@@ -44,7 +47,7 @@
                         <h5>Create Quotation</h5>
                         <?php if(in_array('createCustomer', $user_permission)): ?>
                             <div class="ibox-tools">
-                                <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-xs">Quotation History</a>
+                                <a href="<?php echo base_url('quotation/history') ?>" class="btn btn-primary btn-xs">Quotation History</a>
                             </div>
 
                             <br /> <br />
@@ -52,24 +55,12 @@
                     </div>
                     <div class="ibox-title">
 
-                        <form role="form" action="<?php echo base_url('task/createtask') ?>" method="post" id="createForm">
+                        <form role="form" action="<?php echo base_url('quotation/create') ?>" method="post" id="createForm">
 
                             <div class="modal-body">
 
                                 <div id="messages"></div>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="col-form-label" for="description">Purchase Order Number</label>
-                                            <input type="text" id="pon" name="pon" value=""
-                                                   placeholder="PON" class="form-control">
-                                        </div>
 
-                                    </div>
-
-
-
-                                </div>
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-group">
@@ -91,10 +82,10 @@
 
                                 </div>
                                 <div class="row">
-                                    <table class="table" id="material_info_table">
+                                    <table class="table" id="product_info_table">
                                         <thead>
                                         <tr>
-                                            <th style="width:35%">Material</th>
+                                            <th style="width:35%">Product</th>
                                             <th style="width:10%">Quantity</th>
                                             <th style="width:10%">Cost</th>
                                             <th style="width:5%"></th>
@@ -103,11 +94,11 @@
                                         <tbody>
                                         <tr id="row_1">
                                             <td>
-                                                <select class="form-control select_group material" data-row-id="row_1"
-                                                        id="material_1" name="material[]" style="width:100%;" required>
+                                                <select class="form-control select_group product" data-row-id="row_1"
+                                                        id="product_1" name="product[]" style="width:100%;" required>
                                                     <option value=""></option>
-                                                    <?php foreach ($materials as $k => $v): ?>
-                                                        <option value="<?php echo $v['name'] ?>" placeholder="Choose a material"><?php echo $v['name'] ?></option>
+                                                    <?php foreach ($products as $k => $v): ?>
+                                                        <option value="<?php echo $v['name'] ?>" placeholder="Choose a product"><?php echo $v['name'] ?></option>
                                                     <?php endforeach ?>
                                                 </select>
                                             </td>
@@ -133,8 +124,10 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-white" data-dismiss="modal">Clear</button>
-                                <button type="submit" class="btn btn-primary">Save &amp Close</button>
+                                <button type="button" class="btn btn-white" data-dismiss="modal"><i class="fa fa-pencil"></i> Clear</button>
+
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Save &amp Mail</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-print"></i> Save &amp Print</button>
                             </div>
                     </div>
                     </form>
@@ -151,7 +144,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".material").select2();
+        $(".product").select2();
 
         // Append table with add row form on add new button click ==Add new Task==
         $(".add-new").click(function () {
@@ -159,19 +152,19 @@
 
 
             var index = $("table tbody tr:last-child").index();
-            var table = $("#material_info_table");
-            var count_table_tbody_tr = $("#material_info_table tbody tr").length;
+            var table = $("#product_info_table");
+            var count_table_tbody_tr = $("#product_info_table tbody tr").length;
             var row_id = count_table_tbody_tr + 1;
 
             $.ajax({
-                url: base_url + '/task/getMaterialRow/',
+                url: base_url + '/task/getProductRow/',
                 type: 'post',
                 dataType: 'json',
                 success: function (response) {
 
                     var html = '<tr id="row_' + row_id + '">' +
                         '<td>' +
-                        '<select class="form-control select_group material" data-row-id="' + row_id + '" id="material_' + row_id + '" name="material[]" style="width:100%;" >' +
+                        '<select class="form-control select_group product" data-row-id="' + row_id + '" id="product_' + row_id + '" name="product[]" style="width:100%;" >' +
                         '<option value=""></option>';
                     $.each(response, function (index, value) {
                         html += '<option value="' + value.name + '">' + value.name + '</option>';
@@ -185,11 +178,11 @@
                         '</tr>';
 
                     if (count_table_tbody_tr >= 1) {
-                        $("#material_info_table tbody tr:last").after(html);
+                        $("#product_info_table tbody tr:last").after(html);
                     } else {
-                        $("#material_info_table tbody").html(html);
+                        $("#product_info_table tbody").html(html);
                     }
-                    $(".material").select2();
+                    $(".product").select2();
 
                 }
             });

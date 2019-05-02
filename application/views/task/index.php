@@ -532,7 +532,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-
+        $("#TaskMainMenu").addClass('active');
 
         // submit the create from
         $("#createForm").unbind('submit').on('submit', function() {

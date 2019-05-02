@@ -21,7 +21,7 @@
                     </div>
                 </li>
                 
-                <li>
+                <li id="dashboardMainMenu">
                     <a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                 </li>
                
@@ -126,7 +126,7 @@
                             <a href="#">Sales &amp Purchase <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
-                                    <a href="<?php echo base_url('purchase/') ?>">Purchase</a>
+                                    <a href="<?php echo base_url('purchase') ?>">Purchase</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url('sales') ?>">Sales</a>
@@ -178,10 +178,10 @@
                             <a href="#">Orders <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
-                                    <a href="<?php echo base_url('orders/salesorder/') ?>">Sales Order</a>
+                                    <a href="<?php echo base_url('salesorder/') ?>">Sales Order</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('orders/purchaseorder/') ?>">Purchase Order</a>
+                                    <a href="<?php echo base_url('purchaseorder/') ?>">Purchase Order</a>
                                 </li>
                                 
 
@@ -204,7 +204,7 @@
                     </li>
                 <?php endif; ?>
 
-                <li class="special_link">
+                <li class="special_link" id="TaskMainMenu">
                     <a href="<?php echo base_url('task/') ?>"><i class="fa fa-star"></i> <span class="nav-label">Task</span></a>
                 </li>
 

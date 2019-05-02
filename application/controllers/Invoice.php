@@ -11,8 +11,9 @@ class Invoice extends Admin_Controller
         $this->data['page_title'] = 'Customers';
 
 
-        $this->load->model('model_mainstock');
-        $this->load->model('model_stores');
+        $this->load->model('model_finalstock');
+        $this->load->model('model_invoice');
+        $this->load->model('model_customers');
         $this->load->model('model_users');
 
     }
@@ -23,7 +24,8 @@ class Invoice extends Admin_Controller
         if(!in_array('viewCustomer', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
-        $this->data['materials'] = $this->model_mainstock->getMaterialData();
+        $this->data['customer_data'] = $this->model_customers->getCustomerData();
+        $this->data['products'] = $this->model_finalstock->getProductData();
 
         $this->render_template('transactions/salesandpurchase/invoice', $this->data);
     }
@@ -35,42 +37,53 @@ class Invoice extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
 
-        $this->form_validation->set_rules('name', 'Name', 'trim|required');
-        $this->form_validation->set_rules('address', 'Address', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required');
-        $this->form_validation->set_rules('phone', 'Phone', 'trim|required|min_length[10]');
+//        $this->form_validation->set_rules('customer', 'Customer', 'trim|required');
+//        $this->form_validation->set_rules('material[]', 'Material', 'required');
+//        $this->form_validation->set_rules('qty[]', 'Quantity', 'trim|required|number');
+//        $this->form_validation->set_rules('cost[]', 'Cost', 'trim|required|number');
 
 
-        if ($this->form_validation->run() == TRUE) {
-            // true case
+//        if ($this->form_validation->run() == TRUE) {
+        // true case
 
-            $data = array(
-                'name' => $this->input->post('name'),
-                'email' => $this->input->post('email'),
-                'address' => $this->input->post('address'),
-                'phone' => $this->input->post('phone'),
-            );
-
-            $create = $this->model_customers->create($data);
-            if($create == true) {
-                $this->session->set_flashdata('success', 'Successfully created');
-                redirect('customers/', 'refresh');
-            }
-            else {
-                $this->session->set_flashdata('errors', 'Error occurred!!');
-                redirect('customers/create', 'refresh');
-            }
+        $create = $this->model_invoice->create();
+        if($create == true) {
+            $this->session->set_flashdata('success', 'Successfully created');
+            redirect('invoice', 'refresh');
         }
         else {
-            // false case
-
-
-            $this->render_template('customers/create', $this->data);
+            $this->session->set_flashdata('errors', 'Error occurred!!');
+            redirect('invoice', 'refresh');
         }
+//        } else {
+//            // false case
+//            $this->render_template('transactions/salesandpurchase/purchase', $this->data);
+//        }
 
 
     }
 
+
+    public function history()
+    {
+        if (!in_array('createOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+
+
+        $invoice_data = $this->model_invoice->getInvoiceData();
+        $result = array();
+        foreach ($invoice_data as $k => $v) {
+
+            $result[$k]['invoice_info'] = $v;
+
+        }
+
+        $this->data['invoice_data'] = $result;
+
+        $this->render_template('transactions/salesandpurchase/invoicehistory', $this->data);
+
+    }
 
 
     public function edit($id = null)

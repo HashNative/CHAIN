@@ -3,6 +3,9 @@
 <h2>Purchase (GRN)</h2>
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
+        <a href="#">Home</a>
+    </li>
+    <li class="breadcrumb-item">
         <a href="#">Transactions</a>
     </li>
     <li class="breadcrumb-item">
@@ -36,15 +39,13 @@
                 </div>
             <?php endif; ?>
 
-            <div class="box">
-
 
                 <div class="ibox ">
                     <div class="ibox-title">
                         <h5>Record GRN</h5>
                         <?php if(in_array('createCustomer', $user_permission)): ?>
                             <div class="ibox-tools">
-                                <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-xs">Purchase History</a>
+                                <a href="<?php echo base_url('purchase/history') ?>" class="btn btn-primary btn-xs">Purchase History</a>
                             </div>
 
                             <br /> <br />
@@ -52,7 +53,7 @@
                     </div>
                     <div class="ibox-title">
 
-                        <form role="form" action="<?php echo base_url('task/createtask') ?>" method="post" id="createForm">
+                        <form role="form" action="<?php echo base_url('purchase/create') ?>" method="post" id="createForm">
 
                             <div class="modal-body">
 
@@ -71,19 +72,17 @@
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="col-form-label" for="description">Customer</label>
-                                            <input type="text" id="customer" name="customer" value=""
-                                                   placeholder="Customer" class="form-control">
-                                        </div>
 
-                                    </div>
                                     <div class="col-sm-8">
                                         <div class="form-group">
-                                            <label class="col-form-label" for="description">Address</label>
-                                            <input type="text" id="address" name="address" value=""
-                                                   placeholder="Address" class="form-control">
+                                            <label class="col-form-label" for="description">Vendor</label>
+                                            <select class="form-control select_group material"
+                                                    id="vendor" name="vendor" style="width:100%;" required>
+                                                <option value=""></option>
+                                                <?php foreach ($vendor_data as $k => $v): ?>
+                                                    <option value="<?php echo $v['name'] ?>" placeholder="Choose vendor"><?php echo $v['name'] ?></option>
+                                                <?php endforeach ?>
+                                            </select>
                                         </div>
 
                                     </div>
@@ -144,7 +143,7 @@
                 </div>
             </div>
 
-        </div>
+
     </div>
 </div>
 
