@@ -15,7 +15,7 @@ class Purchaseorder extends Admin_Controller
         $this->data['page_title'] = 'Purchase order';
 
         $this->load->model('model_orders');
-        $this->load->model('model_vendors');
+        $this->load->model('model_suppliers');
         $this->load->model('model_mainstock');
         $this->load->model('model_company');
         $this->load->model('model_purchaseorder');
@@ -36,7 +36,7 @@ class Purchaseorder extends Admin_Controller
         $this->data['page_title'] = 'Create Order';
 
 
-        $this->form_validation->set_rules('vendor', 'Vendor', 'trim|required');
+        $this->form_validation->set_rules('supplier', 'Supplier', 'trim|required');
         $this->form_validation->set_rules('address', 'Address', 'trim|required');
         $this->form_validation->set_rules('material[]', 'Material name', 'trim|required');
         $this->form_validation->set_rules('qty[]', 'Quantity', 'trim|numeric|required');
@@ -55,7 +55,7 @@ class Purchaseorder extends Admin_Controller
                 redirect('purchaseorder/', 'refresh');
             }
         } else {
-            $this->data['vendor_data'] = $this->model_vendors->getVendorData();
+            $this->data['supplier_data'] = $this->model_suppliers->getSupplierData();
             $this->data['materials'] = $this->model_mainstock->getMaterialData();
 
             $this->render_template('transactions/orders/purchaseorder', $this->data);
@@ -189,6 +189,7 @@ class Purchaseorder extends Admin_Controller
     */
     public function getMaterialValueById()
     {
+
         $material_id = $this->input->post('material_id');
         if ($material_id) {
             $material_id = $this->model_mainstock->getMaterialData($material_id);

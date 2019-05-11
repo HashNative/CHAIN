@@ -4,7 +4,7 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element">
-                        <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                        <img alt="image" class="rounded-circle" src="img/hashchain_icon.jpg"/>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="block m-t-xs font-bold"><?php echo $this->session->userdata('username');?><b class="caret"></b></span>
 
@@ -25,62 +25,31 @@
                     <a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                 </li>
                
-                <?php if(in_array('createGroup', $user_permission) || in_array('updateGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>                
-                <li class="treeview" id="groupMainNav">
-                    <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Groups</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                    <?php if(in_array('createGroup', $user_permission)): ?>
-                        <li id="addGroupSubMenu"><a href="<?php echo base_url('groups/create') ?>">Add Group</a></li>
-                    <?php endif; ?>
-                    <?php if(in_array('updateGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
-                        <li id="manageGroupSubMenu"><a href="<?php echo base_url('groups') ?>">Manage Groups</a></li>
-                    <?php endif; ?>
-                       
-                    </ul>
-                </li>
+                <?php if(in_array('createGroup', $user_permission) || in_array('updateGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
+                    <li id="groupMainMenu">
+                        <a href="<?php echo base_url('groups'); ?>"><i class="fa fa-sitemap"></i> <span class="nav-label">Groups</span></a>
+                    </li>
+
                 <?php endif; ?>
                 
                 <?php if(in_array('createUser', $user_permission) || in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
-                <li>
-                <a href="#"><i class="fa fa-user"></i> <span class="nav-label">Users</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                    <?php if(in_array('createUser', $user_permission)): ?>
-                    <li ><a href="<?php echo base_url('users/create') ?>">Add User</a></li>
-                    <?php endif; ?>
-                    <?php if(in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
-                    <li><a href="<?php echo base_url('users') ?>">Manage Users</a></li>
-                    <?php endif; ?>   
-                    </ul>
-                </li>
+                    <li id="userMainMenu">
+                        <a href="<?php echo base_url('users'); ?>"><i class="fa fa-user"></i> <span class="nav-label">Users</span></a>
+                    </li>
                 <?php endif; ?>   
 
                 <?php if(in_array('createUser', $user_permission) || in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
-                <li>
-                <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Customers</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                    <?php if(in_array('createUser', $user_permission)): ?>
-                    <li><a href="<?php echo base_url('customers/create') ?>">Add Customer</a></li>
-                    <?php endif; ?>
-                    <?php if(in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
-                    <li><a href="<?php echo base_url('customers') ?>">Manage Customers</a></li>
-                    <?php endif; ?>   
-                    </ul>
-                </li>
+                    <li id="customerMainMenu">
+                        <a href="<?php echo base_url('customers'); ?>"><i class="fa fa-users"></i> <span class="nav-label">Customers</span></a>
+                    </li>
+
                 <?php endif; ?>   
 
-                <?php if(in_array('createVendor', $user_permission) || in_array('updateVendor', $user_permission) || in_array('viewVendor', $user_permission) || in_array('deleteVendor', $user_permission)): ?>
-                <li>
-                <a href="#"><i class="fa fa-industry"></i> <span class="nav-label">Vendors</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                    <?php if(in_array('createVendor', $user_permission)): ?>
-                    <li ><a href="<?php echo base_url('vendors/create') ?>">Add Vendor</a></li>
-                    <?php endif; ?>
-                    <?php if(in_array('updateVendor', $user_permission) || in_array('viewVendor', $user_permission) || in_array('deleteVendor', $user_permission)): ?>
-                    <li><a href="<?php echo base_url('vendors') ?>">Manage Vendors</a></li>
-                    <?php endif; ?>   
-                    </ul>
-                </li>
-                <?php endif; ?>   
+                <?php if(in_array('createSupplier', $user_permission) || in_array('updateSupplier', $user_permission) || in_array('viewSupplier', $user_permission) || in_array('deleteSupplier', $user_permission)): ?>
+                    <li id="suppliersMainMenu">
+                        <a href="<?php echo base_url('Suppliers'); ?>"><i class="fa fa-industry"></i> <span class="nav-label">Suppliers</span></a>
+                    </li>
+                <?php endif; ?>
 
 
                 <li>
@@ -190,6 +159,9 @@
                     </ul>
                 </li>
 
+                <li id="procurementMainMenu">
+                    <a href="<?php echo base_url('procurement'); ?>"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurement</span></a>
+                </li>
                 <?php if(in_array('createUser', $user_permission) || in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
                     <li>
                         <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Accounting</span><span class="fa arrow"></span></a>

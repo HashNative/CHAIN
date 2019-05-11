@@ -17,7 +17,7 @@
 </div>
 <div class="col-lg-4">
     <div class="title-action">
-        <a href="<?php echo base_url('purchase') ?>" class="btn btn-primary"><i class="fa fa-angle-double-up"></i> New GRN </a>
+        <a href="<?php echo base_url('purchase') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> New GRN </a>
     </div>
 </div>
 

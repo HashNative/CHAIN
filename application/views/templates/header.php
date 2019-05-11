@@ -17,6 +17,7 @@
 
     <link href="<?php echo base_url('assets/css/animate.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css');?>" rel="stylesheet">
 
     <!-- Select2 Style -->
     <link href="<?php echo base_url('assets/css/plugins/select2/select2.min.css');?>" rel="stylesheet">
@@ -45,6 +46,8 @@
     <script src="<?php echo base_url('assets/js/plugins/footable/footable.all.min.js');?>"></script>
     <!-- Select2 Script-->
     <script src="<?php echo base_url('assets/js/plugins/select2/select2.full.min.js');?>"></script
+    <script src="<?php echo base_url('assets/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js');?>"></script>
+
 </head>
 
 <body>

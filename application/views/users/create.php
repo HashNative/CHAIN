@@ -12,10 +12,13 @@
                         </li>
                     </ol>
                 </div>
-                <div class="col-lg-2">
 
-                </div>
-            </div>
+                    <div class="col-lg-4">
+                        <div class="title-action">
+                            <a href="<?php echo base_url('users') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Users</a>
+                        </div>
+                    </div>
+                    </div>
 
     <!-- Main content -->
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -132,7 +135,7 @@
   $(document).ready(function() {
     $("#groups").select2();
 
-    $("#userMainNav").addClass('active');
+    $("#userMainMenu").addClass('active');
     $("#createUserSubNav").addClass('active');
     
   });

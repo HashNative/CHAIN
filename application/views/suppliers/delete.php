@@ -1,14 +1,14 @@
 
-                    <h2>Manage Vendors</h2>
+                    <h2>Manage Suppliers</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a>Vendors</a>
+                            <a>Suppliers</a>
                         </li>
                         <li class="breadcrumb-item active">
-                            <strong>Manage Vendors</strong>
+                            <strong>Manage Suppliers</strong>
                         </li>
                     </ol>
                 </div>
@@ -38,9 +38,9 @@
 
           <h1>Do you really want to remove ?</h1>
 
-          <form action="<?php echo base_url('vendors/delete/'.$id) ?>" method="post">
+          <form action="<?php echo base_url('suppliers/delete/'.$id) ?>" method="post">
             <input type="submit" class="btn btn-primary" name="confirm" value="Confirm">
-            <a href="<?php echo base_url('vendors') ?>" class="btn btn-warning">Cancel</a>
+            <a href="<?php echo base_url('Suppliers') ?>" class="btn btn-warning">Cancel</a>
           </form>
 
         </div>

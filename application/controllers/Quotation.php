@@ -12,6 +12,7 @@ class Quotation extends Admin_Controller
 
         $this->load->model('model_quotation');
         $this->load->model('model_finalstock');
+        $this->load->model('model_company');
         $this->load->model('model_stores');
         $this->load->model('model_users');
 
@@ -24,6 +25,11 @@ class Quotation extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
         $this->data['products'] = $this->model_finalstock->getProductData();
+        $company = $this->model_company->getCompanyData(1);
+        $this->data['company_data'] = $company;
+        $this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+        $this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+
 
         $this->render_template('transactions/salesandpurchase/quotation', $this->data);
     }

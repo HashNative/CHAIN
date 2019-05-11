@@ -12,9 +12,11 @@
                         </li>
                     </ol>
                 </div>
-                <div class="col-lg-2">
-
-                </div>
+                    <div class="col-lg-4">
+                        <div class="title-action">
+                            <a href="<?php echo base_url('groups') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Groups </a>
+                        </div>
+                    </div>
             </div>
 
         <div class="wrapper wrapper-content animated fadeInRight">
@@ -101,18 +103,11 @@
                         <td><input type="checkbox" name="permission[]" id="permission" value="deleteCustomer"></td>
                       </tr>
                       <tr>
-                        <td>Vendors</td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="createVendor"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="updateVendor"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="viewVendor"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteVendor"></td>
-                      </tr>
-                      <tr>
-                        <td>Category</td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="createCategory"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="updateCategory"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="viewCategory"></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteCategory"></td>
+                        <td>Supplier</td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="createSupplier"></td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="updateSupplier"></td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="viewSupplier"></td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteSupplier"></td>
                       </tr>
                       <tr>
                         <td>Product</td>
@@ -186,7 +181,7 @@
    
     <script>
         $(document).ready(function(){
-            $("#groupMainNav").addClass('active');
+            $("#groupMainMenu").addClass('active');
             $("#createGroupSubMenu").addClass('active');
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',

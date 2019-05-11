@@ -12,7 +12,8 @@ class Purchase extends Admin_Controller
 
 
         $this->load->model('model_mainstock');
-        $this->load->model('model_vendors');
+        $this->load->model('model_suppliers');
+        $this->load->model('model_company');
         $this->load->model('model_purchase');
         $this->load->model('model_users');
 
@@ -24,8 +25,13 @@ class Purchase extends Admin_Controller
         if(!in_array('viewCustomer', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
-        $this->data['vendor_data'] = $this->model_vendors->getVendorData();
+        $this->data['supplier_data'] = $this->model_suppliers->getSupplierData();
         $this->data['materials'] = $this->model_mainstock->getMaterialData();
+        $company = $this->model_company->getCompanyData(1);
+        $this->data['company_data'] = $company;
+        $this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+        $this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+
 
         $this->render_template('transactions/salesandpurchase/purchase', $this->data);
     }

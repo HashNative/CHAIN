@@ -1,14 +1,14 @@
 
-                    <h2>Manage Customers</h2>
+                    <h2>Manage Suppliers</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a>Customers</a>
+                            <a>Suppliers</a>
                         </li>
                         <li class="breadcrumb-item active">
-                            <strong>Manage Customers</strong>
+                            <strong>Manage Suppliers</strong>
                         </li>
                     </ol>
                 </div>
@@ -34,17 +34,16 @@
           <?php endif; ?>
           
           
-          
-          <!-- /.box -->
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="col-lg-12">
                     <div class="ibox ">
                         <div class="ibox-title">
-                            <h5>All Customers</h5>
+                            <h5>All Suppliers</h5>
 
                             <div class="ibox-tools">
-                                <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Create new Customer</a>
+                                <a href="<?php echo base_url('suppliers/create') ?>" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Create new Supplier</a>
 
                             </div>
                         </div>
@@ -61,37 +60,54 @@
                                     <th>Email</th>
                                     <th>Status</th>
 
-                                    <?php if(in_array('updateCustomer', $user_permission) || in_array('deleteCustomer', $user_permission)): ?>
-                                        <th class="text-right" data-sort-ignore="true">Action</th>
-                                    <?php endif; ?>
+                                    <?php if(in_array('updateSupplier', $user_permission) || in_array('deleteSupplier', $user_permission)): ?>
+                                        <th class="text-right" data-sort-ignore="true">Action</th>                                    <?php endif; ?>
                                 </tr>
-
                                 </thead>
                                 <tbody>
-                                <?php if($customer_data): ?>
-                                    <?php foreach ($customer_data as $k => $v): ?>
+                                <?php if($supplier_data): ?>
+                                    <?php foreach ($supplier_data as $k => $v): ?>
                                         <tr>
-                                            <td><a href="#" class="client-link"><?php echo $v['customer_info']['name']; ?></a></td>
-                                            <td><?php echo $v['customer_info']['address']; ?></td>
-                                            <td><?php echo $v['customer_info']['phone']; ?></td>
-                                            <td><?php echo $v['customer_info']['email']; ?></td>
-                                            <td class="client-status"><span class="label label-primary">Active</span></td>
-                                            <?php if(in_array('updateCustomer', $user_permission) || in_array('deleteCustomer', $user_permission)): ?>
+                                            <td><a href="#" class="client-link"><?php echo $v['supplier_info']['name']; ?></a></td>
+                                            <td><?php echo $v['supplier_info']['address']; ?></td>
+                                            <td><?php echo $v['supplier_info']['phone']; ?></td>
+                                            <td><?php echo $v['supplier_info']['email']; ?></td>
+                                            <?php if($v['supplier_info']['status']=='pending') {
+                                                $color = 'label label-warning';
+                                            }else if($v['supplier_info']['status']=='sampling'){
+                                                $color ='label label-info';
+
+                                            }else if($v['supplier_info']['status']=='review'){
+                                                $color ='label label-success';
+
+                                            }else if($v['supplier_info']['status']=='approved'){
+                                                $color ='label label-primary';
+
+                                            }else if($v['supplier_info']['status']=='rejected') {
+                                                $color = 'label label-danger';
+
+                                            }else if($v['supplier_info']['status']=='reserved'){
+                                                $color ='label label-plain';
+
+                                            }
+                                            ?>
+                                            <td class="client-status"><span class="<?php echo $color; ?>"><?php echo $v['supplier_info']['status']; ?></span></td>
+                                            <?php if(in_array('updateSupplier', $user_permission) || in_array('deleteSupplier', $user_permission)): ?>
 
                                                 <td class="text-right">
-                                                    <?php if(in_array('updateCustomer', $user_permission)): ?>
-                                                        <a class="btn-white btn btn-xs" href="<?php echo base_url('customers/edit/'.$v['customer_info']['id']) ?>"><i class="fa fa-pencil"></i> Edit</a>
+                                                    <?php if(in_array('updateSupplier', $user_permission)): ?>
+                                                        <a class="btn-white btn btn-xs" href="<?php echo base_url('suppliers/profile/'.$v['supplier_info']['id']) ?>" ><i class="fa fa-pencil"></i> Edit</a>
                                                     <?php endif; ?>
-                                                    <?php if(in_array('deleteCustomer', $user_permission)): ?>
-                                                        <a class="btn-white btn btn-xs" href="<?php echo base_url('customers/delete/'.$v['customer_info']['id']) ?>"><i class="fa fa-trash"></i> Delete</a>
+                                                    <?php if(in_array('deleteSupplier', $user_permission)): ?>
+                                                        <a class="btn-white btn btn-xs" href="<?php echo base_url('suppliers/delete/'.$v['supplier_info']['id']) ?>" ><i class="fa fa-trash"></i> Delete</a>
                                                     <?php endif; ?>
+
                                                 </td>
 
                                             <?php endif; ?>
                                         </tr>
                                     <?php endforeach ?>
                                 <?php endif; ?>
-
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -109,14 +125,17 @@
             </div>
         </div>
 
+
     </div>
      
   
   <script type="text/javascript">
     $(document).ready(function() {
         $('.footable').footable();
+        $('.footable2').footable();
 
-        $("#customerMainMenu").addClass('active');
+
+        $("#suppliersMainMenu").addClass('active');
       $("#manageUserSubNav").addClass('active');
     });
   </script>

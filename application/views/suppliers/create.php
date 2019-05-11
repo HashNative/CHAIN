@@ -1,21 +1,23 @@
 
-                    <h2>Add Vendors</h2>
+                    <h2>Add Supplier</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a>Vendors</a>
+                            <a>Suppliers</a>
                         </li>
                         <li class="breadcrumb-item active">
-                            <strong>Add Vendor</strong>
+                            <strong>Add Supplier</strong>
                         </li>
                     </ol>
                 </div>
-                <div class="col-lg-2">
-
-                </div>
-            </div>
+                    <div class="col-lg-4">
+                        <div class="title-action">
+                            <a href="<?php echo base_url('suppliers') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Suppliers </a>
+                        </div>
+                    </div>
+                    </div>
 
     <!-- Main content -->
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -42,11 +44,11 @@
                   <div class="ibox-title">
 
 
-                <form role="form" action="<?php base_url('vendors/create') ?>" method="post">
+                <form role="form" action="<?php base_url('suppliers/create') ?>" method="post">
                 <?php echo validation_errors(); ?>
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Vendor Name" autocomplete="off">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Supplier Name" autocomplete="off">
                 </div>
 
                 <div class="form-group">
@@ -59,24 +61,34 @@
                   <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off">
                 </div>
 
-                
+                    <div class="form-group">
+                        <label for="web">Web</label>
+                        <input type="text" class="form-control" id="web" name="web" placeholder="Web" autocomplete="off">
+                    </div>
 
                 <div class="form-group">
                   <label for="phone">Phone</label>
                   <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" autocomplete="off">
                 </div>
 
-              
-
+                    <div class="form-group">
+                        <label for="source">Source</label>
+                        <input type="text" class="form-control" id="source" name="source" placeholder="Source" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="overview">Overview</label>
+                        <textarea type="text" id="overview" name="overview" placeholder="Overview" class="form-control" autocomplete="off">
+                    </textarea>
+                    </div>
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('vendors/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('suppliers/') ?>" class="btn btn-warning">Back</a>
               </div>
               </form>
               </div>
               <!-- /.box-body -->
 
-            
+
             </div>
                 </div>
 
@@ -89,8 +101,8 @@
   $(document).ready(function() {
     $("#groups").select2();
 
-    $("#userMainNav").addClass('active');
+    $("#suppliersMainMenu").addClass('active');
     $("#createUserSubNav").addClass('active');
-    
+
   });
 </script>

@@ -1,20 +1,22 @@
 
-                    <h2>Manage Vendors</h2>
+                    <h2>Manage Suppliers</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a>Vendors</a>
+                            <a>Suppliers</a>
                         </li>
                         <li class="breadcrumb-item active">
-                            <strong>Manage Vendors</strong>
+                            <strong>Manage Suppliers</strong>
                         </li>
                     </ol>
                 </div>
-                <div class="col-lg-2">
-
-                </div>
+                    <div class="col-lg-4">
+                        <div class="title-action">
+                            <a href="<?php echo base_url('suppliers') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Suppliers </a>
+                        </div>
+                    </div>
             </div>
 
     <!-- Main content -->
@@ -37,32 +39,45 @@
 
           <div class="ibox ">
                   <div class="ibox-title">
-            <form role="form" action="<?php base_url('vendors/create') ?>" method="post">
+            <form role="form" action="<?php base_url('suppliers/create') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
 
               
                 <div class="form-group">
-                  <label for="username">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Vendor Name" value="<?php echo $vendor_data['name'] ?>" autocomplete="off">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Supplier Name" value="<?php echo $supplier_data['name'] ?>" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                  <label for="fname">Address</label>
-                  <input type="text" class="form-control" id="address" name="address" placeholder="Address" value="<?php echo $vendor_data['address'] ?>" autocomplete="off">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" name="address" placeholder="Address" value="<?php echo $supplier_data['address'] ?>" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $vendor_data['email'] ?>" autocomplete="off">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $supplier_data['email'] ?>" autocomplete="off">
                 </div>
+                  <div class="form-group">
+                      <label for="web">Web</label>
+                      <input type="text" class="form-control" id="web" name="web" placeholder="Web" value="<?php echo $supplier_data['web'] ?>" autocomplete="off">
+                  </div>
 
                 <div class="form-group">
                   <label for="phone">Phone</label>
-                  <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="<?php echo $vendor_data['phone'] ?>" autocomplete="off">
+                  <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="<?php echo $supplier_data['phone'] ?>" autocomplete="off">
                 </div>
 
+                  <div class="form-group">
+                      <label for="source">Source</label>
+                      <input type="text" class="form-control" id="source" name="source" placeholder="Source" value="<?php echo $supplier_data['source'] ?>" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                      <label for="overview">Overview</label>
+                      <textarea type="text" id="overview" name="overview" placeholder="Overview" class="form-control" autocomplete="off">
+                        <?php echo $supplier_data['overview']; ?>
+                      </textarea>
                 
 
               </div>
@@ -70,7 +85,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('vendors/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('suppliers/profile/'.$supplier_data['id']) ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           </div>
@@ -84,13 +99,14 @@
                     </div>
     <!-- /.content -->
   </div>
+</div>
   <!-- /.content-wrapper -->
 
 <script type="text/javascript">
   $(document).ready(function() {
     $("#groups").select2();
 
-    $("#userMainNav").addClass('active');
+    $("#suppliersMainMenu").addClass('active');
     $("#manageUserSubNav").addClass('active');
   });
 </script>

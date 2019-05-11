@@ -63,12 +63,12 @@
                                                     <div class="row">
                                                         <div class="col-sm-4">
                                                             <div class="form-group">
-                                                                <label class="col-form-label" for="description">Vendor</label>
+                                                                <label class="col-form-label" for="description">Supplier</label>
                                                                 <select class="form-control select_group material"
-                                                                        id="vendor" name="vendor" style="width:100%;" onchange="getProductData(1)" required>
+                                                                        id="supplier" name="supplier" style="width:100%;" onchange="getProductData(1)" required>
                                                                     <option value=""></option>
-                                                                    <?php foreach ($vendor_data as $k => $v): ?>
-                                                                        <option value="<?php echo $v['name'] ?>" placeholder="Choose vendor"><?php echo $v['name'] ?></option>
+                                                                    <?php foreach ($supplier_data as $k => $v): ?>
+                                                                        <option value="<?php echo $v['name'] ?>" placeholder="Choose supplier"><?php echo $v['name'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                             </div>
@@ -100,7 +100,7 @@
                                                             <tr id="row_1">
                                                                 <td>
                                                                     <select class="form-control select_group material" data-row-id="row_1"
-                                                                            id="material_1" name="material[]" style="width:100%;" required>
+                                                                            id="material_1" name="material[]" style="width:100%;" onchange="getProductData(1)" required>
                                                                         <option value=""></option>
                                                                         <?php foreach ($materials as $k => $v): ?>
                                                                             <option value="<?php echo $v['id'] ?>" placeholder="Choose a material"><?php echo $v['name'] ?></option>
@@ -148,6 +148,7 @@
 
         <script type="text/javascript">
                         $(document).ready(function () {
+
                             $(".material").select2();
                             // Append table with add row form on add new button click ==Add new Task==
                             $(".add-new").click(function () {
@@ -204,9 +205,10 @@
                         // get the product information from the server
                         function getProductData(row_id)
                         {
-                            var product_id = $("#material_"+row_id).val();
-                            if(product_id == "") {
-                                $("#rate_"+row_id).val("");
+
+                            var material_id = $("#material_"+row_id).val();
+                            if(material_id == "") {
+                                $("#cost_"+row_id).val("");
 
                                 $("#qty_"+row_id).val("");
 
@@ -214,14 +216,16 @@
 
                             } else {
                                 $.ajax({
-                                    url: base_url + 'orders/getProductValueById',
+                                    url: base_url + 'purchaseorder/getMaterialValueById',
                                     type: 'post',
-                                    data: {product_id : product_id},
+                                    data: {material_id : material_id},
                                     dataType: 'json',
                                     success:function(response) {
+                                        alert('success');
+
                                         // setting the rate value into the rate input field
 
-                                        $("#rate_"+row_id).val(response.price);
+                                        $("#cost_"+row_id).val(response.price);
 
                                         $("#qty_"+row_id).val(1);
 

@@ -12,9 +12,11 @@
                         </li>
                     </ol>
                 </div>
-                <div class="col-lg-2">
-
-                </div>
+                    <div class="col-lg-4">
+                        <div class="title-action">
+                            <a href="<?php echo base_url('groups') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Groups </a>
+                        </div>
+                    </div>
             </div>
 
         <div class="wrapper wrapper-content animated fadeInRight">
@@ -146,49 +148,27 @@
                         }
                          ?>></td>
                       </tr>
+
                       <tr>
-                        <td>Vendors</td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="createVendor" <?php 
+                        <td>Supplier</td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="createSupplier" <?php
                         if($serialize_permission) {
-                          if(in_array('createVendor', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('createSupplier', $serialize_permission)) { echo "checked"; }
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="updateVendor" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="updateSupplier" <?php
                         if($serialize_permission) {
-                          if(in_array('updateVendor', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('updateSupplier', $serialize_permission)) { echo "checked"; }
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="viewVendor" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="viewSupplier" <?php
                         if($serialize_permission) {
-                          if(in_array('viewVendor', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('viewSupplier', $serialize_permission)) { echo "checked"; }
                         }
                          ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteVendor" <?php 
+                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteSupplier" <?php
                         if($serialize_permission) {
-                          if(in_array('deleteVendor', $serialize_permission)) { echo "checked"; }  
-                        }
-                         ?>></td>
-                      </tr>
-                      <tr>
-                        <td>Category</td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="createCategory" <?php 
-                        if($serialize_permission) {
-                          if(in_array('createCategory', $serialize_permission)) { echo "checked"; }  
-                        }
-                         ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="updateCategory" <?php 
-                        if($serialize_permission) {
-                          if(in_array('updateCategory', $serialize_permission)) { echo "checked"; }  
-                        }
-                         ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="viewCategory" <?php 
-                        if($serialize_permission) {
-                          if(in_array('viewCategory', $serialize_permission)) { echo "checked"; }  
-                        }
-                         ?>></td>
-                        <td><input type="checkbox" name="permission[]" id="permission" value="deleteCategory" <?php 
-                        if($serialize_permission) {
-                          if(in_array('deleteCategory', $serialize_permission)) { echo "checked"; }  
+                          if(in_array('deleteSupplier', $serialize_permission)) { echo "checked"; }
                         }
                          ?>></td>
                       </tr>
@@ -313,9 +293,16 @@
    
     <script>
         $(document).ready(function(){
-            $('.i-checks').iCheck({
+        $("#groupMainMenu").addClass('active');
+
+        $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
             });
         });
+
     </script>
+
+
+
+

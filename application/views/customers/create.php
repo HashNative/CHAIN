@@ -12,9 +12,11 @@
                         </li>
                     </ol>
                 </div>
-                <div class="col-lg-2">
-
-                </div>
+                    <div class="col-lg-4">
+                        <div class="title-action">
+                            <a href="<?php echo base_url('customers') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Customers </a>
+                        </div>
+                    </div>
             </div>
 
     <!-- Main content -->
@@ -89,7 +91,7 @@
   $(document).ready(function() {
     $("#groups").select2();
 
-    $("#userMainNav").addClass('active');
+    $("#customerMainMenu").addClass('active');
     $("#createUserSubNav").addClass('active');
     
   });

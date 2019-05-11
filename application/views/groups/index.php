@@ -39,7 +39,7 @@
                             <h5>All Groups</h5>
                             <?php if(in_array('createGroup', $user_permission)): ?>
                             <div class="ibox-tools">
-                                <a href="<?php echo base_url('groups/create') ?>" class="btn btn-primary btn-xs">Create new Group</a>
+                                <a href="<?php echo base_url('groups/create') ?>" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Create new Group</a>
                             </div>
 
                             <br /> <br />
@@ -107,7 +107,7 @@
         <script type="text/javascript">
 $(document).ready(function(){
 
-    $("#groupMainNav").addClass('active');
+    $("#groupMainMenu").addClass('active');
     $("#manageGroupSubMenu").addClass('active');
   
 });

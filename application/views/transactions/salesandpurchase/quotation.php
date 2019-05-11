@@ -47,7 +47,7 @@
                         <h5>Create Quotation</h5>
                         <?php if(in_array('createCustomer', $user_permission)): ?>
                             <div class="ibox-tools">
-                                <a href="<?php echo base_url('quotation/history') ?>" class="btn btn-primary btn-xs">Quotation History</a>
+                                <a href="<?php echo base_url('quotation/history') ?>" class="btn btn-primary btn-xs"><i class="fa fa-unsorted"></i> Quotation History</a>
                             </div>
 
                             <br /> <br />
@@ -88,6 +88,7 @@
                                             <th style="width:35%">Product</th>
                                             <th style="width:10%">Quantity</th>
                                             <th style="width:10%">Cost</th>
+                                            <th style="width:10%">Amount</th>
                                             <th style="width:5%"></th>
                                         </tr>
                                         </thead>
@@ -106,6 +107,8 @@
                                             </td>
                                             <td><input type="text" name="cost[]" id="cost_1" class="form-control" required>
                                             </td>
+                                            <td><input type="text" name="amount[]" id="amount_1" class="form-control" required>
+                                            </td>
                                             <td>
                                                 <a class="delete" title="Delete"><i class="fa fa-close"></i></a>
                                             </td>
@@ -118,6 +121,48 @@
                                         </button>
 
                                     </div>
+                                    <table class="table invoice-total">
+                                        <tbody>
+                                        <tr>
+                                            <td><strong>Gross Amount :</strong></td>
+                                            <td>
+                                                <input type="hidden" class="form-control" id="gross_amount_value" name="gross_amount_value" autocomplete="off">
+                                            </td>
+
+                                        </tr>
+                                        <?php if($is_service_enabled == true): ?>
+                                            <tr>
+                                                <td><strong>S-Charge <?php echo $company_data['service_charge_value'] ?> % :</strong></td>
+                                                <td>
+                                                    <input type="text" class="form-control" id="service_charge" name="service_charge" disabled autocomplete="off">
+                                                </td>
+
+
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if($is_vat_enabled == true): ?>
+                                            <tr>
+                                                <td><strong>Vat <?php echo $company_data['vat_charge_value'] ?> % :</strong></td>
+                                                <td>
+                                                    <input type="text" class="form-control" id="vat_charge" name="vat_charge" disabled autocomplete="off">
+                                                </td>
+
+                                            </tr>
+                                        <?php endif; ?>
+                                        <tr>
+                                            <td><strong>Discount :</strong></td>
+                                            <td>
+                                                <input type="text" class="form-control" id="discount" name="discount" placeholder="Discount" onkeyup="subAmount()" autocomplete="off">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Net Amount :</strong></td>
+                                            <td>
+                                                <input type="text" class="form-control" id="net_amount" name="net_amount" disabled autocomplete="off">
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
 
 
                                 </div>
@@ -174,6 +219,7 @@
                         '</td>' +
                         '<td><input type="text" name="qty[]" id="qty_' + row_id + '" class="form-control"></td>' +
                         '<td><input type="text" name="cost[]" id="cost_' + row_id + '" class="form-control"></td>' +
+                        '<td><input type="text" name="amount[]" id="amount_' + row_id + '" class="form-control"></td>' +
                         '<td> <a class="delete" title="Delete"><i class="fa fa-close"></i></a> </td>' +
                         '</tr>';
 

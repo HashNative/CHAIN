@@ -54,7 +54,7 @@ class Model_purchase extends CI_Model
     	$data = array(
     		
     		'date_time' => strtotime(date('Y-m-d h:i:s a')),
-    		'vendor' => $this->input->post('vendor'),
+    		'supplier' => $this->input->post('vendor'),
     		'purchase_order_no' => $this->input->post('pon'),
     		'paid_status' => 2,
     		'user_id' => $user_id,
