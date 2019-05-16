@@ -50,7 +50,7 @@ class Model_invoice extends CI_Model
 		$user_id = $this->session->userdata('id');
 
         //Get Next id
-        $sql = "SELECT no FROM sales ORDER BY id ASC";
+        $sql = "SELECT no FROM sales WHERE no IS NOT NULL ORDER BY id ASC";
         $query = $this->db->query($sql);
         $result=$query->result_array();
         $sales_no=null;

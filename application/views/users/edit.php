@@ -1,5 +1,5 @@
 
-                    </div>
+<div class="row wrapper border-bottom white-bg">
                     <div class="col-lg-4 navbar-right">
                         <a class="minimalize-styl-2 btn btn-primary " href="<?php echo base_url('users') ?>"><i class="fa fa-eye"></i> All Users</a>
                     </div>

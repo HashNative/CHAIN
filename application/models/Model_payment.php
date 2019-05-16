@@ -1,6 +1,6 @@
 <?php 
 
-class Model_quotation extends CI_Model
+class Model_payment extends CI_Model
 {
 	public function __construct()
 	{
@@ -11,23 +11,23 @@ class Model_quotation extends CI_Model
 	}
 
 	/* get the orders data */
-	public function getQuotationData($id = null)
+	public function getInvoiceData($id = null)
 	{
 		if($id) {
-			$sql = "SELECT * FROM quotation WHERE id = ?";
+			$sql = "SELECT * FROM invoice WHERE id = ?";
 			$query = $this->db->query($sql, array($id));
 			return $query->row_array();
 		}
 
 		$user_id = $this->session->userdata('id');
 		if($user_id == 1) {
-			$sql = "SELECT * FROM quotation ORDER BY id DESC";
+			$sql = "SELECT * FROM invoice ORDER BY id DESC";
 			$query = $this->db->query($sql);
 			return $query->result_array();
 		}
 		else {
 			$user_data = $this->model_users->getUserData($user_id);
-			$sql = "SELECT * FROM quotation_detail WHERE store_id = ? ORDER BY id DESC";
+			$sql = "SELECT * FROM invoice_detail WHERE store_id = ? ORDER BY id DESC";
 			$query = $this->db->query($sql, array($user_data['store_id']));
 			return $query->result_array();	
 		}
@@ -40,7 +40,7 @@ class Model_quotation extends CI_Model
 			return false;
 		}
 
-		$sql = "SELECT * FROM purchase_order_detail WHERE order_id = ?";
+		$sql = "SELECT * FROM invoice_detail WHERE order_id = ?";
 		$query = $this->db->query($sql, array($order_id));
 		return $query->result_array();
 	}
@@ -49,38 +49,20 @@ class Model_quotation extends CI_Model
 	{
 		$user_id = $this->session->userdata('id');
 
-        //Get Next id
-        $sql = "SELECT no FROM sales WHERE no IS NOT NULL ORDER BY id ASC";
-        $query = $this->db->query($sql);
-        $result=$query->result_array();
-        $sales_no=null;
-        if($result){
+        $invoice_id = $this->db->insert_id();
+    	$data = array(
 
-            foreach ($result as $k => $v):
-                $sales_no=$v['no']+1;
-            endforeach;
-
-        }else{
-            $sales_no=1000;
-
-        }
-
-
-        $quotation_id = $this->db->insert_id();
-        $data = array(
-
-            'date_time' => $this->input->post('quotation_date'),
+            'date_time' => $this->input->post('payment_date'),
             'customer' => $this->input->post('customer'),
-            'no' => $sales_no,
-            'type' => 'Quotation',
-            'paid_status' => 'pending',
+            'type' => 'Payment',
+            'paid_status' => 'closed',
+            'total' => $this->input->post('amount'),
             'user_id' => $user_id,
-        );
+    	);
 
-        $insert = $this->db->insert('sales', $data);
+		$insert = $this->db->insert('sales', $data);
 
-    	
-		return ($quotation_id) ? $quotation_id : false;
+		return ($invoice_id) ? $invoice_id : false;
 	}
 
 	public function countOrderItem($order_id)
@@ -152,11 +134,11 @@ class Model_quotation extends CI_Model
 
 
 
-	public function remove($id)
+	public function delete($id)
 	{
 		if($id) {
 			$this->db->where('id', $id);
-			$delete = $this->db->delete('Salesorder');
+			$delete = $this->db->delete('invoice');
 
 			$this->db->where('order_id', $id);
 			$delete_item = $this->db->delete('order_items');

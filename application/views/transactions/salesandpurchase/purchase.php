@@ -1,11 +1,4 @@
 
-
-</div>
-<div class="col-lg-2">
-
-</div>
-</div>
-
 <!-- Main content -->
 <div class="wrapper wrapper-content animated fadeInRight">
 
@@ -43,6 +36,18 @@
                             <div class="modal-body">
 
                                 <div id="messages"></div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group" id="data_1">
+                                            <label class="font-normal">Purchase Date</label>
+                                            <div class="input-group date">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                <input type="text" id="purchase_date" name="purchase_date" class="form-control" value="03/04/2014">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row">
 
                                     <div class="col-sm-8">
@@ -171,6 +176,15 @@
         $("#purchaseMainMenu").addClass('active');
 
         $(".material").select2();
+
+
+        var mem = $('#data_1 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
 
         // Append table with add row form on add new button click ==Add new Task==
         $(".add-new").click(function () {

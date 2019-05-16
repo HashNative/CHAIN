@@ -1,11 +1,4 @@
 
-
-                </div>
-                <div class="col-lg-2">
-
-                </div>
-            </div>
-
    <!-- Main content -->
    <div class="wrapper wrapper-content animated fadeInRight">
 

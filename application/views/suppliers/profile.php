@@ -1,5 +1,6 @@
+<div class="row wrapper border-bottom white-bg">
 
-</div>
+
 <div class="col-lg-4 navbar-right">
     <a class="minimalize-styl-2 btn btn-primary " href="<?php echo base_url('suppliers') ?>"><i class="fa fa-eye"></i> All Suppliers</a>
 </div>

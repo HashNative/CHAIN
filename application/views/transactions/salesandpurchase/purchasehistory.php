@@ -1,10 +1,4 @@
 
-</div>
-
-
-</div>
-
-
 <!-- Main content -->
 <div class="wrapper wrapper-content  animated fadeInDown">
 
@@ -31,7 +25,16 @@
                             <h5>All Purchases</h5>
 
                             <div class="ibox-tools">
-                                <a href="<?php echo base_url('purchase') ?>" class="btn-primary btn btn-xs"><i class="fa fa-plus"></i> New Purchase</a>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-plus"></i> New Transaction
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="<?php echo base_url('purchase') ?>">Purchase (GRN)</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('purchase/purchaseorder') ?>">Purchase Order</a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="ibox-content">
@@ -42,34 +45,44 @@
                                 <thead>
                                 <tr>
 
-                                    <th data-toggle="true">Order No</th>
                                     <th data-hide="phone">Time</th>
-                                    <th data-hide="phone">Vendor</th>
+                                    <th data-hide="phone">Type</th>
+                                    <th data-toggle="true">No</th>
+                                    <th data-hide="phone">Supplier</th>
                                     <th data-hide="phone">Total</th>
                                     <th data-hide="phone">Status</th>
                                     <th class="text-right" data-sort-ignore="true">Action</th>
+
 
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php foreach ($purchase_data as $k => $v): ?>
                                     <tr>
+
+
                                         <td>
-                                            <?php echo $v['purchase_info']['purchase_order_no']; ?>
+                                            <?php echo date("d/m/Y", strtotime($v['purchase_info']['date_time'])); ?>
                                         </td>
                                         <td>
-                                            <!-- left side align problem here -->
-                                            <?php echo date('d/m/Y H:i:s', $v['purchase_info']['date_time']); ?>
+                                            <?php echo $v['purchase_info']['type']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $v['purchase_info']['vendor']; ?>
+                                            <?php echo $v['purchase_info']['no']; ?>
                                         </td>
                                         <td>
+                                            <?php echo $v['purchase_info']['supplier']; ?>
+                                        </td>
+
+                                        <td class="text-right">
                                             <?php echo $v['purchase_info']['total']; ?>
                                         </td>
                                         <td>
                                             <?php echo $v['purchase_info']['paid_status']; ?>
                                         </td>
+
+
+
                                         <td class="text-right">
                                             <div class="btn-group">
 
@@ -112,7 +125,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <td colspan="6">
+                                    <td colspan="12">
                                         <ul class="pagination float-right"></ul>
                                     </td>
                                 </tr>

@@ -50,30 +50,37 @@ class Model_purchase extends CI_Model
 		$user_id = $this->session->userdata('id');
 
 		echo $user_id;
-		$purchase_id = $this->db->insert_id();
+
+
+        //Get Next id
+        $sql = "SELECT no FROM purchase WHERE no IS NOT NULL ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        $result=$query->result_array();
+        $purchase_no=null;
+        if($result){
+
+            foreach ($result as $k => $v):
+                $purchase_no=$v['no']+1;
+            endforeach;
+
+        }else {
+            $purchase_no = 1;
+        }
+
+
+            $purchase_id = $this->db->insert_id();
     	$data = array(
-    		
-    		'date_time' => strtotime(date('Y-m-d h:i:s a')),
-    		'supplier' => $this->input->post('vendor'),
-    		'paid_status' => 2,
-    		'user_id' => $user_id,
+
+            'date_time' => $this->input->post('purchase_date'),
+            'supplier' => $this->input->post('supplier'),
+            'no' => $purchase_no,
+            'type' => 'GRN',
+            'paid_status' => 'paid',
+            'user_id' => $user_id,
     	);
 
 		$insert = $this->db->insert('purchase', $data);
 
-		$count_product = count($this->input->post('material'));
-    	for($x = 0; $x < $count_product; $x++) {
-    		$items = array(
-    			'material_id' => $this->input->post('material')[$x],
-    			'quantity' => $this->input->post('qty')[$x],
-    			'price' => $this->input->post('cost')[$x],
-    			'amount' => $this->input->post('amount')[$x],
-    		);
-
-    		$this->db->insert('purchase_detail', $items);
-    	}
-
-    	
 		return ($purchase_id) ? $purchase_id : false;
 	}
 

@@ -15,6 +15,7 @@ class Purchase extends Admin_Controller
         $this->load->model('model_suppliers');
         $this->load->model('model_company');
         $this->load->model('model_purchase');
+        $this->load->model('model_purchaseorder');
         $this->load->model('model_users');
 
     }
@@ -69,6 +70,43 @@ class Purchase extends Admin_Controller
 
     }
 
+    public function purchaseorder()
+    {
+        if (!in_array('createOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+
+        $this->data['page_title'] = 'Create Order';
+
+
+        $this->form_validation->set_rules('supplier', 'Supplier', 'trim|required');
+        $this->form_validation->set_rules('address', 'Address', 'trim|required');
+        $this->form_validation->set_rules('material[]', 'Material name', 'trim|required');
+        $this->form_validation->set_rules('qty[]', 'Quantity', 'trim|numeric|required');
+
+
+
+        if ($this->form_validation->run() == TRUE) {
+
+            $order_id = $this->model_purchaseorder->create();
+
+            if ($order_id) {
+                $this->session->set_flashdata('success', 'Successfully created');
+                redirect('purchase/purchaseorder/' . $order_id, 'refresh');
+            } else {
+                $this->session->set_flashdata('errors', 'Error occurred!!');
+                redirect('purchase/purchaseorder/', 'refresh');
+            }
+        } else {
+            $this->data['supplier_data'] = $this->model_suppliers->getSupplierData();
+            $this->data['materials'] = $this->model_mainstock->getMaterialData();
+
+            $this->render_template('transactions/salesandpurchase/purchaseorder', $this->data);
+        }
+
+
+    }
+
 
     public function history()
     {
@@ -90,8 +128,6 @@ class Purchase extends Admin_Controller
         $this->render_template('transactions/salesandpurchase/purchasehistory', $this->data);
 
     }
-
-
 
     public function edit($id = null)
     {

@@ -1,7 +1,4 @@
 
-                </div>
-       </div>
-
     <!-- Main content -->
     <div class="wrapper wrapper-content animated fadeInRight">
 

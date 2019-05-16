@@ -51,33 +51,39 @@ class Model_purchaseorder extends CI_Model
 		// get store id from user id 
 		$user_data = $this->model_users->getUserData($user_id);
 
-		$order_id = $this->db->insert_id();
-    	$data = array(
-    		
-    		'date_time' => strtotime(date('Y-m-d h:i:s a')),
-    		'vendor' => $this->input->post('vendor'),
-    		'purchase_order_no' => $order_id,
-    		'paid_status' => 2,
-    		'user_id' => $user_id,
-    	);
 
-		$insert = $this->db->insert('purchase_order', $data);
+        //Get Next id
+        $sql = "SELECT no FROM purchase WHERE no IS NOT NULL ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        $result=$query->result_array();
+        $purchase_no=null;
+        if($result){
 
-		$count_product = count($this->input->post('material'));
-    	for($x = 0; $x < $count_product; $x++) {
-    		$items = array(
-                'purchase_order_no' => $order_id,
-    			'material_id' => $this->input->post('material')[$x],
-    			'quantity' => $this->input->post('qty')[$x],
-    			'price' => $this->input->post('cost')[$x],
-    			'amount' => $this->input->post('amount')[$x],
-    		);
+            foreach ($result as $k => $v):
+                $purchase_no=$v['no']+1;
+            endforeach;
 
-    		$this->db->insert('purchase_order_detail', $items);
-    	}
+        }else {
+            $purchase_no = 1;
+        }
+
+
+        $purchase_id = $this->db->insert_id();
+        $data = array(
+
+            'date_time' => $this->input->post('purchase_date'),
+            'supplier' => $this->input->post('supplier'),
+            'no' => $purchase_no,
+            'type' => 'Purchase Order',
+            'paid_status' => 'paid',
+            'user_id' => $user_id,
+        );
+
+        $insert = $this->db->insert('purchase', $data);
+
 
     	
-		return ($order_id) ? $order_id : false;
+		return ($purchase_id) ? $purchase_id : false;
 	}
 
 	public function countOrderItem($order_id)

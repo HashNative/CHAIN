@@ -9,10 +9,10 @@
 <!---->
 <!---->
 <!--</ol>-->
-
-</div>
-
-</div>
+<!---->
+<!--</div>-->
+<!---->
+<!--</div>-->
 
 
 
@@ -42,7 +42,7 @@
                 <div class="col-lg-12">
                     <div class="ibox ">
                         <div class="ibox-title">
-                            <h5>All Sales</h5>
+                            <h5>All Sales Transactions</h5>
 
                             <div class="ibox-tools">
                                 <div class="btn-group">
@@ -53,7 +53,8 @@
                                         <a class="dropdown-item" href="<?php echo base_url('sales/salesreceipt') ?>">Sales Receipt</a>
                                         <a class="dropdown-item" href="<?php echo base_url('sales/invoice') ?>">Invoice</a>
                                         <a class="dropdown-item" href="<?php echo base_url('sales/quotation') ?>">Quotation</a>
-                                        <a class="dropdown-item" href="#">Payment</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('sales/payment') ?>">Payment</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('sales/salesorder') ?>">Sales Order</a>
 
                                     </div>
                                 </div>
@@ -101,7 +102,7 @@
                                             }
                                             ?>
                                         </td>
-                                        <td>
+                                        <td class="text-right">
                                             <?php echo $v['sales_info']['total']; ?>
                                         </td>
                                         <td>

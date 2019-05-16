@@ -1,7 +1,4 @@
 
-                </div>
-            </div>
-
     <!-- Main content -->
     <div class="wrapper wrapper-content animated fadeInRight">
 
@@ -81,9 +78,9 @@
                                                 <td class="text-right">
 
                                                     <div class="btn-group">
-                                                        <button class="btn btn-sm" type="button">
-                                                            Print
-                                                        </button>
+
+                                                            <a class="dropdown-item" href="<?php echo base_url('suppliers/profile/'.$v['supplier_info']['id']) ?>"><i class="fa fa-pencil"></i> View/Edit</a>
+
                                                         <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         </button>
                                                         <div class="dropdown-menu">
@@ -91,7 +88,6 @@
                                                             <a class="dropdown-item" href="#">Another action</a>
                                                             <a class="dropdown-item" href="#">Something else here</a>
                                                             <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item" href="<?php echo base_url('suppliers/profile/'.$v['supplier_info']['id']) ?>"><i class="fa fa-pencil"></i> View/Edit</a>
                                                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteModal<?php echo $v['supplier_info']['id']; ?>"><i class="fa fa-trash"></i> Delete</a>
                                                         </div>
                                                     </div>
