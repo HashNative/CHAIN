@@ -164,20 +164,20 @@ class Purchase extends Admin_Controller
             if($this->input->post('confirm')) {
 
 
-                $delete = $this->model_customers->delete($id);
+                $delete = $this->model_purchase->delete($id);
                 if($delete == true) {
                     $this->session->set_flashdata('success', 'Successfully removed');
-                    redirect('customers/', 'refresh');
+                    redirect('purchase/history', 'refresh');
                 }
                 else {
                     $this->session->set_flashdata('error', 'Error occurred!!');
-                    redirect('customers/delete/'.$id, 'refresh');
+                    redirect('purchase/delete'.$id, 'refresh');
                 }
 
             }
             else {
                 $this->data['id'] = $id;
-                $this->render_template('customers/delete', $this->data);
+                $this->render_template('transactions/salesandpurchase/purchasehistory', $this->data);
             }
         }
     }

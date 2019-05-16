@@ -49,31 +49,49 @@ class Model_invoice extends CI_Model
 	{
 		$user_id = $this->session->userdata('id');
 
-		echo $user_id;
-		$invoice_id = $this->db->insert_id();
+        //Get Next id
+        $sql = "SELECT no FROM sales ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        $result=$query->result_array();
+        $sales_no=null;
+        if($result){
+
+            foreach ($result as $k => $v):
+                $sales_no=$v['no']+1;
+            endforeach;
+
+        }else{
+            $sales_no=1000;
+
+        }
+
+
+        $invoice_id = $this->db->insert_id();
     	$data = array(
-    		
-    		'date_time' => strtotime(date('Y-m-d h:i:s a')),
-    		'customer' => $this->input->post('customer'),
-    		'sales_order_no' => $this->input->post('son'),
-    		'paid_status' => 2,
-    		'user_id' => $user_id,
+
+            'date_time' => $this->input->post('invoice_date'),
+            'due_date' => $this->input->post('due_date'),
+            'customer' => $this->input->post('customer'),
+            'no' => $sales_no,
+            'type' => 'Invoice',
+            'paid_status' => 'pending',
+            'user_id' => $user_id,
     	);
 
-		$insert = $this->db->insert('invoice', $data);
+		$insert = $this->db->insert('sales', $data);
 
-		$count_product = count($this->input->post('product'));
-    	for($x = 0; $x < $count_product; $x++) {
-    		$items = array(
-                'sales_order_no' => $this->input->post('son')[$x],
-    			'product_id' => $this->input->post('product')[$x],
-    			'quantity' => $this->input->post('qty')[$x],
-    			'price' => $this->input->post('cost')[$x],
-    			'amount' => $this->input->post('amount')[$x],
-    		);
-
-    		$this->db->insert('invoice_detail', $items);
-    	}
+////		$count_product = count($this->input->post('product'));
+////    	for($x = 0; $x < $count_product; $x++) {
+////    		$items = array(
+////                'sales_order_no' => $this->input->post('son')[$x],
+////    			'product_id' => $this->input->post('product')[$x],
+////    			'quantity' => $this->input->post('qty')[$x],
+////    			'price' => $this->input->post('cost')[$x],
+////    			'amount' => $this->input->post('amount')[$x],
+////    		);
+////
+////    		$this->db->insert('invoice_detail', $items);
+//    	}
 
     	
 		return ($invoice_id) ? $invoice_id : false;
@@ -148,11 +166,11 @@ class Model_invoice extends CI_Model
 
 
 
-	public function remove($id)
+	public function delete($id)
 	{
 		if($id) {
 			$this->db->where('id', $id);
-			$delete = $this->db->delete('Salesorder');
+			$delete = $this->db->delete('invoice');
 
 			$this->db->where('order_id', $id);
 			$delete_item = $this->db->delete('order_items');

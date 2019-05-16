@@ -165,17 +165,17 @@ class Invoice extends Admin_Controller
                 $delete = $this->model_customers->delete($id);
                 if($delete == true) {
                     $this->session->set_flashdata('success', 'Successfully removed');
-                    redirect('customers/', 'refresh');
+                    redirect('invoice/', 'refresh');
                 }
                 else {
                     $this->session->set_flashdata('error', 'Error occurred!!');
-                    redirect('customers/delete/'.$id, 'refresh');
+                    redirect('invoice/delete/'.$id, 'refresh');
                 }
 
             }
             else {
                 $this->data['id'] = $id;
-                $this->render_template('customers/delete', $this->data);
+                $this->render_template('transactions/salesandpurchase/deleteinvoice', $this->data);
             }
         }
     }

@@ -1,20 +1,5 @@
 
 
-<h2>Purchase (GRN)</h2>
-<ol class="breadcrumb">
-    <li class="breadcrumb-item">
-        <a href="#">Home</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a href="#">Transactions</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a>Sales &amp Purchase</a>
-    </li>
-    <li class="breadcrumb-item active">
-        <strong>Purchase</strong>
-    </li>
-</ol>
 </div>
 <div class="col-lg-2">
 
@@ -59,25 +44,12 @@
 
                                 <div id="messages"></div>
                                 <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="col-form-label" for="description">Purchase Order Number</label>
-                                            <input type="text" id="pon" name="pon" value=""
-                                                   placeholder="PON" class="form-control">
-                                        </div>
-
-                                    </div>
-
-
-
-                                </div>
-                                <div class="row">
 
                                     <div class="col-sm-8">
                                         <div class="form-group">
                                             <label class="col-form-label" for="description">Supplier</label>
                                             <select class="form-control select_group material"
-                                                    id="supplier" name="supplier" style="width:100%;" required>
+                                                    id="supplier" name="supplier" style="width:100%;" required >
                                                 <option value=""></option>
                                                 <?php foreach ($supplier_data as $k => $v): ?>
                                                     <option value="<?php echo $v['name'] ?>" placeholder="Choose Supplier"><?php echo $v['name'] ?></option>
@@ -89,6 +61,7 @@
 
 
                                 </div>
+
                                 <div class="row">
                                     <table class="table" id="material_info_table">
                                         <thead>
@@ -195,6 +168,8 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#purchaseMainMenu").addClass('active');
+
         $(".material").select2();
 
         // Append table with add row form on add new button click ==Add new Task==

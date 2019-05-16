@@ -1,23 +1,12 @@
 
-                    <h2>Add Customers</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Customers</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>Add Customer</strong>
-                        </li>
-                    </ol>
-                </div>
-                    <div class="col-lg-4">
-                        <div class="title-action">
-                            <a href="<?php echo base_url('customers') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Customers </a>
-                        </div>
+
                     </div>
-            </div>
+                    <div class="col-lg-4 navbar-right">
+                        <a class="minimalize-styl-2 btn btn-primary " href="<?php echo base_url('customers') ?>"><i class="fa fa-eye"></i> All Customers</a>
+                    </div>
+
+
+                    </div>
 
     <!-- Main content -->
     <div class="wrapper wrapper-content animated fadeInRight">

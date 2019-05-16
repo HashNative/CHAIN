@@ -49,31 +49,35 @@ class Model_quotation extends CI_Model
 	{
 		$user_id = $this->session->userdata('id');
 
-		echo $user_id;
-		$quotation_id = $this->db->insert_id();
-    	$data = array(
-    		
-    		'date_time' => strtotime(date('Y-m-d h:i:s a')),
-            'quotation_id' => $quotation_id,
-    		'customer' => $this->input->post('customer'),
-    		'user_id' => $user_id,
-    	);
+        //Get Next id
+        $sql = "SELECT no FROM sales ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        $result=$query->result_array();
+        $sales_no=null;
+        if($result){
 
-		$insert = $this->db->insert('quotation', $data);
+            foreach ($result as $k => $v):
+                $sales_no=$v['no']+1;
+            endforeach;
 
-		$count_product = count($this->input->post('product'));
-    	for($x = 0; $x < $count_product; $x++) {
-    		$items = array(
+        }else{
+            $sales_no=1000;
 
-    			'quotation_id' => $quotation_id,
-                'product_id' => $this->input->post('product')[$x],
-    			'quantity' => $this->input->post('qty')[$x],
-    			'price' => $this->input->post('cost')[$x],
-    			'amount' => $this->input->post('amount')[$x],
-    		);
+        }
 
-    		$this->db->insert('quotation_detail', $items);
-    	}
+
+        $quotation_id = $this->db->insert_id();
+        $data = array(
+
+            'date_time' => $this->input->post('quotation_date'),
+            'customer' => $this->input->post('customer'),
+            'no' => $sales_no,
+            'type' => 'Quotation',
+            'paid_status' => 'pending',
+            'user_id' => $user_id,
+        );
+
+        $insert = $this->db->insert('sales', $data);
 
     	
 		return ($quotation_id) ? $quotation_id : false;

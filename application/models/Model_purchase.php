@@ -55,7 +55,6 @@ class Model_purchase extends CI_Model
     		
     		'date_time' => strtotime(date('Y-m-d h:i:s a')),
     		'supplier' => $this->input->post('vendor'),
-    		'purchase_order_no' => $this->input->post('pon'),
     		'paid_status' => 2,
     		'user_id' => $user_id,
     	);
@@ -65,7 +64,6 @@ class Model_purchase extends CI_Model
 		$count_product = count($this->input->post('material'));
     	for($x = 0; $x < $count_product; $x++) {
     		$items = array(
-                'purchase_order_no' => $this->input->post('pon')[$x],
     			'material_id' => $this->input->post('material')[$x],
     			'quantity' => $this->input->post('qty')[$x],
     			'price' => $this->input->post('cost')[$x],
@@ -148,15 +146,13 @@ class Model_purchase extends CI_Model
 
 
 
-	public function remove($id)
+	public function delete($id)
 	{
 		if($id) {
 			$this->db->where('id', $id);
-			$delete = $this->db->delete('Salesorder');
+			$delete = $this->db->delete('purchase');
 
-			$this->db->where('order_id', $id);
-			$delete_item = $this->db->delete('order_items');
-			return ($delete == true && $delete_item) ? true : false;
+			return ($delete == true) ? true : false;
 		}
 	}
 

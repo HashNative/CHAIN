@@ -1,16 +1,5 @@
 
-                    <h2>Manage Company Info</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Comapny</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>Manage Comapny Info</strong>
-                        </li>
-                    </ol>
+
                 </div>
                 <div class="col-lg-2">
 

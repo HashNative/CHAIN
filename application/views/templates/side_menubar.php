@@ -1,5 +1,5 @@
 
-<nav class="navbar-default navbar-static-side" role="navigation">
+<nav class="navbar-default navbar-static-side" role="navigation" style="position: fixed;">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
@@ -86,95 +86,25 @@
                 </li>
 
 
-
-
-                <li class="treeview" id="TransactionMainNav">
-                    <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Transactions </span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li>
-                            <a href="#">Sales &amp Purchase <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="<?php echo base_url('purchase') ?>">Purchase</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('sales') ?>">Sales</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('invoice') ?>">Invoice</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('quotation') ?>">Quotation</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Payments <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Incoming Payments</a>
-                                </li>
-                                <li>
-                                    <a href="#">Outgoing Payments</a>
-                                </li>
-                                <li>
-                                    <a href="#">Additional Expenses</a>
-                                </li>
-                                <li>
-                                    <a href="#">Financial Operations</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-                        <li>
-
-                            <a href="#">Return <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="<?php echo base_url('returns/salesreturn/') ?>">Sales Return</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('returns/purchasereturn/') ?>">Purchase Return</a>
-                                </li>
-
-                            </ul>
-
-                        </li>
-                        <li class="treeview" id="OrdersMainMenu">
-                            <a href="#">Orders <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="<?php echo base_url('salesorder/') ?>">Sales Order</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('purchaseorder/') ?>">Purchase Order</a>
-                                </li>
-                                
-
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-
-                <li id="procurementMainMenu">
-                    <a href="<?php echo base_url('procurement'); ?>"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurement</span></a>
-                </li>
-                <?php if(in_array('createUser', $user_permission) || in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
-                    <li>
-                        <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Accounting</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <?php if(in_array('createUser', $user_permission)): ?>
-                                <li><a href="<?php echo base_url('customers/create') ?>">Manufacturing Accounts</a></li>
-                            <?php endif; ?>
-                            <?php if(in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
-                                <li><a href="<?php echo base_url('customers') ?>">Income Statement</a></li>
-                            <?php endif; ?>
-                        </ul>
+                <?php if(in_array('createSupplier', $user_permission) || in_array('updateSupplier', $user_permission) || in_array('viewSupplier', $user_permission) || in_array('deleteSupplier', $user_permission)): ?>
+                    <li id="salesMainMenu">
+                        <a href="<?php echo base_url('sales/history'); ?>"><i class="fa fa-industry"></i> <span class="nav-label">Sales</span></a>
                     </li>
                 <?php endif; ?>
+
+                <?php if(in_array('createSupplier', $user_permission) || in_array('updateSupplier', $user_permission) || in_array('viewSupplier', $user_permission) || in_array('deleteSupplier', $user_permission)): ?>
+                    <li id="purchaseMainMenu">
+                        <a href="<?php echo base_url('purchase/history'); ?>"><i class="fa fa-industry"></i> <span class="nav-label">Purchase</span></a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if(in_array('createSupplier', $user_permission) || in_array('updateSupplier', $user_permission) || in_array('viewSupplier', $user_permission) || in_array('deleteSupplier', $user_permission)): ?>
+                    <li id="accountingMainMenu">
+                        <a href="<?php echo base_url('purchase/history'); ?>"><i class="fa fa-industry"></i> <span class="nav-label">Accounting</span></a>
+                    </li>
+                <?php endif; ?>
+
+
 
                 <li class="special_link" id="TaskMainMenu">
                     <a href="<?php echo base_url('task/') ?>"><i class="fa fa-star"></i> <span class="nav-label">Task</span></a>
@@ -190,8 +120,3 @@
 
     <div id="page-wrapper" class="gray-bg">
 
-        <div class="row wrapper border-bottom white-bg page-heading">
-            <div class="col-lg-1">
-                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            </div>
-            <div class="col-lg-7">

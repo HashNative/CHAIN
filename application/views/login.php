@@ -24,7 +24,7 @@
         <div>
             <div>
 
-                <h1 class="logo-name">HN</h1>
+                <h1 class="logo-name">#C</h1>
 
             </div>
             <h3>Welcome to Hash Chain</h3>

@@ -1,24 +1,13 @@
 
-<h2>Invoice History</h2>
+
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="#">Home</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a>Transactions</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a>Sales &amp Purchase</a>
+        <a href="<?php echo base_url('sales/history') ?>">Sales</a>
     </li>
     <li class="breadcrumb-item active">
-        <strong>Invoice History</strong>
+        <strong href="<?php echo base_url('invoice/history') ?>">Invoice</strong>
     </li>
 </ol>
-</div>
-<div class="col-lg-4">
-    <div class="title-action">
-        <a href="<?php echo base_url('invoice') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> New Invoice </a>
-    </div>
 </div>
 
 </div>
@@ -40,6 +29,9 @@
         </div>
     <?php endif; ?>
 
+
+    <?php if($invoice_data){ ?>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="col-lg-12">
@@ -48,13 +40,8 @@
                         <h5>All Invoices</h5>
 
                         <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
+                            <a href="<?php echo base_url('invoice') ?>" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> New Invoice</a>
 
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -75,7 +62,6 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php if($invoice_data): ?>
                                 <?php foreach ($invoice_data as $k => $v): ?>
                                     <tr>
                                         <td>
@@ -96,12 +82,29 @@
                                         <td class="text-right">
                                             <div class="btn-group">
                                                 <button class="btn-white btn btn-xs">View</button>
-                                                <button class="btn-white btn btn-xs"><i class="fa fa-trash"></i> Delete</button>
-                                            </div>
+                                                <a data-toggle="modal" data-target="#deleteModal<?php echo $v['invoice_info']['id']; ?>" class="btn-white btn-xs" href="<?php echo base_url('invoice/delete/'.$v['invoice_info']['id']) ?>" >                                            </div>
                                         </td>
                                     </tr>
+
+                                    <div class="modal inmodal fade" id="deleteModal<?php echo $v['invoice_info']['id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content">
+                                                <form role="form" action="<?php echo base_url('invoice/delete/'.$v['invoice_info']['id']) ?>" method="post" id="issueForm">
+                                                    <div class="confirmation-modal-body">
+                                                        <p><strong>Do you really want to delete?</strong></p>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-white" data-dismiss="modal">Discard</button>
+                                                            <button type="submit" class="btn btn-primary" name="confirm" value="Confirm">Yes</button>
+                                                        </div>
+                                                    </div>
+
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 <?php endforeach ?>
-                            <?php endif; ?>
 
                             </tbody>
                             <tfoot>
@@ -119,12 +122,28 @@
             </div>
         </div>
     </div>
+    <?php }else{ ?>
 
+    <div class="row justify-content-center">
+        <div class="col-sm-6 align-item-center">
+            <div class="row justify-content-center">
+                <img src="https://plugin.intuitcdn.net/improved-inventory/2.4.29/images/aedd71ce8d4a14e839494d68e8de5cce.svg">
+            </div>
+            <div class="row text-center">
+                <h2><strong>Create Your first invoice for product or service</strong></h2>
+            </div>
+            <div class="row justify-content-center">
+                <a href="<?php echo base_url('invoice'); ?>" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Create new Invoice</a>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
 
 </div>
 
 <script>
     $(document).ready(function() {
+        $("#salesMainMenu").addClass('active');
 
         $('.footable').footable();
         $('.footable2').footable();

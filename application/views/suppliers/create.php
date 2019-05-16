@@ -1,22 +1,10 @@
 
-                    <h2>Add Supplier</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Suppliers</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>Add Supplier</strong>
-                        </li>
-                    </ol>
-                </div>
-                    <div class="col-lg-4">
-                        <div class="title-action">
-                            <a href="<?php echo base_url('suppliers') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Suppliers </a>
-                        </div>
                     </div>
+                    <div class="col-lg-4 navbar-right">
+                        <a class="minimalize-styl-2 btn btn-primary " href="<?php echo base_url('suppliers') ?>"><i class="fa fa-eye"></i> All Suppliers</a>
+                    </div>
+
+
                     </div>
 
     <!-- Main content -->

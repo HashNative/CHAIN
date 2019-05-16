@@ -49,30 +49,45 @@ class Model_sales extends CI_Model
 	{
 		$user_id = $this->session->userdata('id');
 
+		//Get Next id
+        $sql = "SELECT no FROM sales ORDER BY id ASC";
+        $query = $this->db->query($sql);
+        $result=$query->result_array();
+        $sales_no=null;
+        if($result){
 
-		$sales_id = $this->db->insert_id();
+            foreach ($result as $k => $v):
+                $sales_no=$v['no']+1;
+            endforeach;
+
+        }else{
+            $sales_no=1000;
+
+        }
+
+        $sales_id = $this->db->insert_id();
     	$data = array(
-    		'date_time' => strtotime(date('Y-m-d h:i:s a')),
+    		'date_time' => $this->input->post('bill_date'),
     		'customer' => $this->input->post('customer'),
-    		'sales_order_no' => $this->input->post('son'),
-    		'paid_status' => 2,
+            'no' => $sales_no,
+            'type' => 'Sales Receipt',
+    		'paid_status' => 'paid',
     		'user_id' => $user_id,
     	);
 
 		$insert = $this->db->insert('sales', $data);
-
-		$count_product = count($this->input->post('product'));
-    	for($x = 0; $x < $count_product; $x++) {
-    		$items = array(
-                'sales_order_no' => $this->input->post('son')[$x],
-    			'product_id' => $this->input->post('product')[$x],
-    			'quantity' => $this->input->post('qty')[$x],
-    			'price' => $this->input->post('cost')[$x],
-    			'amount' => $this->input->post('amount')[$x],
-    		);
-
-    		$this->db->insert('sales_detail', $items);
-    	}
+//
+//		$count_product = count($this->input->post('product'));
+//    	for($x = 0; $x < $count_product; $x++) {
+//    		$items = array(
+//    			'product_id' => $this->input->post('product')[$x],
+//    			'quantity' => $this->input->post('qty')[$x],
+//    			'price' => $this->input->post('cost')[$x],
+//    			'amount' => $this->input->post('amount')[$x],
+//    		);
+//
+//    		$this->db->insert('sales_detail', $items);
+//    	}
 
     	
 		return ($sales_id) ? $sales_id : false;
@@ -147,15 +162,14 @@ class Model_sales extends CI_Model
 
 
 
-	public function remove($id)
+	public function delete($id)
 	{
 		if($id) {
 			$this->db->where('id', $id);
-			$delete = $this->db->delete('Salesorder');
+			$delete = $this->db->delete('sales');
 
-			$this->db->where('order_id', $id);
-			$delete_item = $this->db->delete('order_items');
-			return ($delete == true && $delete_item) ? true : false;
+
+			return ($delete == true) ? true : false;
 		}
 	}
 

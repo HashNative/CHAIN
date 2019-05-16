@@ -1,21 +1,6 @@
 
-                    <h2>Manage Customers</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Customers</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>Manage Customers</strong>
-                        </li>
-                    </ol>
                 </div>
-                <div class="col-lg-2">
-
-                </div>
-            </div>
+       </div>
 
     <!-- Main content -->
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -36,39 +21,41 @@
           
           
           <!-- /.box -->
-        <div class="row">
-            <div class="col-lg-12">
+
+
+        <?php if($customer_data){ ?>
+            <div class="row">
                 <div class="col-lg-12">
-                    <div class="ibox ">
-                        <div class="ibox-title">
-                            <h5>All Customers</h5>
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5>All Customers</h5>
 
-                            <div class="ibox-tools">
-                                <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Create new Customer</a>
+                                <div class="ibox-tools">
+                                    <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Create new Customer</a>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="ibox-content">
-                            <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
-                                   placeholder="Search in table">
+                            <div class="ibox-content">
+                                <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
+                                       placeholder="Search in table">
 
-                            <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
-                                <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>Status</th>
+                                <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
 
-                                    <?php if(in_array('updateCustomer', $user_permission) || in_array('deleteCustomer', $user_permission)): ?>
-                                        <th class="text-right" data-sort-ignore="true">Action</th>
-                                    <?php endif; ?>
-                                </tr>
+                                        <?php if(in_array('updateCustomer', $user_permission) || in_array('deleteCustomer', $user_permission)): ?>
+                                            <th class="text-right" data-sort-ignore="true">Action</th>
+                                        <?php endif; ?>
+                                    </tr>
 
-                                </thead>
-                                <tbody>
-                                <?php if($customer_data): ?>
+                                    </thead>
+                                    <tbody>
                                     <?php foreach ($customer_data as $k => $v): ?>
                                         <tr>
                                             <td><a href="#" class="client-link"><?php echo $v['customer_info']['name']; ?></a></td>
@@ -79,36 +66,82 @@
                                             <?php if(in_array('updateCustomer', $user_permission) || in_array('deleteCustomer', $user_permission)): ?>
 
                                                 <td class="text-right">
-                                                    <?php if(in_array('updateCustomer', $user_permission)): ?>
-                                                        <a class="btn-white btn btn-xs" href="<?php echo base_url('customers/edit/'.$v['customer_info']['id']) ?>"><i class="fa fa-pencil"></i> Edit</a>
-                                                    <?php endif; ?>
-                                                    <?php if(in_array('deleteCustomer', $user_permission)): ?>
-                                                        <a class="btn-white btn btn-xs" href="<?php echo base_url('customers/delete/'.$v['customer_info']['id']) ?>"><i class="fa fa-trash"></i> Delete</a>
-                                                    <?php endif; ?>
+
+                                                    <div class="btn-group">
+
+                                                        <button class="btn btn-sm" type="button">
+                                                            Print
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="#">Action</a>
+                                                            <a class="dropdown-item" href="#">Another action</a>
+                                                            <a class="dropdown-item" href="#">Something else here</a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="<?php echo base_url('customers/edit/'.$v['customer_info']['id']) ?>"><i class="fa fa-pencil"></i> Edit</a>
+                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteModal<?php echo $v['customer_info']['id']; ?>"><i class="fa fa-trash"></i> Delete</a>
+                                                        </div>
+                                                    </div>
+
                                                 </td>
 
                                             <?php endif; ?>
                                         </tr>
+                                        <div class="modal inmodal" id="deleteModal<?php echo $v['customer_info']['id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <form role="form" action="<?php echo base_url('customers/delete/'.$v['customer_info']['id']) ?>" method="post" id="issueForm">
+                                                        <div class="confirmation-modal-body">
+                                                            <p><strong>Do you really want to delete?</strong></p>
+                                                            <div class="modal-footer d-flex justify-content-around">
+                                                                <button type="button" class="btn btn-white" data-dismiss="modal">No</button>
+                                                                <button type="submit" class="btn btn-primary" name="confirm" value="Confirm">Yes</button>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     <?php endforeach ?>
-                                <?php endif; ?>
 
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td colspan="6">
-                                        <ul class="pagination float-right"></ul>
-                                    </td>
-                                </tr>
-                                </tfoot>
-                            </table>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="6">
+                                            <ul class="pagination float-right"></ul>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
 
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php }else{ ?>
 
+
+            <div class="row justify-content-center">
+                <div class="col-sm-6 align-item-center">
+                    <div class="row justify-content-center">
+                        <img src="https://plugin.intuitcdn.net/improved-inventory/2.4.29/images/aedd71ce8d4a14e839494d68e8de5cce.svg">
+                    </div>
+                   <div class="row text-center">
+                       <h2><strong>Add your Existing customers to create your next invoice or receipt</strong></h2>
+                   </div>
+                    <div class="row justify-content-center">
+                       <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Create new Customer</a>
+                    </div>
+                    </div>
+            </div>
+
+        <?php }?>
     </div>
      
   

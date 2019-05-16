@@ -40,42 +40,44 @@
         </div>
     <?php endif; ?>
 
-    <div class="row">
-        <div class="col-lg-12">
+
+
+    <?php if($purchase_order_data){ ?>
+        <div class="row">
             <div class="col-lg-12">
-                <div class="ibox ">
-                    <div class="ibox-title">
-                        <h5>All Purchase Orders</h5>
+                <div class="col-lg-12">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>All Purchase Orders</h5>
 
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
 
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ibox-content">
-                        <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
-                               placeholder="Search in table">
+                        <div class="ibox-content">
+                            <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
+                                   placeholder="Search in table">
 
-                        <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
-                            <thead>
-                            <tr>
+                            <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
+                                <thead>
+                                <tr>
 
-                                <th data-toggle="true">Order No</th>
-                                <th data-hide="phone">Time</th>
-                                <th data-hide="phone">Vendor</th>
-                                <th data-hide="phone">Total</th>
-                                <th data-hide="phone">Status</th>
-                                <th class="text-right" data-sort-ignore="true">Action</th>
+                                    <th data-toggle="true">Order No</th>
+                                    <th data-hide="phone">Time</th>
+                                    <th data-hide="phone">Vendor</th>
+                                    <th data-hide="phone">Total</th>
+                                    <th data-hide="phone">Status</th>
+                                    <th class="text-right" data-sort-ignore="true">Action</th>
 
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php if($purchase_order_data): ?>
+                                </tr>
+                                </thead>
+                                <tbody>
                                 <?php foreach ($purchase_order_data as $k => $v): ?>
                                     <tr>
                                         <td>
@@ -101,24 +103,27 @@
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
-                            <?php endif; ?>
 
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <td colspan="6">
-                                    <ul class="pagination float-right"></ul>
-                                </td>
-                            </tr>
-                            </tfoot>
-                        </table>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="6">
+                                        <ul class="pagination float-right"></ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
 
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php }else{ ?>
+        <a href="<?php echo base_url('suppliers/create') ?>" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Create new Purchase Order</a>
+
+    <?php }?>
 
 
 </div>

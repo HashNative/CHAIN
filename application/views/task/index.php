@@ -1,24 +1,11 @@
 
-        <h2>Manage Task</h2>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a>Task</a>
-            </li>
-            <li class="breadcrumb-item active">
-                <strong>Manage Task</strong>
-            </li>
-        </ol>
-    </div>
-        <div class="col-lg-4">
-            <div class="title-action">
-                <a href="<?php echo base_url('task/all') ?>" class="btn btn-primary"><i class="fa fa-angle-double-down"></i> All Tasks </a>
-            </div>
+        </div>
+        <div class="col-lg-4 navbar-right">
+            <a class="minimalize-styl-2 btn btn-primary " href="<?php echo base_url('task/all') ?>"><i class="fa fa-angle-double-down"></i> All Tasks</a>
         </div>
 
-</div>
+
+        </div>
 
 
 <!-- Main content -->

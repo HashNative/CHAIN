@@ -1,17 +1,4 @@
 
-
-                    <h2>Manage Groups</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Group</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>Manage Groups</strong>
-                        </li>
-                    </ol>
                 </div>
                 <div class="col-lg-2">
 
@@ -34,6 +21,8 @@
               <?php echo $this->session->flashdata('error'); ?>
             </div>
           <?php endif; ?>
+
+                <?php if($groups_data){ ?>
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>All Groups</h5>
@@ -52,15 +41,16 @@
 
                                 <table class="table table-hover">
                                     <tbody>
-                                    <?php if($groups_data): ?>                  
+
                                     <?php foreach ($groups_data as $k => $v): ?>
                                     <tr>
+                                        <a href="">
                                         <td class="project-status">
                                             <span class="label label-primary">Active</span>
                                         </td>
                                         <td class="project-title">
                                             <a><?php echo $v['group_name']; ?></a>
-                                            
+
                                         </td>
                                         <td class="project-completion">
                                                 <small>Completion with: 48%</small>
@@ -79,28 +69,63 @@
                                         <?php if(in_array('updateGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
                         <td class="project-actions">
                           <?php if(in_array('updateGroup', $user_permission)): ?>
-                          
+
                           <a href="<?php echo base_url('groups/edit/'.$v['id']) ?>" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
                           <?php endif; ?>
                           <?php if(in_array('deleteGroup', $user_permission)): ?>
-                          <a href="<?php echo base_url('groups/delete/'.$v['id']) ?>" class="btn btn-white btn-sm demo3"><i class="fa fa-trash"></i> Delete </a>
-            
+                          <a href="#" data-toggle="modal" data-target="#deleteModal<?php echo $v['id']; ?>" class="btn btn-white btn-sm demo3"><i class="fa fa-trash"></i> Delete </a>
+
                           <?php endif; ?>
                         </td>
                         <?php endif; ?>
-                                      
-                                        </td>
+                                        </a>
 
                                     </tr>
+                                        <div class="modal inmodal" id="deleteModal<?php echo $v['id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <form role="form" action="<?php echo base_url('groups/delete/'.$v['id']) ?>" method="post" id="issueForm">
+                                                        <div class="confirmation-modal-body">
+                                                            <p><strong>Do you really want to delete?</strong></p>
+                                                            <div class="modal-footer d-flex justify-content-around">
+                                                                <button type="button" class="btn btn-white" data-dismiss="modal">No</button>
+                                                                <button type="submit" class="btn btn-primary" name="confirm" value="Confirm">Yes</button>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     <?php endforeach ?>
-                  <?php endif; ?>
-                                 
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php }else{ ?>
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6 align-item-center">
+                            <div class="row justify-content-center">
+                                <img src="https://plugin.intuitcdn.net/improved-inventory/2.4.29/images/aedd71ce8d4a14e839494d68e8de5cce.svg">
+                            </div>
+                            <div class="row text-center">
+                                <h2><strong>Add groups to manage the system by giving permission to each</strong></h2>
+                            </div>
+                            <div class="row justify-content-center">
+                                <a href="<?php echo base_url('groups/create') ?>" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Create new Group</a>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php }?>
+
+            </div>
             </div>
         </div>
 
@@ -109,7 +134,11 @@ $(document).ready(function(){
 
     $("#groupMainMenu").addClass('active');
     $("#manageGroupSubMenu").addClass('active');
-  
+
+    $('.table > tbody > tr').click(function() {
+        alert('success');
+    });
+
 });
 </script>
       

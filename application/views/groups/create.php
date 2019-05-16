@@ -1,23 +1,11 @@
 
-                    <h2>Add Groups</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Groups</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>Add Group</strong>
-                        </li>
-                    </ol>
-                </div>
-                    <div class="col-lg-4">
-                        <div class="title-action">
-                            <a href="<?php echo base_url('groups') ?>" class="btn btn-primary"><i class="fa fa-eye"></i>  All Groups </a>
-                        </div>
                     </div>
-            </div>
+                    <div class="col-lg-4 navbar-right">
+                        <a class="minimalize-styl-2 btn btn-primary " href="<?php echo base_url('groups') ?>"><i class="fa fa-eye"></i> All Groups</a>
+                    </div>
+
+
+                    </div>
 
         <div class="wrapper wrapper-content animated fadeInRight">
 

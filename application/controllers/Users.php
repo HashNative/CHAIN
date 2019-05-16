@@ -47,7 +47,6 @@ class Users extends Admin_Controller
         }
 
 		$this->form_validation->set_rules('groups', 'Group', 'required');
-		$this->form_validation->set_rules('store', 'Store', 'trim|required');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|is_unique[users.username]');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');

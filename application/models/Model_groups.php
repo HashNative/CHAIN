@@ -16,7 +16,7 @@ class Model_groups extends CI_Model
 		}
 
 		$sql = "SELECT * FROM groups WHERE id != ? ORDER BY id DESC";
-		$query = $this->db->query($sql, array(0)); //if array 1 it will not show super admin group
+		$query = $this->db->query($sql, array(1)); //if array 1 it will not show super admin group
 		return $query->result_array();
 	}
 

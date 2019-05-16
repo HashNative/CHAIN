@@ -1,20 +1,4 @@
 
-
-<h2>Sales</h2>
-<ol class="breadcrumb">
-    <li class="breadcrumb-item">
-        <a href="#">Home</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a href="#">Transactions</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a>Sales &amp Purchase</a>
-    </li>
-    <li class="breadcrumb-item active">
-        <strong>Sales</strong>
-    </li>
-</ol>
 </div>
 <div class="col-lg-2">
 
@@ -44,7 +28,7 @@
 
                 <div class="ibox ">
                     <div class="ibox-title">
-                        <h5>Create Sales Bill</h5>
+                        <h5>Create Sales Receipt</h5>
                         <?php if(in_array('createCustomer', $user_permission)): ?>
                             <div class="ibox-tools">
                                 <a href="<?php echo base_url('sales/history') ?>" class="btn btn-primary btn-xs"><i class="fa fa-unsorted"></i> Sales History</a>
@@ -55,31 +39,31 @@
                     </div>
                     <div class="ibox-title">
 
-                        <form role="form" action="<?php echo base_url('sales/create') ?>" method="post" id="createForm">
+                        <form role="form" action="<?php echo base_url('sales/createsalesreceipt') ?>" method="post" id="createForm">
 
                             <div class="modal-body">
 
                                 <div id="messages"></div>
                                 <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="col-form-label" for="description">Sales Order Number</label>
-                                            <input type="text" id="son" name="son" value=""
-                                                   placeholder="SON" class="form-control">
+                                    <div class="col-sm-3">
+                                        <div class="form-group" id="data_1">
+                                        <label class="font-normal">Bill Date</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" id="bill_date" name="bill_date" class="form-control" value="03/04/2014">
                                         </div>
-
+                                        </div>
                                     </div>
-
-
-
                                 </div>
+                                <br>
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label class="col-form-label" for="description">Customer</label>
                                             <select class="form-control select_group product"
                                                     id="customer" name="customer" style="width:100%;" required>
-                                                <option value=""></option>
+                                                <option selected="false" value=""><i class="fa fa-plus"></i>Test</option>
+
                                                 <?php foreach ($customer_data as $k => $v): ?>
                                                     <option value="<?php echo $v['name'] ?>" placeholder="Choose customer"><?php echo $v['name'] ?></option>
                                                 <?php endforeach ?>
@@ -209,7 +193,17 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#salesMainMenu").addClass('active');
+
         $(".product").select2();
+
+        var mem = $('#data_1 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
 
         // Append table with add row form on add new button click ==Add new Task==
         $(".add-new").click(function () {
@@ -253,6 +247,8 @@
                 }
             });
         })
+
+
 
 
         // Delete row on delete button click

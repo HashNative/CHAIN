@@ -53,9 +53,9 @@ class Admin_Controller extends MY_Controller
 	{
 
 		$this->load->view('templates/header',$data);
-		$this->load->view('templates/header_menu',$data);
 		$this->load->view('templates/side_menubar',$data);
-		$this->load->view($page, $data);
+        $this->load->view('templates/header_menu',$data);
+        $this->load->view($page, $data);
 		$this->load->view('templates/footer',$data);
 	}
 

@@ -1,20 +1,4 @@
 
-
-<h2>Invoice</h2>
-<ol class="breadcrumb">
-    <li class="breadcrumb-item">
-        <a href="#">Home</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a href="#">Transactions</a>
-    </li>
-    <li class="breadcrumb-item">
-        <a>Sales &amp Purchase</a>
-    </li>
-    <li class="breadcrumb-item active">
-        <strong>Invoice</strong>
-    </li>
-</ol>
 </div>
 <div class="col-lg-2">
 
@@ -47,7 +31,7 @@
                         <h5>Create Invoice</h5>
                         <?php if(in_array('createCustomer', $user_permission)): ?>
                             <div class="ibox-tools">
-                                <a href="<?php echo base_url('invoice/history') ?>" class="btn btn-primary btn-xs"><i class="fa fa-unsorted"></i> Invoice History</a>
+                                <a href="<?php echo base_url('sales/history') ?>" class="btn btn-primary btn-xs"><i class="fa fa-unsorted"></i> Sales History</a>
                             </div>
 
                             <br /> <br />
@@ -55,24 +39,28 @@
                     </div>
                     <div class="ibox-title">
 
-                        <form role="form" action="<?php echo base_url('invoice/create') ?>" method="post" id="createForm">
+                        <form role="form" action="<?php echo base_url('sales/createinvoice') ?>" method="post" id="createForm">
 
                             <div class="modal-body">
-
                                 <div id="messages"></div>
+
                                 <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="col-form-label" for="description">Sales Order Number</label>
-                                            <input type="text" id="son" name="son" value=""
-                                                   placeholder="SON" class="form-control">
-                                        </div>
-
-                                    </div>
-
-
-
+                                <div class="col-sm-3" id="data_1">
+                                <label class="font-normal">Invoice Date</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input id="invoice_date" name="invoice_date" type="text" class="form-control" value="03/04/2014">
                                 </div>
+                                </div>
+                                    <div class="col-sm-3" id="data_2">
+                                        <label class="font-normal">Due Date</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input id="due_date" name="due_date" type="text" class="form-control" value="03/04/2014">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-group">
@@ -207,7 +195,25 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#salesMainMenu").addClass('active');
+
         $(".product").select2();
+
+        var mem = $('#data_1 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
+        var mem = $('#data_2 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
+
 
         // Append table with add row form on add new button click ==Add new Task==
         $(".add-new").click(function () {
