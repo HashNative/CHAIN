@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="">
             <div class="float-right">
                 10GB of <strong>250GB</strong> Free.
             </div>
